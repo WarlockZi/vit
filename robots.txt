@@ -1,0 +1,12 @@
+User-agent: *
+
+Disallow: /tmp/
+Disallow: /libs/
+Disallow: /config/
+Disallow: /bit/
+Disallow: /app/
+Disallow: /*?
+
+Sitemap: https://vitexopt.ru/sitemap.xml
+Host: https://vitexopt.ru
+
