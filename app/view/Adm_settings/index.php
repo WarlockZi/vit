@@ -15,6 +15,8 @@
        <a href  = #>Должности пользователей</a>
        <a href  = '/adminsc/settings/props'>Свойства (товаров, пользователей)</a>
        <a href  = '/adminsc/settings/instructions'>Инструкции</a>
+       <a href  = '/adminsc/settings/dump'>Dump</a>
+
      </div>
   <? endif; ?>
 

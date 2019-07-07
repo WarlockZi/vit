@@ -79,7 +79,7 @@ class Category extends Model {
 //      $category = App::$app->cache->get('category'.$url);
       if (!$category) {
          $arr = explode('/', $url);
-         if (count($arr) > 2) {
+         if (count($arr) > 3) {
             http_response_code(404);
             exit(include '../public/404.html');
          }

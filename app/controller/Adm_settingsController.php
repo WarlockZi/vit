@@ -19,6 +19,30 @@ class Adm_settingsController extends AdminscController {
       $this->vars['js'] = $this->getJSCSS('.js');
 //      $this->vars['css'] = $this->getJSCSS('.css');
    }
+   public function actionDumpSQL() {
+
+      $this->auth();
+
+      $this->layout = 'crm';
+      $this->vars['js'] = $this->getJSCSS('.js');
+//      $this->vars['css'] = $this->getJSCSS('.css');
+   }
+   public function actionDump() {
+
+      $this->auth();
+
+      $this->layout = 'crm';
+      $this->vars['js'] = $this->getJSCSS('.js');
+//      $this->vars['css'] = $this->getJSCSS('.css');
+   }
+   public function actionDumpWWW() {
+
+      $this->auth();
+
+      $this->layout = 'crm';
+      $this->vars['js'] = $this->getJSCSS('.js');
+//      $this->vars['css'] = $this->getJSCSS('.css');
+   }
 
    public function actionModule() {
 
