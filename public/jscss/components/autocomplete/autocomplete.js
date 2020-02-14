@@ -5,16 +5,19 @@ async function autoComplete(Input) {
     return await response.json();
 
 }
+
+
 export default window.getValue = async function (val) {
-    // if no value
+var result = document.querySelector('.result-search');
+// if no value
     if (!val) {
         result.innerHTML = '';
         return
     }
     // search goes here
     var data = await autoComplete(val);
-    debugger;
 
+    // debugger;
     // append list data
     var res = '<ul>';
     data.forEach(e => {
@@ -25,7 +28,6 @@ export default window.getValue = async function (val) {
             '</a></li>';
     });
     res += '</ul>';
-    var result = document.querySelector('.result-search');
     result.innerHTML = res;
 
     document.querySelector('body').addEventListener('click', function (e) {
@@ -35,5 +37,3 @@ export default window.getValue = async function (val) {
         }
     });
 }
-
-
