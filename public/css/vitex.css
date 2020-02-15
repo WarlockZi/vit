@@ -1,16 +1,14 @@
 @charset "UTF-8";
-/*@import '../../node_modules/swiper/css/swiper.min.css';*/
-
-@font-face {
-    font-family: 'Intro';
-    font-display: swap;
-    src: url('/public/css/fonts/intro.eot'); /* IE 9 Compatibility Mode */
-    src: url('/public/css/fonts/intro.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
-        url('/public/css/fonts/intro.woff2') format('woff2'), /* Super Modern Browsers */
-        url('/public/css/fonts/intro.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
-        url('/public/css/fonts/intro.ttf') format('truetype'), /* Safari, Android, iOS */
-        url('/public/css/fonts/intro.svg#intro') format('svg'); /* Chrome < 4, Legacy iOS */
-}
+/*@font-face {*/
+/*    font-family: 'Intro';*/
+/*    font-display: swap;*/
+/*    src: url('/public/css/fonts/intro.eot'); !* IE 9 Compatibility Mode *!*/
+/*    src: url('/public/css/fonts/intro.eot?#iefix') format('embedded-opentype'), !* IE < 9 *!*/
+/*        url('/public/css/fonts/intro.woff2') format('woff2'), !* Super Modern Browsers *!*/
+/*        url('/public/css/fonts/intro.woff') format('woff'), !* Firefox >= 3.6, any other modern browser *!*/
+/*        url('/public/css/fonts/intro.ttf') format('truetype'), !* Safari, Android, iOS *!*/
+/*        url('/public/css/fonts/intro.svg#intro') format('svg'); !* Chrome < 4, Legacy iOS *!*/
+/*}*/
 
 
 .h400{

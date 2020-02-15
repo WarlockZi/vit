@@ -153,8 +153,8 @@ nav#menu {
   color: #fff;
   padding: 0 48px;
   position: sticky;
-    position-top: 0;
-    position-z-index: 3; }
+  top: 0;
+  z-index: 3; }
 
 .top-menu a {
   color: #fff; }
@@ -689,7 +689,7 @@ header .h-cat {
   padding: 13px;
   background: #e30000;
   color: #fff;
-  font: 400 17px/17px intro,'Proxima Nova', sans-serif; }
+  font: 700 17px/17px arial-black, sans-serif; }
 
 header .h-cat:first-child ul {
   left: 0; }

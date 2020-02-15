@@ -1,6 +1,6 @@
 const path = require('path');
 // const WebpackDevServer = require('webpack-dev-server');
-// const webpack = require('webpack');
+const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
@@ -42,11 +42,12 @@ module.exports = {
         rules: [
             {
                 test: /\.(png|jpe?g|gif)$/i,
-                use: [{
+                use: [
+                    {
                         loader: 'file-loader',
-                    }]
+                    }
+                ]
             },
-
             {
                 test: /\.js/,
                 loader: 'babel-loader',
@@ -72,14 +73,7 @@ module.exports = {
             filename: '[name].css',
             chunkFilename: '[id].css',
         }),
-        // new webpack.ProvidePlugin({
-        //     $: 'jquery',
-        //     jQuery: 'jquery',
-        //     "window.jQuery": "jquery"
-        // }),
-        // new webpack.ProvidePlugin({
-        //     slick: 'slick-carousel'
-        // }),
+
         new CleanWebpackPlugin(),
     ]
 
