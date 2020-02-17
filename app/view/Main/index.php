@@ -31,13 +31,10 @@
 			на соответствие ГОСТам.
 		</p>
 	</div>
-<!--		<span>акция !!!</span>-->
-<!--		<div class="next">&#62;</div>-->
-<!--		<div class="prev">&#60;</div>-->
 
-
-	<div class="swiper-container">
-		<div class="swiper-wrapper" >
+	<div class="swiper-new">Новинки</div>
+	<div class="swiper-container-new">
+		<div class="swiper-wrapper">
 			<? foreach ($sale as $product) : ?>
 				<div class="swiper-slide">
 					<a href="/<?= $product['alias']; ?>">

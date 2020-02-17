@@ -1,6 +1,4 @@
-// import "jquery";
 import {post} from '../common';
-import '../components/header/header.sass';
 
 ///////////////////////////    Login     /////////////////////
 window.onload = function () {

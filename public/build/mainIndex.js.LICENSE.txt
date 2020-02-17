@@ -10,8 +10,6 @@
 
 /*! ../components/autocomplete/autocomplete */
 
-/*! ../components/header/header.sass */
-
 /*! ./autocomplete.sass */
 
 /*! dom7/dist/dom7.modular */
