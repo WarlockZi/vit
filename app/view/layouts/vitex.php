@@ -11,11 +11,58 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--	<link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">-->
-	<!--	<link rel="preload" href="/public/css/fonts/intro.woff2" as="font" crossorigin="anonymous" />-->
+	<link rel="preload" href="/pic/header-big.png" as="image" crossorigin="anonymous"/>
 	<? $this::getMeta(); ?>
 	<!--	--><? // $this::getCSS(); ?>
 	<link rel="preload" href='/public/build/mainIndex.css' as="style" onload="this.rel='stylesheet'" media="all">
+	<style>
+		body { /*margin-left: calc(100vw - 100%);*/
+			overflow-y: scroll;
+			margin: 0;
+			font-family: 'Roboto', sans-serif;
+		}
 
+		html, body {
+			height: 100%;
+		}
+
+		body, a, p {
+			color: #595959;
+		}
+
+		.top-menu {
+			min-width: 25px;
+			background: black;
+			color: #fff;
+			padding: 0 48px;
+			position: sticky;
+			top: 0;
+			z-index: 3;
+			display: flex;
+			align-items: center;
+		}
+		main {
+			display: flex;
+			max-width: 1310px;
+			margin: auto;
+			padding: 0 10px;
+		}
+
+		.top-menu .contacts {
+			align-self: center;
+			margin-left: 50px;
+		}
+
+		#menu, #toggle-button, #toggle-label {
+			display: none;
+		}
+
+		.top-menu a {
+			font: normal 14px 'Verdana';
+			color: #fff;
+			text-decoration: none;
+		}
+	</style>
 </head>
 
 <body class="row">
@@ -49,47 +96,47 @@
 		</div>
 
 		<div class="user-menu  flex1">
-                <span class="row">
-                    <? if (!isset($user)): ?>
-	                    <a href="/user/login" aria-label="login">
+			<!--                <span class="row">-->
+			<? if (!isset($user)): ?>
+				<a href="/user/login" aria-label="login">
                        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
                                                data-prefix="far" data-icon="user" class="svg-inline--fa fa-user fa-w-14"
-                                               role="img" viewBox="0 0 2688 3072"><path fill="currentColor"
-                                                                                        d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"/></svg></span>
-                     </a>
-						  <? else: ?>
-	                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
-	                                            data-prefix="far" data-icon="user" class="svg-inline--fa fa-user fa-w-14"
-	                                            role="img" viewBox="0 0 448 512"><path fill="currentColor"
-	                                                                                   d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"/></svg></span>
-                     <?
-							  if (isset($user)) {
-								  echo '<span class = "FIO">' . $user['surName'] . ' ' . $user['name'] . ' ' . $user['middleName'] . '</span>';
-							  }
-							  ?>
+                                               role="img" viewBox="0 0 448 512"><path fill="currentColor"
+                                                                                      d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"/></svg></span>
+				</a>
+			<? else: ?>
+				<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+				                        data-prefix="far" data-icon="user" class="svg-inline--fa fa-user fa-w-14"
+				                        role="img" viewBox="0 0 448 512"><path fill="currentColor"
+				                                                               d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"/></svg></span>
+				<?
+				if (isset($user)) {
+					echo '<span class = "FIO">' . $user['surName'] . ' ' . $user['name'] . ' ' . $user['middleName'] . '</span>';
+				}
+				?>
 
 
-	                    <div class="nav">
-                       <a href="/user/edit">Редактировать свой профиль</a>
-                       <?=
-							  in_array('1', $user['rights']) ? // редактировать
-								  '<a href="/edit/1">Редактировать тесты</a>
+				<div class="nav">
+					<a href="/user/edit">Редактировать свой профиль</a>
+					<?=
+					in_array('1', $user['rights']) ? // редактировать
+						'<a href="/edit/1">Редактировать тесты</a>
                       <a href="/freetest/edit/41">Редактировать свободный тест</a>' : ''
-							  ?>
+					?>
 
-								  <?=
-								  in_array('2', $user['rights']) ? // проходить
-									  '<a href="/test/1">Проходить тесты</a>
+					<?=
+					in_array('2', $user['rights']) ? // проходить
+						'<a href="/test/1">Проходить тесты</a>
                       <a href="/freetest/41">Свободный тест</a>' : '';
-								  ?>
+					?>
 
-								  <?=
-								  in_array('3', $user['rights']) ?
-									  '<a href="/adminsc">Admin</a>' : ''; // Admin
-								  ?>
+					<?=
+					in_array('3', $user['rights']) ?
+						'<a href="/adminsc">Admin</a>' : ''; // Admin
+					?>
 
-								  <? if (isset($user)): ?>
-			                    <a href="/user/logout" aria-label="logout">
+					<? if (isset($user)): ?>
+						<a href="/user/logout" aria-label="logout">
                             <span class="icon-logout">
                               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="20"
                                    viewBox="0 0 20 20">
@@ -97,13 +144,13 @@
                                     d="M4 8v-2c0-3.314 2.686-6 6-6s6 2.686 6 6v0h-3v2h4c1.105 0 2 0.895 2 2v0 8c0 1.105-0.895 2-2 2v0h-14c-1.105 0-2-0.895-2-2v0-8c0-1.1 0.9-2 2-2h1zM9 14.73v2.27h2v-2.27c0.602-0.352 1-0.996 1-1.732 0-1.105-0.895-2-2-2s-2 0.895-2 2c0 0.736 0.398 1.38 0.991 1.727l0.009 0.005zM7 6v2h6v-2c0-1.657-1.343-3-3-3s-3 1.343-3 3v0z"></path>
                               </svg>
                             </span>
-                            Выход
-                          </a>
-								  <? endif; ?>
-                     </div>
-						  <? endif; ?>
+							Выход
+						</a>
+					<? endif; ?>
+				</div>
+			<? endif; ?>
 
-                </span>
+			<!--                </span>-->
 		</div>
 
 
@@ -306,4 +353,5 @@
 <!--</noscript>-->
 <!-- /Yandex.Metrika counter -->
 </body>
+<img src="/pic/header-big.jpg" alt="" style="height: 1px; width: 1px">
 </html>
