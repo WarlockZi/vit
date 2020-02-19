@@ -1,6 +1,11 @@
 ///*************************************
 //*******      MOBILE PANEL        ******
 //**************************************/
+#panel
+  width: 100%
+
+input#toggle-button
+  display: none
 
 label[for="toggle-button"]
   position: absolute
@@ -11,19 +16,6 @@ label[for="toggle-button"]
   padding: 7px 9px
   cursor: pointer
   z-index: 4
-
-#panel
-  width: 100%
-
-#panel header .wrap
-  box-shadow: 0 5px 18px 0 #d2d2d2
-  min-height: 100vh
-  margin: 0 0 -83px 0
-
-
-input#toggle-button
-  display: none
-
 
 /************      MENU ***************/
 nav#menu
@@ -53,10 +45,10 @@ nav#menu
   margin: 50px 20px 0 20px
   width: 360px
 
-.menu-wrap .item
-  padding:  0
-  transition: .3s
-  text-transform: uppercase
+  .item
+    padding:  0
+    transition: .3s
+    text-transform: uppercase
 
 
 #toggle-button:checked ~#menu .menu-wrap .item

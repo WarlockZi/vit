@@ -4,9 +4,7 @@
 
 /*! ../../../public/jscss/components/swiper/swiper.sass */
 
-/*! ../User/user_login */
-
-/*! ../common */
+/*! ../common.sass */
 
 /*! ../components/autocomplete/autocomplete */
 
@@ -18,8 +16,6 @@
 
 /*! exports provided: default */
 
-/*! exports provided: post, get, uniq */
-
 /*! exports provided: window, document */
 
 /*! no exports provided */
@@ -30,16 +26,12 @@
 
 /*! swiper */
 
-/*!********************************!*\
-  !*** ./public/jscss/common.js ***!
-  \********************************/
+/*!**********************************!*\
+  !*** ./public/jscss/common.sass ***!
+  \**********************************/
 
 /*!*****************************************!*\
   !*** ./public/jscss/Main/main_index.js ***!
-  \*****************************************/
-
-/*!*****************************************!*\
-  !*** ./public/jscss/User/user_login.js ***!
   \*****************************************/
 
 /*!************************************************!*\

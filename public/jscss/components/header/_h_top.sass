@@ -1,0 +1,106 @@
+.top-menu
+  .top-menu-wrap
+    .item
+      padding: 0 10px
+
+
+#toggle-label
+  display: block
+
+.logo
+  display: flex
+  flex: 1
+  justify-content: start
+  height: 45px
+  margin-left: 10px
+
+  img
+    width: 100%
+    max-width: 35%
+    min-width: 50px
+
+  a
+    width: 22vw
+    display: block
+
+  > span
+    margin: 3px 0 0 -50px
+    display: inline-block
+    vertical-align: top
+    font-size: 14px
+    color: #343133
+
+.user-menu
+
+  &:hover
+    background-color: #8d8d8d
+
+    >.nav
+      display: flex
+      flex-flow: column
+      border: 1px solid #eee
+      box-shadow: 0 6px 12px rgba(0,0,0,0.175)
+      background: #fff
+      z-index: 3
+      position: absolute
+      top: 100%
+      width: 280px
+
+      a
+        display: flex
+        padding: 7px 0px 9px 26px
+        color: #3d3d3d
+        .icon-logout
+          position: absolute
+          left: 2px
+
+        &:hover
+          background: #ababab33
+  .nav
+    display: none
+
+    a
+      display: none
+
+  .icon
+    svg
+      width: 14px
+  > span
+    > a
+      color: #fff
+      display: flex
+  .FIO
+    display: flex
+    align-items: center
+    padding-right: 10px
+    font-size: 12px
+
+
+
+.user-button
+  flex-direction: column
+
+.user-button div:first-child span
+  padding-left: 10px
+  color: #fff
+
+
+
+.form-submit input
+  position: absolute
+  top: 0
+  left: 0
+  height: 100%
+  width: 100%
+  opacity: 0
+
+//.user-menu>span:after
+//  content: '☰'
+//  display: block
+//  padding: 0 8px
+
+//.h-upper > div:not([class])
+//  position: relative
+//  top: 8px
+//  white-space: nowrap
+

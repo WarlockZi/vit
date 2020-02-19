@@ -1,12 +1,20 @@
 /*! ../common */
 
+/*! ./common.sass */
+
 /*! exports provided: post, get, uniq */
 
 /*! no exports provided */
 
+/*! no static exports found */
+
 /*!********************************!*\
   !*** ./public/jscss/common.js ***!
   \********************************/
+
+/*!**********************************!*\
+  !*** ./public/jscss/common.sass ***!
+  \**********************************/
 
 /*!*****************************************!*\
   !*** ./public/jscss/User/user_login.js ***!

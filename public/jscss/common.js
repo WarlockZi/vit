@@ -1,14 +1,4 @@
-// function autocomplete() {
-//     $('#autocomplete').autocomplete({
-//         source: '/search',
-//         minLength: 1,
-//         appendTo: $("#autocomplete").parent(),
-//         select: function (event, ui) {
-//             window.location = 'http://catalog/search?search=' + encodeURIcomponent(ui.item.value);
-//         }
-//     });
-// };
-
+import './common.sass';
 
 function get_cookie(cookie_name) {
     var results = document.cookie.match('(^|;)?' + cookie_name + '=([^;]*)');

@@ -1,4 +1,4 @@
-import 'jquery';
+// import 'jquery';
 // import '../max.auto';
 import '../common';
 
