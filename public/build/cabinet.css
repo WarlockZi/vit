@@ -7,11 +7,13 @@ body {
 html, body {
   height: 100%; }
 
+#panel {
+  width: 100%; }
+
 a, p {
   color: #595959; }
 
-h1,
-h2 {
+h1, h2 {
   text-transform: uppercase;
   color: #4e4e4e;
   font-size: 1.6em;

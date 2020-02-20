@@ -40,13 +40,8 @@
   height: 300px; }
 
 @charset "UTF-8";
-#panel {
-  width: 100%; }
-
-input#toggle-button {
-  display: none; }
-
-label[for="toggle-button"] {
+label#toggle-label {
+  display: flex;
   position: absolute;
   top: -9px;
   left: 0px;
@@ -56,49 +51,39 @@ label[for="toggle-button"] {
   cursor: pointer;
   z-index: 4; }
 
-/************      MENU ***************/
-nav#menu {
-  max-width: 0px;
-  min-width: 0px;
-  position: relative;
-  overflow: hidden; }
-
-#toggle-button:checked ~ nav#menu {
-  min-width: 400px;
-  max-width: 400px; }
-
-#toggle-button:checked ~ label[for="toggle-button"] {
+#toggle-button:checked ~ label#toggle-label {
   position: absolute;
   text-align: center;
   padding: 1px;
-  left: 0px;
+  left: 7px;
   top: 0px;
   width: 30px;
   height: 30px;
-  color: #000;
-  z-index: 3;
-  border: 1px solid #e30000; }
+  color: #000000;
+  z-index: 3; }
+
+#toggle-button:checked ~ nav#menu {
+  display: flex;
+  width: 400px;
+  transition: width .3s; }
+
+#toggle-button:checked ~ nav#menu .menu-wrap a {
+  display: flex;
+  padding: 10px 0;
+  position: relative;
+  transition: padding .3s, height .3s; }
 
 .menu-wrap {
   margin: 50px 20px 0 20px;
   width: 360px; }
   .menu-wrap .item {
     padding: 0;
-    transition: .3s;
+    opacity: 1;
+    transition: opacity .05s;
     text-transform: uppercase; }
-
-#toggle-button:checked ~ #menu .menu-wrap .item {
-  padding: 10px 0;
-  position: relative; }
-
-.transition {
-  transition: .3s; }
 
 .top-menu .top-menu-wrap .item {
   padding: 0 10px; }
-
-#toggle-label {
-  display: block; }
 
 .logo {
   display: flex;
@@ -146,9 +131,6 @@ nav#menu {
   display: none; }
   .user-menu .nav a {
     display: none; }
-
-.user-menu .icon svg {
-  width: 14px; }
 
 .user-menu > span > a {
   color: #fff;
@@ -453,11 +435,13 @@ body {
 html, body {
   height: 100%; }
 
+#panel {
+  width: 100%; }
+
 a, p {
   color: #595959; }
 
-h1,
-h2 {
+h1, h2 {
   text-transform: uppercase;
   color: #4e4e4e;
   font-size: 1.6em;

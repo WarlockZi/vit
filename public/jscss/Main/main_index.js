@@ -21,7 +21,7 @@ window.onload = function () {
         slidesPerView: 5,
         spaceBetween: 10,
         grabCursor: true,
-        watchSlidesVisibility: true,
+        // watchSlidesVisibility: true,
         preloadImages: false,
         // Enable lazy loading
         lazy: true

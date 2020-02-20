@@ -1,13 +1,6 @@
-///*************************************
-//*******      MOBILE PANEL        ******
-//**************************************/
-#panel
-  width: 100%
 
-input#toggle-button
-  display: none
-
-label[for="toggle-button"]
+label#toggle-label
+  display: flex
   position: absolute
   top: -9px
   left: 0px
@@ -17,29 +10,32 @@ label[for="toggle-button"]
   cursor: pointer
   z-index: 4
 
-/************      MENU ***************/
-nav#menu
-  max-width: 0px
-  min-width: 0px
-  position: relative
-  overflow: hidden
+#toggle-button
+  &:checked
 
-#toggle-button:checked~nav#menu
-  min-width: 400px
-  max-width: 400px
+    &~label#toggle-label
+      position: absolute
+      text-align: center
+      padding: 1px
+      left: 7px
+      top: 0px
+      width: 30px
+      height: 30px
+      color: #000000
+      z-index: 3
+      //border: 1px solid #e30000
 
+    &~nav#menu
+      display: flex
+      width: 400px
+      transition: width .3s
 
-#toggle-button:checked~label[for="toggle-button"]
-  position: absolute
-  text-align: center
-  padding: 1px
-  left: 0px
-  top: 0px
-  width: 30px
-  height: 30px
-  color: #000
-  z-index: 3
-  border: 1px solid #e30000
+    &~nav#menu .menu-wrap a
+      display: flex
+      padding:  10px 0
+      position: relative
+      transition: padding .3s, height .3s
+      //opacity: 1
 
 .menu-wrap
   margin: 50px 20px 0 20px
@@ -47,17 +43,12 @@ nav#menu
 
   .item
     padding:  0
-    transition: .3s
+    opacity: 1
+    transition: opacity .05s
     text-transform: uppercase
 
 
-#toggle-button:checked ~#menu .menu-wrap .item
-
-  padding:  10px 0
-  position: relative
 
 
-.transition 
-  transition: .3s
 
 
