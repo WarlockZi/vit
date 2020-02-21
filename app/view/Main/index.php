@@ -28,8 +28,36 @@
 		</div>
 		<!-- Add Pagination -->
 		<div class="swiper-pagination"></div>
+	</div>
 
+	<div class="swiper-title">Лучшие предложения</div>
+	<div class="swiper-container-new">
+		<div class="swiper-wrapper">
+			<? $i = 0; ?>
+			<? foreach ($sale as $product) : ?>
+				<? $i++; ?>
+				<? if ($i < 6): ?>
+					<div class="swiper-slide">
+						<a href="/<?= $product['alias']; ?>">
+							<img class="pic" src="/pic<?= $product['dpic']; ?>" alt="<?= $product['name']; ?>">
+							<span><?= $product['name']; ?> </span>
+						</a>
+					</div>
+				<? else: ?>
+					<div class="swiper-slide">
+						<a href="/<?= $product['alias']; ?>">
+							<img data-src="/pic<?= $product['dpic']; ?>" class="swiper-lazy pic"
+							     alt="<?= $product['name']; ?>">
+							<div class="swiper-lazy-preloader"></div>
+							<span><?= $product['name']; ?> </span>
+						</a>
+					</div>
+				<? endif; ?>
 
+			<? endforeach; ?>
+		</div>
+		<!-- Add Pagination -->
+		<div class="swiper-pagination"></div>
 	</div>
 
 	<div class="info">

@@ -2,6 +2,7 @@ const path = require('path');
 // const WebpackDevServer = require('webpack-dev-server');
 const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -12,9 +13,9 @@ const PATHS = {
 };
 
 module.exports = {
-    mode: 'development',
+    // mode: 'development',
     devtool: "source-map",
-    watch: true, //live-reloading
+    // watch: true, //live-reloading
     entry: {
         cabinet: PATHS.source + '/User/user_cabinet.js',
         login: PATHS.source + '/User/user_login.js',
@@ -32,10 +33,16 @@ module.exports = {
     },
     optimization: {
         minimize: true,
-        minimizer: [new TerserPlugin({
-            parallel: true,
-            cache: true,
-        })],
+        minimizer: [
+            new TerserPlugin({
+                parallel: true,
+                sourceMap: true,
+            }),
+            new OptimizeCSSAssetsPlugin({
+                cssProcessorOptions: { map: { inline: false, annotation: true, } }
+
+            })
+        ],
     },
 
     module: {
@@ -59,14 +66,17 @@ module.exports = {
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
+
+                    'style-loader',
                     MiniCssExtractPlugin.loader,
-                    // Creates `style` nodes from JS strings
-                    // 'style-loader',
-                    // Translates CSS into CommonJS
-                    'css-loader',
-                    // Compiles Sass to CSS
-                    'sass-loader',
-                    // 'css-loader'
+                    {
+                        loader: 'css-loader',
+                        options: {sourceMap: true}
+                    }, {
+                        loader: 'sass-loader',
+                        options: {sourceMap: true}
+                    }
+
                 ],
             }
         ]
@@ -76,6 +86,7 @@ module.exports = {
             filename: '[name].css',
             chunkFilename: '[id].css',
         }),
+        // new ExtractTextPlugin('file.css'),
 
         new CleanWebpackPlugin(),
     ]

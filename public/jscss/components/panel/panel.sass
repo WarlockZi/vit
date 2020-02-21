@@ -1,0 +1,58 @@
+label#toggle-label
+  display: flex
+  position: absolute
+  top: -9px
+  left: 0px
+  color: #fff
+  font-size: 21px
+  padding: 7px 9px
+  cursor: pointer
+  z-index: 4
+
+
+#toggle-button
+    &~label#toggle-label
+      position: absolute
+      text-align: center
+      padding: 1px
+      left: 7px
+      top: -2px
+      width: 30px
+      height: 30px
+
+
+
+
+    &~nav#menu
+      display: block
+      //width: 0px
+
+      .menu-wrap
+        a
+          //padding:  10px 0
+          //opacity: 0
+          //width: 0px
+
+#toggle-button:checked
+    &~label#toggle-label
+      color: #fff
+      z-index: 3
+
+    &~nav#menu
+      //display: block
+      width: 400px
+      background: #4e4e4e
+
+      transition: all .3s
+
+      .menu-wrap
+        margin: 50px 20px 0 20px
+        width: 360px
+
+        a
+          display: flex
+          color: #ec1717
+          padding:  10px 0
+          width: 360px
+          opacity: 1
+          text-transform: uppercase
