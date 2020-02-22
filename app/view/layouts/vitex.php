@@ -19,8 +19,6 @@
 	<!--	--><? // $this::getCSS(); ?>
 	<link rel="preload" href='/public/build/mainIndex.css' as="style" onload="this.rel='stylesheet'" media="all">
 	<style>
-
-
 		body {
 			margin: 0;
 			overflow-x: hidden;
@@ -28,17 +26,26 @@
 			font-family: 'Roboto', sans-serif;
 			color: #4e4e4e;
 		}
+
 		body *::selection {
 			background: rgba(0, 0, 0, 0);
 		}
+
 		a, p {
 			color: #4e4e4e;
 			text-decoration: none;
 		}
 
+		.none {
+			display: none;
+		}
+
 		.top-menu {
 			background: #4e4e4e;
 			color: #fff;
+			position: sticky;
+			top: 0;
+			z-index: 3;
 		}
 
 		.top-menu-wrap {
@@ -97,7 +104,7 @@
 			padding: 0 10px;
 		}
 
-		#toggle-button, #toggle-label, .nav {
+		#toggle-button, #toggle-label, .nav, nav {
 			display: none;
 		}
 
@@ -120,7 +127,8 @@
 			position: relative;
 			height: 45px;
 		}
-		.h-upper>* {
+
+		.h-upper > * {
 			flex: 1;
 		}
 
@@ -150,68 +158,68 @@
 	</style>
 </head>
 
-<body class="row">
+<body class="column">
 
-<input name="toggle-button" type="checkbox" id="toggle-button">
-<label id="toggle-label" for="toggle-button">☰</label>
-<nav id="menu">
-	<div class="menu-wrap column">
-		<a class="item" href="/perchatki-rezinovye-tekhnicheskie">перчатки</a>
-		<a class="item" href="/about/payment">бахилы</a>
-		<a class="item" href="/about/payment">сиз</a>
-		<a class="item" href="/about/payment">шприцы</a>
+<div class="top-menu">
+	<input name="toggle-button" type="checkbox" id="toggle-button">
+	<label id="toggle-label" for="toggle-button">☰</label>
+	<nav id="menu">
+		<div class="menu-wrap column">
+			<a class="item" href="/perchatki-rezinovye-tekhnicheskie">перчатки</a>
+			<a class="item" href="/about/payment">бахилы</a>
+			<a class="item" href="/about/payment">сиз</a>
+			<a class="item" href="/about/payment">шприцы</a>
+			<hr>
+			<a class="item" href="/about/payment">акции</a>
+			<a class="item" href="/about/payment">ОПЛАТА</a>
+			<a class="item" href="/about/delivery">ДОСТАВКА</a>
+			<a class="item" href="/about/return_change">ВОЗВРАТ И ОБМЕН</a>
+			<a class="item" href="/about/discount">СИСТЕМА СКИДОК</a>
+			<hr>
+			<a class="item" href="/about/contacts">Контакты</a>
+			<a class="item" href="/about/contacts">СТАТЬИ</a>
+			<a class="item" href="/about/contact-us">✉ Напишите нам</a>
+		</div>
+	</nav>
 
-		<a class="item" href="/about/payment">акции</a>
-		<a class="item" href="/about/payment">ОПЛАТА</a>
-		<a class="item" href="/about/delivery">ДОСТАВКА</a>
-		<a class="item" href="/about/return_change">ВОЗВРАТ И ОБМЕН</a>
-		<a class="item" href="/about/discount">СИСТЕМА СКИДОК</a>
-		<a class="item" href="/about/contacts">Контакты</a>
-		<a class="item" href="/about/contacts">СТАТЬИ</a>
-		<a class="item" href="/about/contact-us">✉ Напишите нам</a>
-	</div>
-</nav>
-<div id="panel" class="column">
+	<div class="top-menu-wrap">
+		<div class="contacts">
+			<a class="item" href="/about">О НАС</a>
+			<a class="item" href="/about/contacts">КОНТАКТЫ</a>
+		</div>
 
-	<div class="top-menu">
-		<div class="top-menu-wrap">
-			<div class="contacts">
-				<a class="item" href="/about">О НАС</a>
-				<a class="item" href="/about/contacts">КОНТАКТЫ</a>
-			</div>
-
-			<div class="user-menu">
-				<!--                <span class="row">-->
-				<? if (!isset($user)): ?>
-					<a href="/user/login" aria-label="login">
-						<div class="icon"></div>
-					</a>
-				<? else: ?>
+		<div class="user-menu">
+			<!--                <span class="row">-->
+			<? if (!isset($user)): ?>
+				<a href="/user/login" aria-label="login">
 					<div class="icon"></div>
+				</a>
+			<? else: ?>
+				<div class="icon"></div>
 
-					<span class="FIO"><?= $user['surName']; ?> <?= $user['name']; ?> <?= $user['middleName']; ?></span>
+				<span class="FIO"><?= $user['surName']; ?> <?= $user['name']; ?> <?= $user['middleName']; ?></span>
 
-					<div class="nav column">
-						<a href="/user/edit">Редактировать свой профиль</a>
-						<?=
-						in_array('1', $user['rights']) ? // редактировать
-							'<a href="/edit/1">Редактировать тесты</a>
+				<div class="nav column">
+					<a href="/user/edit">Редактировать свой профиль</a>
+					<?=
+					in_array('1', $user['rights']) ? // редактировать
+						'<a href="/edit/1">Редактировать тесты</a>
                       <a href="/freetest/edit/41">Редактировать свободный тест</a>' : ''
-						?>
+					?>
 
-						<?=
-						in_array('2', $user['rights']) ? // проходить
-							'<a href="/test/1">Проходить тесты</a>
+					<?=
+					in_array('2', $user['rights']) ? // проходить
+						'<a href="/test/1">Проходить тесты</a>
                       <a href="/freetest/41">Свободный тест</a>' : '';
-						?>
+					?>
 
-						<?=
-						in_array('3', $user['rights']) ?
-							'<a href="/adminsc">Admin</a>' : ''; // Admin
-						?>
+					<?=
+					in_array('3', $user['rights']) ?
+						'<a href="/adminsc">Admin</a>' : ''; // Admin
+					?>
 
-						<? if (isset($user)): ?>
-							<a href="/user/logout" aria-label="logout">
+					<? if (isset($user)): ?>
+						<a href="/user/logout" aria-label="logout">
                             <span class="icon-logout">
                               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="20"
                                    viewBox="0 0 20 20">
@@ -219,13 +227,17 @@
                                     d="M4 8v-2c0-3.314 2.686-6 6-6s6 2.686 6 6v0h-3v2h4c1.105 0 2 0.895 2 2v0 8c0 1.105-0.895 2-2 2v0h-14c-1.105 0-2-0.895-2-2v0-8c0-1.1 0.9-2 2-2h1zM9 14.73v2.27h2v-2.27c0.602-0.352 1-0.996 1-1.732 0-1.105-0.895-2-2-2s-2 0.895-2 2c0 0.736 0.398 1.38 0.991 1.727l0.009 0.005zM7 6v2h6v-2c0-1.657-1.343-3-3-3s-3 1.343-3 3v0z"></path>
                               </svg>
                             </span>Выход</a>
-						<? endif; ?>
-					</div>
-				<? endif; ?>
+					<? endif; ?>
+				</div>
+			<? endif; ?>
 
-			</div>
 		</div>
 	</div>
+</div>
+
+
+<div id="panel" class="column">
+
 
 	<header>
 		<div class="inner-wrap">

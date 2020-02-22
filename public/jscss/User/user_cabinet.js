@@ -2,9 +2,9 @@
 // import '../max.auto';
 import '../common';
 
-$(function () {
+window.onload = function () {
     // var a = $('#menu').html();
     // alert(a);
-});
+};
 
 

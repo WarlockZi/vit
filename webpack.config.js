@@ -3,7 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -13,9 +13,7 @@ const PATHS = {
 };
 
 module.exports = {
-    // mode: 'development',
     devtool: "source-map",
-    // watch: true, //live-reloading
     entry: {
         cabinet: PATHS.source + '/User/user_cabinet.js',
         login: PATHS.source + '/User/user_login.js',
@@ -86,11 +84,8 @@ module.exports = {
             filename: '[name].css',
             chunkFilename: '[id].css',
         }),
-        // new ExtractTextPlugin('file.css'),
-
         new CleanWebpackPlugin(),
     ]
-
 
 }
 

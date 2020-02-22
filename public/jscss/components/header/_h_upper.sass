@@ -18,25 +18,17 @@
     padding: 0 25px
     white-space: nowrap
 
-    &:hover .popup-info
-      padding-top: 15px
-      height: auto
-
-    &:hover .popup-info .inner
-      padding: 25px 30px
-      height: auto
-      overflow: visible
-    >a
+    &>a
       position: relative
-
+      padding: 13px 45px
       &:before
         content: '\1F57B'
         width: 26px
         height: 26px
         background-position: 0 -44px
         position: absolute
-        left: -20px
-        top: -3px
+        left: 12px
+        top: 8px
         color: #e30000
         font-size: 27px
         transform: rotate(-30deg)
@@ -45,13 +37,23 @@
         content: ''
         display: block
         position: absolute
-        top: 3px
-        right: -21px
+        top: 14px
+        right: 9px
         width: 8px
         height: 8px
         border-bottom: 3px solid #e30000
         border-right: 3px solid #e30000
         transform: rotate(45deg)
+    &>a:hover
+      &~.popup-info
+        padding-top: 15px
+        height: auto
+
+      &~.popup-info .inner
+        padding: 25px 30px
+        height: auto
+        overflow: visible
+
 
     .popup-info
       position: absolute
