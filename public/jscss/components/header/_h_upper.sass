@@ -1,11 +1,14 @@
 
-/***** Всплывающие телефоны */
-
 .h-upper
-
   .logo-wrap
-    .none
-      background-image: url("/pic/logo-square.svg")
+    .logo-vitex
+      @media screen and (max-width: 560px)
+        display: none
+    .logo-square
+      @media screen and (max-width: 560px)
+        padding-right: 20px
+    //.none
+    //  background-image: url("/pic/logo-square.svg")
     >svg
       width: 250px
       height: 40px

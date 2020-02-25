@@ -1,12 +1,8 @@
 /*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./admin.sass */
 
-/*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./adminMain.sass */
-
 /*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
 
-/*! ../../../public/jscss/Adminsc/admin.sass */
-
-/*! ../../../public/jscss/Adminsc/adminMain.sass */
+/*! ./admin.sass */
 
 /*! no exports provided */
 
@@ -20,10 +16,6 @@
   !*** ./public/jscss/Adminsc/admin.sass ***!
   \*****************************************/
 
-/*!*********************************************!*\
-  !*** ./public/jscss/Adminsc/adminMain.sass ***!
-  \*********************************************/
-
 /*!****************************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
   \****************************************************************************/
@@ -31,7 +23,3 @@
 /*!************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./public/jscss/Adminsc/admin.sass ***!
   \************************************************************************************************************************************************************************************************/
-
-/*!****************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./public/jscss/Adminsc/adminMain.sass ***!
-  \****************************************************************************************************************************************************************************************************/
