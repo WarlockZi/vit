@@ -17,7 +17,7 @@ module.exports = {
     entry: {
         cabinet: PATHS.source + '/User/user_cabinet.js',
         login: PATHS.source + '/User/user_login.js',
-        admin: PATHS.source + '/Adm_crm/admin_crm_user.js',
+        admin: PATHS.source + '/Adminsc/admin.js',
         mainIndex: PATHS.source + '/Main/main_index.js',
         adminCategory: PATHS.source + '/Adm_catalog/adm_category.js',
     },

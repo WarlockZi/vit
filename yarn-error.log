@@ -30,7 +30,7 @@ npm manifest:
   {
     "name": "vitalik",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "admin.js",
     "license": "MIT",
     "scripts": {
       "build": "webpack --mode production",

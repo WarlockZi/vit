@@ -1,9 +1,0 @@
-$(function () {
-
-
-
-//   $('.menu').accordion();
-
-
-
-});

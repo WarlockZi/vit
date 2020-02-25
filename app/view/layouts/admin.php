@@ -6,7 +6,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
-        <? $this::getCSS() ?>
+<!--        --><?// $this::getCSS() ?>
+	    <link rel="stylesheet" href="/public/build/admin.css">
         <!--<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>-->
     </head>
 
@@ -119,7 +120,8 @@
 
 <!--  <script src="/public/js/jq.js"></script>-->
   <script src="/public/jscss/adminLayer.js?<?=time();?>"></script>
-  <? $this::getJS(['route'=>['controller'=>$this->route['controller'],'view'=>$this->view]]) ?>
+  <script src="/public/build/admin.js?<?=time();?>"></script>
+<!--  --><?// $this::getJS(['route'=>['controller'=>$this->route['controller'],'view'=>$this->view]]) ?>
 
   <svg width="150" height="30"  viewBox="0 0 140.93602 25.903431" >
   <defs>
