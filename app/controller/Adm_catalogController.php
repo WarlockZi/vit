@@ -136,34 +136,37 @@ class Adm_catalogController extends AdminscController
 		$this->set(compact('iniCatList'));
 	}
 
+	public function actionCategoryNew()
+	{
+		$this->view = 'category_new';
+
+		$props = [];
+		$parent = isset($_GET['parent']) && (int)$_GET['parent'] !== 0 ? (int)$_GET['parent'] : 0;
+		$idAutoincrement = App::$app->category->autoincrement('category');
+		$category['id'] = $idAutoincrement;
+//		$category['name'] = '';
+//		$category['text'] = '';
+//		$category['props'] = '';
+//		$category['title'] = '';
+//		$category['alias'] = '';
+//		$category['keywords'] = '';
+//		$category['description'] = '';
+//		$category['core'] = '';
+//		$category['children'] = '';
+
+		$this->set(compact('category'));
+	}
+
 	public function actionCategory()
 	{
-		if (isset($_GET['id']) && ($_GET['id'] == 'new')) {
-			$props = [];
-			$parent = isset($_GET['parent']) && (int)$_GET['parent']!==0 ? (int)$_GET['parent'] : 0;
-			$idAutoincrement = App::$app->category->autoincrement('category');
-			$category['id'] = $idAutoincrement;
-			$category['name'] = '';
-			$category['text'] = '';
-			$category['props'] = '';
-			$category['title'] = '';
-			$category['alias'] = '';
-			$category['keywords'] = '';
-			$category['description'] = '';
-			$category['core'] = '';
-			$category['children'] = '';
 
-			$this->set(compact('category'));
-		} elseif (isset($_GET['id']) && $_GET['id']) { /// иначе это корнвой каталог
-			///
-			$id = (int)$_GET['id'];
-			$category = App::$app->category->getCategory($id);
-			$props = App::$app->prop->getProps();
-			$thisCatAndParentCatProps = isset($category['parents']) ?
-				array_merge($category['parentProps'], $category['props']) :
-				$category['props'];
-			$this->set(compact('category', 'props', 'thisCatAndParentCatProps'));
-		}
+		$id = (int)$_GET['id'];
+		$category = App::$app->category->getCategory($id);
+		$props = App::$app->prop->getProps();
+		$thisCatAndParentCatProps = isset($category['parents']) ?
+			array_merge($category['parentProps'], $category['props']) :
+			$category['props'];
+		$this->set(compact('category', 'props', 'thisCatAndParentCatProps'));
 	}
 
 }

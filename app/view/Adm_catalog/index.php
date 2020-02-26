@@ -22,7 +22,7 @@
   </div>
 <section>
 	<div class="separator btns">
-		<a href="/adminsc/catalog/category?id=new" class="btn-add-category">Добавить категорию</a>
+		<a href="/adminsc/catalog/category/new" class="btn-add-category">Добавить категорию</a>
 	</div>
 </section>
 

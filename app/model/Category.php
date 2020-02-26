@@ -28,7 +28,7 @@ class Category extends Model
 
 	public function getAssocCategory($options)
 	{
-		$onlyActive = (isset($options['active']) && $options['active'])?" WHERE `act` = 1" : "";
+		$onlyActive = (isset($options['active']) && $options['active']) ? " WHERE `act` = 1" : "";
 		$sql = 'SELECT * FROM category' . $onlyActive;
 		$res = App::$app->category->findBySql($sql, $params = array());
 
@@ -108,27 +108,42 @@ class Category extends Model
 		return $children;
 	}
 
-//   public function getCategoryPropertiesSnippet($Id) {
-//
-//      $sql = 'SELECT * FROM props WHERE parent = ?';
-//      $params = [$Id];
-//      $arr['property'] = $this->findBySql($sql, $params);
-//
-//      ob_start();
-//      include APP . '/view/Adm_catalog/snippet/KeyVal.php';
-//      $cont = ob_get_clean();
-//      return $cont;
-//   }
+	public function getActiveCategoryPropertiesSnippet($Id)
+	{
+
+		$sql =
+			"SELECT category.`name`, category.`alias`, pic.`nameRu`, props.`name`".
+" FROM category".
+" INNER JOIN category_prop".
+" ON category.id = category_prop.category_id".
+" INNER JOIN props".
+" ON props.id = category_prop.prop_id".
+" INNER JOIN category_pic".
+" ON category_pic.category_id = category_prop.category_id".
+" INNER JOIN pic".
+" ON category_pic.pic_id = pic.id"
+;
+		$params = [];
+		$arr['property'] = $this->findBySql($sql, $params);
+
+		ob_start();
+//		include APP . '/view/Adm_catalog/snippet/KeyVal.php';
+		$cont = ob_get_clean();
+		return $cont;
+	}
 
 	public function isCategory($url)
 	{
 		$category = 0;
 		if (!$category) {
 			$arr = explode('/', $url);
-			if (count($arr) > 3) {
+			if (count($arr) > 3 && $arr[0] !== 'adminsc') {
 				http_response_code(404);
-				exit(include '../../public/404.html');
-			}
+				exit(include ROOT . '/public/404.html');
+			} else {
+				$dd = $this ->getActiveCategoryPropertiesSnippet(0);
+				return false;
+			};
 			$category = $this->findOne($arr[0], 'alias');
 			if ($category && is_array($category)) {
 				$category['parents'] = $this->getCategoryParents($category['parent']);

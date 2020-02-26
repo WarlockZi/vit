@@ -69,7 +69,7 @@
              <td class="art"><?= $product['art'] ?>
              </td>
              <td>
-               <img class = "thum" src = "/pic<?= ($product['preview_pic'] && is_file(ROOT . PROJ . "/pic" . $product['preview_pic']) ) ? $product['preview_pic'] : '/srvc/nophoto-min.jpg' ?>">
+               <img class = "thum" src = "/pic<?= ($product['preview_pic'] && is_file(ROOT . "/pic" . $product['preview_pic']) ) ? $product['preview_pic'] : '/srvc/nophoto-min.jpg' ?>">
              </td>
 
 

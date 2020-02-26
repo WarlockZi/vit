@@ -20,8 +20,7 @@ class Router {
 
 // если это категория
 
-
-        if ($url && $category = App::$app->category->isCategory($url)) {
+        if ($url && $category = App::$app->category->isCategory($url) ) {
             $route['controller'] = 'Catalog';
             $route['action'] = 'category';
 

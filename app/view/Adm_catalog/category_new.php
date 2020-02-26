@@ -11,8 +11,8 @@
 			'cache' => 60,
 			'sql' => "SELECT * FROM category "
 		]);
-
-		$addCategoryButton = "<a href='/adminsc/catalog/category?id=new&parent=`{$_GET['id']}`' 
+		$new = $_GET['id'] == 'new';
+		$addCategoryButton = "<a href='/adminsc/catalog/category/new`' 
 					   class='btn-add-category'>Добавить категорию</a>";
 		?>
 	</div>
@@ -56,9 +56,6 @@
 
 				<label for="tab4" title="<?= $children ?>"><?= $children ?></label>
 
-					<?=$addCategoryButton?>
-
-
 				<section id="content-tab1" class="admin-flex-table">
 					<? if ($category): ?>
 						<div class="row">
@@ -67,18 +64,17 @@
 						</div>
 						<div class="row">
 							<strong>Наименование :</strong>
-							<span contenteditable id='name'><?= $category['name'] ?: ''; ?></span>
+							<span contenteditable id='name'></span>
 						</div>
 
 						<div class="row">
 							<strong>Описание :</strong>
 							<span contenteditable id='text'
-							      class="column"><?= htmlspecialchars($category['text'] ?: ''); ?></span>
+							      class="column"></span>
 						</div>
 					<? else: ?>
 						<div class="row">
 							Такой категории пока что не существует!
-							<!--<span id='id'>--><? //= $category['id'] ?: ''; ?><!--</span>-->
 						</div>
 					<? endif; ?>
 
@@ -157,23 +153,23 @@
 
 					<div class="row">
 						<strong>title :</strong>
-						<span contenteditable id='title'><?= $category['title'] ?: ''; ?></span>
+						<span contenteditable id='title'></span>
 					</div>
 					<div class="row">
 						<strong>url :</strong>
-						<span contenteditable id='alias'><?= $category['alias'] ?: ''; ?></span>
+						<span contenteditable id='alias'></span>
 					</div>
 					<div class="row">
 						<strong>key words :</strong>
-						<span contenteditable id='keywords'><?= $category['keywords'] ?: ''; ?></span>
+						<span contenteditable id='keywords'></span>
 					</div>
 					<div class="row">
 						<strong>description :</strong>
-						<span contenteditable id='description'><?= $category['description'] ?: ''; ?></span>
+						<span contenteditable id='description'></span>
 					</div>
 					<div class="row">
 						<strong>семантическое ядро :</strong>
-						<span contenteditable id='core'><?= $category['core'] ?: ''; ?></span>
+						<span contenteditable id='core'></span>
 					</div>
 
 
@@ -211,8 +207,6 @@
 					<? if ($category): ?>
 						<div class="btn-add-category">Сохранить</div>
 					<? endif; ?>
-
-						<?=$addCategoryButton?>
 
 				</div>
 			</div>
