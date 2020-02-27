@@ -1,6 +1,6 @@
-import '../../../public/jscss/components/swiper/swiper.sass';
-import '../../../public/jscss/components/header/header.sass';
-import '../../../public/jscss/components/footer/footer.sass';
+import '../components/swiper/swiper.sass';
+import '../components/header/header.sass';
+import '../components/footer/footer.sass';
 
 
 // import '../User/user_login';
@@ -20,6 +20,7 @@ window.onload = function () {
         },
         speed: 9000,
         loop: true,
+        // width: 600,
         breakpoints: {
             640: {
                 slidesPerView: 2,

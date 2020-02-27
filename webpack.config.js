@@ -8,7 +8,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const PATHS = {
-    source: path.join(__dirname, 'public/jscss'),
+    source: path.join(__dirname, 'app/jscss'),
     build: path.join(__dirname, 'public/build')
 };
 

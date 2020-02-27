@@ -108,7 +108,7 @@
     </footer>
 
 <!--  <script src="/public/js/jq.js"></script>-->
-  <script src="/public/jscss/adminLayer.js?<?=time();?>"></script>
+  <script src="/app/jscss/adminLayer.js?<?=time();?>"></script>
   <script src="/public/build/admin.js?<?=time();?>"></script>
 <!--  --><?// $this::getJS(['route'=>['controller'=>$this->route['controller'],'view'=>$this->view]]) ?>
 

@@ -193,15 +193,9 @@ class UserController extends AppController
 
     public function actionLogout()
     {
-
-        if (isset($_COOKIE[session_name()])) {  // session_name() - получаем название текущей сессии
-            setcookie(session_name(), '', time() - 86400, '/');
-        }
         //очистить массив  $_SESSION
         $_SESSION = array();
-
         session_destroy();
-
         // Перенаправляем пользователя на главную страницу
         header("Location: /");
     }
