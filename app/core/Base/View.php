@@ -52,7 +52,7 @@ class View {
 
    public static function getJsCssProps($data, $ext) {
       $addtime = in_array('addtime', $data) ? true : false;
-      $addtime = DEBU && $addtime ? "?" . time() : '';
+      $addtime = (MODE == 'DEV') && $addtime ? "?" . time() : '';
       $defer = in_array('defer', $data) ? 'defer' : '';
       $async = in_array('defer', $data) ? 'async' : '';
       $deferAsync = $defer ?: $async;

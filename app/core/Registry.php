@@ -6,10 +6,22 @@ class Registry {
 
    public static $objects = [];
    protected static $instance;
+   protected $reestr;
 
    protected function __construct() {
-      require_once ROOT.'/app/config.php';
-      foreach ($config['components'] as $name => $object) {
+		$this->reestr = [
+			'cache' => 'app\core\Cache',
+			'main' => 'app\model\Main',
+			'prop' => 'app\model\Prop',
+			'user' => 'app\model\User',
+			'test' => 'app\model\Test',
+			'freetest' => 'app\model\Freetest',
+			'product' => 'app\model\Product',
+			'category' => 'app\model\Category',
+			'adminsc' => 'app\model\Adminsc',
+			//'instructions' => 'app\model\Instructions',
+		];
+      foreach ($this->reestr as $name => $object) {
          self::$objects[$name] = new $object;
       }
    }

@@ -5,16 +5,7 @@ use app\core\App;
 
 session_start();
 
-	error_reporting(1);
-if ($_SERVER['HTTP_HOST'] == 'vitexopt.ru') {
-	define('ROOT', $_SERVER['DOCUMENT_ROOT']);
-	define('DEBU', '0'); //0-не выводить ошибки
- } else {
-	define('ROOT', dirname(__DIR__));
-	ini_set('display_errors', 1);
-	ini_set('error_reporting', E_ALL);
-	define('DEBU', '1'); //0-не выводить ошибки
-}
+require_once dirname(__DIR__).'/app/config.php';
 
 function vitexAutoload($class)
 {
@@ -26,10 +17,15 @@ function vitexAutoload($class)
 
 spl_autoload_register('vitexAutoload');
 
+require '../vendor/rb/rb-mysql.php';
+R::setup( 'mysql:host=127.0.0.1;dbname=vitex_test', 'mysql', 'mysql' );
+if ( !R::testConnection() )
+{
+	exit ('Нет соединения с базой данных');
+}
+
 new App;
 
-//$mi = new \app\core\Migrations();
-//$mi->up();
 
 $url = $_SERVER['QUERY_STRING'];
 

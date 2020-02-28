@@ -11,8 +11,15 @@ class DB {
 
     public function __construct() {
 
-        $db =  require ROOT.'/app/config.php';
-        $db = $db['config_db'];
+		 if (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == 'vitexopt.ru') {
+			 $db['dsn'] = 'mysql:host=127.0.0.1;dbname=vitex_test;charset=utf8';
+			 $db['user'] = 'vitexopt';
+			 $db['password'] = '8D8p6L2x';
+		 } else {
+			 $db['dsn'] = 'mysql:host=127.0.0.1;dbname=vitex_test;charset=utf8';
+			 $db['user'] = 'root';
+			 $db['password'] = '';
+		 };
 		// exit(var_dump($db));
         $options = [
             \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,

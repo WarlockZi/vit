@@ -111,20 +111,21 @@ class Category extends Model
 	public function getActiveCategoryPropertiesSnippet($Id)
 	{
 
-		$sql =
-			"SELECT category.`name`, category.`alias`, pic.`nameRu`, props.`name`".
-" FROM category".
-" INNER JOIN category_prop".
-" ON category.id = category_prop.category_id".
-" INNER JOIN props".
-" ON props.id = category_prop.prop_id".
-" INNER JOIN category_pic".
-" ON category_pic.category_id = category_prop.category_id".
-" INNER JOIN pic".
-" ON category_pic.pic_id = pic.id"
-;
-		$params = [];
-		$arr['property'] = $this->findBySql($sql, $params);
+//		$sql =
+//			"SELECT category.`name`, category.`alias`, pic.`nameRu`, props.`name`".
+//" FROM category".
+//" INNER JOIN category_prop".
+//" ON category.id = category_prop.category_id".
+//" INNER JOIN props".
+//" ON props.id = category_prop.prop_id".
+//" INNER JOIN category_pic".
+//" ON category_pic.category_id = category_prop.category_id".
+//" INNER JOIN pic".
+//" ON category_pic.pic_id = pic.id"
+//;
+//		$params = [];
+//		$arr['property'] = $this->findBySql($sql, $params);
+//		$post = R::load( 'category', 1 );
 
 		ob_start();
 //		include APP . '/view/Adm_catalog/snippet/KeyVal.php';

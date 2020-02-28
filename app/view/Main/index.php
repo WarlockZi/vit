@@ -1,5 +1,6 @@
 <main class="column">
 
+
 	<div class="swiper-title">Новинки</div>
 	<div class="swiper-container-new">
 		<div class="swiper-wrapper">

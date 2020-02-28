@@ -7,6 +7,7 @@ use app\controller\AppController;
 use app\model\Catalog;
 use app\model\Prop;
 use app\core\Base\View;
+use R;
 
 class Adm_catalogController extends AdminscController
 {
@@ -144,23 +145,32 @@ class Adm_catalogController extends AdminscController
 		$parent = isset($_GET['parent']) && (int)$_GET['parent'] !== 0 ? (int)$_GET['parent'] : 0;
 		$idAutoincrement = App::$app->category->autoincrement('category');
 		$category['id'] = $idAutoincrement;
-//		$category['name'] = '';
-//		$category['text'] = '';
-//		$category['props'] = '';
-//		$category['title'] = '';
-//		$category['alias'] = '';
-//		$category['keywords'] = '';
-//		$category['description'] = '';
-//		$category['core'] = '';
-//		$category['children'] = '';
 
 		$this->set(compact('category'));
 	}
 
 	public function actionCategory()
 	{
-
 		$id = (int)$_GET['id'];
+
+		$cat = R::load('category', 3);
+		$res = $cat->sharedProps;
+		foreach ($res as $ob) {
+			echo('<pre>');
+			echo $ob->name;
+			echo('<pre>');
+		}
+		$prop = R::load('props', 3);
+		$res = $prop->sharedCategory;
+		foreach ($res as $ob) {
+			echo('<pre>');
+			echo $ob->name;
+			echo('<pre>');
+		}
+
+
+
+
 		$category = App::$app->category->getCategory($id);
 		$props = App::$app->prop->getProps();
 		$thisCatAndParentCatProps = isset($category['parents']) ?
