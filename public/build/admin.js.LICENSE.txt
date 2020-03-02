@@ -1,12 +1,52 @@
+/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./a-menu.sass */
+
 /*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./admin.sass */
+
+/*! !../../node_modules/mini-css-extract-plugin/dist/loader.js!../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./common.sass */
+
+/*! ../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
 
 /*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
 
+/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
+
+/*! ../admin */
+
+/*! ../adminLayer */
+
+/*! ../common */
+
+/*! ./a-menu.sass */
+
 /*! ./admin.sass */
+
+/*! ./common.sass */
+
+/*! ./components/a-menu/a-menu */
+
+/*! ./components/cache/clear-cache */
+
+/*! exports provided: post, get, uniq */
 
 /*! no exports provided */
 
 /*! no static exports found */
+
+/*!****************************!*\
+  !*** ./app/jscss/admin.js ***!
+  \****************************/
+
+/*!*****************************!*\
+  !*** ./app/jscss/common.js ***!
+  \*****************************/
+
+/*!*******************************!*\
+  !*** ./app/jscss/common.sass ***!
+  \*******************************/
+
+/*!*********************************!*\
+  !*** ./app/jscss/adminLayer.js ***!
+  \*********************************/
 
 /*!************************************!*\
   !*** ./app/jscss/Adminsc/admin.js ***!
@@ -16,10 +56,30 @@
   !*** ./app/jscss/Adminsc/admin.sass ***!
   \**************************************/
 
+/*!***********************************************!*\
+  !*** ./app/jscss/components/a-menu/a-menu.js ***!
+  \***********************************************/
+
+/*!*************************************************!*\
+  !*** ./app/jscss/components/a-menu/a-menu.sass ***!
+  \*************************************************/
+
+/*!***************************************************!*\
+  !*** ./app/jscss/components/cache/clear-cache.js ***!
+  \***************************************************/
+
 /*!****************************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
   \****************************************************************************/
 
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/common.sass ***!
+  \**************************************************************************************************************************************************************************************/
+
 /*!*********************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Adminsc/admin.sass ***!
   \*********************************************************************************************************************************************************************************************/
+
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/a-menu/a-menu.sass ***!
+  \********************************************************************************************************************************************************************************************************/

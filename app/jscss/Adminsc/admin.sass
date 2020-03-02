@@ -15,42 +15,34 @@
 
 
 
-.logo
-  display: flex
-  flex: 1
-  justify-content: start
-  height: 45px
-  margin-left: 10px
-
-  img
-    width: 100%
-    max-width: 35%
-    min-width: 50px
-
-  a
-    width: 22vw
-    display: block
-
-  > span
-    margin: 3px 0 0 -50px
-    display: inline-block
-    vertical-align: top
-    font-size: 14px
-    color: #343133
+//.logo
+//  display: flex
+//  flex: 1
+//  justify-content: start
+//  height: 45px
+//  margin-left: 10px
+//
+//  img
+//    width: 100%
+//    max-width: 35%
+//    min-width: 50px
+//
+//  a
+//    width: 22vw
+//    display: block
+//
+//  > span
+//    margin: 3px 0 0 -50px
+//    display: inline-block
+//    vertical-align: top
+//    font-size: 14px
+//    color: #343133
 
 .h200
   height: 200px
 .w200
   width: 200px
 
-/*//////////////////////////////*/
-/*/////  PIC BOX  //////*/
-/*//////////////////////////////*/
-
-.pic img
-  width: 100%
-  height: 100%
-  object-fit: contain
 
 
 /*//////////////////////////////*/
@@ -72,6 +64,7 @@
   justify-content: flex-end
   font-size: 14px
   align-items: center
+  word-break: break-word
 
 
 .admin-flex-table .row div,
@@ -88,14 +81,17 @@
 /*////////   PIC  /////////*/
 /*//////////////////////////////*/
 
+/*//////////////////////////////*/
+/*/////  PIC BOX  //////*/
+/*//////////////////////////////*/
+
+.pic img
+  width: 100%
+  height: 100%
+  object-fit: contain
 .pic .column
   padding: 10px
 
-
-///*.pic img
-//    max-width:100%
-//    max-height: 100%
-//*/
 
 .pic .column div
   height: 150px
@@ -370,12 +366,10 @@ menu
 .tabs > label
   display: inline-block
   margin: 0 0 -1px
-  padding: 9px 7px
+  padding: 9px 3px
   font-weight: 600
   text-align: center
-  color: #aaa
-  border: 0px solid #ddd
-  border-width: 1px 1px 1px 1px
+  border: 1px solid #ddd
   background: #f1f1f1
   border-radius: 3px 3px 0 0
 
@@ -383,7 +377,7 @@ menu
     padding: 15px
 
   @media screen and (max-width: 680px)
-    font-size: 0
+    font-size: 7px
 
 
 
@@ -942,141 +936,6 @@ input
 .adm-save-cansel button
   padding: 10px
 
-
-.adm-menu
-  width: 71px
-  font-size: 8px
-  align-items: center
-  background-color: #8a92a0
-  padding-top: 10px
-
-
-.module
-  width: 80px
-  height: 80px
-  margin-bottom: 5px
-  text-align: center
-  position: relative
-  display: flex
-  justify-content: center
-  align-items: flex-end
-
-
-.module span
-
-  color: #fff
-  padding: 10px 0
-
-
-.module.home
-  background-image: url(/pic/admin-mainmenu-items.png)
-  background-position: 20px 4px
-  background-repeat: no-repeat
-
-
-
-.module.home:hover
-  background-image: url(/pic/admin-mainmenu-items.png),
-  url(/pic/admin-mainmenu-items-bg.png)
-  background-position: 20px -51px, 5px -0px
-  background-repeat: no-repeat, no-repeat
-
-
-.module.home.activ
-  background-image: url(/pic/admin-mainmenu-items.png),
-  url(/pic/admin-mainmenu-items-bg.png)
-  background-position: 20px 0px, 5px -88px
-  background-repeat: no-repeat, no-repeat
-
-
-
-.module.catalog
-  background-image: url(/pic/admin-mainmenu-items.png)
-  background-position: 20px -352px
-  background-repeat: no-repeat
-
-
-
-.module.catalog:hover
-  background-image: url(/pic/admin-mainmenu-items.png),
-  url(/pic/admin-mainmenu-items-bg.png)
-  background-position: 20px -407px, 5px 0px
-  background-repeat: no-repeat, no-repeat
-
-
-.module.catalog.activ
-  background-image: url(/pic/admin-mainmenu-items.png),
-  url(/pic/admin-mainmenu-items-bg.png)
-  background-position: 20px -408px, 5px -88px
-  background-repeat: no-repeat, no-repeat
-
-
-
-.module.settings
-  background-image: url(/pic/admin-mainmenu-items.png)
-  background-position: 20px -685px
-  background-repeat: no-repeat
-
-
-
-.module.settings:hover
-  background-image: url(/pic/admin-mainmenu-items.png),
-  url(/pic/admin-mainmenu-items-bg.png)
-  background-position: 20px -740px, 5px 0px
-  background-repeat: no-repeat, no-repeat
-
-
-.module.settings.activ
-  background-image: url(/pic/admin-mainmenu-items.png),
-  url(/pic/admin-mainmenu-items-bg.png)
-  background-position: 20px -743px, 5px -88px
-  background-repeat: no-repeat, no-repeat
-
-
-
-.module.crm
-  background-image: url(/pic/admin-mainmenu-items.png)
-  background-position: 20px -110px
-  background-repeat: no-repeat
-
-
-
-.module.crm:hover
-  background-image: url(/pic/admin-mainmenu-items.png),
-  url(/pic/admin-mainmenu-items-bg.png)
-  background-position: 20px -168px, 5px 0px
-  background-repeat: no-repeat, no-repeat
-
-
-.module.crm.activ
-  background-image: url(/pic/admin-mainmenu-items.png),
-  url(/pic/admin-mainmenu-items-bg.png)
-  background-position: 20px -110px, 5px -88px
-  background-repeat: no-repeat, no-repeat
-
-
-.module.marketing
-  background-image: url(/pic/admin-mainmenu-items.png)
-  background-position: 20px -1722px
-  background-repeat: no-repeat
-
-
-
-.module.marketing:hover
-  background-image: url(/pic/admin-mainmenu-items.png),
-  url(/pic/admin-mainmenu-items-bg.png)
-  background-position: 20px -1778px, 5px 0px
-  background-repeat: no-repeat, no-repeat
-
-
-.module.marketing.activ
-  background-image: url(/pic/admin-mainmenu-items.png),
-  url(/pic/admin-mainmenu-items-bg.png)
-  background-position: 20px -27px, 5px -88px
-  background-repeat: no-repeat, no-repeat
-
-
-
 .blue
 
   border-bottom: 1px #123aff solid
@@ -1192,13 +1051,10 @@ body
 
 
 body
-  margin-left: calc(100vw - 100%)
-  margin-right: 0
   overflow-y: scroll
   margin: 0
   font-family: 'Roboto', sans-serif
   flex-direction: column
-  height: 100%
 
 
 
@@ -1329,7 +1185,8 @@ input[contenteditable]:hover,
 span[contenteditable]:hover,
 .category-properties select:hover
   border-color: #ebf4f4
-  box-shadow: 0 0 2px 2px #71ffff
+  box-shadow: 0 0 2px 2px #f1f1f1
+
   min-height: 18px
 
 
@@ -1452,7 +1309,7 @@ header
   width: 100%
   -webkit-box-shadow: 0 0 18px 0 #d2d2d2
   background-image: url(/pic/header-big.png)
-  justify-content: space-between
+  justify-content: flex-end
 
 
 .wrap header

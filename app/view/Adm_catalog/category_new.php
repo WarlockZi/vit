@@ -2,7 +2,6 @@
 	<div class="title">Каталог</div>
 	<div class="admin-actions">
 		<?
-
 		use \app\core\Base\View;
 
 		new app\view\widgets\menu\Menu([
@@ -11,7 +10,7 @@
 			'cache' => 60,
 			'sql' => "SELECT * FROM category "
 		]);
-		$new = $_GET['id'] == 'new';
+//		$new = $_GET['id'] == 'new';
 		$addCategoryButton = "<a href='/adminsc/catalog/category/new`' 
 					   class='btn-add-category'>Добавить категорию</a>";
 		?>
@@ -33,7 +32,6 @@
 
 		<div class="work-area">
 			<input id='token' type="hidden" value="<?= $_SESSION['token'] ?>">
-
 
 			<div class="tabs">
 				<input id="tab1" type="radio" name="tabs" checked>
@@ -80,7 +78,6 @@
 
 				</section>
 
-				<? ?>
 				<section id="content-tab2">
 					<? if (isset($category['parents'])): ?>
 
@@ -176,13 +173,10 @@
 				</section>
 
 				<section id="content-tab4">
-
-
 					<? if (isset($category['children']['categories']) && $category['children']['categories']): ?>
 						<? foreach ($category['children']['categories'] as $key => $value) : ?>
 							<a href="/adminsc/catalog/category?id=<?= $value['id'] ?>"><?= $value['alias'] ?></a>
 						<? endforeach; ?>
-
 					<? else: ?>
 						<? if (isset($category['parent'])): ?> //чтобы добавить товар категория должна быть сохранена
 							<?= $ddProductButton ?>
@@ -195,20 +189,19 @@
 										</div>
 										<span><?= $product['name'] ?></span>
 									</a>
-
 								<? endforeach; ?>
 							</div>
 						<? endif; ?>
 					<? endif; ?>
 
-
 				</section>
+
 				<div class="separator btns">
 					<? if ($category): ?>
 						<div class="btn-add-category">Сохранить</div>
 					<? endif; ?>
-
 				</div>
+
 			</div>
 		</div>
 
