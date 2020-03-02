@@ -158,14 +158,22 @@ class Adm_catalogController extends AdminscController
 		foreach ($res as $ob) {
 			echo('<pre>');
 			echo $ob->name;
-			echo('<pre>');
+			echo('</pre>');
 		}
-		$prop = R::load('props', 3);
-		$res = $prop->sharedCategory;
+//		$prop = R::load('props', 3);
+//		$res = $prop->sharedCategory;
+//		foreach ($res as $ob) {
+//			echo('<pre>');
+//			echo $ob->name;
+//			echo('</pre>');
+//		}
+
+		$pic = R::load('pic', 3);
+		$res = $pic->sharedCategory;
 		foreach ($res as $ob) {
 			echo('<pre>');
 			echo $ob->name;
-			echo('<pre>');
+			echo('</pre>');
 		}
 
 

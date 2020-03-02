@@ -24,9 +24,6 @@
       <span><strong>con</strong></span>
       <span><strong>email</strong></span>
 
-
-
-
       <? foreach ($users as $use): ?>
 
          <span><a href="/adminsc/crm/user?id=<?= $use['id']; ?>"><?= $use['surName']; ?> <?= $use['name']; ?> <?= $use['middleName']; ?>    </a></span>
@@ -38,9 +35,11 @@
     </div>
 
 
-    <button class = "btnadd-user">Создать нового</button>
+<!--    <button class = "btnadd-user">Создать нового</button>-->
   </div>
-
+	<div class="separator btns">
+		<div class="btn-add-category">Сохранить</div>
+	</div>
 
 
 </div>
