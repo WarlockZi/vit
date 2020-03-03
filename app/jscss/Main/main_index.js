@@ -1,9 +1,10 @@
 import '../components/swiper/swiper.sass';
 import '../components/header/header.sass';
 import '../components/footer/footer.sass';
-import '../components/alert'
+import '../components/alert/alert'
+import '../components/coockie/coockie'
 // import '../User/user_login';
-import '../common.sass';
+import '../common';
 import '../components/autocomplete/autocomplete';
 
 import { Swiper, Mousewheel, Zoom, Lazy, Autoplay} from 'swiper/js/swiper.esm.js';

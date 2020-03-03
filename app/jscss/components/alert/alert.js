@@ -1,1 +1,1 @@
-import 'alert.sass'
+import './alert.sass'
