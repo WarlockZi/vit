@@ -1,8 +1,7 @@
 import '../components/swiper/swiper.sass';
 import '../components/header/header.sass';
 import '../components/footer/footer.sass';
-
-
+import '../components/alert'
 // import '../User/user_login';
 import '../common.sass';
 import '../components/autocomplete/autocomplete';
@@ -49,11 +48,5 @@ window.onload = function () {
         },
         // preloadImages: true,
         // watchSlidesVisibility: true,
-
     });
-// Add handler that will be executed only once
-//     newSwiper.once('sliderMove', function () {
-//         // alert('ddd');
-//         console.log('slider moved');
-//     });
 };

@@ -9,12 +9,12 @@
 
   <? if (in_array('3', $user['rights'])): // admin ?>
      <div class="admin-actions">
-       <a href  = "<?= PROJ ?>/adminsc/products">Товары</a>
-       <a href  = "<?= PROJ ?>/adminsc/categories">Категории</a>
-       <a href  = "<?= PROJ ?>/adminsc/orders">Заказы</a>
-       <a href  = '<?= PROJ ?>/adminsc/users'>Пользователи</a>
-       <a href  = '<?= PROJ ?>/adminsc/prodtypes'>Типы товаров</a>
-       <a href  = '<?= PROJ ?>/adminsc/Sitemap'>Создать SiteMap</a>
+       <a href  = "/adminsc/products">Товары</a>
+       <a href  = "/adminsc/categories">Категории</a>
+       <a href  = "/adminsc/orders">Заказы</a>
+       <a href  = '/adminsc/users'>Пользователи</a>
+       <a href  = '/adminsc/prodtypes'>Типы товаров</a>
+       <a href  = '/adminsc/Sitemap'>Создать SiteMap</a>
 
 
      </div>
@@ -23,21 +23,21 @@
 
   <? if (in_array('4', $user['rights'])):// SU ?>
      <input class = "list" type="button" name="scr" id="scr" value = "выгрузить ">
-     <form method="post" action= '<?= PROJ ?>/Adminsc/FileImport'>
+     <form method="post" action= '/Adminsc/FileImport'>
        <input class = "list" type="submit" name = 'scrImport' value = "загрузить ">
      </form>
 
-     <form method="post" action= '<?= PROJ ?>/Adminsc/ProductsActivity'>
+     <form method="post" action= '/Adminsc/ProductsActivity'>
        <input class = "list" type="submit" name = 'ProductsActivity' value = "actionProductsActivity ">
      </form>
 
-     <a class = "list" href  = '<?= PROJ ?>/adminsc/galery'>Картинки</a>
+     <a class = "list" href  = '/adminsc/galery'>Картинки</a>
 
 
-     <form method="post" action= '<?= PROJ ?>/Adminsc'>
+     <form method="post" action= '/Adminsc'>
        <input class = "list" type="submit" name = 'cat' value = "Формируем категории">
      </form>
-     <form method="post" action= '<?= PROJ ?>/Adminsc'>
+     <form method="post" action= '/Adminsc'>
        <input class = "list" type="submit" name = 'translitCat' value = "Категории транслит">
      </form>
    <!--           <div id="vk_post_2083688_2227"></div><script type="text/javascript">

@@ -1,3 +1,5 @@
+import './cache.sass';
+
 document.querySelector('.clear-cache').addEventListener('click', clearCache);
 
 async function clearCache() {

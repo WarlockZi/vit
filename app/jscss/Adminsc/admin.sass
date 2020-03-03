@@ -1,6 +1,86 @@
+@import '../components/misc/grid_table'
+
+
+*:focus
+  outline: none
+
+
 ///*************************************
 //*******      ADMIN    ******
 //**************************************/
+
+
+header
+  position: relative
+  padding: 10px 0
+  height: 30px
+  z-index: 500
+  width: 100%
+  background: url(/pic/header-big.png)
+  justify-content: flex-end
+
+  .header-tabs
+    div
+      height: 10px
+      padding: 10px
+      position: absolute
+      top: 7px
+      left: 120px
+      background-color: #fff
+      border-radius: 5px 5px 0 0
+      cursor: pointer
+
+    div:first-child
+      left: 54px
+      background-color: #000
+      color: #ccc
+
+    div:last-child
+      border-bottom: 0
+      font-weight: 600
+
+    a
+      height: 100%
+      width: 100%
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+
+  .user-menu
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    position: relative
+    margin-right: 10px
+    color: #fff
+    font-size: 0.8rem
+
+    &:before
+      content: '☰'
+      display: block
+      padding: 0 8px
+
+.breadcrumbs-adm
+  margin: 25px 0
+
+  &> div
+    text-transform: uppercase
+
+  div,
+  a
+    padding: 3px 6px
+    font-size: 0.7rem
+    color: #7e98ba
+    font-weight: 600
+    margin-left: 5px
+
+
+
+
+
+
+
 
 .edit:before
   content: '\270e изменить'
@@ -11,32 +91,6 @@
   padding: 0 0 0 20%
   height: 100%
   color: #fff
-  //background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0,0,0,0.5) 24%)
-
-
-
-//.logo
-//  display: flex
-//  flex: 1
-//  justify-content: start
-//  height: 45px
-//  margin-left: 10px
-//
-//  img
-//    width: 100%
-//    max-width: 35%
-//    min-width: 50px
-//
-//  a
-//    width: 22vw
-//    display: block
-//
-//  > span
-//    margin: 3px 0 0 -50px
-//    display: inline-block
-//    vertical-align: top
-//    font-size: 14px
-//    color: #343133
 
 .h200
   height: 200px
@@ -52,34 +106,26 @@
 .admin-flex-table
   padding: 10px
 
+  .row
+    padding: 5px
 
-.admin-flex-table .row
-  padding: 5px
+    div,
+    span,
+    select,
+    input
+      flex: 3
+      justify-content: flex-start
+      min-height: 18px
 
+    strong
+      padding-right: 5px
+      display: flex
+      flex: 1
+      justify-content: flex-end
+      font-size: 14px
+      align-items: center
+      word-break: break-word
 
-.admin-flex-table .row strong
-  padding-right: 5px
-  display: flex
-  flex: 1
-  justify-content: flex-end
-  font-size: 14px
-  align-items: center
-  word-break: break-word
-
-
-.admin-flex-table .row div,
-.admin-flex-table .row span,
-.admin-flex-table .row select,
-.admin-flex-table .row input
-  flex: 3
-  justify-content: flex-start
-  min-height: 18px
-
-
-
-/*//////////////////////////////*/
-/*////////   PIC  /////////*/
-/*//////////////////////////////*/
 
 /*//////////////////////////////*/
 /*/////  PIC BOX  //////*/
@@ -115,91 +161,82 @@
 .dump-form *
   padding: 10px
 
-
-.dump-form input
-  flex: 1
+  input
+    flex: 1
 
 
 /*//////////////////////////////*/
 /*////////   Catalog  /////////*/
 /*//////////////////////////////*/
 
-.tabs>.btn-add-category
 
-  position: absolute
-  right: 10px
-  top: 4px
+.tabs
 
-.tabs .btn-add-category
+  &>.btn-add-category
+    position: absolute
+    right: 10px
+    top: 4px
 
-  background-color: #71ffff
-  padding: 5px 10px
-  cursor: pointer
-  color: #444444
-
-
-
-.categories .row
-  justify-content: space-around
-  align-items: center
+  .btn-add-category
+    background-color: #71ffff
+    padding: 5px 10px
+    cursor: pointer
+    color: #444444
 
 
-.categories .row:hover
-  background: #ccc
+
+.categories
+  .row
+    justify-content: space-around
+    align-items: center
+
+  .row:hover
+    background: #ccc
 
 
-.breadcrumbs-adm > div
-  text-transform: uppercase
-
-
+/*////////////////////////////*/
+/*//  CATALOG PRODUCT   //////*/
+/*////////////////////////////*/
 
 .desc:hover + .no
   display: flex
 
-
 .no
-  display: none
   display: none
   position: absolute
   top: 0
   left: 100%
 
+.admin-product-edit
+  display: flex
+  flex-flow: column
+  margin: 0 10px
 
-menu p
-  margin: 0
-
-
-span.close
-  position: absolute
-  right: 0px
-  top: 0px
-  border: 1px solid #ccc
-  padding: 0 5px
+  img
+    max-height: 500px
+    max-width: 400px
 
 
+
+
+/*///////////////////////////////////*/
+/*//       INSTRUCTIONS        //////*/
+/*///////////////////////////////////*/
 .doc
   position: relative
 
+  ul
+    margin: 0 10px 0 0
 
-.doc ul
-  margin: 0 10px 0 0
-
-
-menu
-  position: absolute
-  display: none
-  background-color: #fff
-  border: 1px solid #ccc
-  padding: 10px
-  top: 100%
-  margin: 0
-
-
+//module
 .name
-  //display: flex
   flex: 1
 
 
+
+/*///////////////////////////////////*/
+/*//       CATALOG PRODUCT        //////*/
+/*///////////////////////////////////*/
 .val-block
   flex: 1
   display: flex
@@ -208,31 +245,18 @@ menu
 .val-item
   display: flex
 
+  .value
+    padding-left: 10px
 
-.val-item .value
-  padding-left: 10px
-
-
-///*.prop
-//    display:flex
-//    flex-flow:column
-//    justify-content: space-between
-//    position: relative
-//    flex:1
-//*/
+    &:focus
+      border-bottom: 1px #ddd solid
 .val
   padding: 10px
   flex: 1
 
+  &> .name > input
+    max-width: 200px
 
-.value:focus
-  border-bottom: 1px #ddd solid
-
-
-
-/*/////////////////////////////*/
-/*//       ALERT        //////*/
-/*///////////////////////////*/
 
 .prop-name
   display: flex
@@ -244,89 +268,11 @@ menu
   flex: 1
 
 
-.overlay
-  width: 100%
-  height: 100%
-  background-color: #000
-  z-index: 1000
-  position: fixed
-  top: 0
-  left: 0
-  opacity: 0.5
-  display: none
 
 
 
-.messageBox
-  display: flex
-  flex-direction: column
-  width: 30%
-  min-width: 241px
-  position: fixed
-  top: 10vw
-  left: 30%
-  background-color: #eff4ee
-  z-index: 10001
-  line-height: 25px
-  font-size: 14px
-  font-family: 'Roboto', sans-serif
 
 
-.messageBox > div
-  padding: 10px
-
-
-.messageTitleBar
-  display: flex
-  text-transform: uppercase
-
-
-
-.messageTitle
-  flex: 1
-  color: #80868e
-  padding-left: 20px
-  font-weight: 800
-
-
-.messageClose
-  display: flex
-  justify-content: center
-  flex: 1
-  transition: .5s
-  color: #494949
-  background: #ccc
-  text-transform: uppercase
-  font-weight: 800
-
-
-.messageClose:hover
-  background: #4cb000
-  transition: .3s
-  color: #000
-  font-weight: 800
-
-
-.msg div
-  color: #6e6e6e
-  font-size: 20px
-  padding: 0 30px
-
-
-.msg
-  min-height: 100px
-  background: #fff
-
-
-.msg a
-  text-decoration: underline
-  color: #1d5bff
-  font-weight: 800
-  padding: 3px
-
-
-
-/* Базовый контейнер табов */
 .tabs
   min-width: 320px
   width: 100%
@@ -334,107 +280,75 @@ menu
   margin: 0 auto 0 0
   position: relative
 
+  &> section
+    display: none
+    background: #fff
+    border: 1px solid #ddd
 
-/* Стили секций с содержанием */
-.tabs > section
-  display: none
-  /*padding: 15px*/
-  background: #fff
-  border: 1px solid #ddd
+    &> .flex
+      margin: 0 0 5px
+      line-height: 1.5
+      color: #383838
+      animation-duration: .5s
+      animation-fill-mode: both
+      animation-name: fadeIn
 
+  &> input
+    display: none
+    position: absolute
 
-.tabs > section > .flex
-  margin: 0 0 5px
-  line-height: 1.5
-  color: #383838
-  /* прикрутим анимацию */
-  -webkit-animation-duration: .5s
-  animation-duration: .5s
-  -webkit-animation-fill-mode: both
-  animation-fill-mode: both
-  -webkit-animation-name: fadeIn
-  animation-name: fadeIn
+  &> input:checked + label
+    color: #555
+    border-top: 1px solid #ffa500
+    border-bottom: 1px solid #fff
+    background: #fff
 
+  &> label
+    display: inline-block
+    margin: 0 0 -1px
+    padding: 9px 3px
+    font-weight: 600
+    text-align: center
+    border: 1px solid #ddd
+    background: #f1f1f1
+    border-radius: 3px 3px 0 0
 
-/* Прячем чекбоксы */
-.tabs > input
-  display: none
-  position: absolute
+    @media screen and (max-width: 400px)
+      padding: 15px
 
+    @media screen and (max-width: 680px)
+      font-size: 7px
 
-/* Стили переключателей вкладок (табов) */
-.tabs > label
-  display: inline-block
-  margin: 0 0 -1px
-  padding: 9px 3px
-  font-weight: 600
-  text-align: center
-  border: 1px solid #ddd
-  background: #f1f1f1
-  border-radius: 3px 3px 0 0
+  &> label:before
+    font-weight: normal
+    margin-right: 10px
+    @media screen and (max-width: 680px)
+      margin: 0
+      font-size: 18px
 
-  @media screen and (max-width: 400px)
-    padding: 15px
-
-  @media screen and (max-width: 680px)
-    font-size: 7px
-
-
-
-
-/* Шрифт-иконки от Font Awesome в формате Unicode */
-.tabs > label:before
-  font-family: fontawesome
-  font-weight: normal
-  margin-right: 10px
-  @media screen and (max-width: 680px)
-    margin: 0
-    font-size: 18px
-
-
-/* Изменения стиля переключателей вкладок при наведении */
-
-.tabs > label:hover
-  color: #888
-  cursor: pointer
-
-
-/* Стили для активной вкладки */
-.tabs > input:checked + label
-  color: #555
-  border-top: 1px solid #ffa500
-  border-bottom: 1px solid #fff
-  background: #fff
-
+  &> label:hover
+    color: #888
+    cursor: pointer
 
 /* Активация секций с помощью псевдокласса :checked */
-#tab1:checked ~ #content-tab1, #tab2:checked ~ #content-tab2, #tab3:checked ~ #content-tab3, #tab4:checked ~ #content-tab4
+#tab1:checked ~ #content-tab1,
+#tab2:checked ~ #content-tab2,
+#tab3:checked ~ #content-tab3,
+#tab4:checked ~ #content-tab4
   display: flex
   flex-direction: column
   padding: 15px
   min-height: 100vh
 
 #content-tab1 strong
-
   color: #4d4d4d
 
-
-///* Убираем текст с переключателей
-//* и оставляем иконки на малых экранах
-//*/
-
-
 .title
-  padding: 0px 0 40px
   font-weight: 600
   font-size: 25px
   color: #343436
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
   padding: 10px
-
-
-.main
-  display: flex
 
 
 .props
@@ -443,15 +357,6 @@ menu
   margin: 20px 20px
 
 
-.admin-product-edit
-  display: flex
-  flex-flow: column
-  margin: 0 10px
-
-
-.admin-product-edit img
-  max-height: 500px
-  max-width: 400px
 
 
 td a
@@ -468,9 +373,8 @@ td a
   display: flex
   flex-flow: column
 
-
-.work-middle button
-  margin: 10px 0
+  button
+    margin: 10px 0
 
 
 
@@ -483,68 +387,18 @@ td a
   height: 49px
 
 
-.has-children > label a:before
-  content: ''
-  border: 4px solid
-  border-color: transparent transparent transparent #ccc
-  position: absolute
-  right: -16px
-  top: 3px
+.has-children
 
+  label
+    display: flex
 
-.menu label, .menu a, .menu li
-  position: relative
-  display: block
-  color: #c1c1c1
-  font-size: 12px
-
-
-.has-children label
-  display: flex
-
-
-.menu input:checked + label > a
-  font-size: 13px
-  font-weight: 600
-  color: #fff
-  text-transform: uppercase
-
-
-.menu > li
-  font-size: 13px
-
-
-.menu li ul li:hover,
-.menu li ul li a:hover
-  /*padding: 2px*/
-  font-size: 13px
-  color: #ffa500
-  font-weight: 600
-
-
-.menu .drop
-  background: #001a98
-  cursor: pointer
-
-
-.menu > li:hover,
-.menu li:hover > li label,
-.menu > label a:hover
-  background: #5e5e5e
-
-
-.menu > li:not(.has-children)
-  padding: 9px 0 9px 0px
-
-
-
-.menu > li > label
-  padding: 9px 0 9px 9px
-
-
-.menu .drop
-  padding: 9px 0 9px 9px
-
+  &> label a:before
+    content: ''
+    border: 4px solid
+    border-color: transparent transparent transparent #ccc
+    position: absolute
+    right: -16px
+    top: 3px
 
 
 .menu
@@ -552,192 +406,62 @@ td a
   background: #001a98
   align-self: flex-start
 
+  label, a, li
+    position: relative
+    display: block
+    color: #c1c1c1
+    font-size: 12px
 
-.menu ul
-  display: none
-  cursor: pointer
+  input:checked + label > a
+    font-size: 13px
+    font-weight: 600
+    color: #fff
+    text-transform: uppercase
 
+  &> li
+    font-size: 13px
 
+  li ul li:hover,
+  li ul li a:hover
+    /*padding: 2px*/
+    font-size: 13px
+    color: #ffa500
+    font-weight: 600
 
-.menu input[type=checkbox]:checked + label + ul,
-.menu input[type=checkbox]:checked + label:nth-of-type(n) + ul
-  display: block
+  ul
+    display: none
+    cursor: pointer
 
+  .drop
+    background: #001a98
+    cursor: pointer
+    padding: 9px 0 9px 9px
 
-.menu input[type=checkbox]
-  position: absolute
-  opacity: 0
+    li
+      padding: 0 5px
 
+  &> li:hover,
+  &> label a:hover,
+  li:hover > li label
+    background: #5e5e5e
 
+  &> li:not(.has-children)
+    padding: 9px 0 9px 0px
 
-.drop li
-  padding: 0 5px
+  &> li > label
+    padding: 9px 0 9px 9px
 
+  input[type=checkbox]:checked + label + ul,
+  input[type=checkbox]:checked + label:nth-of-type(n) + ul
+    display: block
 
+  input[type=checkbox]
+    position: absolute
+    opacity: 0
 
-*:focus
-  outline: none
 
 
 
-/*//////////////////////////////*/
-/*////////   FORMS  /////////*/
-/*//////////////////////////////*/
-
-.add:before
-  content: "\271A"
-
-
-.edit:before
-  content: "\270E"
-
-
-.delete:before
-  content: "\2718"
-
-
-.save:before
-  content: "\2714"
-
-
-.email:before
-  content: "\2709"
-
-
-.cross:before
-  content: "\2716"
-
-
-.like:before
-  content: "\2764"
-
-
-.star:before
-  content: "\2605"
-
-
-.spark:before
-  content: "\2737"
-
-
-.play:before
-  content: "\25B6"
-
-
-.watch:before
-  content: "\231A"
-
-
-.blacksun:before
-  content: "\2600"
-
-
-.cloud:before
-  content: "\2601"
-
-
-.umbrella:before
-  content: "\2602"
-
-
-.snowman:before
-  content: "\2603"
-
-
-.blackstar:before
-  content: "\2605"
-
-
-.whitestar:before
-  content: "\2606"
-
-
-.blackphone:before
-  content: "\260E"
-
-
-.whitephone:before
-  content: "\260F"
-
-
-.saltire:before
-  content: "\2613"
-
-
-.hot_drink:before
-  content: "\2615"
-
-
-.skull:before
-  content: "\2620"
-
-
-.radioactive:before
-  content: "\2622"
-
-
-.biohazard:before
-  content: "\2623"
-
-
-.peace:before
-  content: "\262E"
-
-
-.yingyang:before
-  content: "\262F"
-
-
-.frowning_face:before
-  content: "\2639"
-
-
-.smiling_face:before
-  content: "\263A"
-
-
-.first_quarter_moon:before
-  content: "\263D"
-
-
-.last_quarter_moon:before
-  content: "\263E"
-
-
-.wheelchair:before
-  content: "\267F"
-
-
-.recycle:before
-  content: "\267D"
-
-
-.recycle2:before
-  content: "\267C"
-
-
-.music_note:before
-  content: "\266C"
-
-
-.warning:before
-  content: "\26A0"
-
-
-.male_and_female:before
-  content: "\26A4"
-
-
-.scissors:before
-  content: "\2701"
-
-
-.airplane:before
-  content: "\2708"
-
-
-.snow:before
-  content: "\2042"
 
 
 
@@ -761,21 +485,14 @@ td a
   border-radius: .2em
   box-shadow: 0 0 1px 1px rgba(255, 255, 255, .8) inset, 0 1px 0 rgba(0, 0, 0, .3)
 
+  &:hover
+    background: #ffffff
+    background: linear-gradient(top, #ffffff 0%, #e5e5e5 100%)
 
-.buttons:hover
-  background: #ffffff
-  background: linear-gradient(top, #ffffff 0%, #e5e5e5 100%)
-
-
-.buttons:active
-  box-shadow: 0 0 4px 2px rgba(0, 0, 0, .3) inset
-  position: relative
-  top: 1px
-
-
-#users
-
-
+  &:active
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, .3) inset
+    position: relative
+    top: 1px
 
 .type
   width: 200px
@@ -793,61 +510,87 @@ td a
   display: flex
   flex-flow: wrap
 
+  a
+    min-width: 28px
+    display: block
+    padding: 6px
+    background-color: #f5f5f5
+    text-align: center
 
-.navi a
-  min-width: 28px
-  display: block
-  padding: 6px
-  background-color: #f5f5f5
-  text-align: center
-
-
-.navi a:hover
-  background-color: #e8e8e8
-
-
+  a:hover
+    background-color: #e8e8e8
 
 .filter
   padding: 30px
 
+#users
+  div[data-id]
+    justify-content: flex-start
+    align-items: flex-start
 
-
-#users div[data-id]
-  justify-content: flex-start
-  align-items: flex-start
-
-
-#users div[data-id]:nth-child(odd)
-  background-color: #f7f7f7
+  div[data-id]:nth-child(odd)
+    background-color: #f7f7f7
 
 
 /*//////////////////////////////*/
 /*////////   COMMON   /////////*/
 /*//////////////////////////////*/
 
-.flex1
+body
+  overflow-y: scroll
+  margin: 0
+  font-family: 'Roboto', sans-serif
+
+a
+  color: #949494
+
+a,
+a:hover,
+.navi__item,
+.navi__item:hover
+  text-decoration: none
+
+
+ul, li
+  list-style: none
+  margin: 0
+  padding: 0
+
+
+input,
+textarea,
+textarea:focus,
+.button:focus
+  outline: none
+
+
+a:hover,
+.list,
+.a label,
+.submit,
+.button,
+.buttons,
+.del-prop,
+span.close,
+.messageClose,
+.add-prop,
+.add-prop:hover
+  cursor: pointer
+
+
+.user-menu,
+.user-menu li,
+.user-menu label,
+.enter-button,
+.user-button,
+.user-button span,
+.user-menu:hover > .nav,
+.user-menu:hover .nav > a,
+.breadcrumbs-adm
   display: flex
-  flex: 1
 
-
-.row
-  display: flex
-  flex-flow: wrap
-
-
-.column
-  display: flex
-  flex-flow: column
-
-
-
-.plr
-  padding: 0 10px
-
-
-.pud
-  padding: 10px 0
-
+h2
+  margin: 0
 
 
 input
@@ -856,15 +599,14 @@ input
   border-right: 1px solid #ccc
 
 
-
-.ref-row
-  display: flex
-
-
-
 .adm-wrap
   height: 100%
   flex-flow: nowrap
+  min-height: 100vw
+
+.wrap-admin
+  background-color: #fff
+  margin: 0 5px
 
 
 .admin-actions
@@ -875,43 +617,19 @@ input
   border: 1px solid #ddd
   padding: 10px 0
 
+  a,
+  label
+    color: #4a4a4a
+    font-size: 16px
+    padding: 0 0 7px 5px
 
-///*.admin-actions label
-//        padding: 0 0 0 5px
-//*/
-.admin-actions a,
-.admin-actions label
-  color: #4a4a4a
-  font-size: 16px
-  padding: 0 0 7px 5px
+  label a
+    padding: 3px
+    color: #4a4a4a
+    font-size: 14px
 
-
-.clear-cache
-  display: block
-  width: 20px
-  height: 20px
-  background-color: slategray
-  border-radius: 3px
-  margin: auto 0
-
-
-.admin-actions label a
-  padding: 3px
-  color: #4a4a4a
-  font-size: 14px
-
-
-.admin-actions a:hover
-  background: #cedbdf
-
-
-.wrap-admin
-  background-color: #fff
-  margin: 0 5px
-
-
-.wrap-admin-content
-  display: flex
+  a:hover
+    background: #cedbdf
 
 
 
@@ -927,25 +645,8 @@ input
   margin: 5px
 
 
-.adm-save-cansel
-  position: fixed
-  bottom: 0
-  margin-bottom: 20px
-
-
-.adm-save-cansel button
-  padding: 10px
-
-.blue
-
-  border-bottom: 1px #123aff solid
-  padding: 3px 6px
-  font-weight: 600
-/*text-align: center*/
-
 
 .add-prop
-  /*color: #5e5e5e*/
   background: #123aff
   color: #fff
   height: 100%
@@ -959,21 +660,9 @@ input
   color: #fff
 
 
-.val > .name > input
-  max-width: 200px
 
 
-.breadcrumbs-adm
-  margin: 25px 0
 
-
-.breadcrumbs-adm div,
-.breadcrumbs-adm a
-  padding: 3px 6px
-  font-size: 0.7rem
-  color: #7e98ba
-  font-weight: 600
-  margin-left: 5px
 
 
 .del-prop
@@ -989,72 +678,35 @@ input
   border-radius: 0 0 7px 7px
   line-height: 200%
 
+  &:hover
+    width: 50px
+    transition: .3s
 
+  span
+    position: absolute
 
-.del-prop span
-  position: absolute
+  span:nth-child(1)
+    opacity: 1
+    right: 5px
 
+  span:nth-child(2)
+    opacity: 0
+    display: none
 
-.del-prop span:nth-child(1)
-  opacity: 1
-  right: 5px
+  &:hover.del-prop span:nth-child(1)
+    opacity: 0
+    transition: .3s
 
-
-.del-prop span:nth-child(2)
-  opacity: 0
-  display: none
-
-
-.del-prop:hover
-  width: 50px
-  transition: .3s
-
-
-.del-prop:hover.del-prop span:nth-child(1)
-  opacity: 0
-  transition: .3s
-
-
-.del-prop:hover.del-prop span:nth-child(2)
-  opacity: 1
-  transition: .3s
-  right: 6px
-  display: block
+  &:hover.del-prop span:nth-child(2)
+    opacity: 1
+    transition: .3s
+    right: 6px
+    display: block
 
 
 .add-prop-val
   height: 17px
   transition: .1s
-
-
-.clear
-  border-top: 1px solid #ddd
-  font-weight: 600
-  text-align: center
-  padding: 3px 6px
-  color: #6b6b6b
-
-
-.clear:hover
-  color: #fff
-  background: #4d5158
-/*border-bottom: 1px solid slategray*/
-/*border-right: 1px solid slategray*/
-
-
-
-html,
-body
-  height: 100%
-  overflow-x: hidden /*/для скрытия горизонтального скрола при появлении ответов*/
-  overflow-y: hidden
-
-
-body
-  overflow-y: scroll
-  margin: 0
-  font-family: 'Roboto', sans-serif
-  flex-direction: column
 
 
 
@@ -1069,105 +721,61 @@ body
   top: 100%
   width: 100%
 
+  a:hover
+    background: rgba(0, 0, 0, 0.08)
 
-.nav a:hover
-  background: rgba(0, 0, 0, 0.08)
-
-
-.nav a
-  display: none
-  padding: 5px 10px
+  a
+    display: none
+    padding: 5px 10px
 
 
 .column.categories
   align-items: flex-start
 
+  a.row span
+    position: relative
+    padding-left: 20px
 
-.column.categories a.row span
-  position: relative
-  padding-left: 20px
-
-
-.column.categories a.row span:before
-  content: ''
-  position: absolute
-  left: -2px
-  display: block
-  width: 0
-  height: 0
-  border-right: #343133 7px solid
-  border-left: rgba(255, 255, 255, 0) 3px solid
-  border-bottom: rgba(255, 255, 255, 0) 3px solid
-  border-top: rgba(255, 255, 255, 0) 3px solid
-  margin: 6px
+  a.row span:before
+    content: ''
+    position: absolute
+    left: -2px
+    display: block
+    width: 0
+    height: 0
+    border-right: #343133 7px solid
+    border-left: rgba(255, 255, 255, 0) 3px solid
+    border-bottom: rgba(255, 255, 255, 0) 3px solid
+    border-top: rgba(255, 255, 255, 0) 3px solid
+    margin: 6px
 
 
-.admin-actions label ul
-  display: none
-  transition: all 1s
+.admin-actions
+  label ul
+    display: none
+    transition: all 1s
 
+  label input
+    display: none
 
-.admin-actions label input
-  display: none
-
-
-.admin-actions label input:checked + ul
-  display: flex
-  height: 100%
-  transition: all 1s
+  label input:checked + ul
+    display: flex
+    height: 100%
+    transition: all 1s
 
 
 
-h2
-  margin: 0
-
-
-
-/*//////////////////////////////*/
-/*////////   GRID   /////////*/
-/*//////////////////////////////*/
-
-
-.grid
-  display: grid
-  grid-template-columns: repeat(3, 1fr)
-  background-color: white
-
-
-.grid > span,
-.grid5 > span
-  padding: 8px 4px
-  display: flex
-
-
-.grid5
-  display: grid
-  grid-template-columns: 40px 40px 1fr 1fr 80px
-
-
-.grid-head
+strong
   font-weight: 600
-  background-color: #ccc
-  text-shadow: 2px 1px 1px white
-  border-left: #e1e1e1 1px solid
-
-
-
-srong
-  font-weight: 600
-
 
 .user.content-90
   height: 100%
   padding-top: 20px
-/*position: relative*/
-
 
 .admin-content *
   display: flex
   padding: 3px
   align-items: flex-start
-
 
 .admin-contentdiv *
   flex: 2
@@ -1186,7 +794,6 @@ span[contenteditable]:hover,
 .category-properties select:hover
   border-color: #ebf4f4
   box-shadow: 0 0 2px 2px #f1f1f1
-
   min-height: 18px
 
 
@@ -1209,205 +816,22 @@ span[contenteditable]:hover,
   justify-content: center
 
 
-/*.separator button */
-/*    width: 180px*/
-/*    height: 27px*/
-/*    margin: 24px*/
-/*    justify-content: center*/
-/*    !*flex:1*!*/
-/**/
-
 .separator
-  padding: 5px
   background-color: #ebf4f4
   margin: 10px 0
   display: flex
   justify-content: space-around
   padding: 3px
-  /*font-weight: 600*/
-  /*text-transform: uppercase*/
-  /*letter-spacing: 2px*/
   color: #646464
 
-
-/*.separator.btns button */
-/*    display: block*/
-/**/
-
-.separator.btns
-  position: sticky
-  bottom: 0
-/*z-index: 1*/
-
+  &.btns
+    position: sticky
+    bottom: 0
 
 
 .wrap .list:hover
   background: #f6f6f6
 
-
-a
-  color: #949494
-
-
-a,
-a:hover,
-.navi__item,
-.navi__item:hover
-  text-decoration: none
-
-
-ul, li
-  list-style: none
-  margin: 0
-  padding: 0
-
-
-input,
-textaria,
-textarea:focus,
-.button:focus
-  outline: none
-
-
-
-a,
-a:hover,
-.list,
-.a label,
-.submit,
-.button,
-.buttons,
-.del-prop,
-span.close,
-.messageClose,
-.add-prop,
-.add-prop:hover
-  cursor: pointer
-
-
-body,
-.header,
-.user-menu,
-.user-menu li,
-.user-menu label,
-.enter-button,
-.user-button,
-.user-button span,
-.user-menu:hover > .nav,
-.user-menu:hover .nav > a,
-footer,
-.breadcrumbs-adm,
-footer p
-  display: flex
-
-
-header
-  background: #fff
-  padding: 10px 0
-  height: 30px
-  z-index: 500
-  width: 100%
-  -webkit-box-shadow: 0 0 18px 0 #d2d2d2
-  background-image: url(/pic/header-big.png)
-  justify-content: flex-end
-
-
-.wrap header
-  -webkit-box-shadow: 0 0 0px 0 #d2d2d2
-
-
-
-.wrap .header-tabs .column div:first-child
-  height: 10px
-  padding: 10px
-  position: absolute
-  top: 20px
-  left: 54px
-  background-color: #000
-  color: #ccc
-  border-radius: 5px 5px 0 0
-  cursor: pointer
-
-
-.wrap .header-tabs .column div
-  height: 10px
-  padding: 10px
-  position: absolute
-  top: 20px
-  left: 120px
-  background-color: #fff
-  border-radius: 5px 5px 0 0
-
-
-.wrap .header-tabs.column div:last-child
-  height: 10px
-  border-bottom: 1px solid #ccc
-
-
-.wrap .header-tabs.column .column div:last-child
-  height: 10px
-  border-bottom: 0
-  font-weight: 600
-  cursor: pointer
-
-
-.wrap .header-tabs.column a
-  height: 100%
-  width: 100%
-  display: block
-  position: absolute
-  top: 0
-  left: 0
-
-
-.wrap
-  flex: 1 0 auto
-  position: relative
-
-
-
-.logo
-  flex: 1
-  justify-content: center
-  /*    flex-basis: 56px
-          width: .admin-actions label
-          max-width: 498px*/
-  margin-left: 10px
-
-
-.logo img
-  width: 100%
-  max-width: 35%
-  min-width: 50px
-
-
-.logo a
-  width: 30px
-  display: block
-
-
-.logo > span
-  margin: 3px 0 0 12px
-  display: inline-block
-  vertical-align: top
-  font-size: 14px
-  color: #343133
-
-
-.user-menu
-  display: flex
-  justify-content: flex-end
-  align-items: center
-  position: relative
-  margin-right: 10px
-  color: #fff
-  font-size: 0.8rem
-
-
-.user-menu:before
-  content: '☰'
-  display: block
-  padding: 0 8px
 
 
 .category-properties
@@ -1417,10 +841,10 @@ header
 .properties
   padding: 5px
 
-
-.properties.column > select
-  margin: 5px 0 5px 50px
-
+  &.column > select
+    margin: 5px 0 5px 50px
+  select
+    margin: 5px 0
 
 .cat-prop
   padding: 10px 0
@@ -1428,36 +852,23 @@ header
 
 
 
-.properties select
-  margin: 5px 0
-/*	max-width: 330px*/
-
-
-//.add-property select
-//    float: 1
-
-
 .add-property
   justify-content: flex-end
 
-
-
-.add-property span
-  padding: 10px 10px 10px 0
+  span
+    padding: 10px 10px 10px 0
 
 
 .lists
   height: 100%
   padding-top: 20px
-  /*position: relative*/
-  /*margin: 20px 1%*/
   background-color: #fff
   display: flex
   flex-flow: column
 
 
 /*//////////////////////*/
-/*//////  MENU  ////////*/
+/*//////  A CATALOG-MENU  ////////*/
 /*//////////////////////*/
 
 .admin-category-menu
@@ -1465,118 +876,67 @@ header
   z-index: 1
   max-width: 350px
 
+  a
+    display: flex
+    align-items: center
+    flex: 1
+    padding: 7px 14px 7px 7px
+    transition: 0.5s all
+    font-size: 0.65rem
+    font-weight: bold
+    text-transform: uppercase
+    min-width: 40px
+    max-width: 190px
+    background-color: rgba(229, 237, 239, 0.73)
 
-.admin-category-menu a
-  display: flex
-  align-items: center
-  flex: 1
-  padding: 7px 14px 7px 7px
-  -webkit-transition: 0.1s all
-  transition: 0.5s all
-  font-size: 0.65rem
-  font-weight: bold
-  text-transform: uppercase
-  min-width: 40px
-  max-width: 190px
-  background-color: rgba(229, 237, 239, 0.73)
+  li
+    display: flex
+    position: relative
+    border-bottom: 1px solid #b7b7b7
+    -webkit-transition: 0.5s all
+    transition: 0.5s all
+    justify-content: flex-end
 
-
-.test-params,
-.freetest-params
-  flex: 1
-  max-width: 37px
-  display: flex
-  justify-content: space-around
-  align-items: center
-/*min-width: 40px*/
-
+    .test-link a
+      text-transform: uppercase
 
 
-.admin-category-menu li .test-link a
-  text-transform: uppercase
+  .vert-menu__list /*Иконки для всплывающих менюшек*/
+    &:after
+      content: " "
+      position: absolute
+      border: .6vw solid
+      border-color: transparent transparent transparent #84989a
+      transition: 0.5s
+      align-self: center
 
+      @media screen and (min-width: 1200px)
+        border: .4vw solid
+        border-color: transparent transparent transparent #eee
 
-.admin-category-menu li
-  display: flex
-  position: relative
-  border-bottom: 1px solid #b7b7b7
-  -webkit-transition: 0.5s all
-  transition: 0.5s all
-  justify-content: flex-end
+    &:hover:after
+      transform: scaleX(-1)
 
+    &:hover > .vert-menu__drop
+      opacity: 1
+      top: 0
+      z-index: 1
 
-
-/*Всплывающие меню*/
-.vert-menu__drop
-  position: absolute
-  width: 100%
-  left: 100%
-  top: -9999em
-  opacity: 0
-  border-left: 1px solid transparent
-  -webkit-transition: 0.5s opacity
-  transition: 0.5s opacity
-
-
-.admin-category-menu .vert-menu__list:hover > .vert-menu__drop
-  opacity: 1
-  top: 0
-  z-index: 1
-
-
-/*Иконки для всплывающих менюшек*/
-.vert-menu__list::after
-  content: " "
-  position: absolute
-  border: .6vw solid
-  border-color: transparent transparent transparent #84989a
-  -webkit-transition: 0.5s
-  transition: 0.5s
-  align-self: center
-
-
-.vert-menu__list:hover::after
-  -webkit-transform: scaleX(-1)
-  -ms-transform: scaleX(-1)
-  transform: scaleX(-1)
+  .vert-menu__drop /*Всплывающие меню*/
+    position: absolute
+    width: 100%
+    left: 100%
+    top: -9999em
+    opacity: 0
+    border-left: 1px solid transparent
+    -webkit-transition: 0.5s opacity
+    transition: 0.5s opacity
 
 
 
 /*//////////////////////*/
 /*//////  END  MENU  ////////*/
 /*//////////////////////*/
-
-.enter-button,
-.user-button
-  justify-content: center
-  align-items: center
-  position: relative
-
-
-.enter-button
-  width: 20%
-  height: 100%
-
-
-.user-button
-  flex-direction: column
-
-
-
-.user-button div:first-child
-  align-items: center
-  border: 1px #e5e5e5 solid
-  font-size: 11px
-  display: flex
-  padding: 10px
-
-
-
-.user-button div:first-child span
-  padding-left: 10px
-  min-width: 120px
-  color: #757575
-
 
 .content
   max-width: 1200px
@@ -1594,17 +954,3 @@ header
   width: 20px
 
 
-.ref-row > *
-  padding-left: 7px
-  min-width: 15px
-  border: none
-  border-right: 1px #ddd solid
-
-
-footer
-  flex: 0 0 auto
-  justify-content: space-between
-  background-image: url(/pic/header-big.png)
-
-footer p
-  padding: 0 15px

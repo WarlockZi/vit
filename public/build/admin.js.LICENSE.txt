@@ -1,5 +1,7 @@
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./a-menu.sass */
 
+/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./cache.sass */
+
 /*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./admin.sass */
 
 /*! !../../node_modules/mini-css-extract-plugin/dist/loader.js!../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./common.sass */
@@ -19,6 +21,8 @@
 /*! ./a-menu.sass */
 
 /*! ./admin.sass */
+
+/*! ./cache.sass */
 
 /*! ./common.sass */
 
@@ -60,6 +64,10 @@
   !*** ./app/jscss/components/a-menu/a-menu.js ***!
   \***********************************************/
 
+/*!***********************************************!*\
+  !*** ./app/jscss/components/cache/cache.sass ***!
+  \***********************************************/
+
 /*!*************************************************!*\
   !*** ./app/jscss/components/a-menu/a-menu.sass ***!
   \*************************************************/
@@ -79,6 +87,10 @@
 /*!*********************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Adminsc/admin.sass ***!
   \*********************************************************************************************************************************************************************************************/
+
+/*!******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/cache/cache.sass ***!
+  \******************************************************************************************************************************************************************************************************/
 
 /*!********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/a-menu/a-menu.sass ***!
