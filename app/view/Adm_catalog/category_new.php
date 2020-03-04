@@ -70,6 +70,19 @@
 							<span contenteditable id='text'
 							      class="column"></span>
 						</div>
+                        <div>
+                            <strong>Принадлежит категории :</strong>
+                            <select id='parent' class="column">
+                                <?
+                                new app\view\widgets\menu\Menu([
+                                    'class' => 'admin-category-menu',
+                                    'tpl' => ROOT . "/app/view/widgets/menu/menu_tpl/admin_category_parent.php",
+                                    'cache' => 60,
+                                    'sql' => "SELECT * FROM category "
+                                ]);
+                                ?>
+                            </select>
+                        </div>
 					<? else: ?>
 						<div class="row">
 							Такой категории пока что не существует!
