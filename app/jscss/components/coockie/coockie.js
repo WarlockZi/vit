@@ -1,33 +1,34 @@
 import './coockie.sass'
 
-window.addEventListener('DOMContentLoaded ', get_cookie());
+document.addEventListener('DOMContentLoaded', function () {
 
-// get_cookie('cn');
+    get_cookie('cn');
 
-function get_cookie(cookie_name) {
-    var results = document.cookie.match('(^|;)?' + cookie_name + '=([^;]*)');
-    var s = document.querySelector('#cookie-notice');
-    if (results) {
-        // document.querySelector('#cookie-notice').style.bottom = '-100%';
-    } else {
-        s.style.bottom = '0';
+    function get_cookie(cookie_name) {
+
+        let results = document.cookie.match('(^|;)?' + cookie_name + '=([^;]*)');
+        let s = document.querySelector('#cookie-notice');
+        if (results) { //нашли куку
+            s.style.bottom = '-1000%';
+        } else {
+            s.style.bottom = '0';
+        }
+        return null;
     }
-    // alert('dd' + s);
-    // document.querySelector('#cookie-notice').style.bottom = '0';
-    setCookie();
-    return null;
 
-}
+    document.querySelector('#cn-accept-cookie').addEventListener('click', setCookie);
 
-function setCookie() {
-    alert('Установим куки');
-    const date = new Date(),
-        minute = 60 * 1000,
-        day = minute * 60 * 24;
-    var days = 1;
-    date.setTime(date.getTime() + (days * day));
-    // document.querySelector('#cookie-notice').style.bottom = '-100%';
-    document.cookie = "cn=1; path=/; SameSite=lax; expires=" + date;
-}
+    function setCookie() {
+        // alert('Установим куки');
+        const date = new Date(),
+            minute = 60 * 1000,
+            day = minute * 60 * 24;
+        let days = 1;
+        date.setTime(date.getTime() + (days * day));
+        document.cookie = "cn=1; path=/; SameSite=lax; expires=" + date;
+    }
+});
+
+
 
 

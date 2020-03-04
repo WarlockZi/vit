@@ -12,7 +12,7 @@
 		]);
 //		$new = $_GET['id'] == 'new';
 		$addCategoryButton = "<a href='/adminsc/catalog/category/new`' 
-					   class='btn-add-category'>Добавить категорию</a>";
+					   class='a-btn-action'>Добавить категорию</a>";
 		?>
 	</div>
 </div>
@@ -198,7 +198,7 @@
 
 				<div class="separator btns">
 					<? if ($category): ?>
-						<div class="btn-add-category">Сохранить</div>
+						<div class="a-btn-action">Сохранить</div>
 					<? endif; ?>
 				</div>
 

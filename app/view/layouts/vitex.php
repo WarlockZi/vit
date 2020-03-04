@@ -158,7 +158,7 @@
     </style>
 </head>
 
-<body class="column">
+<body class="column" onload="get_cookie('cn');">
 
 <div class="top-menu">
     <input name="toggle-button" type="checkbox" id="toggle-button">
@@ -346,13 +346,13 @@
 </footer>
 
 
-<div id="cookie-notice" role="banner">Продолжая использовать сайт, вы даете согласие на обработку файлов cookie,
+<div id="cookie-notice" role="cookie" >Продолжая использовать сайт, вы даете согласие на обработку файлов cookie,
     пользовательских данных (сведения о местоположении; тип и версия ОС; тип и версия Браузера; тип устройства и
     разрешение его экрана; источник откуда пришел на сайт пользователь; с какого сайта или по какой рекламе;
     язык ОС и Браузера; какие страницы открывает и на какие кнопки нажимает пользователь; ip-адрес) в целях
     функционирования сайта, проведения ретаргетинга и проведения статистических исследований и обзоров. Если вы
     не хотите, чтобы ваши данные обрабатывались, покиньте сайт.
-    <span id="cn-accept-cookie" onclick="return setCookie(this);">Соглашаюсь</span>
+    <span id="cn-accept-cookie">Соглашаюсь</span>
 </div>
 
 <!--<script src="/public/js/jq.js"></script>-->
@@ -360,7 +360,7 @@
 
 
 </div>
-<? $this::getJS(); ?>
+
 
 
 <!--</div>-->
@@ -387,6 +387,7 @@
 <!--	<div><img src="https://mc.yandex.ru/watch/7715905" style="position:absolute; left:-9999px;" alt=""/></div>-->
 <!--</noscript>-->
 <!-- /Yandex.Metrika counter -->
+<? $this::getJS(); ?>
 </body>
 <!--<img src="/pic/header-big.png" alt="" style="height: 1px; width: 1px">-->
 </html>

@@ -173,12 +173,20 @@ header
 
 .tabs
 
-  &>.btn-add-category
-    position: absolute
-    right: 10px
-    top: 4px
+  &>.a-btn-action
+    margin-left: 60px
 
-  .btn-add-category
+  .separator
+    background-color: #ebf4f4
+    margin: 10px 0
+    display: flex
+    justify-content: space-around
+    padding: 3px
+    color: #646464
+    position: sticky
+    bottom: 0
+
+  .a-btn-action
     background-color: #71ffff
     padding: 5px 10px
     cursor: pointer
@@ -313,6 +321,7 @@ header
     border: 1px solid #ddd
     background: #f1f1f1
     border-radius: 3px 3px 0 0
+    color: #555
 
     @media screen and (max-width: 400px)
       padding: 15px
@@ -815,19 +824,6 @@ span[contenteditable]:hover,
   height: 27px
   margin: 24px
   justify-content: center
-
-
-.separator
-  background-color: #ebf4f4
-  margin: 10px 0
-  display: flex
-  justify-content: space-around
-  padding: 3px
-  color: #646464
-
-  &.btns
-    position: sticky
-    bottom: 0
 
 
 .wrap .list:hover

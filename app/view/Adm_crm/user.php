@@ -126,7 +126,7 @@
                 </section>
 
                         <div class="separator btns">
-                            <div class="btn-add-category">Сохранить</div>
+                            <div class="a-btn-action">Сохранить</div>
                         </div>
 
 <!--                <div class="separator btns">-->
