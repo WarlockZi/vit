@@ -1,14 +1,18 @@
-import '../components/swiper/swiper.sass';
-import '../components/header/header.sass';
-import '../components/footer/footer.sass';
+import '../components/swiper/swiper.sass'
+import '../components/header/header.sass'
+import '../components/footer/footer.sass'
 import '../components/alert/alert'
 import '../components/coockie/coockie'
-// import '../User/user_login';
-import '../common';
-import '../components/autocomplete/autocomplete';
+import '../components/autocomplete/autocomplete'
+import '../components/breadcrumbs/breadcrumbs.sass'
+
+import '../Catalog/catalog_product.sass'
+import '../Catalog/catalog_product.sass'
+import '../Catalog/prod.sass'
+
+import '../common'
 
 import { Swiper, Mousewheel, Zoom, Lazy, Autoplay} from 'swiper/js/swiper.esm.js';
-
 Swiper.use([Mousewheel, Zoom, Lazy, Autoplay ]);
 
 window.onload = function () {

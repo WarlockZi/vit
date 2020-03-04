@@ -12,11 +12,13 @@
 
 /*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
 
-/*! ../admin */
-
 /*! ../adminLayer */
 
 /*! ../common */
+
+/*! ../components/a-menu/a-menu */
+
+/*! ../components/cache/clear-cache */
 
 /*! ./a-menu.sass */
 
@@ -26,19 +28,11 @@
 
 /*! ./common.sass */
 
-/*! ./components/a-menu/a-menu */
-
-/*! ./components/cache/clear-cache */
-
 /*! exports provided: post, get, uniq */
 
 /*! no exports provided */
 
 /*! no static exports found */
-
-/*!****************************!*\
-  !*** ./app/jscss/admin.js ***!
-  \****************************/
 
 /*!*****************************!*\
   !*** ./app/jscss/common.js ***!

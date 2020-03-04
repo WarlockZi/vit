@@ -158,7 +158,7 @@
     </style>
 </head>
 
-<body class="column" onload="get_cookie('cn');">
+<body class="column" >
 
 <div class="top-menu">
     <input name="toggle-button" type="checkbox" id="toggle-button">

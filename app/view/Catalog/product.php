@@ -11,8 +11,8 @@
           </div>
 
 
-          <div class="pic h400 w400">
-              <? if (!DEBU): ?>
+          <div class="h400 w400">
+              <? if (MODE == 'PROD'): ?>
                <div class="vert-thumbs">
                  <div class="thumb-small">
                    Вид1
@@ -29,10 +29,10 @@
                </div>
             <? endif; ?>
 
-            <img title="<?= $product['name']; ?>" src="/pic<?= $product['dpic']; ?>" alt="<?= $product['name']; ?>">
+            <img class="pic" title="<?= $product['name']; ?>" src="/pic<?= $product['dpic']; ?>" alt="<?= $product['name']; ?>">
 
           <div class="horiz-thumbs">
-              <? if (!DEBU): ?>
+              <? if (MODE == 'PROD'): ?>
                <div class="thumb">
                  Расцв етка 1
                </div>

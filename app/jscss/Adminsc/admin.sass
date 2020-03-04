@@ -21,12 +21,14 @@ header
   align-items: center
 
   .header-tabs
+    position: absolute
+    bottom: 0
+    left: 100px
+    display: flex
+
     div
       height: 10px
       padding: 10px
-      position: absolute
-      top: 20px
-      left: 120px
       background-color: #fff
       border-radius: 5px 5px 0 0
       cursor: pointer
@@ -35,6 +37,7 @@ header
       left: 54px
       background-color: #000
       color: #ccc
+      margin-right: 10px
 
     div:last-child
       border-bottom: 0
@@ -81,7 +84,7 @@ header
 
 
 
-
+f
 
 .edit:before
   content: '\270e изменить'
@@ -99,33 +102,6 @@ header
   width: 200px
 
 
-
-/*//////////////////////////////*/
-/*/////  ADMIN FLEX TABLE  //////*/
-/*//////////////////////////////*/
-
-.admin-flex-table
-  padding: 10px
-
-  .row
-    padding: 5px
-
-    div,
-    span,
-    select,
-    input
-      flex: 3
-      justify-content: flex-start
-      min-height: 18px
-
-    strong
-      padding-right: 5px
-      display: flex
-      flex: 1
-      justify-content: flex-end
-      font-size: 14px
-      align-items: center
-      word-break: break-word
 
 
 /*//////////////////////////////*/
@@ -192,6 +168,29 @@ header
     cursor: pointer
     color: #444444
 
+  .admin-flex-table
+    padding: 10px
+
+    .row
+      padding: 5px
+
+      div,
+      span,
+      select,
+      input
+        flex: 3
+        justify-content: flex-start
+        min-height: 18px
+
+      strong
+        padding-right: 5px
+        display: flex
+        flex: 1
+        justify-content: flex-end
+        font-size: 14px
+        align-items: center
+        word-break: break-word
+
 
 
 .categories
@@ -224,6 +223,8 @@ header
   img
     max-height: 500px
     max-width: 400px
+
+
 
 
 
@@ -577,7 +578,6 @@ textarea:focus,
 a:hover,
 .list,
 .a label,
-.submit,
 .button,
 .buttons,
 .del-prop,
@@ -647,6 +647,7 @@ input
   max-width: 180px
   background-image: url(/pic/submenu-bg.png)
   border-right: 1px solid #ddd
+  margin-top: 5px
 
 
 .adm-content

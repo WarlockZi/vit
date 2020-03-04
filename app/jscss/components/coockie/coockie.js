@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
         let days = 1;
         date.setTime(date.getTime() + (days * day));
         document.cookie = "cn=1; path=/; SameSite=lax; expires=" + date;
+        let s = document.querySelector('#cookie-notice');
+        s.style.bottom = '-1000%';
     }
 });
 
