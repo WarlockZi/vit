@@ -3,7 +3,6 @@ h1
   font-family: Intro,sans-serif
 
 .product
-
   display: flex
   border: 1px solid #ddd
   width: auto
@@ -11,13 +10,17 @@ h1
   position: relative
   overflow: hidden
 
-.dtxt
 
-  margin: 0 10px
-  text-align: left
+  
+.card
+  display: flex
+  border: 1px solid #ddd
+  width: auto
+  padding: 0
+  position: relative
+  overflow: hidden
 
 .card-left
-
   flex: 2
   display: flex
   flex-direction: column
@@ -26,21 +29,19 @@ h1
   flex-basis: 381px
   min-width: 400px
 
-.card-left .image
-  display: flex
+  .image
+    display: flex
     justify-content: center
-  position: relative
-  width: 400px
-  height: 480px
+    position: relative
+    width: 400px
+    height: 480px
 
-.card-left img
-
-  max-width: 100%
-  max-height: 100%
+  img
+    max-width: 100%
+    max-height: 100%
 
 
 .card-right
-
   flex: 1
   flex-basis: 240px
   display: flex
@@ -81,6 +82,12 @@ h1
   color: #555
   text-align: center
   padding: 1.14rem 1.14rem
+
+.card H1
+  font: normal 19px Intro,Verdana,Arial,sans
+  color: #555
+  text-align: center
+  padding: 1.14rem 1.14rem 
 
 
 .card .image
@@ -175,14 +182,15 @@ h1
 
 .prod-info-wrap,
 .cust-questions-wrap
-
   display: flex
   flex-flow: column
   align-items: flex-start
 
+  .dtxt
+    margin: 0 10px
+    text-align: left
+
 .cust-questions-wrap input:focus
-
-
   outline: none
   border-color: #85c0ff
   box-shadow: 0 0 6px #85c0ff
@@ -190,7 +198,6 @@ h1
 
 
 .share .f
-
   background-color: #3b5998
   border-radius: 5px
   transition: none
@@ -221,7 +228,6 @@ h1
   margin: 0
   font: normal 16px Verdana,Arial,sans
   padding: 0 0 15px
-  margin: 0
   color: #555
 
 .info-tag
