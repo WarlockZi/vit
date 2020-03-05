@@ -5,7 +5,6 @@ import '../common'
 import '../components/cache/clear-cache'
 import '../components/a-menu/a-menu'
 
-
 // document.addEventListener('DOMContentLoaded',function () {});
 // ///////////////////////////////
 // ////// PRODUCTS /////////////
