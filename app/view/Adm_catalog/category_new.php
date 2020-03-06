@@ -2,7 +2,9 @@
 	<div class="title">Каталог</div>
 	<div class="admin-actions">
 		<?
+
 		use \app\core\Base\View;
+		use app\view\widgets\menu\Menu;
 
 		new app\view\widgets\menu\Menu([
 			'class' => 'admin-category-menu',
@@ -10,7 +12,7 @@
 			'cache' => 60,
 			'sql' => "SELECT * FROM category "
 		]);
-//		$new = $_GET['id'] == 'new';
+		//		$new = $_GET['id'] == 'new';
 		$addCategoryButton = "<a href='/adminsc/catalog/category/new`' 
 					   class='a-btn-action'>Добавить категорию</a>";
 		?>
@@ -70,19 +72,20 @@
 							<span contenteditable id='text'
 							      class="column"></span>
 						</div>
-                        <div>
-                            <strong>Принадлежит категории :</strong>
-                            <select id='parent' class="column">
-                                <?
-                                new app\view\widgets\menu\Menu([
-                                    'class' => 'admin-category-menu',
-                                    'tpl' => ROOT . "/app/view/widgets/menu/menu_tpl/admin_category_parent.php",
-                                    'cache' => 60,
-                                    'sql' => "SELECT * FROM category "
-                                ]);
-                                ?>
-                            </select>
-                        </div>
+						<div class="row">
+							<strong>Принадлежит категории :</strong>
+							<select id='parent' class="column">
+								<?
+								new app\view\widgets\menu\Menu([
+									'class' => 'parent',
+									'tpl' => ROOT . "/app/view/widgets/menu/menu_tpl/a-new-category-parent.php",
+									'cache' => 60,
+									'sql' => "SELECT * FROM category "
+								]);
+								?>
+								?>
+							</select>
+						</div>
 					<? else: ?>
 						<div class="row">
 							Такой категории пока что не существует!

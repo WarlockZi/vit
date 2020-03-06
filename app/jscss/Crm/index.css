@@ -376,10 +376,7 @@ tbody tr:first-child
 	margin: 30px auto;
 
 }
-.wrap-admin-content{
-	display: flex;
 
-}
 .properties
 {
 	padding: 10px;
@@ -726,10 +723,7 @@ footer p{
     padding: 50px;
 }
 
-.content-90
-{
-	margin: 20px 1%;
-}
+
 .confirm
 {
 	text-align: center;

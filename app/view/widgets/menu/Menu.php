@@ -44,7 +44,7 @@ class Menu extends Model {
       foreach ($tree as $id => $cat) {
          $str .= $this->catToTemplate($cat, $tab, $id);
       }
-      return$str;
+      return $str;
    }
 
    public function catToTemplate($cat, $tab = '', $id = '') {

@@ -1,10 +1,6 @@
 @import '../components/misc/grid_table'
 
 
-*:focus
-  outline: none
-
-
 ///*************************************
 //*******      ADMIN    ******
 //**************************************/
@@ -65,10 +61,11 @@ header
       display: block
       padding: 0 8px
 
+
 .breadcrumbs-adm
   margin: 25px 0
 
-  &> div
+  & > div
     text-transform: uppercase
 
   div,
@@ -80,12 +77,6 @@ header
     margin-left: 5px
 
 
-
-
-
-
-f
-
 .edit:before
   content: '\270e изменить'
   line-height: 54px
@@ -96,13 +87,6 @@ f
   height: 100%
   color: #fff
 
-.h200
-  height: 200px
-.w200
-  width: 200px
-
-
-
 
 /*//////////////////////////////*/
 /*/////  PIC BOX  //////*/
@@ -112,6 +96,7 @@ f
   width: 100%
   height: 100%
   object-fit: contain
+
 .pic .column
   padding: 10px
 
@@ -130,7 +115,6 @@ f
   max-width: 150px
 
 
-
 /*//////////////////////////////*/
 /*////////   DUMP  /////////*/
 /*//////////////////////////////*/
@@ -145,11 +129,15 @@ f
 /*//////////////////////////////*/
 /*////////   Catalog  /////////*/
 /*//////////////////////////////*/
-
+.a-btn-action
+   background-color: #71ffff
+   padding: 5px 10px
+   cursor: pointer
+   color: #444444
 
 .tabs
 
-  &>.a-btn-action
+  & > .a-btn-action
     margin-left: 60px
 
   .separator
@@ -192,7 +180,6 @@ f
         word-break: break-word
 
 
-
 .categories
   .row
     justify-content: space-around
@@ -206,15 +193,6 @@ f
 /*//  CATALOG PRODUCT   //////*/
 /*////////////////////////////*/
 
-.desc:hover + .no
-  display: flex
-
-.no
-  display: none
-  position: absolute
-  top: 0
-  left: 100%
-
 .admin-product-edit
   display: flex
   flex-flow: column
@@ -223,10 +201,6 @@ f
   img
     max-height: 500px
     max-width: 400px
-
-
-
-
 
 
 /*///////////////////////////////////*/
@@ -243,41 +217,16 @@ f
   flex: 1
 
 
-
 /*///////////////////////////////////*/
 /*//       CATALOG PRODUCT        //////*/
 /*///////////////////////////////////*/
-.val-block
-  flex: 1
-  display: flex
 
 
-.val-item
-  display: flex
+.value
+  padding-left: 10px
 
-  .value
-    padding-left: 10px
-
-    &:focus
-      border-bottom: 1px #ddd solid
-.val
-  padding: 10px
-  flex: 1
-
-  &> .name > input
-    max-width: 200px
-
-
-.prop-name
-  display: flex
-  border-bottom: 1px solid #d8d8d8
-
-
-.prop-val-list
-  padding-left: 25px
-  flex: 1
-
-
+  &:focus
+    border-bottom: 1px #ddd solid
 
 
 
@@ -290,12 +239,12 @@ f
   margin: 0 auto 0 0
   position: relative
 
-  &> section
+  & > section
     display: none
     background: #fff
     border: 1px solid #ddd
 
-    &> .flex
+    & > .flex
       margin: 0 0 5px
       line-height: 1.5
       color: #383838
@@ -303,17 +252,17 @@ f
       animation-fill-mode: both
       animation-name: fadeIn
 
-  &> input
+  & > input
     display: none
     position: absolute
 
-  &> input:checked + label
+  & > input:checked + label
     color: #555
     border-top: 1px solid #ffa500
     border-bottom: 1px solid #fff
     background: #fff
 
-  &> label
+  & > label
     display: inline-block
     margin: 0 0 -1px
     padding: 9px 3px
@@ -330,36 +279,28 @@ f
     @media screen and (max-width: 680px)
       font-size: 7px
 
-  &> label:before
+  & > label:before
     font-weight: normal
     margin-right: 10px
     @media screen and (max-width: 680px)
       margin: 0
       font-size: 18px
 
-  &> label:hover
+  & > label:hover
     color: #888
     cursor: pointer
 
-/* Активация секций с помощью псевдокласса :checked */
-#tab1:checked ~ #content-tab1,
-#tab2:checked ~ #content-tab2,
-#tab3:checked ~ #content-tab3,
-#tab4:checked ~ #content-tab4
-  display: flex
-  flex-direction: column
-  padding: 15px
-  min-height: 100vh
+  #tab1:checked ~ #content-tab1,
+  #tab2:checked ~ #content-tab2,
+  #tab3:checked ~ #content-tab3,
+  #tab4:checked ~ #content-tab4
+    display: flex
+    flex-direction: column
+    padding: 15px
+    min-height: 100vh
 
-#content-tab1 strong
-  color: #4d4d4d
-
-.title
-  font-weight: 600
-  font-size: 25px
-  color: #343436
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
-  padding: 10px
+  #content-tab1 strong
+    color: #4d4d4d
 
 
 .props
@@ -367,7 +308,9 @@ f
   flex-flow: column
   margin: 20px 20px
 
-
+  .val
+    padding: 10px
+    flex: 1
 
 
 td a
@@ -375,41 +318,13 @@ td a
   padding: 3px 8px
 
 
-.work-area
-  display: flex
-
-
-.work-middle
-  padding: 5px 35px
-  display: flex
-  flex-flow: column
-
-  button
-    margin: 10px 0
-
-
 
 .right-check
   display: flex
 
 
-.btnadd-user
-  width: 205px
-  height: 49px
 
 
-.has-children
-
-  label
-    display: flex
-
-  &> label a:before
-    content: ''
-    border: 4px solid
-    border-color: transparent transparent transparent #ccc
-    position: absolute
-    right: -16px
-    top: 3px
 
 
 .menu
@@ -429,7 +344,7 @@ td a
     color: #fff
     text-transform: uppercase
 
-  &> li
+  & > li
     font-size: 13px
 
   li ul li:hover,
@@ -451,15 +366,15 @@ td a
     li
       padding: 0 5px
 
-  &> li:hover,
-  &> label a:hover,
+  & > li:hover,
+  & > label a:hover,
   li:hover > li label
     background: #5e5e5e
 
-  &> li:not(.has-children)
+  & > li:not(.has-children)
     padding: 9px 0 9px 0px
 
-  &> li > label
+  & > li > label
     padding: 9px 0 9px 9px
 
   input[type=checkbox]:checked + label + ul,
@@ -471,15 +386,13 @@ td a
     opacity: 0
 
 
-
-
-
-
-
 /*//////////////////////////////*/
 /*////////   TABLE USERS  /////////*/
 /*//////////////////////////////*/
 
+.btnadd-user
+  width: 205px
+  height: 49px
 
 .buttons
   display: inline-block
@@ -516,20 +429,6 @@ td a
 .phone
   width: 105px
 
-
-.navi
-  display: flex
-  flex-flow: wrap
-
-  a
-    min-width: 28px
-    display: block
-    padding: 6px
-    background-color: #f5f5f5
-    text-align: center
-
-  a:hover
-    background-color: #e8e8e8
 
 .filter
   padding: 30px
@@ -609,6 +508,8 @@ input
   border-right: 1px solid #ccc
 
 
+
+
 .adm-wrap
   height: 100%
   flex-flow: nowrap
@@ -642,19 +543,78 @@ input
     background: #cedbdf
 
 
-
 .adm-submenu
   max-width: 180px
   background-image: url(/pic/submenu-bg.png)
   border-right: 1px solid #ddd
   margin-top: 5px
 
+  .navi
+    display: flex
+    flex-flow: wrap
+
+    a
+      min-width: 28px
+      display: block
+      padding: 6px
+      background-color: #f5f5f5
+      text-align: center
+
+  .title
+    font-weight: 600
+    font-size: 25px
+    color: #343436
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+    padding: 10px
+
+  .admin-actions
+
+    label ul
+      display: none
+      transition: all 1s
+
+    label input
+      display: none
+
+    label input:checked + ul
+      display: flex
+      height: 100%
+      transition: all 1s
+
+    .admin-category-menu
+      flex: 1
+      z-index: 1
+      max-width: 350px
+
+      a
+        display: flex
+        align-items: center
+        flex: 1
+        padding: 7px 14px 7px 7px
+        transition: 0.5s all
+        font-size: 0.65rem
+        font-weight: bold
+        text-transform: uppercase
+        min-width: 40px
+        max-width: 190px
+        background-color: rgba(229, 237, 239, 0.73)
+
+      li
+        display: flex
+        position: relative
+        border-bottom: 1px solid #b7b7b7
+        -webkit-transition: 0.5s all
+        transition: 0.5s all
+        justify-content: flex-end
+
+        .test-link a
+          text-transform: uppercase
+
 
 .adm-content
   flex: 1
   background-color: #ebf4f4
   margin: 5px
-
 
 
 .add-prop
@@ -669,11 +629,6 @@ input
 .add-prop:hover
   background: #0070ff
   color: #fff
-
-
-
-
-
 
 
 .del-prop
@@ -720,7 +675,6 @@ input
   transition: .1s
 
 
-
 .nav
   display: none
   flex-flow: column
@@ -740,9 +694,6 @@ input
     padding: 5px 10px
 
 
-.column.categories
-  align-items: flex-start
-
   a.row span
     position: relative
     padding-left: 20px
@@ -761,35 +712,9 @@ input
     margin: 6px
 
 
-.admin-actions
-  label ul
-    display: none
-    transition: all 1s
-
-  label input
-    display: none
-
-  label input:checked + ul
-    display: flex
-    height: 100%
-    transition: all 1s
 
 
 
-strong
-  font-weight: 600
-
-.user.content-90
-  height: 100%
-  padding-top: 20px
-
-.admin-content *
-  display: flex
-  padding: 3px
-  align-items: flex-start
-
-.admin-contentdiv *
-  flex: 2
 
 
 input[contenteditable],
@@ -807,33 +732,11 @@ span[contenteditable]:hover,
   box-shadow: 0 0 2px 2px #f1f1f1
   min-height: 18px
 
-
-.admin-contentstrong
-  flex: 1
-  justify-content: flex-end
-  margin-right: 25px
-  align-items: flex-end
-
-
-.admin-contentdiv input
-  justify-content: flex-start
-
-
-.admin-content.btnadd-user,
-.admin-content.btnupdate-user
-  width: 180px
-  height: 27px
-  margin: 24px
-  justify-content: center
-
+.category-properties
+  margin: 5px 0 5px 50px
 
 .wrap .list:hover
   background: #f6f6f6
-
-
-
-.category-properties
-  margin: 5px 0 5px 50px
 
 
 .properties
@@ -841,13 +744,13 @@ span[contenteditable]:hover,
 
   &.column > select
     margin: 5px 0 5px 50px
+
   select
     margin: 5px 0
 
 .cat-prop
   padding: 10px 0
   font-weight: 600
-
 
 
 .add-property
@@ -857,68 +760,30 @@ span[contenteditable]:hover,
     padding: 10px 10px 10px 0
 
 
-.lists
-  height: 100%
-  padding-top: 20px
-  background-color: #fff
-  display: flex
-  flex-flow: column
-
-
 /*//////////////////////*/
 /*//////  A CATALOG-MENU  ////////*/
 /*//////////////////////*/
+.vert-menu__list
 
-.admin-category-menu
-  flex: 1
-  z-index: 1
-  max-width: 350px
+  &:after
+    content: " "
+    position: absolute
+    border: .6vw solid
+    border-color: transparent transparent transparent #84989a
+    transition: 0.5s
+    align-self: center
 
-  a
-    display: flex
-    align-items: center
-    flex: 1
-    padding: 7px 14px 7px 7px
-    transition: 0.5s all
-    font-size: 0.65rem
-    font-weight: bold
-    text-transform: uppercase
-    min-width: 40px
-    max-width: 190px
-    background-color: rgba(229, 237, 239, 0.73)
+    @media screen and (min-width: 1200px)
+      border: .4vw solid
+      border-color: transparent transparent transparent #eee
 
-  li
-    display: flex
-    position: relative
-    border-bottom: 1px solid #b7b7b7
-    -webkit-transition: 0.5s all
-    transition: 0.5s all
-    justify-content: flex-end
+  &:hover:after
+    transform: scaleX(-1)
 
-    .test-link a
-      text-transform: uppercase
-
-
-  .vert-menu__list /*Иконки для всплывающих менюшек*/
-    &:after
-      content: " "
-      position: absolute
-      border: .6vw solid
-      border-color: transparent transparent transparent #84989a
-      transition: 0.5s
-      align-self: center
-
-      @media screen and (min-width: 1200px)
-        border: .4vw solid
-        border-color: transparent transparent transparent #eee
-
-    &:hover:after
-      transform: scaleX(-1)
-
-    &:hover > .vert-menu__drop
-      opacity: 1
-      top: 0
-      z-index: 1
+  &:hover > .vert-menu__drop
+    opacity: 1
+    top: 0
+    z-index: 1
 
   .vert-menu__drop /*Всплывающие меню*/
     position: absolute
@@ -927,28 +792,17 @@ span[contenteditable]:hover,
     top: -9999em
     opacity: 0
     border-left: 1px solid transparent
-    -webkit-transition: 0.5s opacity
     transition: 0.5s opacity
-
 
 
 /*//////////////////////*/
 /*//////  END  MENU  ////////*/
 /*//////////////////////*/
 
-.content
-  max-width: 1200px
-  margin: 50px auto
-  padding: 50px
 
-
-.content-90
-  /*margin: 20px 1%*/
-  background-color: #fff
 
 
 .confirm
   text-align: center
   width: 20px
-
 

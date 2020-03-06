@@ -17,7 +17,7 @@
     <div>Users</div>
   </div>
 
-  <div class="content-90">
+
     <div class="grid">
 
       <span><strong>fio</strong></span>
@@ -31,8 +31,6 @@
          <span><?= $use['email']; ?></span>
 
       <? endforeach; ?>
-
-    </div>
 
 
 <!--    <button class = "btnadd-user">Создать нового</button>-->

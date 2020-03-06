@@ -8,10 +8,14 @@
 	<link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
 	<? // $this::getCSS() ?>
 	<link rel="stylesheet" href="/public/build/admin.css">
+	<link rel="preload" href="/pic/admin-mainmenu-items-bg.png" as="image"/>
+	<link rel="preload" href="/pic/admin-mainmenu-items.png" as="image"/>
+	<link rel="preload" href="/pic/header-big.png" as="image"/>
+	<link rel="preload" href="/pic/submenu-bg.png" as="image"/>
 </head>
 
 
-<body class = "column">
+<body class="column">
 <header class='row'>
 
 	<div class="header-tabs">
@@ -25,12 +29,12 @@
 
 	<div class="user-menu">
 
-                    <span class="FIO"><?
-							  $rightId = $user['rights'];
+                    <span class="FIO">
+	                    <? $rightId = $user['rights'];
 							  if (isset($user)) {
 								  echo $user['surName'] . ' ' . $user['name'] . ' ' . $user['middleName'];
-							  }
-							  ?></span>
+							  } ?>
+                    </span>
 
 		<div class="nav">
 			<a href="/user/edit">Редактировать свой профиль</a>
