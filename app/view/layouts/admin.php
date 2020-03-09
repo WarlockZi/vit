@@ -6,14 +6,17 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
-	<? // $this::getCSS() ?>
-	<link rel="stylesheet" href="/public/build/admin.css">
+    <link rel="preload" href='<? $this::getCSS(); ?>' as="style" onload="this.rel='stylesheet'" media="all">
 	<link rel="preload" href="/pic/admin-mainmenu-items-bg.png" as="image"/>
 	<link rel="preload" href="/pic/admin-mainmenu-items.png" as="image"/>
 	<link rel="preload" href="/pic/header-big.png" as="image"/>
 	<link rel="preload" href="/pic/submenu-bg.png" as="image"/>
-</head>
+    <style>
+        .admin-category-menu {max-width: 150px;}
+        a {color: #2f2f2f;}
 
+    </style>
+</head>
 
 <body class="column">
 <header class='row'>
@@ -36,7 +39,7 @@
 							  } ?>
                     </span>
 
-		<div class="nav">
+		<div class="nav_user">
 			<a href="/user/edit">Редактировать свой профиль</a>
 			<?
 			if (in_array('3', $rightId)):
@@ -103,8 +106,7 @@
 
 <footer></footer>
 
-<script src="/public/build/admin.js<? //= time(); ?>"></script>
-<? // $this::getJS(['route'=>['controller'=>$this->route['controller'],'view'=>$this->view]]) ?>
+<script src="<? $this::getJS(); ?>"></script>
 
 
 </body>

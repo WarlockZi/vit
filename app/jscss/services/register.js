@@ -1,17 +1,16 @@
 window.onload = function () {
-
 ///////////////////////////    REGISTER     /////////////////////
-   $("[name = 'reg']").on("click", function (e) {
+   document.querySelector("[name = 'reg']").addEventListener("click", function (e) {
       e.preventDefault();
-      var email = $('input[type = email]').val(),
-      password = $("input[type= password]").val(),
-      confPass = $("[name='confPass']").val(),
-      surName = $("[name='surName']").val(),
-      name = $("[name='name']").val(),
-      secName = $("[name='secName']").val(),
-      token = document.querySelector("[name = 'token']").value;
+      var email = document.querySelector('input[type = email]').value,
+          password = document.querySelector("input[type= password]").value,
+          confPass = document.querySelector("[name='confPass']").value,
+          surName = document.querySelector("[name='surName']").value,
+          name = document.querySelector("[name='name']").value,
+          secName = document.querySelector("[name='secName']").value,
+          token = document.querySelector("[name = 'token']").value;
       formData = new FormData(),
-      xhr = new XMLHttpRequest();
+          xhr = new XMLHttpRequest();
       formData.append('email', email);
       formData.append('password', password);
       formData.append('confPass', confPass);
@@ -30,8 +29,8 @@ window.onload = function () {
 
                $('body').after(xhr.responseText);
                var overlay = document.querySelector(".overlay"),
-               box = document.querySelector(".messageBox"),
-               clos = document.querySelector(".messageClose")
+                   box = document.querySelector(".messageBox"),
+                   clos = document.querySelector(".messageClose")
                ;
                overlay.addEventListener("click", function () {
                   overlay.autocomplete.display = 'none';
@@ -45,9 +44,8 @@ window.onload = function () {
          }
          else {
             if (xhr.status != 200) {
-//alert( xhr.status + ': Ошибка' + xhr.statusText ); // пример вывода: 404: Not Found
-            };
-         };
+            }
+         }
       };
    });
 };

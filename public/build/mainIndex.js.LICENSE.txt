@@ -42,7 +42,7 @@
 
 /*! ../components/header/header.sass */
 
-/*! ../components/swiper/swiper.sass */
+/*! ../components/swiper/swiper */
 
 /*! ./alert.sass */
 
@@ -51,6 +51,8 @@
 /*! ./common.sass */
 
 /*! ./coockie.sass */
+
+/*! ./swiper.sass */
 
 /*! dom7/dist/dom7.modular */
 
@@ -98,6 +100,10 @@
 
 /*!***********************************************!*\
   !*** ./app/jscss/components/alert/alert.sass ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./app/jscss/components/swiper/swiper.js ***!
   \***********************************************/
 
 /*!************************************************!*\

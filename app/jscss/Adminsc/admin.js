@@ -3,7 +3,7 @@ import '../adminLayer'
 import '../common'
 
 import '../components/cache/clear-cache'
-import '../components/a-menu/a-menu'
+import './a_menu/a_menu'
 
 // document.addEventListener('DOMContentLoaded',function () {});
 // ///////////////////////////////

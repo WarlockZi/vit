@@ -13,7 +13,8 @@ class CatalogController extends AppController {
 //      $this->layout = 'vitex';
 //      $list = App::$app->category->getInitCategories();
 //      $this->set(compact('list'));
-      View::setCss(['css' => '/public/css/vitex.css', 'addtime']);
+//      View::setCss(['css' => '/public/css/vitex.css', 'addtime']);
+      View::setCssN('/public/build/mainIndex.css');
 
    }
 
@@ -42,7 +43,7 @@ class CatalogController extends AppController {
 //      'user', , 'categories', 'tov'
       $this->set(compact('canonical', 'breadcrumbs', 'product'));
 
-      View::setCss(['css' => $this->route['controller'], 'view' => $this->view, 'addtime']);
+//      View::setCss(['css' => $this->route['controller'], 'view' => $this->view, 'addtime']);
    }
 
    public function actionCategory($category) {

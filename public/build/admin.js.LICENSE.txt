@@ -1,4 +1,4 @@
-/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./a-menu.sass */
+/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./a_menu.sass */
 
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./cache.sass */
 
@@ -16,11 +16,11 @@
 
 /*! ../common */
 
-/*! ../components/a-menu/a-menu */
-
 /*! ../components/cache/clear-cache */
 
-/*! ./a-menu.sass */
+/*! ./a_menu.sass */
+
+/*! ./a_menu/a_menu */
 
 /*! ./admin.sass */
 
@@ -54,17 +54,17 @@
   !*** ./app/jscss/Adminsc/admin.sass ***!
   \**************************************/
 
-/*!***********************************************!*\
-  !*** ./app/jscss/components/a-menu/a-menu.js ***!
-  \***********************************************/
+/*!********************************************!*\
+  !*** ./app/jscss/Adminsc/a_menu/a_menu.js ***!
+  \********************************************/
+
+/*!**********************************************!*\
+  !*** ./app/jscss/Adminsc/a_menu/a_menu.sass ***!
+  \**********************************************/
 
 /*!***********************************************!*\
   !*** ./app/jscss/components/cache/cache.sass ***!
   \***********************************************/
-
-/*!*************************************************!*\
-  !*** ./app/jscss/components/a-menu/a-menu.sass ***!
-  \*************************************************/
 
 /*!***************************************************!*\
   !*** ./app/jscss/components/cache/clear-cache.js ***!
@@ -82,10 +82,10 @@
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Adminsc/admin.sass ***!
   \*********************************************************************************************************************************************************************************************/
 
+/*!*****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Adminsc/a_menu/a_menu.sass ***!
+  \*****************************************************************************************************************************************************************************************************/
+
 /*!******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/cache/cache.sass ***!
   \******************************************************************************************************************************************************************************************************/
-
-/*!********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/a-menu/a-menu.sass ***!
-  \********************************************************************************************************************************************************************************************************/

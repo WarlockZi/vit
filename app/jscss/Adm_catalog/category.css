@@ -246,26 +246,6 @@ textarea{
 }
 
 
-.bottom{
-    display: flex;
-    align-items: center;
-}
-.bottom li{
-    flex: 1;
-    text-align:  center;
-    display:flex;
-}
-
-.bottom li a {
-    color: #949494;
-    flex-basis: 100%;
-    padding: 10px 3px;
-}
-.bottom li a:hover {
-    color: #fff;
-    background-color: #ccc;
-}
-
 
 
 /*/////////////// animate.css ////////////////*/

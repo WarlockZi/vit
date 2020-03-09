@@ -15,11 +15,9 @@ const PATHS = {
 module.exports = {
     devtool: "source-map",
     entry: {
-        cabinet: PATHS.source + '/User/user_cabinet.js',
-        login: PATHS.source + '/User/user_login.js',
+        services: PATHS.source + '/services/services.js',
         admin: PATHS.source + '/Adminsc/admin.js',
         mainIndex: PATHS.source + '/Main/main_index.js',
-        adminCategory: PATHS.source + '/Adm_catalog/adm_category.js',
     },
     output: {
         chunkFilename: '[name].bundle.js',

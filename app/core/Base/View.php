@@ -59,6 +59,14 @@ class View {
       return compact('deferAsync', 'addtime');
    }
 
+   public static function setJsN(string $path) {
+       self::$jsCss['js'] = $path;
+   }
+
+    public static function setCssN(string $path) {
+        self::$jsCss['css'] = $path;
+    }
+
    public static function setJs($data) {
       extract(self::getJsCssProps($data, 'js'));
       if (isset($data['controller']) && isset($data['view'])) {
@@ -89,26 +97,26 @@ class View {
 //	}
 
    public static function getCSS() {
-      $css = '';
-      $arr = self::$jsCss['css'];
-      if (is_array($arr)) {
-         foreach ($arr as $v) {
-            $css .= $v;
-         }
-      }
-      echo $css;
+//      $css = '';
+//      $arr = self::$jsCss['css'];
+//      if (is_array($arr)) {
+//         foreach ($arr as $v) {
+//            $css .= $v;
+//         }
+//      }
+      echo self::$jsCss['css'];
    }
 
    public static function getJS() {
 // если передали route. значит хотим подключить индивид.
 // скрипт, если не передали, то тот который передали
-      $js = '';
-      if (is_array(self::$jsCss['js'])) {
-         foreach (self::$jsCss['js'] as $v) {
-            $js .= $v;
-         }
-      }
-      echo $js;
+//      $js = '';
+//      if (is_array(self::$jsCss['js'])) {
+//         foreach (self::$jsCss['js'] as $v) {
+//            $js .= $v;
+//         }
+//      }
+      echo self::$jsCss['js'];
    }
 
    public static function getMeta() {

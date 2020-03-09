@@ -40,7 +40,6 @@ abstract class Controller
 	{
 		if (isset($_POST) && $_POST) {
 			$data = json_decode($_POST['param'], true);
-//         $data = json_decode($_POST, true);
 			if (isset($data['token'])) {
 				if ($_SESSION['token'] !== $data['token']) {
 					exit('Обновите страницу');

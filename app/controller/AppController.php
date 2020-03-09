@@ -4,6 +4,7 @@ namespace app\controller;
 
 use app\core\Base\Controller;
 use app\core\App;
+use app\core\Base\View;
 
 class AppController extends Controller
 {
@@ -13,6 +14,8 @@ class AppController extends Controller
 	{
 		parent::__construct($route);
 		$this->layout = 'vitex';
+		View::setJsN("/public/build/mainIndex.js");
+		View::setCssN("/public/build/mainIndex.css");
 		if (strpos(strtolower($route['controller']), 'adminsc') === false) {
 			$list = App::$app->category->getAssocCategory(['active'=>'true']);
 			$this->list = App::$app->category->categoriesTree($list);
@@ -20,8 +23,7 @@ class AppController extends Controller
 		}
 	}
 
-	public
-	function getFromCache($cache_path)
+	public function getFromCache($cache_path)
 	{
 		$this->auth();
 		if (is_array($this->route) && array_key_exists('cache', $this->route)) {
@@ -38,8 +40,7 @@ class AppController extends Controller
 		exit();
 	}
 
-	public
-	function auth()
+	public function auth()
 	{
 		try {
 			if (isset($_SESSION['id']) && !$_SESSION['id'] && $_SERVER['QUERY_STRING'] != '') { // REDIRECT на регистрацию, если запросили не корень

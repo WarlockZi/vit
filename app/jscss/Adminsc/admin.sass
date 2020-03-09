@@ -1,4 +1,6 @@
 @import '../components/misc/grid_table'
+@import "a_submenu/a_submenu"
+@import "a_user_menu/a_user_menu"
 
 
 ///*************************************
@@ -47,22 +49,9 @@ header
       top: 0
       left: 0
 
-  .user-menu
-    display: flex
-    justify-content: flex-end
-    align-items: center
-    position: relative
-    margin-right: 10px
-    color: #fff
-    font-size: 0.8rem
-
-    &:before
-      content: '☰'
-      display: block
-      padding: 0 8px
-
 
 .breadcrumbs-adm
+  display: flex
   margin: 25px 0
 
   & > div
@@ -75,17 +64,6 @@ header
     color: #7e98ba
     font-weight: 600
     margin-left: 5px
-
-
-.edit:before
-  content: '\270e изменить'
-  line-height: 54px
-  display: block
-  position: absolute
-  width: 80%
-  padding: 0 0 0 20%
-  height: 100%
-  color: #fff
 
 
 /*//////////////////////////////*/
@@ -126,14 +104,15 @@ header
     flex: 1
 
 
-/*//////////////////////////////*/
-/*////////   Catalog  /////////*/
-/*//////////////////////////////*/
+///*//////////////////////////////*/
+///*////////   Catalog  /////////*/
+///*//////////////////////////////*/
+
 .a-btn-action
-   background-color: #71ffff
-   padding: 5px 10px
-   cursor: pointer
-   color: #444444
+  background-color: #71ffff
+  padding: 5px 10px
+  cursor: pointer
+  color: #444444
 
 .tabs
 
@@ -149,87 +128,6 @@ header
     color: #646464
     position: sticky
     bottom: 0
-
-  .a-btn-action
-    background-color: #71ffff
-    padding: 5px 10px
-    cursor: pointer
-    color: #444444
-
-  .admin-flex-table
-    padding: 10px
-
-    .row
-      padding: 5px
-
-      div,
-      span,
-      select,
-      input
-        flex: 3
-        justify-content: flex-start
-        min-height: 18px
-
-      strong
-        padding-right: 5px
-        display: flex
-        flex: 1
-        justify-content: flex-end
-        font-size: 14px
-        align-items: center
-        word-break: break-word
-
-
-.categories
-  .row
-    justify-content: space-around
-    align-items: center
-
-  .row:hover
-    background: #ccc
-
-
-/*////////////////////////////*/
-/*//  CATALOG PRODUCT   //////*/
-/*////////////////////////////*/
-
-.admin-product-edit
-  display: flex
-  flex-flow: column
-  margin: 0 10px
-
-  img
-    max-height: 500px
-    max-width: 400px
-
-
-/*///////////////////////////////////*/
-/*//       INSTRUCTIONS        //////*/
-/*///////////////////////////////////*/
-.doc
-  position: relative
-
-  ul
-    margin: 0 10px 0 0
-
-//module
-.name
-  flex: 1
-
-
-/*///////////////////////////////////*/
-/*//       CATALOG PRODUCT        //////*/
-/*///////////////////////////////////*/
-
-
-.value
-  padding-left: 10px
-
-  &:focus
-    border-bottom: 1px #ddd solid
-
-
-
 
 
 .tabs
@@ -299,9 +197,87 @@ header
     padding: 15px
     min-height: 100vh
 
-  #content-tab1 strong
-    color: #4d4d4d
+  #content-tab1
+    padding: 10px
 
+  .row
+    padding: 5px
+
+    div, span, select, input
+      flex: 3
+      min-height: 18px
+      position: relative
+
+    select
+      width: 100%
+
+    strong
+      color: #4d4d4d
+      min-width: 120px
+      padding-right: 5px
+      display: flex
+      flex: 1
+      justify-content: flex-end
+      font-size: 14px
+      align-items: start
+      word-break: break-word
+
+input[contenteditable],
+span[contenteditable],
+.category-properties select
+  border: 1px solid transparent
+  background-color: #fbfbfb
+
+
+input[contenteditable]:hover,
+span[contenteditable]:hover,
+.category-properties select:hover
+  border-color: #ebf4f4
+  box-shadow: 0 0 2px 2px #f1f1f1
+  min-height: 18px
+
+
+.categories
+  .row
+    justify-content: space-around
+    align-items: center
+
+  .row:hover
+    background: #ccc
+
+/*///////////////////////////////////*/
+/*//       INSTRUCTIONS        //////*/
+/*///////////////////////////////////*/
+.doc
+  position: relative
+
+  ul
+    margin: 0 10px 0 0
+
+//module
+.name
+  flex: 1
+
+
+/*///////////////////////////////////*/
+/*//       CATALOG PRODUCT        //////*/
+/*///////////////////////////////////*/
+
+.edit:before
+  content: '\270e изменить'
+  line-height: 54px
+  display: block
+  position: absolute
+  width: 80%
+  padding: 0 0 0 20%
+  height: 100%
+  color: #fff
+
+.value
+  padding-left: 10px
+
+  &:focus
+    border-bottom: 1px #ddd solid
 
 .props
   display: flex
@@ -312,78 +288,9 @@ header
     padding: 10px
     flex: 1
 
-
 td a
   border: 1px solid #949494
   padding: 3px 8px
-
-
-
-.right-check
-  display: flex
-
-
-
-
-
-
-.menu
-  width: 130px
-  background: #001a98
-  align-self: flex-start
-
-  label, a, li
-    position: relative
-    display: block
-    color: #c1c1c1
-    font-size: 12px
-
-  input:checked + label > a
-    font-size: 13px
-    font-weight: 600
-    color: #fff
-    text-transform: uppercase
-
-  & > li
-    font-size: 13px
-
-  li ul li:hover,
-  li ul li a:hover
-    /*padding: 2px*/
-    font-size: 13px
-    color: #ffa500
-    font-weight: 600
-
-  ul
-    display: none
-    cursor: pointer
-
-  .drop
-    background: #001a98
-    cursor: pointer
-    padding: 9px 0 9px 9px
-
-    li
-      padding: 0 5px
-
-  & > li:hover,
-  & > label a:hover,
-  li:hover > li label
-    background: #5e5e5e
-
-  & > li:not(.has-children)
-    padding: 9px 0 9px 0px
-
-  & > li > label
-    padding: 9px 0 9px 9px
-
-  input[type=checkbox]:checked + label + ul,
-  input[type=checkbox]:checked + label:nth-of-type(n) + ul
-    display: block
-
-  input[type=checkbox]
-    position: absolute
-    opacity: 0
 
 
 /*//////////////////////////////*/
@@ -404,8 +311,6 @@ td a
   border: 1px solid #a1a1a1
   color: #333
   text-shadow: 0 1px 0 rgba(255, 255, 255, .8)
-  -moz-border-radius: .2em
-  -webkit-border-radius: .2em
   border-radius: .2em
   box-shadow: 0 0 1px 1px rgba(255, 255, 255, .8) inset, 0 1px 0 rgba(0, 0, 0, .3)
 
@@ -421,14 +326,11 @@ td a
 .type
   width: 200px
 
-
 .edit
   width: 90px
 
-
 .phone
   width: 105px
-
 
 .filter
   padding: 30px
@@ -451,14 +353,11 @@ body
   margin: 0
   font-family: 'Roboto', sans-serif
 
-a
-  color: #949494
 
 a,
-a:hover,
-.navi__item,
-.navi__item:hover
+a:hover
   text-decoration: none
+  color: #949494
 
 
 ul, li
@@ -473,34 +372,16 @@ textarea:focus,
 .button:focus
   outline: none
 
-
-a:hover,
 .list,
 .a label,
 .button,
 .buttons,
 .del-prop,
-span.close,
-.messageClose,
 .add-prop,
-.add-prop:hover
   cursor: pointer
-
-
-.user-menu,
-.user-menu li,
-.user-menu label,
-.enter-button,
-.user-button,
-.user-button span,
-.user-menu:hover > .nav,
-.user-menu:hover .nav > a,
-.breadcrumbs-adm
-  display: flex
 
 h2
   margin: 0
-
 
 input
   border: none
@@ -508,112 +389,14 @@ input
   border-right: 1px solid #ccc
 
 
-
-
-.adm-wrap
-  height: 100%
-  flex-flow: nowrap
-  min-height: 100vw
-
 .wrap-admin
-  background-color: #fff
+  background-color: #fffF
   margin: 0 5px
-
-
-.admin-actions
-  display: flex
-  flex-flow: column
-  margin-bottom: 50px
-  width: 150px
-  border: 1px solid #ddd
-  padding: 10px 0
-
-  a,
-  label
-    color: #4a4a4a
-    font-size: 16px
-    padding: 0 0 7px 5px
-
-  label a
-    padding: 3px
-    color: #4a4a4a
-    font-size: 14px
-
-  a:hover
-    background: #cedbdf
-
-
-.adm-submenu
-  max-width: 180px
-  background-image: url(/pic/submenu-bg.png)
-  border-right: 1px solid #ddd
-  margin-top: 5px
-
-  .navi
-    display: flex
-    flex-flow: wrap
-
-    a
-      min-width: 28px
-      display: block
-      padding: 6px
-      background-color: #f5f5f5
-      text-align: center
-
-  .title
-    font-weight: 600
-    font-size: 25px
-    color: #343436
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
-    padding: 10px
-
-  .admin-actions
-
-    label ul
-      display: none
-      transition: all 1s
-
-    label input
-      display: none
-
-    label input:checked + ul
-      display: flex
-      height: 100%
-      transition: all 1s
-
-    .admin-category-menu
-      flex: 1
-      z-index: 1
-      max-width: 350px
-
-      a
-        display: flex
-        align-items: center
-        flex: 1
-        padding: 7px 14px 7px 7px
-        transition: 0.5s all
-        font-size: 0.65rem
-        font-weight: bold
-        text-transform: uppercase
-        min-width: 40px
-        max-width: 190px
-        background-color: rgba(229, 237, 239, 0.73)
-
-      li
-        display: flex
-        position: relative
-        border-bottom: 1px solid #b7b7b7
-        -webkit-transition: 0.5s all
-        transition: 0.5s all
-        justify-content: flex-end
-
-        .test-link a
-          text-transform: uppercase
 
 
 .adm-content
   flex: 1
-  background-color: #ebf4f4
+  background-color: #f7f7f7
   margin: 5px
 
 
@@ -630,6 +413,9 @@ input
   background: #0070ff
   color: #fff
 
+.add-prop-val
+  height: 17px
+  transition: .1s
 
 .del-prop
   width: 15px
@@ -670,74 +456,11 @@ input
     display: block
 
 
-.add-prop-val
-  height: 17px
-  transition: .1s
-
-
-.nav
-  display: none
-  flex-flow: column
-  border: 1px solid #eee
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175)
-  background: #fff
-  z-index: 2
-  position: absolute
-  top: 100%
-  width: 100%
-
-  a:hover
-    background: rgba(0, 0, 0, 0.08)
-
-  a
-    display: none
-    padding: 5px 10px
-
-
-  a.row span
-    position: relative
-    padding-left: 20px
-
-  a.row span:before
-    content: ''
-    position: absolute
-    left: -2px
-    display: block
-    width: 0
-    height: 0
-    border-right: #343133 7px solid
-    border-left: rgba(255, 255, 255, 0) 3px solid
-    border-bottom: rgba(255, 255, 255, 0) 3px solid
-    border-top: rgba(255, 255, 255, 0) 3px solid
-    margin: 6px
-
-
-
-
-
-
-
-input[contenteditable],
-span[contenteditable],
-.category-properties select
-  border: 1px solid transparent
-  padding: 5px
-  background-color: #fbfbfb
-
-
-input[contenteditable]:hover,
-span[contenteditable]:hover,
-.category-properties select:hover
-  border-color: #ebf4f4
-  box-shadow: 0 0 2px 2px #f1f1f1
-  min-height: 18px
-
 .category-properties
   margin: 5px 0 5px 50px
 
 .wrap .list:hover
   background: #f6f6f6
-
 
 .properties
   padding: 5px
@@ -752,7 +475,6 @@ span[contenteditable]:hover,
   padding: 10px 0
   font-weight: 600
 
-
 .add-property
   justify-content: flex-end
 
@@ -761,48 +483,11 @@ span[contenteditable]:hover,
 
 
 /*//////////////////////*/
-/*//////  A CATALOG-MENU  ////////*/
-/*//////////////////////*/
-.vert-menu__list
-
-  &:after
-    content: " "
-    position: absolute
-    border: .6vw solid
-    border-color: transparent transparent transparent #84989a
-    transition: 0.5s
-    align-self: center
-
-    @media screen and (min-width: 1200px)
-      border: .4vw solid
-      border-color: transparent transparent transparent #eee
-
-  &:hover:after
-    transform: scaleX(-1)
-
-  &:hover > .vert-menu__drop
-    opacity: 1
-    top: 0
-    z-index: 1
-
-  .vert-menu__drop /*Всплывающие меню*/
-    position: absolute
-    width: 100%
-    left: 100%
-    top: -9999em
-    opacity: 0
-    border-left: 1px solid transparent
-    transition: 0.5s opacity
-
-
-/*//////////////////////*/
 /*//////  END  MENU  ////////*/
 /*//////////////////////*/
-
-
-
 
 .confirm
   text-align: center
   width: 20px
+
 

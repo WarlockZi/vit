@@ -1,8 +1,8 @@
 <main class="column">
 
 
-	<div class="swiper-title">Новинки</div>
 	<div class="swiper-container-new">
+	<div class="swiper-title">Новинки</div>
 		<div class="swiper-wrapper">
 			<? $i = 0; ?>
 			<? foreach ($sale as $product) : ?>
@@ -31,8 +31,8 @@
 		<div class="swiper-pagination"></div>
 	</div>
 
-	<div class="swiper-title">Лучшие предложения</div>
 	<div class="swiper-container-new">
+	<div class="swiper-title">Лучшие предложения</div>
 		<div class="swiper-wrapper">
 			<? $i = 0; ?>
 			<? foreach ($sale as $product) : ?>
@@ -95,4 +95,4 @@
 
 
 </main>
-<script src="/public/build/mainIndex.js"></script>
+<!--<script src="/public/build/mainIndex.js"></script>-->

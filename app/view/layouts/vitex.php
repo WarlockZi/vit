@@ -16,8 +16,8 @@
     <link rel="preload" href="/pic/logo-vitex.svg" as="image"/>
     <link rel="preload" href="/pic/user.svg" as="image"/>
     <? $this::getMeta(); ?>
-    <!--	--><? // $this::getCSS(); ?>
-    <link rel="preload" href='/public/build/mainIndex.css' as="style" onload="this.rel='stylesheet'" media="all">
+
+    <link rel="preload" href='<? $this::getCSS(); ?>' as="style" onload="this.rel='stylesheet'" media="all">
     <style>
         body {
             margin: 0;
@@ -36,9 +36,6 @@
             text-decoration: none;
         }
 
-        .none {
-            display: none;
-        }
 
         .top-menu {
             background: #4e4e4e;
@@ -99,17 +96,17 @@
 
         main {
             display: flex;
-            max-width: 1310px;
+            max-width: 970px;
             margin: auto;
             padding: 0 10px;
         }
 
-        #toggle-button, #toggle-label, .nav, nav {
+        #burger-button, #burger-label, .nav, nav {
             display: none;
         }
 
         .inner-wrap {
-            max-width: 1310px;
+            max-width: 970px;
             margin: auto;
             box-sizing: border-box;
             padding-bottom: 3px;
@@ -161,10 +158,10 @@
 <body class="column" >
 
 <div class="top-menu">
-    <input name="toggle-button" type="checkbox" id="toggle-button">
-    <label id="toggle-label" for="toggle-button">☰</label>
-    <nav id="menu">
-        <div class="menu-wrap column">
+    <input id="burger-button" name="burger-button" type="checkbox" >
+    <label id="burger-label" for="burger-button">☰</label>
+    <nav id="burger-menu">
+        <div class="wrap column">
             <a class="item" href="/perchatki-rezinovye-tekhnicheskie">перчатки</a>
             <a class="item" href="/about/payment">бахилы</a>
             <a class="item" href="/about/payment">сиз</a>
@@ -355,9 +352,6 @@
     <span id="cn-accept-cookie">Соглашаюсь</span>
 </div>
 
-<!--<script src="/public/js/jq.js"></script>-->
-<!--<script src="/public/js/auto.js"></script>-->
-
 
 </div>
 
@@ -387,7 +381,6 @@
 <!--	<div><img src="https://mc.yandex.ru/watch/7715905" style="position:absolute; left:-9999px;" alt=""/></div>-->
 <!--</noscript>-->
 <!-- /Yandex.Metrika counter -->
-<? $this::getJS(); ?>
+<script src="<? $this::getJS(); ?>"></script>
 </body>
-<!--<img src="/pic/header-big.png" alt="" style="height: 1px; width: 1px">-->
 </html>

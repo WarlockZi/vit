@@ -26,13 +26,10 @@ class UserController extends AppController
 //         }
 //      }
         parent::__construct($route);
-        View::setCss([
-            'css' => '/public/css/vitex.css',
-            'addtime'
-        ]);
     }
 
-    public function actionContacts()    {
+    public function actionContacts()
+    {
         $this->auth();
         if (isset($_POST['token'])) {
             if ($_SESSION['token'] !== $_POST['token']) {
@@ -57,28 +54,31 @@ class UserController extends AppController
             View::setMeta('Личный кабинет', 'Личный кабинет', '');
         }
     }
+
     public function actionLogin()
     {
+        View::setJsN('/public/build/services.js');
+        View::setCssN('/public/build/services.css');
         if ($data = $this->isAjax()) {
             $email = (string)$data['email'];
-            $password = (int)$data['pass'];
             if (!App::$app->user->checkEmail($email)) {
                 $msg[] = "Неверный формат email";
-                exit(include APP . '/view/User/alert.php');
+                exit(include ROOT.'/app/view/User/alert.php');
             }
+            $password = (int)$data['pass'];
             if (!App::$app->user->checkPassword($password)) {
                 $msg[] = "Пароль не должен быть короче 6-ти символов";
-                exit(include APP . '/view/User/alert.php');
+                exit(include ROOT.'/app/view/User/alert.php');
             }
             $user = App::$app->user->getUserByEmail($email, $password);
             if ($user === false) { // Почта с паролем существуют, но нет подтверждения
                 // Нет пользователя с таким паролем
                 $msg[] = "Пользователь с 'e-mail' : $email не зарегистрирован";
                 $msg[] = "Перейдите по <a href = 'https://vitexopt.ru" . PROJ . "/user/register'>ССЫЛКЕ</a> чтобы зарегистрироваться.";
-                exit(include APP . '/view/User/alert.php');
+                exit(include  ROOT.'/app/view/User/alert.php');
             } elseif ($user === NULL) {// Пароль, почта в порядке, но нет подтверждения
                 $msg[] = 'Зайдите на <a href ="https://mail.vitexopt.ru/webmail/login/">РАБОЧУЮ ПОЧТУ</a>, найдите письмо "Регистрация VITEX" и перейдите по ссылке в письме.';
-                echo include APP . '/view/User/alert.php';
+                echo include ROOT.'/app/view/User/alert.php';
                 exit();
             } else {// Если данные правильные, запоминаем пользователя (в сессию)
                 $user['rights'] = explode(",", $user['rights']);
@@ -87,11 +87,15 @@ class UserController extends AppController
                 $this->set(compact('user'));
                 $msg[] = "Все ок";
                 $_SESSION['id'] = $user['id'];
-                exit(include ROOT.'/app/view/User/alert.php');
+                if (in_array('5', $user['rights'])) {
+                    exit ('Переходим в админку');
+                }else{
+                    exit('в кабинет');
+                }
+
             }
         }
         if (isset($_SESSION['id'])) {
-            $user = App::$app->user->getUser($_SESSION['id']);
             $this->set(compact('user'));
         }
 //        View::setJs(['controller' => $this->route['controller'],'view' => $this->view,'addtime']);
@@ -237,7 +241,6 @@ class UserController extends AppController
         View::setMeta('Забыли пароль', 'Забыли пароль', 'Забыли пароль');
         $this->set(compact('user'));
     }
-
 
 
     public function actionEdit()

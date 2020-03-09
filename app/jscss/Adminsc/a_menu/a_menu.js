@@ -1,4 +1,4 @@
-import './a-menu.sass';
+import './a_menu.sass'
 
 let path = window.location.pathname;
 let paths = path.match('(adminsc$)|(crm)|(settings)|(Sitemap)|(catalog)')[0];

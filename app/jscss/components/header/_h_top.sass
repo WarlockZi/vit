@@ -2,7 +2,7 @@
 .top-menu
   padding: 0 20px
 
-  label#toggle-label
+  #burger-label
     display: flex
     align-items: center
     justify-content: center
@@ -16,15 +16,24 @@
     width: 30px
     height: 30px
 
-  #toggle-button ~ nav#menu
-    display: block
-    position: absolute
-    top: 26px
-    left: -500px
-    background: #4e4e4e
-    padding-bottom: 65px
-    transition: left .3s
-    z-index: 4
+  #burger-button:checked
+    & ~ #burger-menu
+      left: 0
+
+#burger-menu
+  display: block
+  position: absolute
+  top: 26px
+  left: -500px
+  background: #4e4e4e
+  padding-bottom: 65px
+  transition: left .3s
+  z-index: 4
+
+  .wrap
+    margin: 50px 20px 0 20px
+    width: 360px
+
     hr
       padding: 0
       border: none
@@ -32,69 +41,45 @@
       box-shadow: 0px 3px 6px 1px #2f2f2f
       width: 100%
 
-    .menu-wrap
-      margin: 50px 20px 0 20px
+    a
+      display: flex
+      color: #fff
+      padding: 10px 0 10px 34px
       width: 360px
+      opacity: 1
+      text-transform: uppercase
 
-      a
-        display: flex
-        color: #fff
-        padding: 10px 0 10px 34px
-        width: 360px
-        opacity: 1
-        text-transform: uppercase
-        &:hover
-          background: rgb(255,255,255)
-          background: radial-gradient(circle, rgba(255,255,255,0.1339031339031339) 0%, rgba(255,252,252,0) 85%)
-
-  #toggle-button:checked
-    & ~ nav#menu
-      left: 0
+      &:hover
+        background: rgb(255, 255, 255)
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1339031339031339) 0%, rgba(255, 252, 252, 0) 85%)
 
 
 .user-menu:hover
-    background-color: #8d8d8d
+  background-color: #8d8d8d
 
-    >.nav
+  > .nav
+    display: flex
+    flex-flow: column
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175)
+    background: #fff
+    z-index: 3
+    position: absolute
+    top: 100%
+    width: 280px
+
+    a
       display: flex
-      flex-flow: column
-      border: 1px solid #eee
-      box-shadow: 0 6px 12px rgba(0,0,0,0.175)
-      background: #fff
-      z-index: 3
-      position: absolute
-      top: 100%
-      width: 280px
+      padding: 7px 0px 9px 26px
+      color: #3d3d3d
 
-      a
-        display: flex
-        padding: 7px 0px 9px 26px
-        color: #3d3d3d
-        .icon-logout
-          position: absolute
-          left: 2px
+      .icon-logout
+        position: absolute
+        left: 2px
 
-        &:hover
-          background: #ababab33
+      &:hover
+        background: #ababab33
+
 .user-menu
   .FIO
     @media screen and (max-width: 560px)
       display: none
-
-.form-submit input
-  position: absolute
-  top: 0
-  left: 0
-  height: 100%
-  width: 100%
-  opacity: 0
-
-  .nav
-    display: none
-    a
-      display: none
-
-  > span> a
-      color: #fff
-      display: flex
-

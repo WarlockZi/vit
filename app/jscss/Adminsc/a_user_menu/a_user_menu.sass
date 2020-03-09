@@ -1,0 +1,56 @@
+.user-menu
+  display: flex
+  justify-content: flex-end
+  align-items: center
+  position: relative
+  margin-right: 10px
+  color: #fff
+  font-size: 0.8rem
+  cursor: pointer
+
+
+  &:before
+    content: '☰'
+    display: block
+    padding: 0 8px
+
+.user-menu:hover > .nav_user,
+.user-menu:hover .nav_user > a
+  display: flex
+
+
+.nav_user
+  display: none
+  flex-flow: column
+  border: 1px solid #eee
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175)
+  background: #fff
+  z-index: 2
+  position: absolute
+  top: 27px
+  width: 100%
+
+  a:hover
+    background: rgba(0, 0, 0, 0.08)
+
+  a
+    display: none
+    padding: 5px 10px
+
+  a.row span
+    position: relative
+    padding-left: 20px
+
+  a.row span:before
+    content: ''
+    position: absolute
+    left: -2px
+    display: block
+    width: 0
+    height: 0
+    border-right: #343133 7px solid
+    border-left: rgba(255, 255, 255, 0) 3px solid
+    border-bottom: rgba(255, 255, 255, 0) 3px solid
+    border-top: rgba(255, 255, 255, 0) 3px solid
+    margin: 6px
+

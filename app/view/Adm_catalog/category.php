@@ -56,7 +56,7 @@
 
 				<label for="tab4" title="<?= $children ?>"><?= $children ?></label>
 
-					<?=$addCategoryButton?>
+<!--					--><?//=$addCategoryButton?>
 
 
 				<section id="content-tab1" class="admin-flex-table">

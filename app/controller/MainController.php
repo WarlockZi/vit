@@ -36,10 +36,10 @@ class MainController Extends AppController {
 //          'view' => $this->view,
 //          'defer'
 //      ]);
-      View::setCss(['css' => '/public/css/vitex.css']);
-      View::setCss(['controller' => $this->route['controller'], 'view' => $this->view]);
+//      View::setCss(['css' => '/public/css/vitex.css']);
+//      View::setCss(['controller' => $this->route['controller'], 'view' => $this->view]);
       if ($this->route['action'] !== 'index') {
-         View::setCss(['css' => '/public/css/about.css']);
+//         View::setCss(['css' => '/public/css/services.css']);
       }
       $this->set(compact('sale'));
    }
