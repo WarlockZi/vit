@@ -1,3 +1,4 @@
+@import '../media'
 
 h1
   font-family: Intro,sans-serif
@@ -189,6 +190,9 @@ h1
   .dtxt
     margin: 0 10px
     text-align: left
+
+    @media screen and (max-width: $screen_md)
+      width: 80%
 
 .cust-questions-wrap input:focus
   outline: none

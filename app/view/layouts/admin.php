@@ -6,16 +6,15 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
-    <link rel="preload" href='<? $this::getCSS(); ?>' as="style" onload="this.rel='stylesheet'" media="all">
+	<link rel="preload" href='<? $this::getCSS(); ?>' as="style" onload="this.rel='stylesheet'" media="all">
 	<link rel="preload" href="/pic/admin-mainmenu-items-bg.png" as="image"/>
 	<link rel="preload" href="/pic/admin-mainmenu-items.png" as="image"/>
 	<link rel="preload" href="/pic/header-big.png" as="image"/>
-	<link rel="preload" href="/pic/submenu-bg.png" as="image"/>
-    <style>
-        .admin-category-menu {max-width: 150px;}
-        a {color: #2f2f2f;}
-
-    </style>
+	<style>
+		a {
+			color: #2f2f2f;
+		}
+	</style>
 </head>
 
 <body class="column">

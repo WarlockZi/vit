@@ -1,3 +1,5 @@
+@import 'media'
+
 ///*************************************
 //*******      HTML BODY    ******
 //**************************************/
@@ -11,64 +13,15 @@ h1, h2
   font-size: 1.6em
   font-weight: 400
 
-a:hover,
-.form-title,
-.navi__item,
-.navi__item:hover,
-.p-no-active
-  text-decoration: none
-
 ul, li
   list-style: none
   margin: 0
   padding: 0
 
-input,
-textarea,
-textarea:focus,
-.button:focus
-  outline:  none
-
-a,
-.checkbox + label,
-.checkbox:checked + label:before,
-.navi__item,
-.button,
-.submit
-  cursor: pointer
-
-.h400
-  height: 400px
-
-.w400
-  width: 400px
-
-.h500
-  height: 500px
-
-.w500
-  width: 500px
-
-.h200
-  height: 200px
-
-.w200
-  width: 200px
-
-.mt20
-  margin-top: 20px
-
-.mb20
-  margin-top: 20px
-
-
-.wrap
-  flex: 1 0 auto
-  min-height: 100vh
-
-.d-content
-  max-width: 800px
-  margin: auto
+a:hover,
+.form-title,
+.p-no-active
+  text-decoration: none
 
 .column
   display: flex
@@ -90,6 +43,29 @@ strong
   font-weight: 600
 
 
+input,
+textarea,
+textarea:focus,
+.button:focus
+  outline:  none
+
+a,
+.checkbox + label,
+.checkbox:checked + label:before,
+.navi__item,
+.button,
+.submit
+  cursor: pointer
+
+.wrap
+  flex: 1
+  min-height: 100vh
+
+.d-content
+  max-width: 800px
+  margin: auto
+
+
 ///*//////////////////////////////*/
 ///*/////  PIC BOX  //////*/
 ///*//////////////////////////////*/
@@ -97,108 +73,4 @@ strong
   width: 100%
   height: 100%
   object-fit: contain
-
-
-
-///* xs ( 401px <=  543px) */
-@media (min-width: 401px) and (max-width: 575px)
-  .t-1,
-  .logo-desc,
-  .title,
-  .logo>span,
-  .basket,
-  .icon-phone,
-  .header-lower,
-  .top-menu .contacts,
-  .user-button span,
-  .user-button,
-  .user-button div span,
-  .top-strip,
-  .h-upper .phone-wrap
-      display: none
-
-  header
-    height: 65px
-
-  .user-button i
-    font-size: 3.5vw
-
-  .container-do-test
-    flex-direction: column
-    align-items: flex-start
-
-  .test-menu-wrap
-    margin: 0
-
-  .dtxt
-    width: 80%
-
-  .nav
-    right: 0px
-    width: auto
-
-  div.top-menu-wrap
-    justify-content: flex-end
-
-
-///* sm (>=576 и <=767) */
-@media screen and (max-width: 768px)
-  .toggle-button
-    display: block
-
-  .logo-desc,
-  .basket,
-  .icon-phone,
-  .user-button span,
-  .h-upper>div:not([class]),
-  .user-button,
-  .phone-wrap,
-  .header-lower
-    display: none
-
-///* md (>=768 и <=991) */
-@media screen and (max-width: 991px)
-  .title,
-  .logo>span
-    display: none
-
-
-
-
-///* lg (>=992 и <=1199) */
-@media (min-width: 992px) and (max-width: 1199px)
-  .h-upper>div:not([class]),
-  .title
-    display: none
-
-  .logo-wrap
-    min-width: 437px
-    max-width: 583px
-
-
-
-///* xl (>=1200) */
-@media (min-width: 1200px)
-  .q,
-  .menu a,
-  textarea,
-  .pagination a
-    font-size: .9vw
-
-  .content
-    flex: 3
-
-  textarea
-    font-family: inherit
-
-  .holder
-    font-size: .6vw
-
-
-
-
-  .pagination a
-    width: 1.1vw
-    padding: .1vw .3vw
-
 

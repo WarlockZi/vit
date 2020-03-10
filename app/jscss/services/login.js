@@ -1,4 +1,5 @@
 import './login.sass'
+import {post} from '../common'
 /////////////////////////    Login     /////////////////////
 window.onload = function () {
 
