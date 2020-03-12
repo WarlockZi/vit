@@ -1,8 +1,11 @@
 import './admin.sass'
-import '../common'
+import '../Adminsc/Adm_catalog/category'
+import '../common/common'
 
 import '../components/cache/clear-cache'
 import './a_menu/a_menu'
+
+
 
 // document.addEventListener('DOMContentLoaded',function () {});
 /////////////////////////////////
@@ -14,16 +17,12 @@ import './a_menu/a_menu'
 //    $(this).toggleClass('edit');
 //    let id = $(this).data('id');
 //    $(this).prop('href', '/adminsc/catalog/product?id=' + id);
-//
 // },
-//
 // );
-//
 // $('.breadcrumbs').on('click',
 // function (e) {
 //    var el = e.target,
 //    attr = el.getAttribute('data-id')
-//
 //    if (attr) {
 //       if (el.href) {
 //          el.href = '/adminsc/catalog/category?id=' + el.getAttribute('data-id');
@@ -32,12 +31,9 @@ import './a_menu/a_menu'
 //       else {
 //          window.location = '/adminsc/catalog/category?id='+ el.getAttribute('data-id');
 // //         $(this).toggleClass('edit');
-//
 //       }
 //    }
-//
 // },
-//
 // );
 // );
 

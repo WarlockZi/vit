@@ -1,7 +1,7 @@
 <div class="wrap-admin">
 
 
-  <div class="breadcrumbs-adm">
+  <div class="a-breadcrumbs">
     <a href  = "index">Admin</a>
     <a href  = "index">Настройки</a>
     <div>Картинки</div>

@@ -1,13 +1,5 @@
-/*@import url('/public/css/admin.css');*/
 
 
-.module.settings.activ{
-    background-image: 
-        url(/pic/admin-mainmenu-items.png),
-        url(/pic/admin-mainmenu-items-bg.png);
-    background-position: 20px -743px, 5px -88px;
-    background-repeat: no-repeat,no-repeat;
-}
 .adm-content .column{
     background-color: #fff;
 }

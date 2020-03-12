@@ -8,11 +8,12 @@
             'cache' => 60,
             'sql' => "SELECT * FROM category "
         ]);
-        ?>
+
+		  use app\view\widgets\menu\Menu; ?>
     </div>
 </div>
 <div class="adm-content">
-    <div class="breadcrumbs-adm">
+    <div class="a-breadcrumbs">
         <a href="/adminsc/index">Admin ></a>
         <a href="/adminsc/catalog">Каталог ></a>
 
@@ -72,19 +73,21 @@
                         <strong>Описание :</strong>
                         <span contenteditable id='text' class="column"></span>
                     </div>
-                    <div>
-                        <strong>Принадлежит категории :</strong>
-                        <select id='parent' class="column">
-                            <?
-                            new app\view\widgets\menu\Menu([
-                                'class' => 'admin-category-menu',
-                                'tpl' => ROOT . "/app/view/widgets/menu/menu_tpl/admin_category_parent.php",
-                                'cache' => 60,
-                                'sql' => "SELECT * FROM category "
-                            ]);
-                            ?>
-                        </select>
-                    </div>
+	                <div class="row">
+		                <strong>Принадлежит категории :</strong>
+		                <div>
+			                <select id='parent'>
+									 <?
+									 new app\view\widgets\menu\Menu([
+										 'class' => 'parent',
+										 'tpl' => ROOT . "/app/view/widgets/menu/menu_tpl/a-new-category-parent.php",
+										 'cache' => 60,
+										 'sql' => "SELECT * FROM category "
+									 ]);
+									 ?>
+			                </select>
+		                </div>
+	                </div>
 
 
                 </section>

@@ -1,12 +1,7 @@
 @import '../components/misc/grid_table'
 @import "a_submenu/a_submenu"
 @import "a_user_menu/a_user_menu"
-
-
-///*************************************
-//*******      ADMIN    ******
-//**************************************/
-
+@import "components/a_breadcrumbs"
 
 header
   position: relative
@@ -50,58 +45,8 @@ header
       left: 0
 
 
-.breadcrumbs-adm
-  display: flex
-  margin: 25px 0
-
-  & > div
-    text-transform: uppercase
-
-  div,
-  a
-    padding: 3px 6px
-    font-size: 0.7rem
-    color: #7e98ba
-    font-weight: 600
-    margin-left: 5px
 
 
-/*//////////////////////////////*/
-/*/////  PIC BOX  //////*/
-/*//////////////////////////////*/
-
-.pic img
-  width: 100%
-  height: 100%
-  object-fit: contain
-
-.pic .column
-  padding: 10px
-
-
-.pic .column div
-  height: 150px
-  width: 150px
-  text-align: center
-  display: flex
-  justify-content: center
-  align-items: center
-
-
-.pic span
-  padding: 20px 0px 5px 10px
-  max-width: 150px
-
-
-/*//////////////////////////////*/
-/*////////   DUMP  /////////*/
-/*//////////////////////////////*/
-
-.dump-form *
-  padding: 10px
-
-  input
-    flex: 1
 
 
 ///*//////////////////////////////*/
@@ -111,6 +56,7 @@ header
 .a-btn-action
   background-color: #565d68
   padding: 5px 10px
+  margin-right: 10px
   cursor: pointer
   color: #fff
   font-weight: 600
@@ -124,8 +70,8 @@ header
     background-color: #ebf4f4
     margin: 10px 0
     display: flex
-    justify-content: space-around
-    padding: 3px
+    //justify-content: space-around
+    padding: 1em
     color: #646464
     position: sticky
     bottom: 0
@@ -246,18 +192,7 @@ span[contenteditable]:hover,
   .row:hover
     background: #ccc
 
-/*///////////////////////////////////*/
-/*//       INSTRUCTIONS        //////*/
-/*///////////////////////////////////*/
-.doc
-  position: relative
 
-  ul
-    margin: 0 10px 0 0
-
-//module
-.name
-  flex: 1
 
 
 /*///////////////////////////////////*/
@@ -294,93 +229,11 @@ td a
   padding: 3px 8px
 
 
-/*//////////////////////////////*/
-/*////////   TABLE USERS  /////////*/
-/*//////////////////////////////*/
-
-.btnadd-user
-  width: 205px
-  height: 49px
-
-.buttons
-  display: inline-block
-  white-space: nowrap
-  text-align: center
-  line-height: 20px
-  background: #eeeeee
-  background: linear-gradient(top, #eeeeee 0%, #eeeeee 100%)
-  border: 1px solid #a1a1a1
-  color: #333
-  text-shadow: 0 1px 0 rgba(255, 255, 255, .8)
-  border-radius: .2em
-  box-shadow: 0 0 1px 1px rgba(255, 255, 255, .8) inset, 0 1px 0 rgba(0, 0, 0, .3)
-
-  &:hover
-    background: #ffffff
-    background: linear-gradient(top, #ffffff 0%, #e5e5e5 100%)
-
-  &:active
-    box-shadow: 0 0 4px 2px rgba(0, 0, 0, .3) inset
-    position: relative
-    top: 1px
-
-.type
-  width: 200px
-
-.edit
-  width: 90px
-
-.phone
-  width: 105px
-
-.filter
-  padding: 30px
 
 
 
-/*//////////////////////////////*/
-/*////////   COMMON   /////////*/
-/*//////////////////////////////*/
-
-body
-  overflow-y: scroll
-  margin: 0
-  font-family: 'Roboto', sans-serif
 
 
-a,
-a:hover
-  text-decoration: none
-  color: #949494
-
-
-ul, li
-  list-style: none
-  margin: 0
-  padding: 0
-
-
-input,
-textarea,
-textarea:focus,
-.button:focus
-  outline: none
-
-.list,
-.a label,
-.button,
-.buttons,
-.del-prop,
-.add-prop,
-  cursor: pointer
-
-h2
-  margin: 0
-
-input
-  border: none
-  border-bottom: 1px solid #ccc
-  border-right: 1px solid #ccc
 
 
 .wrap-admin
@@ -476,12 +329,6 @@ input
     padding: 10px 10px 10px 0
 
 
-/*//////////////////////*/
-/*//////  END  MENU  ////////*/
-/*//////////////////////*/
 
-.confirm
-  text-align: center
-  width: 20px
 
 

@@ -25,7 +25,7 @@
 </div>
 
   <div class="adm-content">
-  <div class="breadcrumbs-adm">
+  <div class="a-breadcrumbs">
     <div>Admin</div>
   </div>
 </div>

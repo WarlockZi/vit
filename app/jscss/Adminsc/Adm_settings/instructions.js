@@ -130,40 +130,4 @@ $(function () {
 
 
 
-
-
-
-   function $_GET(key) {
-      var p = window.location.search;
-      p = p.match(new RegExp(key + '=([^&=]+)'));
-      return p ? p[1] : false;
-   }
-
-   /**
-    * 
-    * @param {type} url глобальный
-    * @param {type} data данные
-    * @return {Promise}
-    */
-   function post(url, data) {
-//      debugger;
-      return new Promise(function (resolve, reject) {
-         var req = new XMLHttpRequest();
-         req.open('POST', url);
-         req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-         req.setRequestHeader('Content-Type', 'application/json');
-         req.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-         req.send('param=' + JSON.stringify(data));
-         req.onerror = function () {
-            reject(Error("Что-то пошло не так"));
-         };
-         req.onload = function () {
-            resolve(req.response);
-         };
-      });
-   }
-
-
-
-
 });

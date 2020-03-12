@@ -20,7 +20,7 @@
 </div>
 
 <div class="adm-content">
-  <div class="breadcrumbs-adm">
+  <div class="a-breadcrumbs">
     <a href  = "index">Admin</a>
     <div>Настройки</div>
   </div>

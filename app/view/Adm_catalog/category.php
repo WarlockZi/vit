@@ -18,7 +18,7 @@
 	</div>
 </div>
 <div class="adm-content">
-	<div class="breadcrumbs-adm">
+	<div class="a-breadcrumbs">
 		<a href="/adminsc/index">Admin ></a>
 		<a href="/adminsc/catalog">Каталог ></a>
 		<? if (isset($category['parents'])): ?>
@@ -188,13 +188,16 @@
 						<? endforeach; ?>
 
 					<? else: ?>
-						<? if (isset($category['parent'])): ?> //чтобы добавить товар категория должна быть сохранена
+						<? if (isset($category['parent'])): ?>
 							<?= $ddProductButton ?>
 							<div class="products row">
 								<? foreach ($category['children']['products'] as $product) : ?>
-									<a class="product w200" href="product?id=<?= $product['id'] ?>">
-										<div class="pic w200 h200">
-											<img src="<?= $product['dpic'] ? '/pic' . $product['dpic'] : '/pic/srvc/nophoto-min.jpg' ?>"
+									<a class="product column" href="product?id=<?= $product['id'] ?>">
+										<div class="pic">
+											<img src="<?=
+												is_readable(ROOT.'/pic' . $product['dpic']) ?
+													'/pic' . $product['dpic']:
+													'/pic/srvc/nophoto-min.jpg'; ?>"
 											     alt="">
 										</div>
 										<span><?= $product['name'] ?></span>

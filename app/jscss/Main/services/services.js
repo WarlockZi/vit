@@ -1,7 +1,7 @@
-import '../components/header/header.sass'
+import '../../components/header/header.sass'
 import '../components/footer/footer.sass'
 import '../components/autocomplete/autocomplete'
-import '../common'
+import '../common/common'
 
 
 

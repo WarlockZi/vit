@@ -11,7 +11,7 @@
 </div>
 
 <div class="adm-content">
-  <div class="breadcrumbs-adm">
+  <div class="a-breadcrumbs">
     <a href  = "/adminsc">Admin</a>
     <a href  = "/adminsc/crm">CRM</a>
     <div>Users</div>
