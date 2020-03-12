@@ -158,26 +158,6 @@
 <body class="column" >
 
 <div class="top-menu">
-    <input id="burger-button" name="burger-button" type="checkbox" >
-    <label id="burger-label" for="burger-button">☰</label>
-    <nav id="burger-menu">
-        <div class="wrap column">
-            <a class="item" href="/perchatki-rezinovye-tekhnicheskie">перчатки</a>
-            <a class="item" href="/about/payment">бахилы</a>
-            <a class="item" href="/about/payment">сиз</a>
-            <a class="item" href="/about/payment">шприцы</a>
-            <hr>
-            <a class="item" href="/about/payment">акции</a>
-            <a class="item" href="/about/payment">ОПЛАТА</a>
-            <a class="item" href="/about/delivery">ДОСТАВКА</a>
-            <a class="item" href="/about/return_change">ВОЗВРАТ И ОБМЕН</a>
-            <a class="item" href="/about/discount">СИСТЕМА СКИДОК</a>
-            <hr>
-            <a class="item" href="/about/contacts">Контакты</a>
-            <a class="item" href="/about/contacts">СТАТЬИ</a>
-            <a class="item" href="/about/contact-us">✉ Напишите нам</a>
-        </div>
-    </nav>
 
     <div class="top-menu-wrap">
 <!--        <div class="contacts">-->
@@ -185,8 +165,28 @@
 <!--            <a class="item" href="/about/contacts">КОНТАКТЫ</a>-->
 <!--        </div>-->
 
+        <input id="burger-button" name="burger-button" type="checkbox" >
+        <label id="burger-label" for="burger-button">☰</label>
+        <nav id="burger-menu">
+            <div class="wrap column">
+                <a class="item" href="/perchatki-rezinovye-tekhnicheskie">перчатки</a>
+                <a class="item" href="/about/payment">бахилы</a>
+                <a class="item" href="/about/payment">сиз</a>
+                <a class="item" href="/about/payment">шприцы</a>
+                <hr>
+                <a class="item" href="/about/payment">акции</a>
+                <a class="item" href="/about/payment">ОПЛАТА</a>
+                <a class="item" href="/about/delivery">ДОСТАВКА</a>
+                <a class="item" href="/about/return_change">ВОЗВРАТ И ОБМЕН</a>
+                <a class="item" href="/about/discount">СИСТЕМА СКИДОК</a>
+                <hr>
+                <a class="item" href="/about/contacts">Контакты</a>
+                <a class="item" href="/about/contacts">СТАТЬИ</a>
+                <a class="item" href="/about/contact-us">✉ Напишите нам</a>
+            </div>
+        </nav>
+
         <div class="user-menu">
-            <!--                <span class="row">-->
             <? if (!isset($user)): ?>
                 <a href="/user/login" aria-label="login">
                     <div class="icon"></div>
@@ -194,7 +194,11 @@
             <? else: ?>
                 <div class="icon"></div>
 
-                <span class="FIO"><?= $user['surName']; ?> <?= $user['name']; ?> <?= $user['middleName']; ?></span>
+                <span class="FIO">
+                    <?= $user['surName']; ?>
+                    <?= $user['name']; ?>
+                    <?= $user['middleName']; ?>
+                </span>
 
                 <div class="nav column">
                     <a href="/user/edit">Редактировать свой профиль</a>
@@ -203,11 +207,10 @@
                         '<a href="/edit/1">Редактировать тесты</a>
                       <a href="/freetest/edit/41">Редактировать свободный тест</a>' : ''
                     ?>
-
                     <?=
                     in_array('2', $user['rights']) ? // проходить
-                        '<a href="/test/1">Проходить тесты</a>
-                      <a href="/freetest/41">Свободный тест</a>' : '';
+                        '<a href="/test/1">Проходить тесты</a> 
+                         <a href="/freetest/41">Свободный тест</a>' : '';
                     ?>
 
                     <?=
@@ -231,9 +234,6 @@
         </div>
     </div>
 </div>
-
-
-<!--<div id="panel" class="column">-->
 
 
 <header>
