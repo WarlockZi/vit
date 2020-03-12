@@ -1,4 +1,5 @@
 import '../components/swiper/swiper'
+import '../common'
 import '../components/header/header.sass'
 import '../components/footer/footer.sass'
 import '../components/alert/alert'
@@ -7,10 +8,8 @@ import '../components/autocomplete/autocomplete'
 import '../components/breadcrumbs/breadcrumbs.sass'
 
 import '../Catalog/catalog_product.sass'
-import '../Catalog/catalog_product.sass'
 import '../Catalog/prod.sass'
 
-import '../common'
 
 
 

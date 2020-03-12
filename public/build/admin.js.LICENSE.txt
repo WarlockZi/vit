@@ -12,8 +12,6 @@
 
 /*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
 
-/*! ../adminLayer */
-
 /*! ../common */
 
 /*! ../components/cache/clear-cache */
@@ -41,10 +39,6 @@
 /*!*******************************!*\
   !*** ./app/jscss/common.sass ***!
   \*******************************/
-
-/*!*********************************!*\
-  !*** ./app/jscss/adminLayer.js ***!
-  \*********************************/
 
 /*!************************************!*\
   !*** ./app/jscss/Adminsc/admin.js ***!

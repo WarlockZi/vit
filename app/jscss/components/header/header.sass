@@ -1,31 +1,25 @@
-$small_width: 400px
+$screen_xs: 320px
+$screen_sm: 600px
+$screen_md: 767px
+$screen_lg: 1080px
+$screen_xl: 1200px
+
+@import h_top
+@import h_upper
+@import h_lower
+
 header
   background: #fff
   width: 100%
   box-shadow: 0px 6px 10px 0px #d2d2d2
   margin-bottom: 20px
 
-  @media screen and (max-width: 400px)
+  @media screen and (max-width: $screen_sm)
     height: 65px
 
-@import "h_top"
-@import "h_upper"
-@import "h_lower"
 
-///*************************************
-//*******     MEDIA QUERRIES    ******
-//**************************************/
 
-@media screen and (max-width: 400px)
 
-  .header-lower,
-  .top-menu .contacts,
-  .contacts,
-  .phone-wrap
-    display: none
-
-  .dtxt
-    width: 80%
 
 
 

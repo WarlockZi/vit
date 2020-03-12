@@ -33,16 +33,6 @@
 		margin-bottom: 20px;
 	}
 
-	.wrap .list {
-		display: flex;
-		justify-content: flex-start;
-		padding: 10px;
-		/*border: 1px solid #eee;*/
-	}
-
-	.wrap .list:hover {
-		background: #f6f6f6;
-	}
 </style>
 
 
