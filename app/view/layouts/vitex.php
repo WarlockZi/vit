@@ -47,7 +47,7 @@
 
         .top-menu-wrap {
             height: 27px;
-            max-width: 1310px;
+            max-width: 970px;
             margin: 0 auto;
             position: sticky;
             top: 0;
@@ -101,7 +101,7 @@
             padding: 0 10px;
         }
 
-        #burger-button, #burger-label, .nav, nav {
+        #burger-button, #burger-label, .nav, nav, .logo-square {
             display: none;
         }
 
@@ -180,10 +180,10 @@
     </nav>
 
     <div class="top-menu-wrap">
-        <div class="contacts">
-            <a class="item" href="/about">О НАС</a>
-            <a class="item" href="/about/contacts">КОНТАКТЫ</a>
-        </div>
+<!--        <div class="contacts">-->
+<!--            <a class="item" href="/about">О НАС</a>-->
+<!--            <a class="item" href="/about/contacts">КОНТАКТЫ</a>-->
+<!--        </div>-->
 
         <div class="user-menu">
             <!--                <span class="row">-->
@@ -275,36 +275,24 @@
 
         </div>
 
-        <div class="header-lower row">
-            <? foreach ($list as $mainItem): ?>
-                <div class='h-cat'><?= $mainItem['name']; ?>
-                    <ul>
-                        <? if (isset($mainItem['childs'])): ?>
-                            <? foreach ($mainItem['childs'] as $item): ?>
-                                <li>
-                                    <a href="/<?= $item['alias'] ?>"><?= $item['name'] ?></a>
-                                </li>
-                            <? endforeach; ?>
-                        <? endif; ?>
-                    </ul>
-
-                </div>
-            <? endforeach; ?>
-
-
-            <div class='h-cat'>Акции
-                <ul>
-                    <li>
-                        <a href="/inventar">инвентарь</a>
-                    </li>
-                    <li>
-                        <a href="/rasprodazha">распродажа</a>
-                    </li>
-
-                </ul>
-            </div>
-
-        </div>
+<!--        <div class="header-lower row">-->
+<!--            --><?// foreach ($list as $mainItem): ?>
+<!--                <div class='h-cat'>--><?//= $mainItem['name']; ?>
+<!--                    <ul>-->
+<!--                        --><?// if (isset($mainItem['childs'])): ?>
+<!--                            --><?// foreach ($mainItem['childs'] as $item): ?>
+<!--                                <li>-->
+<!--                                    <a href="/--><?//= $item['alias'] ?><!--">--><?//= $item['name'] ?><!--</a>-->
+<!--                                </li>-->
+<!--                            --><?// endforeach; ?>
+<!--                        --><?// endif; ?>
+<!--                    </ul>-->
+<!---->
+<!--                </div>-->
+<!--            --><?// endforeach; ?>
+<!--            -->
+<!---->
+<!--        </div>-->
 
     </div>
 </header>
