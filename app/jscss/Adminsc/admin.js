@@ -1,10 +1,11 @@
 import './admin.sass'
-import '../Adminsc/Adm_catalog/category'
-import '../common/common'
+import './components/a_footer/a_footer.sass'
+import '../Adminsc/a_catalog/category'
 
 import '../components/cache/clear-cache'
-import './a_menu/a_menu'
+import './components/a_menu/a_menu'
 
+import '../common/common'
 
 
 // document.addEventListener('DOMContentLoaded',function () {});

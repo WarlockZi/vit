@@ -82,10 +82,10 @@
 </header>
 
 
-<div class="adm-wrap row">
+<div class="a-wrap row">
 
 
-	<div class="adm-menu column">
+	<div class="a-menu column">
 
 		<a href="/adminsc" class="module home"><span>Admin</span></a>
 		<a href="/adminsc/catalog" class="module catalog"><span>Каталог</span></a>

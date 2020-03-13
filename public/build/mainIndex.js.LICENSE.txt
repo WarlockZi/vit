@@ -1,3 +1,7 @@
+/*! !../../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./footer.sass */
+
+/*! !../../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./header.sass */
+
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./alert.sass */
 
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./autocomplete.sass */
@@ -8,15 +12,15 @@
 
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./coockie.sass */
 
-/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./footer.sass */
-
-/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./header.sass */
-
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./prod.sass */
 
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./swiper.sass */
 
 /*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./common.sass */
+
+/*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./main.sass */
+
+/*! ../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
 
 /*! ../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
 
@@ -32,23 +36,25 @@
 
 /*! ../components/coockie/coockie */
 
-/*! ../components/footer/footer.sass */
-
-/*! ../components/header/header.sass */
-
 /*! ../components/swiper/swiper */
-
-/*! ./Catalog/catalog_product.sass */
-
-/*! ./Catalog/prod.sass */
 
 /*! ./alert.sass */
 
 /*! ./autocomplete.sass */
 
+/*! ./catalog/catalog_product.sass */
+
+/*! ./catalog/prod.sass */
+
 /*! ./common.sass */
 
+/*! ./components/footer/footer.sass */
+
+/*! ./components/header/header.sass */
+
 /*! ./coockie.sass */
+
+/*! ./main.sass */
 
 /*! ./swiper.sass */
 
@@ -72,20 +78,24 @@
 
 /*! swiper/js/swiper.esm.js */
 
+/*!********************************!*\
+  !*** ./app/jscss/Main/main.js ***!
+  \********************************/
+
+/*!**********************************!*\
+  !*** ./app/jscss/Main/main.sass ***!
+  \**********************************/
+
 /*!************************************!*\
   !*** ./app/jscss/common/common.js ***!
   \************************************/
-
-/*!**************************************!*\
-  !*** ./app/jscss/Main/main_index.js ***!
-  \**************************************/
 
 /*!**************************************!*\
   !*** ./app/jscss/common/common.sass ***!
   \**************************************/
 
 /*!******************************************!*\
-  !*** ./app/jscss/Main/Catalog/prod.sass ***!
+  !*** ./app/jscss/Main/catalog/prod.sass ***!
   \******************************************/
 
 /*!*********************************************!*\
@@ -113,14 +123,6 @@
   \*************************************************/
 
 /*!*************************************************!*\
-  !*** ./app/jscss/components/footer/footer.sass ***!
-  \*************************************************/
-
-/*!*************************************************!*\
-  !*** ./app/jscss/components/header/header.sass ***!
-  \*************************************************/
-
-/*!*************************************************!*\
   !*** ./app/jscss/components/swiper/swiper.sass ***!
   \*************************************************/
 
@@ -129,8 +131,16 @@
   \***************************************************/
 
 /*!*****************************************************!*\
-  !*** ./app/jscss/Main/Catalog/catalog_product.sass ***!
+  !*** ./app/jscss/Main/catalog/catalog_product.sass ***!
   \*****************************************************/
+
+/*!******************************************************!*\
+  !*** ./app/jscss/Main/components/footer/footer.sass ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./app/jscss/Main/components/header/header.sass ***!
+  \******************************************************/
 
 /*!********************************************************!*\
   !*** ./node_modules/ssr-window/dist/ssr-window.esm.js ***!
@@ -152,25 +162,21 @@
   !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
   \****************************************************************************/
 
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/main.sass ***!
+  \*****************************************************************************************************************************************************************************************/
+
 /*!*********************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/common/common.sass ***!
   \*********************************************************************************************************************************************************************************************/
 
 /*!*************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/Catalog/prod.sass ***!
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/catalog/prod.sass ***!
   \*************************************************************************************************************************************************************************************************/
 
 /*!******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/alert/alert.sass ***!
   \******************************************************************************************************************************************************************************************************/
-
-/*!********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/footer/footer.sass ***!
-  \********************************************************************************************************************************************************************************************************/
-
-/*!********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/header/header.sass ***!
-  \********************************************************************************************************************************************************************************************************/
 
 /*!********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/swiper/swiper.sass ***!
@@ -181,8 +187,16 @@
   \**********************************************************************************************************************************************************************************************************/
 
 /*!************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/Catalog/catalog_product.sass ***!
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/catalog/catalog_product.sass ***!
   \************************************************************************************************************************************************************************************************************/
+
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/components/footer/footer.sass ***!
+  \*************************************************************************************************************************************************************************************************************/
+
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/components/header/header.sass ***!
+  \*************************************************************************************************************************************************************************************************************/
 
 /*!******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/breadcrumbs/breadcrumbs.sass ***!

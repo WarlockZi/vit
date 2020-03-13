@@ -16,7 +16,6 @@
     <link rel="preload" href="/pic/logo-vitex.svg" as="image"/>
     <link rel="preload" href="/pic/user.svg" as="image"/>
     <? $this::getMeta(); ?>
-
     <link rel="preload" href='<? $this::getCSS(); ?>' as="style" onload="this.rel='stylesheet'" media="all">
     <style>
         body {
@@ -43,13 +42,13 @@
             position: sticky;
             top: 0;
             z-index: 3;
+	         position: sticky;
         }
 
         .top-menu-wrap {
             height: 27px;
             max-width: 970px;
             margin: 0 auto;
-            position: sticky;
             top: 0;
             z-index: 3;
             display: flex;
@@ -72,13 +71,6 @@
             position: relative;
         }
 
-
-        .contacts {
-            align-self: center;
-            margin-left: 50px;
-            display: flex;
-        }
-
         .icon {
             padding: 7px 7px;
             margin: 0px 12px;
@@ -95,10 +87,8 @@
         }
 
         main {
-            display: flex;
             max-width: 970px;
             margin: auto;
-            padding: 0 10px;
         }
 
         #burger-button, #burger-label, .nav, nav, .logo-square {
@@ -112,9 +102,9 @@
             padding-bottom: 3px;
         }
 
-        .inner-wrap a {
-            display: flex;
-        }
+        /*.inner-wrap a {*/
+        /*    display: flex;*/
+        /*}*/
 
         .h-upper {
             padding: 12px 0 10px 0;
@@ -122,7 +112,6 @@
             margin: auto;
             display: flex;
             position: relative;
-            height: 45px;
         }
 
         .h-upper > * {
@@ -149,9 +138,9 @@
             width: 120px;
         }
 
-        .swiper-slide img {
-            height: 300px;
-        }
+        /*.swiper-slide img {*/
+        /*    height: 300px;*/
+        /*}*/
     </style>
 </head>
 
@@ -371,4 +360,5 @@
 <!-- /Yandex.Metrika counter -->
 <script src="<? $this::getJS(); ?>"></script>
 </body>
+<div id="call"></div>
 </html>

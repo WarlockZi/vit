@@ -1,24 +1,26 @@
+/*! !../../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./footer.sass */
+
+/*! !../../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./header.sass */
+
+/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./about.sass */
+
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./autocomplete.sass */
 
-/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./common.sass */
+/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./login.sass */
 
-/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./footer.sass */
+/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./map.sass */
 
-/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./header.sass */
+/*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./common.sass */
 
-/*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./about.sass */
-
-/*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./login.sass */
-
-/*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./map.sass */
+/*! ../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
 
 /*! ../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
 
 /*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
 
-/*! ../components/autocomplete/autocomplete */
+/*! ../../common/common */
 
-/*! ../components/common/common */
+/*! ../../components/autocomplete/autocomplete */
 
 /*! ../components/footer/footer.sass */
 
@@ -46,45 +48,45 @@
 
 /*! no static exports found */
 
-/*!*************************************!*\
-  !*** ./app/jscss/services/login.js ***!
-  \*************************************/
+/*!************************************!*\
+  !*** ./app/jscss/common/common.js ***!
+  \************************************/
 
-/*!*************************************!*\
-  !*** ./app/jscss/services/map.sass ***!
-  \*************************************/
+/*!**************************************!*\
+  !*** ./app/jscss/common/common.sass ***!
+  \**************************************/
 
-/*!***************************************!*\
-  !*** ./app/jscss/services/about.sass ***!
-  \***************************************/
+/*!******************************************!*\
+  !*** ./app/jscss/Main/services/login.js ***!
+  \******************************************/
 
-/*!***************************************!*\
-  !*** ./app/jscss/services/login.sass ***!
-  \***************************************/
+/*!******************************************!*\
+  !*** ./app/jscss/Main/services/map.sass ***!
+  \******************************************/
 
-/*!****************************************!*\
-  !*** ./app/jscss/services/register.js ***!
-  \****************************************/
+/*!********************************************!*\
+  !*** ./app/jscss/Main/services/about.sass ***!
+  \********************************************/
 
-/*!****************************************!*\
-  !*** ./app/jscss/services/services.js ***!
-  \****************************************/
+/*!********************************************!*\
+  !*** ./app/jscss/Main/services/login.sass ***!
+  \********************************************/
 
-/*!***********************************************!*\
-  !*** ./app/jscss/components/common/common.js ***!
-  \***********************************************/
+/*!*********************************************!*\
+  !*** ./app/jscss/Main/services/register.js ***!
+  \*********************************************/
 
-/*!*************************************************!*\
-  !*** ./app/jscss/components/common/common.sass ***!
-  \*************************************************/
+/*!*********************************************!*\
+  !*** ./app/jscss/Main/services/services.js ***!
+  \*********************************************/
 
-/*!*************************************************!*\
-  !*** ./app/jscss/components/footer/footer.sass ***!
-  \*************************************************/
+/*!******************************************************!*\
+  !*** ./app/jscss/Main/components/footer/footer.sass ***!
+  \******************************************************/
 
-/*!*************************************************!*\
-  !*** ./app/jscss/components/header/header.sass ***!
-  \*************************************************/
+/*!******************************************************!*\
+  !*** ./app/jscss/Main/components/header/header.sass ***!
+  \******************************************************/
 
 /*!***********************************************************!*\
   !*** ./app/jscss/components/autocomplete/autocomplete.js ***!
@@ -98,29 +100,29 @@
   !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
   \****************************************************************************/
 
-/*!********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/services/map.sass ***!
-  \********************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/common/common.sass ***!
+  \*********************************************************************************************************************************************************************************************/
 
-/*!**********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/services/about.sass ***!
-  \**********************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/services/map.sass ***!
+  \*************************************************************************************************************************************************************************************************/
 
-/*!**********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/services/login.sass ***!
-  \**********************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/services/about.sass ***!
+  \***************************************************************************************************************************************************************************************************/
 
-/*!********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/common/common.sass ***!
-  \********************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/services/login.sass ***!
+  \***************************************************************************************************************************************************************************************************/
 
-/*!********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/footer/footer.sass ***!
-  \********************************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/components/footer/footer.sass ***!
+  \*************************************************************************************************************************************************************************************************************/
 
-/*!********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/header/header.sass ***!
-  \********************************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/components/header/header.sass ***!
+  \*************************************************************************************************************************************************************************************************************/
 
 /*!********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/autocomplete/autocomplete.sass ***!

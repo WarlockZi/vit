@@ -1,21 +1,25 @@
-@import "../coockie/coockie"
+.page-buffer
+  min-height: 150px
 
 footer
   background-image: url('/pic/header-big.png')
   justify-content: space-between
-  min-width: 100vw
+  min-width: 100%
 
   p,a
     color: #fff
     padding: 0 15px
     font-size: 10px
 
-  >.row>.column
-    margin: 15px 3vw
   >.row
-    flex-basis: 50%
     margin: 0 auto
+    max-width: 970px
+    width: 100%
+
+  >.row>.column
+    padding: 1em 0
+    flex: 1
 
 
-.page-buffer
-  min-height: 150px
+
+

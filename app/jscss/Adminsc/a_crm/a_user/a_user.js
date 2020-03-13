@@ -1,4 +1,4 @@
-import 'a_user.sass'
+import './a_user.sass'
 
 $('#users div[data-id]').on('change', function () {
     crudUser('UPDATE', $(this));

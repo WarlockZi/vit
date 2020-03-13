@@ -1,4 +1,6 @@
-/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./a_menu.sass */
+/*! !../../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./a_footer.sass */
+
+/*! !../../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./a_menu.sass */
 
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./cache.sass */
 
@@ -8,19 +10,19 @@
 
 /*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./common.sass */
 
+/*! ../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
+
 /*! ../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
 
 /*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
 
-/*! ../Adminsc/Adm_catalog/category */
+/*! ../Adminsc/a_catalog/category */
 
 /*! ../common/common */
 
 /*! ../components/cache/clear-cache */
 
 /*! ./a_menu.sass */
-
-/*! ./a_menu/a_menu */
 
 /*! ./admin.sass */
 
@@ -29,6 +31,10 @@
 /*! ./category.sass */
 
 /*! ./common.sass */
+
+/*! ./components/a_footer/a_footer.sass */
+
+/*! ./components/a_menu/a_menu */
 
 /*! exports provided: post, get, uniq */
 
@@ -52,29 +58,33 @@
   !*** ./app/jscss/common/common.sass ***!
   \**************************************/
 
-/*!********************************************!*\
-  !*** ./app/jscss/Adminsc/a_menu/a_menu.js ***!
-  \********************************************/
-
-/*!**********************************************!*\
-  !*** ./app/jscss/Adminsc/a_menu/a_menu.sass ***!
-  \**********************************************/
-
 /*!***********************************************!*\
   !*** ./app/jscss/components/cache/cache.sass ***!
   \***********************************************/
 
+/*!*************************************************!*\
+  !*** ./app/jscss/Adminsc/a_catalog/category.js ***!
+  \*************************************************/
+
 /*!***************************************************!*\
-  !*** ./app/jscss/Adminsc/Adm_catalog/category.js ***!
+  !*** ./app/jscss/Adminsc/a_catalog/category.sass ***!
   \***************************************************/
 
 /*!***************************************************!*\
   !*** ./app/jscss/components/cache/clear-cache.js ***!
   \***************************************************/
 
-/*!*****************************************************!*\
-  !*** ./app/jscss/Adminsc/Adm_catalog/category.sass ***!
-  \*****************************************************/
+/*!*******************************************************!*\
+  !*** ./app/jscss/Adminsc/components/a_menu/a_menu.js ***!
+  \*******************************************************/
+
+/*!*********************************************************!*\
+  !*** ./app/jscss/Adminsc/components/a_menu/a_menu.sass ***!
+  \*********************************************************/
+
+/*!*************************************************************!*\
+  !*** ./app/jscss/Adminsc/components/a_footer/a_footer.sass ***!
+  \*************************************************************/
 
 /*!****************************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
@@ -88,14 +98,18 @@
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/common/common.sass ***!
   \*********************************************************************************************************************************************************************************************/
 
-/*!*****************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Adminsc/a_menu/a_menu.sass ***!
-  \*****************************************************************************************************************************************************************************************************/
-
 /*!******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/cache/cache.sass ***!
   \******************************************************************************************************************************************************************************************************/
 
-/*!************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Adminsc/Adm_catalog/category.sass ***!
-  \************************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Adminsc/a_catalog/category.sass ***!
+  \**********************************************************************************************************************************************************************************************************/
+
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Adminsc/components/a_menu/a_menu.sass ***!
+  \****************************************************************************************************************************************************************************************************************/
+
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Adminsc/components/a_footer/a_footer.sass ***!
+  \********************************************************************************************************************************************************************************************************************/

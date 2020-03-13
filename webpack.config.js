@@ -15,9 +15,9 @@ const PATHS = {
 module.exports = {
     devtool: "source-map",
     entry: {
-        services: PATHS.source + '/services/services.js',
+        services: PATHS.source + '/Main/services/services.js',
         admin: PATHS.source + '/Adminsc/admin.js',
-        mainIndex: PATHS.source + '/Main/main_index.js',
+        mainIndex: PATHS.source + '/Main/main.js',
     },
     output: {
         chunkFilename: '[name].bundle.js',

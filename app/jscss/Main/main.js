@@ -1,14 +1,15 @@
 import '../components/swiper/swiper'
 import '../common/common'
-import '../components/header/header.sass'
-import '../components/footer/footer.sass'
+import './components/header/header.sass'
+import './components/footer/footer.sass'
 import '../components/alert/alert'
 import '../components/coockie/coockie'
 import '../components/autocomplete/autocomplete'
 import '../components/breadcrumbs/breadcrumbs.sass'
 
-import './Catalog/catalog_product.sass'
-import './Catalog/prod.sass'
+import './catalog/prod.sass'
+import './main.sass'
+import './catalog/catalog_product.sass'
 
 
 

@@ -31,6 +31,7 @@
     &>a
       position: relative
       padding: 13px 45px
+
       &:before
         content: '\1F57B'
         width: 26px
@@ -43,17 +44,18 @@
         font-size: 27px
         transform: rotate(-30deg)
 
-      &:after
-        content: ''
-        display: block
-        position: absolute
-        top: 14px
-        right: 9px
-        width: 8px
-        height: 8px
-        border-bottom: 3px solid #e30000
-        border-right: 3px solid #e30000
-        transform: rotate(45deg)
+      //&:after
+      //  content: ''
+      //  display: block
+      //  position: absolute
+      //  top: 14px
+      //  right: 9px
+      //  width: 8px
+      //  height: 8px
+      //  border-bottom: 3px solid #e30000
+      //  border-right: 3px solid #e30000
+      //  transform: rotate(45deg)
+
     &>a:hover
       &~.popup-info
         padding-top: 15px
@@ -67,16 +69,15 @@
 
     .popup-info
       position: absolute
-      left: 0
+      left: 30px
       top: 100%
       padding-top: 0
       height: 0
       z-index: 6
 
       .inner
-        width: 200px
+        width: 250px
         background: #fff
-        -webkit-box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.28)
         box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.28)
         font: 15px/19px 'Proxima Nova', sans-serif
         color: #181617
@@ -85,8 +86,6 @@
         overflow: hidden
         border-radius: 2px
         position: relative
-        -webkit-transition: all 0.3s
-        -o-transition: all 0.3s
         transition: all 0.3s
 
         &:before
