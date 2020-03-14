@@ -37,17 +37,16 @@
 
 
 		.top-menu {
-			background: #4e4e4e;
-			color: #fff;
+			/*background: #4e4e4e;*/
+			background: #fff;
 			position: fixed;
 			width: 100%;
 			top: 0;
 			z-index: 7;
-
 		}
 
 		.top-menu-wrap {
-			height: 27px;
+			height: auto;
 			max-width: 970px;
 			margin: 0 auto;
 			top: 0;
@@ -59,7 +58,6 @@
 
 		.top-menu a {
 			font: normal 14px 'Verdana';
-			color: #fff;
 			text-decoration: none;
 			padding: 0 10px;
 		}
