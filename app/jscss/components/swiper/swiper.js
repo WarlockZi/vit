@@ -28,7 +28,7 @@ window.onload = function () {
         mousewheelForceToAxis: true, // just use the horizontal axis to
         grabCursor: true,
         preloadImages: false,
-        lazy: true,
+        // lazy: true,
 
         lazy: {
             loadPrevNext: true,

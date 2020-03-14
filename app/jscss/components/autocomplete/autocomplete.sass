@@ -6,6 +6,7 @@
   position: relative
   margin: 6px 5px
   display: inline-flex
+  z-index: 6
 
   #autocomplete
     flex: 1
@@ -16,7 +17,6 @@
   .result
     position: absolute
     top: 96%
-    z-index: 2
     width: 85%
     left: 6%
 
@@ -47,15 +47,34 @@
 .result-search
   position: absolute
   top: 100%
-  z-index: 2
-  width: 100%
+  right: 0
+  z-index: 6
+  width: 50vw
+  max-width: 400px
+  .pic
+    height: 100px
+    flex: 1
+
+
+    img
+      width: 100px
 
   ul li a
     display: flex
+    padding: 5px
+    border-bottom: 1px solid #e8e8e8
+
+
+    .result-search-text
+      padding: 25px 0 0 5px
+      flex: 4
+      min-width: 120px
+
 
   ul
     background-color: #fff
-    box-shadow: 0px 6px 10px 0px #ff6175
+    box-shadow: 0px 6px 10px 0px #848484
+
 
 .find
   width: 32px

@@ -1,39 +1,73 @@
 import './autocomplete.sass';
 
-async function autoComplete(Input) {
-    let response = await fetch('/search?q=' + Input);
+async function getValue(input) {
+    let response = await fetch('/search?q=' + input);
     return await response.json();
-
 }
 
+function createHTML(data) {
+    var res = '<ul>';
+    data.forEach(e => {
+        res += '<li>' +
+            `<a href = '${e.url}'>` +
+            `<div class="pic">` +
+            `<img src='/pic/${e.pic}'` +
+            `alt='${e.value}'>` +
+            `</div>` +
+            `<div class="result-search-text">` + e.value +
+            '</div></li>';
+    });
+    return res += '</ul>';
+}
 
-export default window.getValue = async function (val) {
-var result = document.querySelector('.result-search');
-// if no value
+function showOverlay() {
+    if (!document.querySelector('.overlay')) {
+
+        let overlay = document.createElement("div");
+        overlay.classList.add('overlay');
+        overlay.style.display = 'block';
+        overlay.style.zIndex = '5';
+        document.querySelector('body').append(overlay);
+    }
+}
+
+function hideOverlay() {
+    let overlay = document.querySelector('.overlay');
+    overlay.remove();
+}
+
+function hideSearchResult(e) {
+    let search = document.querySelector('.result-search ul');
+    debugger;
+    if (search
+        && e.target !== search
+        && e.target.id !== 'autocomplete') {
+
+        search.remove();
+
+        document.querySelector('#autocomplete').value = '';
+
+        hideOverlay();
+    }
+}
+
+export default window.autoComplete = async function (val) {
+
+    var result = document.querySelector('.result-search');
+
     if (!val) {
         result.innerHTML = '';
         return
     }
-    // search goes here
-    var data = await autoComplete(val);
+    var data = await getValue(val);
 
-    // debugger;
-    // append list data
-    var res = '<ul>';
-    data.forEach(e => {
-        res += '<li>' +
-            `<a href = '${e.url}'>`+
-            `<img src='/pic/${e.pic}' alt='${e.value}'>`+
-            e.value+
-            '</a></li>';
-    });
-    res += '</ul>';
-    result.innerHTML = res;
+    result.innerHTML = createHTML(data);
+
+    showOverlay();
 
     document.querySelector('body').addEventListener('click', function (e) {
-        const search = document.querySelector('.result-search ul');
-        if (document.querySelector('.result-search ul') && e.target !== search) {
-            search.remove();
-        }
-    });
+        hideSearchResult(e);
+
+    })
 }
+
