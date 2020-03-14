@@ -10,8 +10,8 @@
     <link rel="canonical" href="/<?= isset($vars['canonical']) ? $vars['canonical'] : '' ?>"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
-	<link rel="preload" href="/pic/header-big.png" as="image"/>
+    <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
+    <link rel="preload" href="/pic/header-big.png" as="image"/>
     <link rel="preload" href="/pic/logo-square.svg" as="image"/>
     <link rel="preload" href="/pic/logo-vitex.svg" as="image"/>
     <link rel="preload" href="/pic/user.svg" as="image"/>
@@ -39,10 +39,11 @@
         .top-menu {
             background: #4e4e4e;
             color: #fff;
-            position: sticky;
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 3;
-	         position: sticky;
+
         }
 
         .top-menu-wrap {
@@ -97,8 +98,7 @@
 
         .inner-wrap {
             max-width: 970px;
-            margin: auto;
-            box-sizing: border-box;
+            margin: 0 auto;
             padding-bottom: 3px;
         }
 
@@ -108,8 +108,6 @@
 
         .h-upper {
             padding: 12px 0 10px 0;
-            max-width: 1310px;
-            margin: auto;
             display: flex;
             position: relative;
         }
@@ -118,14 +116,13 @@
             flex: 1;
         }
 
-        .logo-wrap, .logo-square, .logo-vitex {
+        .logo-vitex {
             height: 45px;
         }
 
         .logo-wrap {
             display: flex;
             width: 515px;
-            margin: 0 0 0 10px;
             font-size: 13px;
             position: relative;
         }
@@ -136,25 +133,33 @@
 
         .logo-wrap span {
             width: 120px;
+            font-size: .7em;
+            display: flex;
+            align-items: center;
         }
 
-        /*.swiper-slide img {*/
-        /*    height: 300px;*/
-        /*}*/
+        .swiper-slide {
+            width: 25%;
+            margin-right: 30px;
+        }
+
+        .swiper-slide img {
+            height: 300px;
+        }
     </style>
 </head>
 
-<body class="column" >
+<body class="column">
 
 <div class="top-menu">
 
     <div class="top-menu-wrap">
-<!--        <div class="contacts">-->
-<!--            <a class="item" href="/about">О НАС</a>-->
-<!--            <a class="item" href="/about/contacts">КОНТАКТЫ</a>-->
-<!--        </div>-->
+        <!--        <div class="contacts">-->
+        <!--            <a class="item" href="/about">О НАС</a>-->
+        <!--            <a class="item" href="/about/contacts">КОНТАКТЫ</a>-->
+        <!--        </div>-->
 
-        <input id="burger-button" name="burger-button" type="checkbox" >
+        <input id="burger-button" name="burger-button" type="checkbox">
         <label id="burger-label" for="burger-button">☰</label>
         <nav id="burger-menu">
             <div class="wrap column">
@@ -233,7 +238,7 @@
                 <img src="/pic/logo-square.svg" class="logo-square" alt="logo  медицицинские расходные материалы">
                 <img src="/pic/logo-vitex.svg" class="logo-vitex" alt="vitex медицицинские расходные материалы">
                 <?= !($this->route['action'] == "index" && $this->route['controller'] == "Main") ? "</a>" : "" ?>
-                <span>Медицинские расходные <br>материалы оптом</span>
+                <span>Медицинские расходные материалы оптом</span>
             </div>
 
             <div class='phone-wrap'>
@@ -253,8 +258,8 @@
 
             <div class="search-wrap">
 
-                <input id="autocomplete" type="text" placeholder="Поиск" name="q" value="" size="20"
-                       maxlength="50" autocomplete="off" aria-label="поиск"
+                <input id="autocomplete" type="text" placeholder="Поиск" name="q" value="" size="15"
+                       maxlength="15" autocomplete="off" aria-label="поиск"
                        onkeyup="getValue(this.value)">
                 <span class="find"></span>
 
@@ -264,30 +269,27 @@
 
         </div>
 
-<!--        <div class="header-lower row">-->
-<!--            --><?// foreach ($list as $mainItem): ?>
-<!--                <div class='h-cat'>--><?//= $mainItem['name']; ?>
-<!--                    <ul>-->
-<!--                        --><?// if (isset($mainItem['childs'])): ?>
-<!--                            --><?// foreach ($mainItem['childs'] as $item): ?>
-<!--                                <li>-->
-<!--                                    <a href="/--><?//= $item['alias'] ?><!--">--><?//= $item['name'] ?><!--</a>-->
-<!--                                </li>-->
-<!--                            --><?// endforeach; ?>
-<!--                        --><?// endif; ?>
-<!--                    </ul>-->
-<!---->
-<!--                </div>-->
-<!--            --><?// endforeach; ?>
-<!--            -->
-<!---->
-<!--        </div>-->
+        <!--        <div class="header-lower row">-->
+        <!--            --><? // foreach ($list as $mainItem): ?>
+        <!--                <div class='h-cat'>--><? //= $mainItem['name']; ?>
+        <!--                    <ul>-->
+        <!--                        --><? // if (isset($mainItem['childs'])): ?>
+        <!--                            --><? // foreach ($mainItem['childs'] as $item): ?>
+        <!--                                <li>-->
+        <!--                                    <a href="/--><? //= $item['alias'] ?><!--">-->
+        <? //= $item['name'] ?><!--</a>-->
+        <!--                                </li>-->
+        <!--                            --><? // endforeach; ?>
+        <!--                        --><? // endif; ?>
+        <!--                    </ul>-->
+        <!--                </div>-->
+        <!--            --><? // endforeach; ?>
+        <!--        </div>-->
 
     </div>
 </header>
 
 <?= $content ?>
-
 
 
 <div class="page-buffer"></div>
@@ -320,7 +322,7 @@
 </footer>
 
 
-<div id="cookie-notice" role="cookie" >Продолжая использовать сайт, вы даете согласие на обработку файлов cookie,
+<div id="cookie-notice" role="cookie">Продолжая использовать сайт, вы даете согласие на обработку файлов cookie,
     пользовательских данных (сведения о местоположении; тип и версия ОС; тип и версия Браузера; тип устройства и
     разрешение его экрана; источник откуда пришел на сайт пользователь; с какого сайта или по какой рекламе;
     язык ОС и Браузера; какие страницы открывает и на какие кнопки нажимает пользователь; ip-адрес) в целях
@@ -331,7 +333,6 @@
 
 
 </div>
-
 
 
 <!--</div>-->

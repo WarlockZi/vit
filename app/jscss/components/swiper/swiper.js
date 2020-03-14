@@ -6,10 +6,9 @@ window.onload = function () {
 
     var newSwiper = new Swiper('.swiper-container-new', {
         autoplay: {
-            delay: 300,
-            disableOnInteraction: true,
+            delay: 5000,
         },
-        speed: 1000,
+        speed: 500,
         loop: true,
         breakpoints: {
             640: {
@@ -25,15 +24,17 @@ window.onload = function () {
                 spaceBetween: 30,
             },
         },
-        mousewheelControl: false,
+        mousewheelControl: true,
         mousewheelForceToAxis: true, // just use the horizontal axis to
         grabCursor: true,
+        preloadImages: false,
+        lazy: true,
 
-        // lazy: {
-        //     loadPrevNext: true,
-        //     loadPrevNextAmount: 1,
-        // },
+        lazy: {
+            loadPrevNext: true,
+            loadPrevNextAmount: 1,
+        },
 
     });
-    newSwiper.width = "100%";
+
 };
