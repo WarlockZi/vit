@@ -1,3 +1,4 @@
+import './showSearchInput'
 import './autocomplete.sass';
 
 async function getValue(input) {

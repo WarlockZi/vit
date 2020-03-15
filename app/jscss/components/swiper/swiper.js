@@ -12,15 +12,15 @@ window.onload = function () {
         loop: true,
         breakpoints: {
             640: {
-                slidesPerView: 2,
+                slidesPerView: 4,
                 spaceBetween: 10,
             },
             768: {
-                slidesPerView: 3,
+                slidesPerView: 5,
                 spaceBetween: 20,
             },
             1024: {
-                slidesPerView: 4,
+                slidesPerView: 6,
                 spaceBetween: 30,
             },
         },

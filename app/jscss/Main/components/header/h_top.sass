@@ -1,19 +1,45 @@
+.header-actions-wrap
+  flex: 1
+  display: flex
+  justify-content: flex-end
+  align-items: center
 
-.top-menu
+.inner-wrap
   padding: 0 20px
 
   #burger-label
-    display: flex
-    align-items: center
-    justify-content: center
-    top: -2px
-    left: 7px
-    color: $dark_grey
-    font-size: 21px
-    cursor: pointer
-    z-index: 5
-    width: 30px
-    height: 30px
+    span
+      display: flex
+      position: relative
+      align-items: center
+      justify-content: center
+      top: 1px
+      left: 1px
+      background-color: $dark_grey
+      font-size: 21px
+      cursor: pointer
+      z-index: 5
+      width: 30px
+      height: 4px
+      margin: 20px 10px
+
+      &:before
+        content: ''
+        position: absolute
+        top: 10px
+        left: 0px
+        width: 100%
+        height: 4px
+        background-color: $dark_grey
+
+      &:after
+        content: ''
+        position: absolute
+        top: -10px
+        left: 0px
+        width: 100%
+        height: 4px
+        background-color: $dark_grey
 
   #burger-button:checked
     & ~ #burger-menu
@@ -22,8 +48,8 @@
 #burger-menu
   display: block
   position: absolute
-  top: 26px
-  left: -500px
+  top: calc(100% + 3px)
+  left: -900px
   background: #4e4e4e
   padding-bottom: 65px
   transition: left .3s
@@ -54,7 +80,7 @@
 
 
 .user-menu:hover
-  background-color: #8d8d8d
+  //border: 1px solid #8d8d8d
 
   > .nav
     display: flex
@@ -63,7 +89,7 @@
     background: #fff
     z-index: 3
     position: absolute
-    top: 100%
+    top: calc(100%+ 1px)
     width: 280px
 
     a
