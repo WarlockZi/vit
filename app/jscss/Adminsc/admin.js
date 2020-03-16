@@ -1,3 +1,4 @@
+import '../common/common'
 import './admin.sass'
 import './components/a_footer/a_footer.sass'
 import '../Adminsc/a_catalog/category'
@@ -5,7 +6,6 @@ import '../Adminsc/a_catalog/category'
 import '../components/cache/clear-cache'
 import './components/a_menu/a_menu'
 
-import '../common/common'
 
 
 // document.addEventListener('DOMContentLoaded',function () {});

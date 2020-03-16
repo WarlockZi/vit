@@ -1,5 +1,5 @@
-import './showSearchInput'
 import './autocomplete.sass';
+import './showSearchInput'
 
 async function getValue(input) {
     let response = await fetch('/search?q=' + input);
@@ -37,7 +37,13 @@ function hideOverlay() {
     overlay.remove();
 }
 
+function hideSearchInp() {
+    let search_wrap = document.querySelector('.search-wrap');
+    search_wrap.classList.remove('search-show');
+}
+
 function hideSearchResult(e) {
+
     let search = document.querySelector('.result-search ul');
     debugger;
     if (search
@@ -49,6 +55,7 @@ function hideSearchResult(e) {
         document.querySelector('#autocomplete').value = '';
 
         hideOverlay();
+        hideSearchInp();
     }
 }
 
@@ -68,7 +75,6 @@ export default window.autoComplete = async function (val) {
 
     document.querySelector('body').addEventListener('click', function (e) {
         hideSearchResult(e);
-
     })
 }
 

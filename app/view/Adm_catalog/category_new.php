@@ -59,26 +59,26 @@
 				<section id="content-tab1">
 					<? if ($category): ?>
 						<div class="row">
-							<strong>id-</strong>
+							<strong>id</strong>
 							<span id='id'><?= $category['id'] ?: ''; ?></span>
 						</div>
 						<div class="row">
-							<strong>активный-</strong>
+							<strong>активный</strong>
 							<input id = 'act' type="checkbox" checked>
 							<label for='act'></label>
 						</div>
 						<div class="row">
-							<strong>наименование-</strong>
+							<strong>наименование</strong>
 							<span contenteditable id='name'></span>
 						</div>
 
 						<div class="row">
-							<strong>описание-</strong>
+							<strong>описание</strong>
 							<span contenteditable id='text'
 							      class="column"></span>
 						</div>
 						<div class="row">
-							<strong>принадлежит категории-</strong>
+							<strong>принадлежит категории</strong>
 							<div>
 								<select id='parent'>
 									<option value=""></option>
