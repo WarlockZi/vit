@@ -1,7 +1,7 @@
-<div class="adm-submenu">
+<div class="a-submenu">
   <div class="title">CRM</div>
   <? if (in_array('3', $user['rights'])): // admin ?>
-     <div class="admin-actions">
+     <div class="a-actions">
 
        <a href  = "crm/orders">Заказы</a>
        <a href  = 'users'>Покупатели</a>
@@ -10,7 +10,7 @@
   <? endif; ?>
 </div>
 
-<div class="adm-content">
+<div class="a-content">
   <div class="a-breadcrumbs">
     <a href  = "/adminsc">Admin</a>
     <a href  = "/adminsc/crm">CRM</a>

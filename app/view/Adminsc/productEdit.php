@@ -1,4 +1,4 @@
-<div class = 'wrap-admin'>
+<div class = 'a-tabs-wrap'>
   <div class = 'admin-product-edit'>
     <div class="title">
       <div contenteditable="true"><?= $product['name'] ?></div>

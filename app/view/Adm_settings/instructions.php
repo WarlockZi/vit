@@ -1,4 +1,4 @@
-<div class="wrap-admin">
+<div class="a-tabs-wrap">
 
 
   <div class="a-breadcrumbs">
@@ -11,7 +11,7 @@
   <div class="admin-instructions row">
       <? if (in_array('3', $user['rights'])): // admin ?>
          <? if (isset($roles)): ?>
-          <div class="admin-actions">
+          <div class="a-actions">
               <? foreach ($roles as $key => $value) : ?>
                <a href="<?= $value ?>"><?= $key ?></a>
             <? endforeach; ?>

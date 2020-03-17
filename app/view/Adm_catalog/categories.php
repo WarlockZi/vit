@@ -1,4 +1,4 @@
-<div class="adm-submenu">
+<div class="a-submenu">
 
   <?
   new app\view\widgets\menu\Menu([
@@ -12,7 +12,7 @@
 </div>
 
 
-<div class="adm-content">
+<div class="a-content">
   <div class="a-breadcrumbs">
     <a href  = "/adminsc/index">Admin</a>
     <a href  = "/adminsc/catalog">Каталог</a>

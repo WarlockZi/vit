@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<meta charset="utf-8">
 	<meta http-equiv="cleartype" content="on">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<meta name="MobileOptimized" content="320">
+	<meta name="ROBOTS" CONTENT="INDEX, FOLOOW">
 	<meta name="HandheldFriendly" content="True">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="yandex-verification" content="003253e624aad5b6"/>
-	<link rel="canonical" href="/<?= isset($vars['canonical']) ? $vars['canonical'] : '' ?>"/>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="canonical" href="/<?= isset($vars['canonical']) ? $vars['canonical'] : '' ?>"/>
 	<link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
 	<link rel="preload" href="/pic/header-big.png" as="image"/>
 	<link rel="preload" href="/pic/logo-square.svg" as="image"/>

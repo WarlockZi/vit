@@ -1,4 +1,4 @@
-<div class="wrap-admin">
+<div class="a-tabs-wrap">
 
 
   <div class="a-breadcrumbs">

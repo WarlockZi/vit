@@ -1,9 +1,7 @@
-<div class="adm-submenu">
+<div class="a-submenu">
 	<div class="title">Каталог</div>
-	<div class="admin-actions">
+	<div class="a-actions">
 		<?
-
-		use \app\core\Base\View;
 
 		new app\view\widgets\menu\Menu([
 			'class' => 'admin-category-menu',
@@ -17,7 +15,7 @@
 		?>
 	</div>
 </div>
-<div class="adm-content">
+<div class="a-content">
 	<div class="a-breadcrumbs">
 		<a href="/adminsc/index">Admin ></a>
 		<a href="/adminsc/catalog">Каталог ></a>
@@ -29,7 +27,7 @@
 		<? endif; ?>
 	</div>
 
-	<div class="wrap-admin">
+	<div class="a-tabs-wrap">
 
 		<div class="work-area">
 			<input id='token' type="hidden" value="<?= $_SESSION['token'] ?>">
@@ -64,6 +62,11 @@
 						<div class="row">
 							<strong>id :</strong>
 							<span id='id'><?= $category['id'] ?: ''; ?></span>
+						</div>
+						<div class="row">
+							<strong>активный</strong>
+							<input id = 'act' type="checkbox" <?=$cat->act?'checked':''?>>
+							<label for='act'></label>
 						</div>
 						<div class="row">
 							<strong>Наименование :</strong>

@@ -1,9 +1,9 @@
-<div class="adm-submenu">
+<div class="a-submenu">
 
 	<div class="title">Настройки</div>
 
 	<? if (in_array('3', $user['rights'])): // admin ?>
-		<div class="admin-actions">
+		<div class="a-actions">
 
 			<a href='/adminsc/Sitemap'>Создать SiteMap</a>
 			<a href=#>Права пользователей</a>
@@ -18,7 +18,7 @@
 
 </div>
 
-<div class="adm-content">
+<div class="a-content">
 	<div class="a-breadcrumbs">
 		<a href="index">Admin</a>
 		<div>Настройки</div>

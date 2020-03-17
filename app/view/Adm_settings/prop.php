@@ -1,8 +1,8 @@
-<div class="adm-submenu">
+<div class="a-submenu">
 </div>
 
 
-<div class="adm-content">
+<div class="a-content">
   <div class="a-breadcrumbs">
     <a href  = "/adminsc">Admin</a>
     <a href  = "/adminsc/settings">Настройки</a>

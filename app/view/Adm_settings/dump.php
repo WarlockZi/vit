@@ -1,4 +1,4 @@
-<div class="wrap-admin">
+<div class="a-tabs-wrap">
 
 
   <div class="a-breadcrumbs">
@@ -9,7 +9,7 @@
 
 
   <? if (in_array('3', $user['rights'])): // admin ?>
-     <div class="admin-actions">
+     <div class="a-actions">
 
        <a href  = '/adminsc/settings/dumpwww'>Dump WWW</a>
        <a href  = '/adminsc/settings/dumpsql'>Dump SQL</a>

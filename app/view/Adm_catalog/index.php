@@ -1,7 +1,7 @@
-<div class="adm-submenu">
+<div class="a-submenu">
   <div class="title">Каталог</div>
 
-  <div class="admin-actions">
+  <div class="a-actions">
       <?
       new app\view\widgets\menu\Menu([
           'class' => 'admin-category-menu',
@@ -14,7 +14,7 @@
   </div>
 </div>
 
-<div class="adm-content">
+<div class="a-content">
 
   <div class="a-breadcrumbs">
     <a href  = "/adminsc/index">Admin</a>

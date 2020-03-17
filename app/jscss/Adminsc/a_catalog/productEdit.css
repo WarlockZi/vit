@@ -391,7 +391,7 @@ tbody tr:first-child
 	width: 130px;
 
 }
-.admin-actions{
+.a-actions{
 	display: flex;
 	flex-flow:column;
 	margin-bottom: 250px;
@@ -400,15 +400,15 @@ tbody tr:first-child
 	padding: 10px;
 }
 
-.admin-actions a{
+.a-actions a{
 	padding: 10px;
 }
-.admin-actions a:hover{
+.a-actions a:hover{
 	background: #ccc;
 	padding: 10px;
 }
 
-.wrap-admin{
+.a-tabs-wrap{
 	width: 90%;
 	margin: 30px auto;
 

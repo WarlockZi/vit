@@ -1,5 +1,5 @@
 
-  <div class="adm-submenu">
+  <div class="a-submenu">
 
 
 
@@ -24,7 +24,7 @@
 
 </div>
 
-  <div class="adm-content">
+  <div class="a-content">
   <div class="a-breadcrumbs">
     <div>Admin</div>
   </div>

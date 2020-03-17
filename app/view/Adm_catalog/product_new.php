@@ -1,6 +1,6 @@
-<div class="adm-submenu">
+<div class="a-submenu">
     <!--<div class="title">Новый товар</div>-->
-    <div class="admin-actions">
+    <div class="a-actions">
         <?
         new app\view\widgets\menu\Menu([
             'class' => 'admin-category-menu',
@@ -12,7 +12,7 @@
 		  use app\view\widgets\menu\Menu; ?>
     </div>
 </div>
-<div class="adm-content">
+<div class="a-content">
     <div class="a-breadcrumbs">
         <a href="/adminsc/index">Admin ></a>
         <a href="/adminsc/catalog">Каталог ></a>
@@ -28,7 +28,7 @@
     </div>
     <H1>Создание нового товара</H1>
 
-    <div class="wrap-admin">
+    <div class="a-tabs-wrap">
         <div class="work-area">
             <input id='token' type="hidden" value="<?= $_SESSION['token'] ?>">
             <div class="tabs">
