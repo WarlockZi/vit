@@ -143,61 +143,6 @@ header
     padding: 15px
     min-height: 100vh
 
-  #content-tab1
-    padding: 10px
-
-  .row
-    padding: 5px
-
-    div, span, select, input, label
-      flex: 3
-      min-height: 18px
-      position: relative
-      padding: 2px
-      font: 100 15px/20px sans-serif
-
-    select
-      width: 100%
-
-    strong
-      color: #555555
-      min-width: 120px
-      padding: 4px 15px 2px 5px
-      display: flex
-      flex: 1
-      justify-content: flex-end
-      font-size: 14px
-      align-items: start
-      word-break: break-word
-      text-align: end
-
-    input[type='checkbox']
-      display: none
-
-    input+label
-      display: inline-flex
-      align-items: center
-      user-select: none
-
-    input+label::before
-      content: ''
-      display: inline-block
-      width: 1em
-      height: 1em
-      flex-shrink: 0
-      flex-grow: 0
-      border: 1px solid #adb5bd
-      border-radius: 0.25em
-      margin-right: 0.5em
-      background-repeat: no-repeat
-      background-position: center center
-      background-size: 50% 50%
-
-    input:checked+label::before
-      border-color: #565d68
-      background-color: #565d68
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e")
-
 
 input[contenteditable],
 span[contenteditable],
@@ -262,13 +207,6 @@ td a
   padding: 3px 8px
 
 
-
-
-
-
-
-
-
 .a-tabs-wrap
   background-color: #fffF
   margin: 0 5px
@@ -280,86 +218,13 @@ td a
   margin: 5px
 
 
-.add-prop
-  background: #123aff
-  color: #fff
-  height: 100%
-  font-weight: 600
-  padding: 3px 6px
-  transition: .1s
 
-
-.add-prop:hover
-  background: #0070ff
-  color: #fff
-
-.add-prop-val
-  height: 17px
-  transition: .1s
-
-.del-prop
-  width: 15px
-  height: 15px
-  position: absolute
-  background: red
-  right: 0
-  top: 100%
-  color: #fff
-  font-size: 8px
-  transition: .3s
-  border-radius: 0 0 7px 7px
-  line-height: 200%
-
-  &:hover
-    width: 50px
-    transition: .3s
-
-  span
-    position: absolute
-
-  span:nth-child(1)
-    opacity: 1
-    right: 5px
-
-  span:nth-child(2)
-    opacity: 0
-    display: none
-
-  &:hover.del-prop span:nth-child(1)
-    opacity: 0
-    transition: .3s
-
-  &:hover.del-prop span:nth-child(2)
-    opacity: 1
-    transition: .3s
-    right: 6px
-    display: block
-
-
-.category-properties
-  margin: 5px 0 5px 50px
 
 .wrap .list:hover
   background: #f6f6f6
 
-.properties
-  padding: 5px
 
-  &.column > select
-    margin: 5px 0 5px 50px
 
-  select
-    margin: 5px 0
-
-.cat-prop
-  padding: 10px 0
-  font-weight: 600
-
-.add-property
-  justify-content: flex-end
-
-  span
-    padding: 10px 10px 10px 0
 
 
 

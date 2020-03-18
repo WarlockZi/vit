@@ -14,9 +14,10 @@ class Category extends Model
 	{
 
 		if ($parentId) {
-			$sql = 'SELECT * FROM category WHERE id = ?';
-			$params = [$parentId];
-			$parent = $this->findBySql($sql, $params);
+			$parent = \R::find('category',$parentId );
+//			$sql = 'SELECT * FROM category WHERE id = ?';
+//			$params = [$parentId];
+//			$parent = $this->findBySql($sql, $params);
 			$parent[0]['props'] = explode(',', $parent[0]['props']);
 			$parents = array_merge($parents, $parent);
 			$i++;
@@ -160,10 +161,11 @@ class Category extends Model
 	public function getCategory($id)
 	{
 
-		$category = $this->findOne($id);
+		$category = \R::load('category', $id); //$this->findOne($id);
 
 		if ($category && is_array($category)) {
-			$category['props'] = explode(',', $category['props']);
+
+			$category['props'] = $category->sharedProps;//explode(',', $category['props']);
 			$category['parents'] = $this->getCategoryParents($category['parent']);
 			if ($ch = $this->getCategoryChildren($category['id']))
 				$category['children'] = $ch;
@@ -180,12 +182,12 @@ class Category extends Model
 		return $category;
 	}
 
-	public function getInitCategories($fromCache = 0)
+	public function getActiveCategories($fromCache = 0)
 	{
 		if ($fromCache) {
 			$list = App::$app->cache->get('list');
 			if (!$list) {
-				$list = $this->getInitCategories();
+				$list = $this->getActiveCategories();
 				App::$app->cache->set('list', $list, 30);
 			}
 		}

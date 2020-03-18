@@ -95,7 +95,7 @@
 							<div class="parent-properties separator">
 								Свойства родительской категории
 							</div>
-							<div class="parent-prop column">
+							<div class="prop column">
 								<? foreach ($parentCat['props'] as $Pprop): ?>
 									<div class="category-properties">
 										<? foreach ($props as $prop): ?>
@@ -121,11 +121,11 @@
 										<? foreach ($props as $prop): ?>
 											<? if (!in_array($prop['id'], $thisCatAndParentCatProps)): ?>
 												<option
-														value="<?= $prop['id']; ?>" <?= $catProp == $prop['id'] ? 'selected' : ''; ?>><?= $prop['name'] ?></option>
+														value="<?= $prop['id']; ?>" <?= $catProp->id == $prop['id'] ? 'selected' : ''; ?>><?= $catProp->name; ?></option>
 											<? else: ?>
 												<? if ($prop['id'] == $catProp): ?>
 													<option
-															value="<?= $prop['id']; ?>" <?= $catProp == $prop['id'] ? 'selected' : ''; ?>><?= $prop['name'] ?></option>
+															value="<?= $prop['id']; ?>" <?= $catProp == $prop['id'] ? 'selected' : ''; ?>><?= $catProp->name; ?></option>
 												<? endif; ?>
 											<? endif; ?>
 										<? endforeach; ?>
@@ -140,7 +140,7 @@
 							<? foreach ($props as $prop): ?>
 								<? if (!in_array($prop['id'], $category['parentProps']) && !in_array($prop['id'], $category['props'])): ?>
 									<option
-											value="<?= $prop['id']; ?>" <?= $catProp == $prop['id'] ? 'selected' : ''; ?>><?= $prop['name'] ?></option>
+											value="<?= $prop['id']; ?>" <?= $category['props'] == $prop['id'] ? 'selected' : ''; ?>><?= $prop['name'] ?></option>
 								<? endif; ?>
 							<? endforeach; ?>
 

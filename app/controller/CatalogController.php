@@ -11,7 +11,7 @@ class CatalogController extends AppController {
    public function __construct($route) {
       parent::__construct($route);
 //      $this->layout = 'vitex';
-//      $list = App::$app->category->getInitCategories();
+//      $list = App::$app->category->getActiveCategories();
 //      $this->set(compact('list'));
 //      View::setCss(['css' => '/public/css/vitex.css', 'addtime']);
       View::setCssN('/public/build/mainIndex.css');
@@ -20,7 +20,7 @@ class CatalogController extends AppController {
 
    public function actionIndex() {
 
-      $cats_id = App::$app->category->getInitCategories();
+      $cats_id = App::$app->category->getActiveCategories();
       View::setMeta('Каталог спецодежды', 'Каталог спецодежды', 'Каталог спецодежды');
       $this->set(compact('cats_id', 'user'));
    }

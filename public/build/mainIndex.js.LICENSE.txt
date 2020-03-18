@@ -8,11 +8,11 @@
 
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./breadcrumbs.sass */
 
-/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./catalog_product.sass */
-
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./coockie.sass */
 
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./prod.sass */
+
+/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./product.sass */
 
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./swiper.sass */
 
@@ -42,9 +42,9 @@
 
 /*! ./autocomplete.sass */
 
-/*! ./catalog/catalog_product.sass */
-
 /*! ./catalog/prod.sass */
+
+/*! ./catalog/product.sass */
 
 /*! ./common.sass */
 
@@ -101,6 +101,10 @@
   \******************************************/
 
 /*!*********************************************!*\
+  !*** ./app/jscss/Main/catalog/product.sass ***!
+  \*********************************************/
+
+/*!*********************************************!*\
   !*** ./app/jscss/components/alert/alert.js ***!
   \*********************************************/
 
@@ -131,10 +135,6 @@
 /*!***************************************************!*\
   !*** ./app/jscss/components/coockie/coockie.sass ***!
   \***************************************************/
-
-/*!*****************************************************!*\
-  !*** ./app/jscss/Main/catalog/catalog_product.sass ***!
-  \*****************************************************/
 
 /*!******************************************************!*\
   !*** ./app/jscss/Main/components/footer/footer.sass ***!
@@ -180,6 +180,10 @@
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/catalog/prod.sass ***!
   \*************************************************************************************************************************************************************************************************/
 
+/*!****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/catalog/product.sass ***!
+  \****************************************************************************************************************************************************************************************************/
+
 /*!******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/alert/alert.sass ***!
   \******************************************************************************************************************************************************************************************************/
@@ -191,10 +195,6 @@
 /*!**********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/coockie/coockie.sass ***!
   \**********************************************************************************************************************************************************************************************************/
-
-/*!************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/catalog/catalog_product.sass ***!
-  \************************************************************************************************************************************************************************************************************/
 
 /*!*************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/components/footer/footer.sass ***!

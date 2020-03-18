@@ -58,7 +58,7 @@ class SearchController extends AppController
 //         exit();
 //      }else {
 //         $this->layout = 'vitex';
-//         $list = App::$app->category->getInitCategories();
+//         $list = App::$app->category->getActiveCategories();
 //         $css = 'vitex.css';
 ////               View::setJsCss(['css'=>'/public/css/vitex.css']);
 //         $this->set(compact('css','list','result'));

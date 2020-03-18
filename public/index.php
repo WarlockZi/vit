@@ -19,10 +19,15 @@ spl_autoload_register('vitexAutoload');
 
 require '../vendor/rb/rb-mysql.php';
 R::setup( 'mysql:host=127.0.0.1;dbname=vitex_test', 'mysql', 'mysql' );
+R::getDatabaseAdapter()->getDatabase()->stringifyFetches( FALSE );
+R::getDatabaseAdapter()->getDatabase()->getPDO()->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
+R::freeze(false);
+
 if ( !R::testConnection() )
 {
 	exit ('Нет соединения с базой данных');
 }
+
 
 new App;
 

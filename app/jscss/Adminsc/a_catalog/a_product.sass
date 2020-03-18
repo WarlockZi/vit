@@ -1,0 +1,55 @@
+.add-prop
+  background: #123aff
+  color: #fff
+  height: 100%
+  font-weight: 600
+  padding: 3px 6px
+  transition: .1s
+
+
+.add-prop:hover
+  background: #0070ff
+  color: #fff
+
+.add-prop-val
+  height: 17px
+  transition: .1s
+
+.del-prop
+  width: 15px
+  height: 15px
+  position: absolute
+  background: red
+  right: 0
+  top: 100%
+  color: #fff
+  font-size: 8px
+  transition: .3s
+  border-radius: 0 0 7px 7px
+  line-height: 200%
+
+  &:hover
+    width: 50px
+    transition: .3s
+
+  span
+    padding: 10px 10px 10px 0
+      position: absolute
+
+  span:nth-child(1)
+    opacity: 1
+    right: 5px
+
+  span:nth-child(2)
+    opacity: 0
+    display: none
+
+  &:hover.del-prop span:nth-child(1)
+    opacity: 0
+    transition: .3s
+
+  &:hover.del-prop span:nth-child(2)
+    opacity: 1
+    transition: .3s
+    right: 6px
+    display: block

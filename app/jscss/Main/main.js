@@ -9,7 +9,7 @@ import '../components/breadcrumbs/breadcrumbs.sass'
 
 import './catalog/prod.sass'
 import './main.sass'
-import './catalog/catalog_product.sass'
+import './catalog/product.sass'
 
 
 

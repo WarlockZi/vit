@@ -2,8 +2,8 @@
 
 namespace app\model;
 
-use app\core\Base\Model;
 use app\core\App;
+use app\core\Base\Model;
 
 
 class Product extends Model
@@ -23,7 +23,8 @@ class Product extends Model
 
 	public function getImgParams()
 	{
-		return ['toExt' => 'webp',
+		return [
+			'toExt' => 'webp',
 			'quality' => 75,
 			'sizes' => [0, 80, 300, 700]
 		];

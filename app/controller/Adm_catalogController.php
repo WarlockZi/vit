@@ -24,10 +24,6 @@ class Adm_catalogController extends AdminscController
 				exit();
 			};
 		}
-//      $routeView = ['js' => $this->route, 'view' => $this->view];
-//      View::setJsCss($routeView);
-//		$routeView = ['css' => $this->route, 'view' => $this->view];
-//      View::setJsCss($routeView);
 	}
 
 	public function actionProducts()
@@ -125,16 +121,24 @@ class Adm_catalogController extends AdminscController
 
 	public function actionIndex()
 	{
-
-		$iniCatList = App::$app->category->getInitCategories();
+		$iniCatList = App::$app->category->getActiveCategories();
 		$this->set(compact('iniCatList'));
 	}
 
 	public function actionCategories()
 	{
 
-		$iniCatList = App::$app->category->getInitCategories();
+		$iniCatList = App::$app->category->getActiveCategories();
 		$this->set(compact('iniCatList'));
+	}
+
+	private function echo_props($props)
+	{
+		foreach ($props as $prop) {
+			echo('<pre>');
+			echo $prop->name;
+			echo('</pre>');
+		}
 	}
 
 	public function actionCategoryNew()
@@ -149,46 +153,33 @@ class Adm_catalogController extends AdminscController
 		$this->set(compact('category'));
 	}
 
-	public function getParentCatProps($cat, $parentCatProps=[])
+	public function getParentsAndThierProps($cat, $arr_parents = [])
 	{
-		while ($cat['properties']['parent']){
-			$parent = R::load('category', $cat['parent']);
-			$parProps = $parent->sharedProps;
-			$parentCatProps[] = $parent['name'];
-			$parentCatProps[$parent['name']]['category'] = $parent;
-			$parentCatProps[$parent['name']]['props'] = $parProps;
-			$this->getParentCatProps($parent,$parentCatProps);
+		$parent = R::load('category', $cat->parent);
+		$parent_name = $parent->name;
+		$parent_id = $parent->parent;
+		if ($parent_id !== null) {
+			$parent_props = $parent->sharedProps->export;
+//			$parent->props = $parent_props;
+			$arr_parents[$parent_name] = $parent->export();
+			$arr_parents[$parent_name] = $parent_props;
+
+			$this->getParentsAndThierProps($parent, $arr_parents);
+		} else {
+
+			return $arr_parents;
 		}
-		return $parentCatProps;
 	}
+
 
 	public function actionCategory()
 	{
 		$id = (int)$_GET['id'];
 
 		$cat = R::load('category', $id);
-		$parentCatProps = $this->getParentCatProps($cat);
-		$props = $cat->sharedProps;
-		foreach ($props as $prop) {
-			echo('<pre>');
-			echo $prop->name;
-			echo('</pre>');
-		}
-//		$prop = R::load('props', 3);
-//		$res = $prop->sharedCategory;
-//		foreach ($res as $ob) {
-//			echo('<pre>');
-//			echo $ob->name;
-//			echo('</pre>');
-//		}
-
-		$pic = R::load('pic', 3);
-		$res = $pic->sharedCategory;
-		foreach ($res as $ob) {
-			echo('<pre>');
-			echo $ob->name;
-			echo('</pre>');
-		}
+		$parentsWithProps = $this->getParentsAndThierProps($cat);
+		$category['props'] = $cat->sharedProps;
+		$this->echo_props($category['props']);
 
 
 		$category = App::$app->category->getCategory($id);
@@ -196,7 +187,7 @@ class Adm_catalogController extends AdminscController
 		$thisCatAndParentCatProps = isset($category['parents']) ?
 			array_merge($category['parentProps'], $category['props']) :
 			$category['props'];
-		$this->set(compact('cat','category', 'props', 'thisCatAndParentCatProps'));
+		$this->set(compact('cat', 'category', 'props', 'thisCatAndParentCatProps'));
 	}
 
 }
