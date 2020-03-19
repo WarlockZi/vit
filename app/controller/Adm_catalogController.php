@@ -132,14 +132,7 @@ class Adm_catalogController extends AdminscController
 		$this->set(compact('iniCatList'));
 	}
 
-	private function echo_props($props)
-	{
-		foreach ($props as $prop) {
-			echo('<pre>');
-			echo $prop->name;
-			echo('</pre>');
-		}
-	}
+
 
 	public function actionCategoryNew()
 	{
@@ -152,42 +145,58 @@ class Adm_catalogController extends AdminscController
 
 		$this->set(compact('category'));
 	}
-
-	public function getParentsAndThierProps($cat, $arr_parents = [])
+	private function echo_beans($beans)
 	{
-		$parent = R::load('category', $cat->parent);
-		$parent_name = $parent->name;
-		$parent_id = $parent->parent;
-		if ($parent_id !== null) {
-			$parent_props = $parent->sharedProps->export;
-//			$parent->props = $parent_props;
-			$arr_parents[$parent_name] = $parent->export();
-			$arr_parents[$parent_name] = $parent_props;
-
-			$this->getParentsAndThierProps($parent, $arr_parents);
-		} else {
-
-			return $arr_parents;
+		foreach ($beans as $bean) {
+			echo('<pre>');
+			echo $bean->name;
+			echo('</pre>');
 		}
 	}
+
+	/**
+	 * @param $cat
+	 * @return array of parents of category with props
+	 */
+	public function getCatParentsWithProps($cat, &$arr_parents = [])
+	{
+		$parent_id = $cat->parent;
+		$parent = R::load('category', $parent_id);
+		$parent_name = $parent->name;
+		if ($parent_id !== 0) {
+			$parent_props = $parent->sharedProps;
+			foreach ($parent_props as $parent_prop) {
+				$prop[] = $parent_prop->export();
+			}
+			$arr_parents[$parent_name] = $parent->export();
+			$arr_parents[$parent_name]['props'] = $prop;
+			$this->getCatParentsWithProps($parent, $arr_parents);
+		}
+			return $arr_parents;
+	}
+	public function getCatProps($cat)
+	{
+		$props = $cat->sharedProps;
+		foreach ($props as $prop) {
+			$arrProps[$prop->name] = $prop->export();
+		}
+		return $arrProps;
+	}
+
 
 
 	public function actionCategory()
 	{
 		$id = (int)$_GET['id'];
 
-		$cat = R::load('category', $id);
-		$parentsWithProps = $this->getParentsAndThierProps($cat);
-		$category['props'] = $cat->sharedProps;
-		$this->echo_props($category['props']);
+		$category = R::load('category', $id);
 
+		$category['props'] = $this->getCatProps($category);
+		$parentsWithProps = $this->getCatParentsWithProps($category);
 
-		$category = App::$app->category->getCategory($id);
-		$props = App::$app->prop->getProps();
-		$thisCatAndParentCatProps = isset($category['parents']) ?
-			array_merge($category['parentProps'], $category['props']) :
-			$category['props'];
-		$this->set(compact('cat', 'category', 'props', 'thisCatAndParentCatProps'));
+		$category['paerntsWithProps'] = $this->getCatProps($category);
+
+		$this->set(compact('category'));
 	}
 
 }

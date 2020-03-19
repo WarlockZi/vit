@@ -65,7 +65,7 @@
 						</div>
 						<div class="row">
 							<strong>активный</strong>
-							<input id = 'act' type="checkbox" <?=$cat->act?'checked':''?>>
+							<input id = 'act' type="checkbox" <?=$category->act?'checked':''?>>
 							<label for='act'></label>
 						</div>
 						<div class="row">

@@ -8,7 +8,7 @@ use app\core\Base\View;
 
 class AppController extends Controller
 {
-	protected $list;
+//	protected $list;
 
 	public function __construct(array $route)
 	{
@@ -16,28 +16,6 @@ class AppController extends Controller
 		$this->layout = 'vitex';
 		View::setJsN("/public/build/mainIndex.js");
 		View::setCssN("/public/build/mainIndex.css");
-		if (strpos(strtolower($route['controller']), 'adminsc') === false) {
-			$list = App::$app->category->getAssocCategory(['active'=>'true']);
-			$this->list = App::$app->category->categoriesTree($list);
-			$this->set(compact('list'));
-		}
-	}
-
-	public function getFromCache($cache_path)
-	{
-		$this->auth();
-		if (is_array($this->route) && array_key_exists('cache', $this->route)) {
-			if ($this->route['cache']) {
-				$cache = $this->route['cache'];
-			}
-		}
-
-		$file = CACHE . $cache_path . $cache . '.txt';
-		if (file_exists($file)) {
-			$results = require $file;
-		}
-		$this->set(compact('results'));
-		exit();
 	}
 
 	public function auth()

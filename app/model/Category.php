@@ -4,6 +4,7 @@ namespace app\model;
 
 use app\core\App;
 use app\core\Base\Model;
+use RedBeanPHP\Logger\RDefault;
 
 class Category extends Model
 {
@@ -49,7 +50,6 @@ class Category extends Model
 
 	public function categoriesTree($cat)
 	{
-
 		$tree = [];
 		$data = $cat;
 		foreach ($data as $id => &$node) {
