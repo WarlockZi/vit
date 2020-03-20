@@ -2,29 +2,14 @@
 
 namespace app\controller;
 
-use app\core\Base\View;
-use app\core\Base\Controller;
-use app\model\User;
-use app\core\App;
+use app\core\{App, Base\View};
+//use app\core\Base\View;
 
 class UserController extends AppController
 {
 
 	public function __construct($route)
 	{
-//      if ($this->isAjax()) {
-//         if (isset($_POST['param'])) {
-//            $arr = json_decode($_POST['param'], true);
-//            if (!isset($arr['token']) || !$arr['token'] == $_SESSION['token']) {
-//               exit(FALSE);
-//            }
-//            $func = $arr['action'];
-//            $model = $arr['model'] ?: 'adminsc';
-//            if (App::$app->{$model}->$func($arr)) {
-//               exit('true');
-//            }
-//         }
-//      }
 		parent::__construct($route);
 	}
 
@@ -109,12 +94,15 @@ class UserController extends AppController
 
 		if ($this->isAjax()) {
 
-			$email = App::$app->user->clean_data($_POST['email']); //$post['reg_email'];//
-			$password = App::$app->user->clean_data($_POST['password']);
-			$confPass = App::$app->user->clean_data($_POST['confPass']);
-			$name = App::$app->user->clean_data($_POST['name']); //$post['reg_name'];//
-			$surName = App::$app->user->clean_data($_POST['surName']); //$post['reg_name'];//
-			$secName = App::$app->user->clean_data($_POST['secName']); //$post['reg_name'];//
+
+			[$email,$password,$confPass,$name,$surName,$secName] = $_POST;
+
+			$email = ($_POST['email']);
+			$password = $_POST['password'];
+			$confPass = $_POST['confPass'];
+			$name = $_POST['name'];
+			$surName = $_POST['surName'];
+			$secName = $_POST['secName'];
 
 			if ($msg = $this->regDataWrong($email, $password, $confPass, $name, $surName, $secName)) {
 				echo include APP . '/view/User/alert.php';
@@ -123,8 +111,6 @@ class UserController extends AppController
 
 			$password = md5($password);
 			$hash = md5(microtime());
-			$squash = (isset($_SESSION['back_url']) && $_SESSION['back_url'] == 'squash') ? 1 : 0;
-
 
 			$sql = 'INSERT INTO users (rightId, surName, middleName, name, email, password, hash)'
 				. 'VALUES (,?,?,?,?,?,?,?)';
@@ -138,8 +124,7 @@ class UserController extends AppController
 				exit();
 			}
 
-			// Все прошло гладко. Отправим почту.
-			$headers = "Content-Type: text/plain; charset=utf8";
+			$headers = "Content-Type: text/plain; charset=utf8";	// Все прошло гладко. Отправим почту.
 //         $headers .= "From: Admin <admin@mail.ru> \r\n";
 			$tema = "Регистрация VITEX";
 			$mail_body = "Для продолжения работы перейдите по ссылке: " . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME'] . PROJ . "/user/confirm?hash=" . $hash;
@@ -152,9 +137,13 @@ class UserController extends AppController
 			exit();
 		}
 		View::setMeta('Регистрация', 'Регистрация', 'Регистрация');
+
 		$token = $this->token;
-		View::setCss(['css' => $this->route['controller'], 'view' => $this->view, 'addtime']);
 		$this->set(compact('token'));
+
+		View::setCssN('/public/build/services.css');
+		View::setJsN('/public/build/services.js');
+
 	}
 
 	public function regDataWrong($email, $password, $confPass, $name, $surName, $secName)
