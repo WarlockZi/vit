@@ -1,47 +1,44 @@
 import './a_category.sass'
 import {post, uniq} from '../../common/common'
 
-let catProps = document.querySelector('.properties');
 let catProp = document.querySelectorAll('.catProp');
 let arra = Array.from(catProp);
-let a = arra.map(function(el) {
-    return el.innerText
+let cat_properties = arra.map(function (el) {
+    return el.innerText;
 });
-let select = document.querySelector('#props');
+
+let select = document.querySelector('#select_props');
 console.log(a);
 
-function addParagraph(self) {
+function addParagraph(self, appendTo) {
     let p = document.createElement('p');
     p.value = self.options[self.selectedIndex].value;
     p.innerHTML = self.options[self.selectedIndex].innerHTML;
-    catProps.append(p);
+    appendTo.append(p);
 }
 
 function delOption(select, chosen) {
     chosen.parentNode.removeChild(chosen);
-    select.options[select.selectedIndex] = 0;
 }
 
-select.addEventListener('change', function() {
+select.addEventListener('change', function () {
     let chosen = (this.options[this.selectedIndex]);
+    let catProps = document.querySelector('.cat-property');
 
-    if (a.indexOf(chosen.innerHTML) == -1) {
-        alert('попали');
-        addParagraph(this);
+    if (cat_properties.indexOf(chosen.innerHTML) == -1) {
+        addParagraph(this, catProps);
         delOption(this, chosen);
     }
-})
+
+    let obj  = {};
+    obj.crud = 'update';
+    obj.table = 'category';
+    obj.token = document.querySelector('#token').value;
+    post( '/adminsc', obj);
+
+});
 
 
-
-
-
-
-
-//
-// post.token = document.querySelector('#token').value;
-// post.url = '/adminsc';
-// post.action = action ? action : 'update';
 //
 // let category = Object.create();
 // category.model = 'category';
