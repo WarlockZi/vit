@@ -93,8 +93,8 @@
 
 						<? foreach ($category['cat_parents_with_props'] as $parent): ?>
 
-							<div class="parent-properties separator">
-								Свойства родительской категории <br><span><?= $parent['name']; ?></span>
+							<div class="parent-properties separator">Свойства родительской категории
+								<span><?= $parent['name']; ?></span>
 							</div>
 							<div class="prop column">
 								<? foreach ($parent['props'] as $prop): ?>
@@ -114,10 +114,11 @@
 
 					<select id="select_props">
 						<option value="0">Добавить свойство</option>
-						<option value="1">цвет</option>
-						<option value="2">вкус</option>
-						<option value="3">размкр</option>
-						<option value="4">вес</option>
+                        <?foreach($props as $prop):?>
+						<option value="<?=$prop['id']?>"><?=$prop['name']?></option>
+
+                        <?endforeach;?>
+
 					</select>
 
 
@@ -158,7 +159,7 @@
 						<? endforeach; ?>
 
 					<? else: ?>
-						<? if (isset($category['parent'])): ?>
+						<? if (isset($category['children'])): ?>
 							<?= $ddProductButton ?>
 							<div class="products row">
 								<? foreach ($category['children']['products'] as $product) : ?>

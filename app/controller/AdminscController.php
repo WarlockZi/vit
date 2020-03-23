@@ -12,9 +12,7 @@ class AdminscController extends AppController
         if ($this->isAjax()) {
             if (isset($_POST['param'])) {
                 $arr = json_decode($_POST['param'], true);
-                if (!isset($arr['token']) || !$arr['token'] == $_SESSION['token']) {
-                    exit(FALSE);
-                }
+
                 $func = $arr['action'];
                 $model = $arr['model'] ?: 'adminsc';
                 if (App::$app->{$model}->$func($arr)) {

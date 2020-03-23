@@ -8,7 +8,6 @@ let cat_properties = arra.map(function (el) {
 });
 
 let select = document.querySelector('#select_props');
-console.log(a);
 
 function addParagraph(self, appendTo) {
     let p = document.createElement('p');
@@ -31,9 +30,15 @@ select.addEventListener('change', function () {
     }
 
     let obj  = {};
-    obj.crud = 'update';
-    obj.table = 'category';
     obj.token = document.querySelector('#token').value;
+    obj.table = 'category';
+    obj.id = document.querySelector('#id');
+    obj.action = 'update';
+    sha
+    obj.values.shared.table = 'props';
+    obj.values.shared.id = chosen.value;
+
+
     post( '/adminsc', obj);
 
 });
