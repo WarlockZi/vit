@@ -7,6 +7,12 @@ class Cache {
    public function __construct() {
    }
 
+    /**
+     * @param $key
+     * @param $data
+     * @param int $seconds
+     * @return bool
+     */
    public  function set($key, $data, $seconds = 3600) {
       $content['data'] = $data;
       $content['end_time'] = time() + $seconds;

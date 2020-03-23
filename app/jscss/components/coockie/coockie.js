@@ -1,59 +1,65 @@
 import './coockie.sass'
 
-document.addEventListener('DOMContentLoaded', function () {
 
-    get_cookie('cn');
+addCookieHTML();
 
-    function get_cookie(cookie_name) {
+const hasCookie = get_cookie('cn');
 
-        let hasCookie = document.cookie.match('(^|;)?' + cookie_name + '=([^;]*)');
+showNotification(hasCookie);
 
-        addCookieHTML();
-        let s = document.querySelector('#cookie-notice');
-        if (hasCookie) { //нашли куку
-            s.style.bottom = '-1000%';
-        } else {
-            // s.style.transition = '1s';
+function showNotification(hasCookie) {
+    if (hasCookie) {
+        return false;
+    } else {
+        setTimeout(function () {
+            let s = document.querySelector('#cookie-notice');
             s.style.bottom = '0';
-        }
+        }, 500);
+    }
+}
+
+function hideNotification() {
+    let s = document.querySelector('#cookie-notice');
+    s.style.bottom = '-35%';
+}
+
+function get_cookie(cookie_name) {
+    let hasCookie = document.cookie.match('(^|;)?' + cookie_name + '=([^;]*)');
+    if (hasCookie) {
+        return true;
+    } else {
         return null;
     }
+}
 
+function setCookie() {
+    const date = new Date(),
+        minute = 60 * 1000,
+        day = minute * 60 * 24;
+    let days = 1;
+    date.setTime(date.getTime() + (days * day));
+    document.cookie = "cn=1; path=/; SameSite=lax; expires=" + date;
+
+    hideNotification();
+
+}
+
+function addCookieHTML() {
+    let el = document.createElement('div');
+    el.id = "cookie-notice";
+    el.role = "cookie";
+    el.innerHTML =
+        'Мы используем cookie-файлы для наилучшего представления' +
+        'нашего сайта. Продолжая использовать этот сайт,' +
+        'вы соглашаетесь с использованием cookie-файлов.' +
+        '<span id="cn-accept-cookie">Соглашаюсь</span> <a href="/about/politicaconf">Подробнее</a>'
+    ;
+    let footer = document.querySelector('footer');
+    footer.append(el);
     document.querySelector('#cn-accept-cookie').addEventListener('click', setCookie);
+}
 
-    function setCookie() {
-        // alert('Установим куки');
-        const date = new Date(),
-            minute = 60 * 1000,
-            day = minute * 60 * 24;
-        let days = 1;
-        date.setTime(date.getTime() + (days * day));
-        document.cookie = "cn=1; path=/; SameSite=lax; expires=" + date;
-        // addCookieHTML();
-        let s = document.querySelector('#cookie-notice');
-        s.style.bottom = '-1000%';
-    }
-
-    function addCookieHTML() {
-        let el = document.createElement('div');
-        el.id = "cookie-notice";
-        el.role = "cookie";
-        el.innerHTML =
-            'Продолжая использовать сайт, вы даете согласие на обработку файлов cookie,' +
-            'пользовательских данных (сведения о местоположении; тип и версия ОС; тип и версия Браузера; тип устройства и' +
-            'разрешение его экрана; источник откуда пришел на сайт пользователь; с какого сайта или по какой рекламе;' +
-            'язык ОС и Браузера; какие страницы открывает и на какие кнопки нажимает пользователь; ip-адрес) в целях' +
-            'функционирования сайта, проведения ретаргетинга и проведения статистических исследований и обзоров. Если вы' +
-            'не хотите, чтобы ваши данные обрабатывались, покиньте сайт.' +
-            '<span id="cn-accept-cookie">Соглашаюсь</span>'
-        ;
-
-        let footer = document.querySelector('footer');
-        footer.append(el)
-        el.style.bottom = '-1000%';
-    }
-
-});
+// });
 
 
 

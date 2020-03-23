@@ -3,24 +3,27 @@
 namespace app\core;
 
 use app\model\User;
+use app\core\Cache;
 use app\controller\СatalogController;
-use app\model\Category;
 
-class Router {
+class Router
+{
 
     protected static $routes = [];
     protected static $route = [];
     protected static $aCategoryOrProduct = [];
 
-    public static function add($regexp, $route = []) {
+    public static function add($regexp, $route = [])
+    {
         self::$routes[$regexp] = $route;
     }
 
-    public static function matchRoute($url) {
+    public static function matchRoute($url)
+    {
 
 // если это категория
 
-        if ($url && $category = App::$app->category->isCategory($url) ) {
+        if ($url && $category = App::$app->category->isCategory($url)) {
             $route['controller'] = 'Catalog';
             $route['action'] = 'category';
 
@@ -65,7 +68,8 @@ class Router {
         return FALSE;
     }
 
-    public static function dispatch($url) {
+    public static function dispatch($url)
+    {
 
         // Получим только неявные Get параметры(то, что после имени домена идет)
         $url = self::removeQuryString($url);
@@ -97,20 +101,24 @@ class Router {
         }
     }
 
-    public static function getRoutes() {
+    public static function getRoutes()
+    {
         return self::$routes;
     }
 
-    public static function getRoute() {
+    public static function getRoute()
+    {
         return self::$route;
     }
 
-    protected static function upperCamelCase($name) {
+    protected static function upperCamelCase($name)
+    {
         $name = str_replace(' ', '', ucwords(str_replace('-', ' ', $name)));
         return $name;
     }
 
-    protected static function lowerCamelCase($name) {
+    protected static function lowerCamelCase($name)
+    {
         $name = str_replace('-', ' ', $name);
         $name = ucwords($name);
         $name = str_replace(' ', '', $name);
@@ -118,7 +126,8 @@ class Router {
         return $name;
     }
 
-    protected static function removeQuryString($url) {
+    protected static function removeQuryString($url)
+    {
 
         if ($url) {
             $params = explode('&', $url, 2);

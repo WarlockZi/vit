@@ -7,7 +7,7 @@ use app\core\App;
 
 class Adminsc extends Model {
 
-   public function createSiteMap() {
+   public function createSiteMaSp() {
 
    }
 
