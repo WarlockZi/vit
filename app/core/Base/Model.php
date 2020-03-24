@@ -204,7 +204,10 @@ abstract class Model
 
     public function updateShared($arr)
     {
-        \R::load('category', $arr['id']);
+        $category = \R::load('category', $arr['id']);
+        $prop = \R::load($arr['values']['shared']['table'], $arr['values']['shared']['id']);
+        $category->sharedPropsList[] = $prop;
+        \R::store($category);
     }
 
     public function updateOwn($arr)

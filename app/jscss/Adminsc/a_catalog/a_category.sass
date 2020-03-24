@@ -7,15 +7,33 @@
 .parent-properties
   flex-flow: column
 
-.cat-property-title
+.cat-properties-title
   padding: 10px 0
   font-weight: 600
   color: #646464
 
-.cat-property
-  p
-    font-weight: 100
-    padding: 3px 5px
+.cat-properties
+
+  .cat-property
+    align-items: baseline
+
+    &:hover
+      background-color: #f1f1f1
+    p
+      font: 100 13px sans-serif
+      padding: 3px 5px
+
+    .cat-prop_del
+      max-width: 1.5em
+      max-height: 1.5em
+      background: #8a92a0
+      border-radius: 6%
+      cursor: pointer
+      text-align: center
+      color: #fff
+      font: 800 .8em sans-serif!important
+      padding: 0!important
+      vertical-align: middle
 
 #select_props
   margin-top: 20px

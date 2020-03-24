@@ -107,17 +107,26 @@
 					<? endif; ?>
 
 
-					<div class="cat-property-title">Свойства категории</div>
-						<div class="cat-property column"></div>
-
+					<div class="cat-properties-title">Свойства категории</div>
+					<div class="cat-properties column">
+						<? foreach ($category['props'] as $prop): ?>
+						<div class="cat-property row">
+							<p><?= $prop['name'] ?></p>
+							<div title="удалить"
+							     class="cat-prop_del"
+							     data-id= <?= $prop['id'] ?>>X
+							</div>
+						</div>
+						<? endforeach; ?>
+					</div>
 
 
 					<select id="select_props">
 						<option value="0">Добавить свойство</option>
-                        <?foreach($props as $prop):?>
-						<option value="<?=$prop['id']?>"><?=$prop['name']?></option>
+						<? foreach ($props as $prop): ?>
+							<option value="<?= $prop['id'] ?>"><?= $prop['name'] ?></option>
 
-                        <?endforeach;?>
+						<? endforeach; ?>
 
 					</select>
 

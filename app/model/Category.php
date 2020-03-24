@@ -88,10 +88,10 @@ class Category extends Model
         }
         return $products;
     }
-    public function update($obj){
-        $cat = R::load('category', obj['id']);
-
-    }
+//    public function update($obj){
+//        $cat = R::load('category', obj['id']);
+//
+//    }
 
 
     public function getCategoryChildren($parentId)
