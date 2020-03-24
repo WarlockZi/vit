@@ -34,9 +34,9 @@
 
 
 			<div class="tabs">
-				<input id="tab1" type="radio" name="tabs" checked>
+				<input id="tab1" type="radio" name="tabs" >
 				<label for="tab1" title="Подкатегории">Подробно</label>
-				<input id="tab2" type="radio" name="tabs">
+				<input id="tab2" type="radio" name="tabs"checked>
 				<label for="tab2" title="Свойства">Свойства</label>
 				<input id="tab3" type="radio" name="tabs">
 				<label for="tab3" title="Сео">Сео</label>
@@ -113,8 +113,8 @@
 						<div class="cat-property row">
 							<p><?= $prop['name'] ?></p>
 							<div title="удалить"
-							     class="cat-prop_del"
-							     data-id= <?= $prop['id'] ?>>X
+                                 onclick = "delProperty(<?= $prop['id'] ?>);this.parentNode.remove()"
+							     >X
 							</div>
 						</div>
 						<? endforeach; ?>

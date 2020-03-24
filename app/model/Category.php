@@ -88,11 +88,15 @@ class Category extends Model
         }
         return $products;
     }
-//    public function update($obj){
-//        $cat = R::load('category', obj['id']);
-//
-//    }
 
+    public function delProp($obj)
+    {
+        $propId = $obj['values']['shared']['id'];
+        $cat = \R::load('category',$obj['id']);
+
+        unset( $cat->sharedPropsList[$propId] );
+        \R::store($cat);
+    }
 
     public function getCategoryChildren($parentId)
     {
@@ -178,8 +182,7 @@ class Category extends Model
         }
 
         $sql = 'SELECT * FROM category WHERE parent = 0 AND act = 1';
-//		$arr = $this->findBySql($sql);
-//		return $arr;
+
     }
 
 }

@@ -1,15 +1,18 @@
-import {post} from "../../common/common";
+import {post} from "../../common/common"
+import {preparedObj} from './a_category'
 
+window.delProperty = async function (id) {
+    let obj = new preparedObj();
+    obj.values = {};
+    obj.values.shared = {};
+    obj.action = "delProp";
+    obj.values.shared.table = "props";
+    obj.values.shared.id = id;
 
-let catPropDel = document.querySelector('.cat-prop_del');
-catPropDel.addEventListener('click', delProperty);
-
-function delProperty() {
-
-        let propId = this.dataset['id'];
-
+    let deleted = await post(obj.url, obj);
 
 };
+
 
 // let catProps = document.querySelector('.cat-property');
 //

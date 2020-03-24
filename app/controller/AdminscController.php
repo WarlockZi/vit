@@ -115,16 +115,18 @@ class AdminscController extends AppController
     public function actionIndex(){
         View::setJsN('/public/build/admin.js');
         View::setCssN('/public/build/admin.css');
-        if ($_POST && count($_POST) == 1) {
-            reset($_POST);
-            $action = key($_POST);
-            if (isset($_POST[$action])) {
-                $this->$action();
-            }
-        }
+//        if ($_POST ) {
+//            $body = json_decode($_POST['param'], true);
+//            $action = $body['action'];
+//            if ($action) {
+//                $this->$action($body);
+//            }
+//        }
 // Проверяем существует ли пользователь и подтвердил ли регистрацию
         View::setMeta('Администрирование', 'Администрирование', 'Администрирование');
     }
+
+
 
     public function OreplaceUnderlinesDashesInURLS()
     {

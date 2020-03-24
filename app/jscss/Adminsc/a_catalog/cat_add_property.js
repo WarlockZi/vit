@@ -9,10 +9,20 @@ let cat_properties = arra.map(function (el) {
 let select = document.querySelector('#select_props');
 
 function addParagraph(self, appendTo) {
+    let catProp = document.createElement('div');
+    catProp.classList.add('cat-property', 'row');
     let p = document.createElement('p');
     p.value = self.options[self.selectedIndex].value;
     p.innerHTML = self.options[self.selectedIndex].innerHTML;
-    appendTo.append(p);
+    catProp.append(p);
+    let delPropBtn = document.createElement('div');
+    delPropBtn.title = 'удалить';
+    delPropBtn.onclick = "delProperty(<?= $prop['id'] ?>)";
+    delPropBtn.innerText = "X";
+    catProp.append(delPropBtn);
+    appendTo.append(catProp);
+
+
 }
 
 function delOption(select, chosen) {
@@ -24,7 +34,7 @@ function addProperty() {
 
 select.addEventListener('change', function () {
     let chosen = (this.options[this.selectedIndex]);
-    let catProps = document.querySelector('.cat-property');
+    let catProps = document.querySelector('.cat-properties');
 
     if (cat_properties.indexOf(chosen.innerHTML) == -1) {
         addParagraph(this, catProps);

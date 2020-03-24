@@ -168,7 +168,6 @@ class Adm_catalogController extends AdminscController
     public function getCatProps($cat)
     {
         if ($props = $cat->sharedProps) {
-
             foreach ($props as $prop) {
                 $arrProps[$prop->name] = $prop->export();
             }

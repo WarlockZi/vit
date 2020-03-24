@@ -24,6 +24,8 @@
 
 /*! ./a_catalog/a_category */
 
+/*! ./a_category */
+
 /*! ./a_category.sass */
 
 /*! ./a_menu.sass */
@@ -43,6 +45,8 @@
 /*! ./components/a_menu/a_menu */
 
 /*! exports provided: post, get, uniq */
+
+/*! exports provided: preparedObj */
 
 /*! no exports provided */
 
