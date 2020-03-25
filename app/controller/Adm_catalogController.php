@@ -101,8 +101,7 @@ class Adm_catalogController extends AdminscController
                 $props = App::$app->prop->getProps();
                 $this->set(compact('product', 'category', 'props'));
                 $this->view = 'product_new';
-                $routeView = ['js' => $this->route, 'view' => $this->view];
-//            View::setJsCss($routeView);
+
             } else {
                 $id = (int)$_GET['id'];
 
@@ -178,29 +177,37 @@ class Adm_catalogController extends AdminscController
 
     public function getAllParentsProps($parentsWithProps){
         $parentProps = [];
+
         foreach ($parentsWithProps as $parentWithProp) {
-            $parentProps = array_merge($parentProps, $parentWithProp);
+            $parentProps = array_merge($parentProps, $parentWithProp['props']);
         }
         return $parentProps;
+    }
+
+    public function getAddableProps( $parentsProps, $categoryProps){
+		 $props1 = R::findAll('props');
+		 foreach ($props1 as $prop) {
+			 $props[$prop->name] = $prop->export();
+		 }
+    	$arr = array_diff_key( $props, $categoryProps);
+    	$arr = array_diff_key($arr, $parentsProps);
+    	return $arr;
     }
 
     public function actionCategory()
     {
         $id = (int)$_GET['id'];
 
-        $props1 = R::findAll('props');
-        foreach ($props1 as $prop) {
-            $props[] = $prop->export();
-        }
-
         $category = R::load('category', $id);
         $category->props = $this->getCatProps($category);
         $parentsWithProps = $this->getCatParentsWithProps($category);
         $parentsProps = $this->getAllParentsProps($parentsWithProps);
+        $addableProps = $this->getAddableProps($parentsProps, $category['props']);
+
         $category->catParentsWithProps = $parentsWithProps;
         $category = $category->export();
 
-        $this->set(compact('category', 'props'));
+        $this->set(compact('category', 'addableProps'));
     }
 
 }

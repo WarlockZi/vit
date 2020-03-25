@@ -34,9 +34,9 @@
 
 
 			<div class="tabs">
-				<input id="tab1" type="radio" name="tabs" >
+				<input id="tab1" type="radio" name="tabs">
 				<label for="tab1" title="Подкатегории">Подробно</label>
-				<input id="tab2" type="radio" name="tabs"checked>
+				<input id="tab2" type="radio" name="tabs" checked>
 				<label for="tab2" title="Свойства">Свойства</label>
 				<input id="tab3" type="radio" name="tabs">
 				<label for="tab3" title="Сео">Сео</label>
@@ -107,23 +107,25 @@
 					<? endif; ?>
 
 
-					<div class="cat-properties-title">Свойства категории</div>
+					<div class="cat-properties-title separator">Свойства категории</div>
 					<div class="cat-properties column">
 						<? foreach ($category['props'] as $prop): ?>
-						<div class="cat-property row">
-							<p><?= $prop['name'] ?></p>
-							<div title="удалить"
-                                 onclick = "delProperty(<?= $prop['id'] ?>);this.parentNode.remove()"
-							     >X
+							<div class="cat-property row">
+								<div title="удалить"
+								     data-id = <?= $prop['id']; ?>
+								     class = "del-prop">
+								<?= $prop['name']; ?>
+								</div>
+								<p><?= $prop['name'] ?></p>
+
 							</div>
-						</div>
 						<? endforeach; ?>
 					</div>
 
 
 					<select id="select_props">
 						<option value="0">Добавить свойство</option>
-						<? foreach ($props as $prop): ?>
+						<? foreach ($addableProps as $prop): ?>
 							<option value="<?= $prop['id'] ?>"><?= $prop['name'] ?></option>
 
 						<? endforeach; ?>

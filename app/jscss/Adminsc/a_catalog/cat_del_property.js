@@ -1,7 +1,22 @@
 import {post} from "../../common/common"
 import {preparedObj} from './a_category'
 
-window.delProperty = async function (id) {
+const cat_properties = document.querySelector('.cat-properties');
+
+if (cat_properties) {
+
+    cat_properties.addEventListener('click', function (e) {
+        if (!event.target.classList.contains('del-prop'))return;
+            let del_btn = event.target;
+            let name = del_btn.innerText;
+            let id = del_btn.dataset.id;
+
+            delProperty(id, name, del_btn);
+
+    });
+}
+
+async function delProperty(id, name, self) {
     let obj = new preparedObj();
     obj.values = {};
     obj.values.shared = {};
@@ -11,22 +26,12 @@ window.delProperty = async function (id) {
 
     let deleted = await post(obj.url, obj);
 
-};
+    let option = document.createElement("option");
+    option.innerText = name;
+    let select = document.querySelector('#select_props');
+    select.append(option);
 
+    self.parentNode.remove()
+}
 
-// let catProps = document.querySelector('.cat-property');
-//
-// let obj = {};
-// obj.token = document.querySelector('#token').value;
-// obj.table = 'category';
-// obj['model'] = 'category';
-// obj.id = +document.querySelector('#id').innerText;
-// obj.action = 'update';
-// let shared = {};
-// shared.table = 'props';
-// shared.id = chosen.value;
-// obj.values = {};
-// obj.values.shared = shared;
-//
-// post('/adminsc', obj);
 
