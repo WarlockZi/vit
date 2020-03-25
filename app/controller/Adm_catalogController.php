@@ -30,8 +30,6 @@ class Adm_catalogController extends AdminscController
     {
 
         $fName = $fAct = $fArt = 0;
-        $params = [];
-        $where = $QSA = '';
         $params = explode('&', $_SERVER['QUERY_STRING'], 2);
         if (count($params) > 1) {
             $QSA = urldecode($params[1]);
@@ -82,8 +80,7 @@ class Adm_catalogController extends AdminscController
             $cnt_pages = 1;
 
         if ($page > $cnt_pages)
-            $page = $cnt_pages;
-        $this->set(compact('products', 'productsCnt', 'cnt_pages', 'QSA'));
+            $this->set(compact('products', 'productsCnt', 'cnt_pages', 'QSA'));
     }
 
     public function actionProduct()
@@ -175,7 +172,8 @@ class Adm_catalogController extends AdminscController
         return [];
     }
 
-    public function getAllParentsProps($parentsWithProps){
+    public function getAllParentsProps($parentsWithProps)
+    {
         $parentProps = [];
 
         foreach ($parentsWithProps as $parentWithProp) {
@@ -184,30 +182,47 @@ class Adm_catalogController extends AdminscController
         return $parentProps;
     }
 
-    public function getAddableProps( $parentsProps, $categoryProps){
-		 $props1 = R::findAll('props');
-		 foreach ($props1 as $prop) {
-			 $props[$prop->name] = $prop->export();
-		 }
-    	$arr = array_diff_key( $props, $categoryProps);
-    	$arr = array_diff_key($arr, $parentsProps);
-    	return $arr;
+    public function getAddableProps($parentsProps, $categoryProps)
+    {
+        $props1 = R::findAll('props');
+        foreach ($props1 as $prop) {
+            $props[$prop->name] = $prop->export();
+        }
+        $arr = array_diff_key($props, $categoryProps);
+        $arr = array_diff_key($arr, $parentsProps);
+        return $arr;
+    }
+
+    public function get_cat_with_null_fields()
+    {
+        $category = \R::findOne('category');
+        $category = $category->export();
+        foreach ($category as $key=>$item) {
+            $arr[$key] = '';
+        }
+        return $arr;
     }
 
     public function actionCategory()
     {
         $id = (int)$_GET['id'];
 
-        $category = R::load('category', $id);
-        $category->props = $this->getCatProps($category);
-        $parentsWithProps = $this->getCatParentsWithProps($category);
-        $parentsProps = $this->getAllParentsProps($parentsWithProps);
-        $addableProps = $this->getAddableProps($parentsProps, $category['props']);
+        if ($id == 'new') {
+            $category = $this->get_cat_with_null_fields();
+            $this->set(compact('category', 'addableProps'
+        }else{
+            $category = R::load('category', $id);
+            $category->props = $this->getCatProps($category);
+            $parentsWithProps = $this->getCatParentsWithProps($category);
+            $parentsProps = $this->getAllParentsProps($parentsWithProps);
+            $addableProps = $this->getAddableProps($parentsProps, $category['props']);
 
-        $category->catParentsWithProps = $parentsWithProps;
-        $category = $category->export();
+            $category->catParentsWithProps = $parentsWithProps;
+            $category = $category->export();
 
-        $this->set(compact('category', 'addableProps'));
+            $this->set(compact('category', 'addableProps'));
+        }
+
     }
 
 }

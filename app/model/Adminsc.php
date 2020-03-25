@@ -44,17 +44,11 @@ class Adminsc extends Model {
       return $params;
    }
 
-
-
    public function addUser() {
 
 // Следующий id вопроса
       $sql = "SHOW TABLE STATUS FROM vitex_test LIKE 'users'";
       $next = $this->findBySql($sql)[0];
-      $uId = $next['Auto_increment'];
-
-      $us = App::$app->user->findAll();
-      $rightTypes = App::$app->user->getRightTypes();
 
       ob_start();
       require APP . '/view/Adminsc/newUser.php';

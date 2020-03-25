@@ -10,22 +10,25 @@ class AdminscController extends AppController
     public function __construct($route){
         parent::__construct($route);
         if ($this->isAjax()) {
-            if (isset($_POST['param'])) {
-                $arr = json_decode($_POST['param'], true);
-
-                $func = $arr['action'];
-                $model = $arr['model'] ?: 'adminsc';
-                if (App::$app->{$model}->$func($arr)) {
-                    exit('true');
-                }
-            }
+            $this->processAjax();
         }
         $this->auth();
         $this->layout = 'admin';
-
         View::setJsN('/public/build/admin.js');
         View::setCssN('/public/build/admin.css');
+    }
 
+    public function processAjax()
+    {
+        if (isset($_POST['param'])) {
+            $arr = json_decode($_POST['param'], true);
+
+            $func = $arr['action'];
+            $model = $arr['model'] ?: 'adminsc';
+            if (App::$app->{$model}->$func($arr)) {
+                exit('true');
+            }
+        }
     }
 
     public function actionClearCache()
@@ -35,25 +38,15 @@ class AdminscController extends AppController
         exit('Успешно');
     }
 
-    public function actionProdtypes()
-    {
-        $types = App::$app->adminsc->getProd_types();
-        $this->set(compact('types'));
-    }
-
     public function actionSiteMap()
     {
-
         $iniCatList = App::$app->category->getActiveCategories();
         $this->set(compact('iniCatList'));
     }
 
     public function actionProducts()
     {
-
         $fName = $fAct = $fArt = 0;
-//      $params = [];
-//      $where = $QSA = '';
         $params = explode('&', $_SERVER['QUERY_STRING'], 2);
         if (count($params) > 1) {
             $QSA = urldecode($params[1]);
@@ -106,7 +99,6 @@ class AdminscController extends AppController
             $cnt_pages = 1;
 
         if ($page > $cnt_pages)
-//         $page = $cnt_pages;
             $this->vars['js'][] = $this->getJSCSS('.js');
 
         $this->set(compact('products', 'productsCnt', 'cnt_pages', 'QSA'));
@@ -115,14 +107,6 @@ class AdminscController extends AppController
     public function actionIndex(){
         View::setJsN('/public/build/admin.js');
         View::setCssN('/public/build/admin.css');
-//        if ($_POST ) {
-//            $body = json_decode($_POST['param'], true);
-//            $action = $body['action'];
-//            if ($action) {
-//                $this->$action($body);
-//            }
-//        }
-// Проверяем существует ли пользователь и подтвердил ли регистрацию
         View::setMeta('Администрирование', 'Администрирование', 'Администрирование');
     }
 
@@ -130,40 +114,31 @@ class AdminscController extends AppController
 
     public function OreplaceUnderlinesDashesInURLS()
     {
-
         $sql = "UPDATE products "
             . "SET durl = REPLACE(durl, '_','-')";
         App::$app->product->insertBySql($sql, $params);
-
         $sql = "UPDATE category "
             . "SET name = REPLACE(name, '_','-')";
-
         App::$app->product->insertBySql($sql, $params);
-
         $sql = "UPDATE products "
             . "SET durl = REPLACE(durl, '/catalog','')";
-
         App::$app->product->insertBySql($sql, $params);
-
         exit;
     }
 
     public function OFixPicNames()
     {
-
 // уберем upload/iblock/ из dpic
         $sql = "UPDATE products SET dpic = REPLACE(dpic, '/upload/iblock', '')";
         App::$app->product->insertBySql($sql);
 // уберем upload/iblock/ из preview_pic
         $sql = "UPDATE products SET preview_pic = REPLACE(preview_pic, '/upload/iblock', '')";
         App::$app->product->insertBySql($sql);
-
         header('settings');
     }
 
     public function fixProductsPath()
     {
-
 //      $sql = "SELECT * FROM products";
 //      $products = App::$app->product->findBySql($sql);
 //      foreach ($products as $key => $value) {

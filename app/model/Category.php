@@ -13,7 +13,6 @@ class Category extends Model
 
 	public function getCategoryParents($parentId, $parents = [], $i = -1)
 	{
-
 		if ($parentId) {
 			$parent = \R::find('category', $parentId);
 			$parent[0]['props'] = explode(',', $parent[0]['props']);
