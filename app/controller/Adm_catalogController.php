@@ -209,7 +209,7 @@ class Adm_catalogController extends AdminscController
 
         if ($id == 'new') {
             $category = $this->get_cat_with_null_fields();
-            $this->set(compact('category', 'addableProps'
+            $this->set(compact('category', 'addableProps'));
         }else{
             $category = R::load('category', $id);
             $category->props = $this->getCatProps($category);

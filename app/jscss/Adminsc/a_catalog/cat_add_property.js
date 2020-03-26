@@ -1,12 +1,39 @@
 import {post} from "../../common/common";
 
-function cat_props_to_array(){
+class prop_printer {
+    constructor(el, className) {
+        this.el = el;
+        this.className = className;
+    }
+
+    toHTML() {
+        return `
+            <div class="cat-property row">
+               <div title="удалить" data-id="">X</div>
+               <p></p>
+            </div>
+        `
+    }
+
+}
+
+var a_category_prop = {
+    constructor(wrapper_class) {
+        this.wrapper = new prop_printer('wrapper', 'wrapper_class');
+    },
+
+    foo: function () {
+
+    }
+}
+
+function cat_props_to_array() {
     let catProps = document.querySelectorAll('.del-prop');
     if (catProps) {
         // let arra = Array.prototype.slice.call(catProps);
         let array = Array.from(catProps);
         let l = array.length;
-        let cat_properties  = array.map(function (el) {
+        let cat_properties = array.map(function (el) {
             return el.innerText;
         });
         return cat_properties;
@@ -53,7 +80,7 @@ select.addEventListener('change', function () {
         delOption(this, chosen);
     }
 
-    let obj  = {};
+    let obj = {};
     obj.token = document.querySelector('#token').value;
     obj.table = 'category';
     obj['model'] = 'category';
@@ -65,6 +92,6 @@ select.addEventListener('change', function () {
     obj.values = {};
     obj.values.shared = shared;
 
-    post( '/adminsc', obj);
+    post('/adminsc', obj);
 
 });
