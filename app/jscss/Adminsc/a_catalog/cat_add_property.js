@@ -1,31 +1,5 @@
 import {post} from "../../common/common";
 
-class prop_printer {
-    constructor(el, className) {
-        this.el = el;
-        this.className = className;
-    }
-
-    toHTML() {
-        return `
-            <div class="cat-property row">
-               <div title="удалить" data-id="">X</div>
-               <p></p>
-            </div>
-        `
-    }
-
-}
-
-var a_category_prop = {
-    constructor(wrapper_class) {
-        this.wrapper = new prop_printer('wrapper', 'wrapper_class');
-    },
-
-    foo: function () {
-
-    }
-}
 
 function cat_props_to_array() {
     let catProps = document.querySelectorAll('.del-prop');
@@ -51,8 +25,8 @@ function addParagraph(self, appendTo) {
 
     let delPropBtn = document.createElement('div');
     delPropBtn.title = 'удалить';
-    delPropBtn.dataset.name = option.innerText;
     delPropBtn.dataset.id = option.value;
+    delPropBtn.classList.add('del-prop');
     delPropBtn.innerText = "X";
     catProp.append(delPropBtn);
 
@@ -70,7 +44,7 @@ function delOption(select, chosen) {
 
 let select = document.querySelector('#select_props');
 
-select.addEventListener('change', function () {
+select.addEventListener('change', async function () {
     let chosen = (this.options[this.selectedIndex]);
     let el_cat_props = document.querySelector('.cat-properties');
     let arr_cat_props = cat_props_to_array();
@@ -92,6 +66,29 @@ select.addEventListener('change', function () {
     obj.values = {};
     obj.values.shared = shared;
 
-    post('/adminsc', obj);
+    let deleted = await post('/adminsc', obj);
 
 });
+
+class prop_printer {
+    constructor(el, className) {
+        this.el = el;
+        this.className = className;
+    }
+    toHTML() {
+        return `
+            <div class="cat-property row">
+               <div title="удалить" data-id="">X</div>
+               <p></p>
+            </div>
+        `
+    }
+}
+
+var a_category_prop = {
+    constructor(wrapper_class) {
+        this.wrapper = new prop_printer('wrapper', 'wrapper_class');
+    },
+    foo: function () {
+    }
+};

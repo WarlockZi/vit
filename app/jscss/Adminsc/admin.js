@@ -5,6 +5,7 @@ import './a_catalog/a_category'
 
 import '../components/cache/clear-cache'
 import './components/a_menu/a_menu'
+import './a_settings/props'
 
 
 

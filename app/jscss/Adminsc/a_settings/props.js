@@ -1,3 +1,5 @@
+import './props.sass'
+
 $(function () {
 
    function obj(self, action) {

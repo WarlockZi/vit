@@ -11,6 +11,7 @@ class AdminscController extends AppController
         parent::__construct($route);
         if ($this->isAjax()) {
             $this->processAjax();
+            exit('ajax done');
         }
         $this->auth();
         $this->layout = 'admin';

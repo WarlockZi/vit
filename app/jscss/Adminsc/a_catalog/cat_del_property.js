@@ -8,7 +8,7 @@ if (cat_properties) {
     cat_properties.addEventListener('click', function (e) {
         if (!event.target.classList.contains('del-prop'))return;
             let del_btn = event.target;
-            let name = del_btn.innerText;
+            let name = del_btn.nextSibling.innerText;
             let id = del_btn.dataset.id;
 
             delProperty(id, name, del_btn);
@@ -26,12 +26,13 @@ async function delProperty(id, name, self) {
 
     let deleted = await post(obj.url, obj);
 
-    let option = document.createElement("option");
-    option.innerText = name;
-    let select = document.querySelector('#select_props');
-    select.append(option);
+    let option = new Option(name, id);
 
-    self.parentNode.remove()
+    let select = document.querySelector('#select_props');
+    if (select) {
+        select.append(option);
+        self.parentNode.remove()
+    }
 }
 
 

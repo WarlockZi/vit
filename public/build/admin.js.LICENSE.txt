@@ -6,6 +6,8 @@
 
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./cache.sass */
 
+/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./props.sass */
+
 /*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./admin.sass */
 
 /*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./common.sass */
@@ -30,6 +32,8 @@
 
 /*! ./a_menu.sass */
 
+/*! ./a_settings/props */
+
 /*! ./admin.sass */
 
 /*! ./cache.sass */
@@ -43,6 +47,8 @@
 /*! ./components/a_footer/a_footer.sass */
 
 /*! ./components/a_menu/a_menu */
+
+/*! ./props.sass */
 
 /*! exports provided: post, get, uniq */
 
@@ -69,8 +75,16 @@
   \**************************************/
 
 /*!***********************************************!*\
+  !*** ./app/jscss/Adminsc/a_settings/props.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
   !*** ./app/jscss/components/cache/cache.sass ***!
   \***********************************************/
+
+/*!*************************************************!*\
+  !*** ./app/jscss/Adminsc/a_settings/props.sass ***!
+  \*************************************************/
 
 /*!***************************************************!*\
   !*** ./app/jscss/Adminsc/a_catalog/a_category.js ***!
@@ -119,6 +133,10 @@
 /*!******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/cache/cache.sass ***!
   \******************************************************************************************************************************************************************************************************/
+
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Adminsc/a_settings/props.sass ***!
+  \********************************************************************************************************************************************************************************************************/
 
 /*!************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Adminsc/a_catalog/a_category.sass ***!
