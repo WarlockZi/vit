@@ -1,19 +1,20 @@
 import {post} from "../../common/common";
-
+import {_} from '../../common/MyJQ'
 
 function cat_props_to_array() {
-    let catProps = document.querySelectorAll('.del-prop');
+    let catProps = _('.del-prop');
+
+    // alert(_(this).value());
+
     if (catProps) {
-        // let arra = Array.prototype.slice.call(catProps);
         let array = Array.from(catProps);
-        let l = array.length;
+        // let length = array.length;
         let cat_properties = array.map(function (el) {
             return el.innerText;
         });
         return cat_properties;
     }
     return [];
-
 }
 
 
@@ -42,9 +43,8 @@ function delOption(select, chosen) {
     chosen.parentNode.removeChild(chosen);
 }
 
-let select = document.querySelector('#select_props');
+let select = _('#select_props').on('change', async function () {
 
-select.addEventListener('change', async function () {
     let chosen = (this.options[this.selectedIndex]);
     let el_cat_props = document.querySelector('.cat-properties');
     let arr_cat_props = cat_props_to_array();
@@ -60,13 +60,12 @@ select.addEventListener('change', async function () {
     obj['model'] = 'category';
     obj.id = +document.querySelector('#id').innerText;
     obj.action = 'update';
-    let shared = {};
-    shared.table = 'props';
-    shared.id = chosen.value;
     obj.values = {};
-    obj.values.shared = shared;
+    obj.values.shared = {};
+    obj.values.shared.table = 'props';
+    obj.values.shared.id = chosen.value;
 
-    let deleted = await post('/adminsc', obj);
+    await post('/adminsc', obj);
 
 });
 
@@ -75,6 +74,7 @@ class prop_printer {
         this.el = el;
         this.className = className;
     }
+
     toHTML() {
         return `
             <div class="cat-property row">

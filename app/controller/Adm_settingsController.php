@@ -10,32 +10,21 @@ class Adm_settingsController extends AdminscController {
 
    public function __construct($route) {
       parent::__construct($route);
-
    }
 
-   public function actionIndex() {
+   public function actionIndex() {   }
 
-   }
-
-   public function actionDumpSQL() {
-
-   }
+   public function actionDumpSQL() {   }
 
    public function actionPics() {
-
       $pics = App::$app->adminsc->findAll('pic');
-
       $this->set(compact('pics'));
    }
 
-   public function actionDump() {
-
-   }
+   public function actionDump() {   }
 
    public function actionDumpWWW() {
-
       if ($this->isAjax()) {
-
          $a = 3;
       }
    }
@@ -81,7 +70,6 @@ class Adm_settingsController extends AdminscController {
          $catProps[$k]['val'] = explode(',', $catProps[$k]['val']);
       };
       $this->vars['catProps'] = $catProps;
-//      View::setJsCss(['js' => '/public/js/sortable.min.js']);
    }
 
    public function actionProp() {
@@ -92,7 +80,6 @@ class Adm_settingsController extends AdminscController {
       $prop['val'] = $prop['val']?explode(',', $prop['val']):[];
 
       $this->vars['prop'] = $prop;
-//      View::setJsCss(['js' => '/public/js/sortable.min.js']);
    }
 
 }

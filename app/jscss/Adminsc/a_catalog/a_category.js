@@ -1,4 +1,5 @@
 import './a_category.sass'
+import './a_category.sass'
 
 import './cat_add_property'
 import './cat_del_property'
@@ -12,8 +13,6 @@ class preparedObj{
         this.id = +document.querySelector('#id').innerText;
         this.action = 'update';
     }
-
-
 }
 
 export {preparedObj};
