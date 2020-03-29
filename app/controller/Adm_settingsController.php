@@ -15,6 +15,9 @@ class Adm_settingsController extends AdminscController {
    public function actionIndex() {   }
 
    public function actionDumpSQL() {   }
+   public function actionValues() {
+//   	$this->view = '';
+	}
 
    public function actionPics() {
       $pics = App::$app->adminsc->findAll('pic');

@@ -5,13 +5,15 @@
 	<? if (in_array('3', $user['rights'])): // admin ?>
 		<div class="a-actions">
 
-			<a href='/adminsc/Sitemap'>Создать SiteMap</a>
 			<a href=#>Права пользователей</a>
 			<a href=#>Должности пользователей</a>
-			<a href='/adminsc/settings/props'>Свойства (товаров, пользователей)</a>
+			<a href='/adminsc/settings/props'>Свойства</a>
+			<a href='/adminsc/settings/values'>Значения свойств</a>
+			<br>
+			<a href='/adminsc/settings/pics'>Картинки</a>
+			<a href='/adminsc/Sitemap'>Создать SiteMap</a>
 			<a href='/adminsc/settings/instructions'>Инструкции</a>
 			<a href='/adminsc/settings/dump'>Dump</a>
-			<a href='/adminsc/settings/pics'>Картинки</a>
 
 		</div>
 	<? endif; ?>
