@@ -30,7 +30,6 @@
 	<div class="a-tabs-wrap">
 
 		<div class="work-area">
-			<input id='token' type="hidden" value="<?= $_SESSION['token'] ?>">
 
 			<div class="tabs">
 				<input id="tab1" type="radio" name="tabs" checked>

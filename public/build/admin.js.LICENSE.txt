@@ -54,9 +54,9 @@
 
 /*! exports provided: _ */
 
-/*! exports provided: post, get, uniq */
+/*! exports provided: a_category_ajax */
 
-/*! exports provided: preparedObj */
+/*! exports provided: post, get, uniq */
 
 /*! no exports provided */
 

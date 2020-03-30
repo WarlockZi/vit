@@ -9,7 +9,7 @@
 			<a href=#>Должности пользователей</a>
 			<a href='/adminsc/settings/props'>Свойства</a>
 			<a href='/adminsc/settings/values'>Значения свойств</a>
-			<hr>
+			<br><hr><br>
 			<a href='/adminsc/settings/pics'>Картинки</a>
 			<a href='/adminsc/Sitemap'>Создать SiteMap</a>
 			<a href='/adminsc/settings/instructions'>Инструкции</a>

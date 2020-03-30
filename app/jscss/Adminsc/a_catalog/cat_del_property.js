@@ -1,11 +1,8 @@
 import {post} from "../../common/common"
-import {preparedObj} from './a_category'
+import {a_category_ajax} from './a_category'
 import {_} from '../../common/MyJQ'
 
-// const cat_properties = document.querySelector('.cat-properties');
-// if (cat_properties) {
-//     cat_properties.addEventListener('click', function (e) {
-//
+
 let cat_properties = _('.cat-properties').on('click', function (e) {
     if (!e.target.classList.contains('del-prop')) return;
     let del_btn = e.target;
@@ -17,20 +14,15 @@ let cat_properties = _('.cat-properties').on('click', function (e) {
 
 });
 
-
-//
-//     });
-// }
-
 async function delProperty(id, name, self) {
-    let obj = new preparedObj();
-    obj.values = {};
-    obj.values.shared = {};
-    obj.action = "delProp";
-    obj.values.shared.table = "props";
-    obj.values.shared.id = id;
+    let req = new a_category_ajax();
+    req.values = {};
+    req.values.shared = {};
+    req.action = "delProp";
+    req.values.shared.table = "props";
+    req.values.shared.id = id;
 
-    let deleted = await post(obj.url, obj);
+    let deleted = await post(req.url, req);
 
     let option = new Option(name, id);
 

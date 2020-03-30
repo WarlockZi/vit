@@ -3,7 +3,7 @@ import {_} from '../../common/MyJQ'
 
 function obj(self, action) {
     return {
-        token: $('#token').val(),
+        token: _("meta[name = 'token']").content,
         url: '/adminsc',
         model: 'prop',
         table: 'props',

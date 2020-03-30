@@ -1,14 +1,12 @@
 import {post} from "../../common/common";
 import {_} from '../../common/MyJQ'
+import {a_category_ajax} from './a_category'
 
 function cat_props_to_array() {
     let catProps = _('.del-prop');
 
-    // alert(_(this).value());
-
     if (catProps) {
         let array = Array.from(catProps);
-        // let length = array.length;
         let cat_properties = array.map(function (el) {
             return el.innerText;
         });
@@ -16,7 +14,6 @@ function cat_props_to_array() {
     }
     return [];
 }
-
 
 function addParagraph(self, appendTo) {
     let catProp = document.createElement('div');
@@ -54,12 +51,7 @@ let select = _('#select_props').on('change', async function () {
         delOption(this, chosen);
     }
 
-    let obj = {};
-    obj.token = document.querySelector('#token').value;
-    obj.table = 'category';
-    obj['model'] = 'category';
-    obj.id = +document.querySelector('#id').innerText;
-    obj.action = 'update';
+    let obj = new a_category_ajax();
     obj.values = {};
     obj.values.shared = {};
     obj.values.shared.table = 'props';

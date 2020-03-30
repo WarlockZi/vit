@@ -728,7 +728,7 @@ window.onload = function () {
          e.preventDefault();
          var email = $('input[type = email]').val(),
          password = $('input[type= password]').val(),
-         token = document.querySelector("[name = 'token']").value,
+         token = document.querySelector("meta[name = 'token']").content,
          formData = new FormData(),
          xhr = new XMLHttpRequest();
          formData.append('email', email);
@@ -790,7 +790,7 @@ window.onload = function () {
       surName = $("[name='surName']").val(),
       name = $("[name='name']").val(),
       secName = $("[name='secName']").val(),
-      token = document.querySelector("[name = 'token']").value;
+      token = document.querySelector("meta[name = 'token']").content;
       formData = new FormData(),
       xhr = new XMLHttpRequest();
       formData.append('email', email);

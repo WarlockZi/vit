@@ -14,9 +14,6 @@ class MainController Extends AppController {
       if ($this->isAjax()) {
          if (isset($_POST['param'])) {
             $arr = json_decode($_POST['param'], true);
-            if (!isset($arr['token']) || !$arr['token'] == $_SESSION['token']) {
-               exit(FALSE);
-            }
             $func = $arr['action'];
             $model = $arr['model'] ?: 'adminsc';
             if (App::$app->{$model}->$func($arr)) {
@@ -31,16 +28,6 @@ class MainController Extends AppController {
          $sale = App::$app->product->getSale();
          App::$app->cache->set('sale', $sale, 30);
       }
-//      View::setJs([
-//          'controller' => $this->route['controller'],
-//          'view' => $this->view,
-//          'defer'
-//      ]);
-//      View::setCss(['css' => '/public/css/vitex.css']);
-//      View::setCss(['controller' => $this->route['controller'], 'view' => $this->view]);
-      if ($this->route['action'] !== 'index') {
-//         View::setCss(['css' => '/public/css/services.css']);
-      }
       $this->set(compact('sale'));
    }
 
@@ -52,9 +39,6 @@ class MainController Extends AppController {
          } elseif ($user === NULL) {
             $errors[] = 'Чтобы получить доступ, зайдите на рабочую почту, найдите письмо "Регистрация VITEX" и перейдите по ссылке в письме.';
          } else {
-//            View::setJs([
-//                'js' => '/public/js/slick-1.8.1/slick/slick.min.js',
-//            ]);
             $this->set(compact('user'));
          }
          return TRUE;

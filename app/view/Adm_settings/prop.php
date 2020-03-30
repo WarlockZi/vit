@@ -15,8 +15,6 @@
     <H2 style='margin:20px 0;'>Настройка значений свойствa : <?= $prop['name'] ?></H2>
 
 
-    <input type="hidden" id="token" value="<?= $_SESSION['token'] ?>">
-
     <? if ($prop['type'] == 'string'): ?>
        <div class="grid-prop-string">
 
