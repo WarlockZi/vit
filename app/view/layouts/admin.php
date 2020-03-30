@@ -10,6 +10,7 @@
 	<link rel="preload" href="/pic/admin-mainmenu-items-bg.png" as="image"/>
 	<link rel="preload" href="/pic/admin-mainmenu-items.png" as="image"/>
 	<link rel="preload" href="/pic/header-big.png" as="image"/>
+	<meta name="csrf-token" content=<?=$_SESSION['token']?>>
 	<style>
 		a {
 			color: #2f2f2f;
