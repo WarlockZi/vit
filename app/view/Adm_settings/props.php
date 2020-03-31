@@ -3,8 +3,11 @@
     <div class="title">Свойства</div>
     <div class="a-actions">
         <? foreach ($catProps as $key): ?>
-            <div class="prop"><?=$key['name']?></div>
-        <?endforeach;?>
+            <div data-id=<?= $key['id'] ?> class="props-actions_row">
+
+                <div><?= $key['name'] ?></div>
+            </div>
+        <? endforeach; ?>
     </div>
 </div>
 <div class="a-content">
@@ -16,16 +19,11 @@
 
     <H2>Настройка свойств</H2>
 
-    <div class="grid5 a_props-table">
-        <span class="grid-head">id</span>
-        <span class="grid-head">сорт.</span>
-        <span class="grid-head">название</span>
-        <span class="grid-head">тип</span>
-        <span class="grid-head">измен.</span>
-        <? foreach ($catProps as $key): ?>
 
+    <? foreach ($catProps as $key): ?>
 
-            <span>
+        <div class="props-container row" data-prop-id=<?= (int) $key['id'];?>>
+        <span>
            <span style="display: flex;align-items: center;"> <?= $id = $key['id'] ?>    </span>
          </span>
             <span>
@@ -50,10 +48,8 @@
            <a href="prop?id=<?= $id ?>" data-id="<?= $id ?>" class="edit">
            </a>
          </span>
-        <? endforeach; ?>
-
-    </div>
-
+        </div>
+    <? endforeach; ?>
 
     <!--  <div class="separator">
          <button>

@@ -1,6 +1,13 @@
 import './props.sass'
 import {_} from '../../common/MyJQ'
 
+_('.props-actions_row').on('click', function () {
+    let row = this.dataset.id;
+    let prop = _(`[data-prop-id='${row}']`).show();
+    // prop.style.display = 'none';
+})
+
+
 function obj(self, action) {
     return {
         token: _("meta[name = 'token']").content,
@@ -14,10 +21,8 @@ function obj(self, action) {
     }
 }
 
-
 // изменение названия свойства / добавление
 _('.property-block').on('input', '.property-name', function () {
-
     var Obj = new obj(this, 'update');
     Obj.pkeyVal = this.getAttribute('data-id');
     Obj.values.name = this.value.trim();

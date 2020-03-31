@@ -23,6 +23,12 @@ function MyJquery(element) {
     this.append = function (child) {
         return this.element[0].append(child);
     };
+    this.remove = function () {
+        return this.element[0].style.display = 'none';
+    };
+    this.show = function () {
+        return this.element[0].style.display = 'flex';
+    };
 
 }
 
@@ -31,6 +37,6 @@ export function _(selector) {
         var elements = document.querySelectorAll(selector);
         return new MyJquery(elements);
     }else{
-        return new MyJquery(selector);
+        return new MyJquery(elements);
     }
 }
