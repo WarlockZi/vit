@@ -30,6 +30,8 @@
 
 /*! ../components/header/header.sass */
 
+/*! ./MyJQ */
+
 /*! ./about.sass */
 
 /*! ./autocomplete.sass */
@@ -48,13 +50,19 @@
 
 /*! ./showSearchInput */
 
+/*! exports provided: _ */
+
 /*! exports provided: default */
 
-/*! exports provided: post, get, uniq */
+/*! exports provided: post, get, uniq, ajax_body */
 
 /*! no exports provided */
 
 /*! no static exports found */
+
+/*!**********************************!*\
+  !*** ./app/jscss/common/MyJQ.js ***!
+  \**********************************/
 
 /*!************************************!*\
   !*** ./app/jscss/common/common.js ***!

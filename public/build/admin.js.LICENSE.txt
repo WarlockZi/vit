@@ -26,6 +26,8 @@
 
 /*! ../components/cache/clear-cache */
 
+/*! ./MyJQ */
+
 /*! ./a_catalog/a_category */
 
 /*! ./a_category */
@@ -56,7 +58,7 @@
 
 /*! exports provided: a_category_ajax */
 
-/*! exports provided: post, get, uniq */
+/*! exports provided: post, get, uniq, ajax_body */
 
 /*! no exports provided */
 

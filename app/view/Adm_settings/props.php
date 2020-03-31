@@ -1,61 +1,60 @@
 <div class="a-submenu">
 
-    <div class="title">Свойства</div>
-    <div class="a-actions">
-        <? foreach ($catProps as $key): ?>
-            <div data-id=<?= $key['id'] ?> class="props-actions_row">
+	<div class="title">Свойства</div>
+	<div class="a-actions">
+		<? foreach ($catProps as $key): ?>
+			<div data-id=<?= $key['id'] ?> class="props-actions_row">
 
-                <div><?= $key['name'] ?></div>
-            </div>
-        <? endforeach; ?>
-    </div>
+				<div><?= $key['name'] ?></div>
+			</div>
+		<? endforeach; ?>
+	</div>
 </div>
 <div class="a-content">
-    <div class="a-breadcrumbs">
-        <a href="/adminsc">Admin</a>
-        <a href="/adminsc/settings">Настройки</a>
-        <div>Настройка свойств</div>
-    </div>
+	<div class="a-breadcrumbs">
+		<a href="/adminsc">Admin</a>
+		<a href="/adminsc/settings">Настройки</a>
+		<div>Настройка свойств</div>
+	</div>
 
-    <H2>Настройка свойств</H2>
+	<H2>Настройка свойств</H2>
 
 
-    <? foreach ($catProps as $key): ?>
+	<? foreach ($catProps as $key): ?>
 
-        <div class="props-container row" data-prop-id=<?= (int) $key['id'];?>>
-        <span>
-           <span style="display: flex;align-items: center;"> <?= $id = $key['id'] ?>    </span>
-         </span>
-            <span>
-           <span data-id="<?= $id ?>" class="sort" contenteditable> <?= $key['sort'] ?>    </span>
-         </span>
+		<div class="prop-container" data-prop-id=<?= (int)$key['id']; ?>>
+			<div class="row">
+				<strong> название : </strong>
+				<input data-id="<?= $id = $key['id']; ?>" class="property-name" contenteditable size="10" type="text"
+				       value="<?= $key['name'] ?>">
+			</div>
 
-            <span>
-           <input data-id="<?= $id ?>" class="property-name" contenteditable size="35" type="text"
-                  value="<?= $key['name'] ?>">
-         </span>
+			<div class="row">
+				<strong> сорт. : </strong>
+				<span data-id="<?= $id ?>" class="sort" contenteditable><?= $key['sort'] ?> </span>
+			</div>
 
-            <span>
-           <select data-id="<?= $id ?>" class="type">
-	           <? $t = \R::find('props', $key['id']); ?>
-             <option value="select" <?= $key['type'] == 'select' ? 'selected' : '' ?>>выбор одного значения</option>
-             <option value="multi" <?= $key['type'] == 'multi' ? 'selected' : '' ?>>выбор нескольких значений</option>
-             <option value="string" <?= $key['type'] == 'string' ? 'selected' : '' ?>>строка</option>
-           </select>
-         </span>
+			<div class="row">
+				<strong> id : </strong>
+				<span> <?= $id; ?>    </span>
+			</div>
 
-            <span>
-           <a href="prop?id=<?= $id ?>" data-id="<?= $id ?>" class="edit">
-           </a>
-         </span>
-        </div>
-    <? endforeach; ?>
+			<div class="row">
+				<strong> тип : </strong>
+				<select data-id="<?= $id ?>" class="type">
+					<option value="select" <?= $key['type'] == 'select' ? 'selected' : '' ?>>выбор одного значения</option>
+					<option value="multi" <?= $key['type'] == 'multi' ? 'selected' : '' ?>>выбор нескольких значений</option>
+					<option value="string" <?= $key['type'] == 'string' ? 'selected' : '' ?>>строка</option>
+				</select>
+			</div>
 
-    <!--  <div class="separator">
-         <button>
-            сохранить
-         </button>
 
-      </div>-->
+			<a href="prop?id=<?= $id ?>" data-id="<?= $id ?>" class="edit"></a>
+		</div>
+	<? endforeach; ?>
+
+	 <div class="separator">
+		 <div class = "btn prop save">Сохранить</div>
+	  </div>
 
 </div>

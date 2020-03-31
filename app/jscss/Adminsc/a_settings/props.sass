@@ -29,5 +29,22 @@
         cursor: pointer
     div
         padding: 5px
-.props-container
+.prop-container
+    flex-flow: column
     display: none
+
+    &.active
+        display: flex
+
+    .row
+        justify-content: center
+        select
+            width: 50%
+        *
+            flex: 1
+            padding: 3px 5px
+            margin: 3px
+            color: #4e4e4e
+        *:first-child
+            display: flex
+            justify-content: flex-end

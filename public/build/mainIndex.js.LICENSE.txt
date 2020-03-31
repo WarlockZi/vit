@@ -38,6 +38,8 @@
 
 /*! ../components/swiper/swiper */
 
+/*! ./MyJQ */
+
 /*! ./alert.sass */
 
 /*! ./autocomplete.sass */
@@ -66,9 +68,11 @@
 
 /*! exports provided: A11y, Autoplay, Controller, EffectCoverflow, EffectCube, EffectFade, EffectFlip, HashNavigation, History, Keyboard, Lazy, Mousewheel, Navigation, Pagination, Parallax, Scrollbar, Swiper, Thumbs, Virtual, Zoom */
 
+/*! exports provided: _ */
+
 /*! exports provided: default */
 
-/*! exports provided: post, get, uniq */
+/*! exports provided: post, get, uniq, ajax_body */
 
 /*! exports provided: window, document */
 
@@ -86,6 +90,10 @@
 
 /*!**********************************!*\
   !*** ./app/jscss/Main/main.sass ***!
+  \**********************************/
+
+/*!**********************************!*\
+  !*** ./app/jscss/common/MyJQ.js ***!
   \**********************************/
 
 /*!************************************!*\

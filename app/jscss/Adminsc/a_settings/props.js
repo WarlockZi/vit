@@ -1,31 +1,37 @@
 import './props.sass'
 import {_} from '../../common/MyJQ'
+import {ajax_body} from "../../common/common";
 
+// show first prop card
+
+let first = _('.props-actions_row').el();
+    // .addClass('active');
+let f = first[0];
+
+// toggle prop cards visibility
 _('.props-actions_row').on('click', function () {
+    _('.active').removeClass('active');
     let row = this.dataset.id;
-    let prop = _(`[data-prop-id='${row}']`).show();
-    // prop.style.display = 'none';
-})
+    _(`[data-prop-id='${row}']`).addClass('active');
+});
 
-
-function obj(self, action) {
-    return {
-        token: _("meta[name = 'token']").content,
-        url: '/adminsc',
-        model: 'prop',
-        table: 'props',
-        action: action ? action : 'update',
-        pkey: 'id',
-        pkeyVal: 'nul',
-        values: {}
+// fill out ajax body
+class props_ajax_body extends ajax_body{
+    constructor(action){
+        super(action);
+        this.model = 'prop';
+        this.table = 'props';
+        this.id = +document.querySelector('#id').innerText;
+        this.action = action ? action : 'update';
+        return this;
     }
 }
 
 // изменение названия свойства / добавление
 _('.property-block').on('input', '.property-name', function () {
-    var Obj = new obj(this, 'update');
-    Obj.pkeyVal = this.getAttribute('data-id');
-    Obj.values.name = this.value.trim();
+    var props_ajax_body = new props_ajax_body(this, 'update');
+    props_ajax_body.pkeyVal = this.getAttribute('data-id');
+    props_ajax_body.values.name = this.value.trim();
 
     if (this.parentNode.classList.contains('new')) {
         var clone = this.parentNode.cloneNode(true);
@@ -34,37 +40,35 @@ _('.property-block').on('input', '.property-name', function () {
         parent.append(clone);
         this.classList.remove('new');
     }
-    ;
+
 //      debugger;
     setTimeout(function () {
-        post(Obj.url, Obj)
+        post(props_ajax_body.url, props_ajax_body)
     }, 800);
 });
 // изменение селекта
 _('select.type').on('change', function () {
-    var Obj = new obj(this, 'update');
-    Obj.pkeyVal = this.getAttribute('data-id');
-    Obj.values.type = this[this.selectedIndex].value;
-    post(Obj.url, Obj);
+    var props_ajax_body = new props_ajax_body(this, 'update');
+    props_ajax_body.pkeyVal = this.getAttribute('data-id');
+    props_ajax_body.values.type = this[this.selectedIndex].value;
+    post(props_ajax_body.url, props_ajax_body);
 });
 
 // изменение сортировки
 _('.property-block').on('input', '.sort', function () {
 //      debugger;
-    var Obj = new obj(this, 'update');
-    Obj.pkeyVal = this.getAttribute('data-id');
-    Obj.values.sort = this.innerHTML;
-    post(Obj.url, Obj);
+    var props_ajax_body = new props_ajax_body(this, 'update');
+    props_ajax_body.pkeyVal = this.getAttribute('data-id');
+    props_ajax_body.values.sort = this.innerHTML;
+    post(props_ajax_body.url, props_ajax_body);
 });
 
 // добавление значения 
-_('.property-block').on('input', '.value, .add-prop-val', function (event) {
+_('.property-block').on('input', '.value, .add-prop-val', function () {
 
-    var url = '/adminsc',
-        val = $(this).text(),
+    let val = $(this).text(),
         id = $(this).parent().parent().parent().data('prop'),
         str = $(this).parent().find('span'),
-        val = '',
         vals = new Set(str),
         dd = [];
 
@@ -85,21 +89,7 @@ _('.property-block').on('input', '.value, .add-prop-val', function (event) {
         parent.insertBefore(clone, el);
     }
 
-//        if (!val&&!'')
-//            return false;
-
-    var data = {
-        token: $('#token').val(),
-        model: 'prop',
-        action: 'update',
-        table: 'props',
-        pkey: 'id',
-        pkeyVal: id,
-        values: {
-            val: val,
-        }
-    };
-    post(url, data);
+    post(props_ajax_body.url, props_ajax_body);
 
 });
 
