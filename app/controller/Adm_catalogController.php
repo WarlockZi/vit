@@ -114,7 +114,6 @@ class Adm_catalogController extends AdminscController
         }
     }
 
-
     public function actionIndex()
     {
         $iniCatList = App::$app->category->getActiveCategories();
@@ -131,8 +130,8 @@ class Adm_catalogController extends AdminscController
     public function actionCategoryNew()
     {
         $this->view = 'category_new';
-        $props = [];
-        $parent = isset($_GET['parent']) && (int)$_GET['parent'] !== 0 ? (int)$_GET['parent'] : 0;
+//        $props = [];
+//        $parent = isset($_GET['parent']) && (int)$_GET['parent'] !== 0 ? (int)$_GET['parent'] : 0;
         $idAutoincrement = App::$app->category->autoincrement('category');
         $category['id'] = $idAutoincrement;
 
@@ -161,25 +160,25 @@ class Adm_catalogController extends AdminscController
 
     }
 
-    public function getCatProps($cat)
+    public function getCatProps($cat, $parent_props = [])
     {
         if ($props = $cat->sharedProps) {
             foreach ($props as $prop) {
                 $arrProps[$prop->name] = $prop->export();
             }
-            return $arrProps;
+			  return array_diff_key($arrProps, $parent_props);
         }
         return [];
     }
 
     public function getAllParentsProps($parentsWithProps)
     {
-        $parentProps = [];
+        $arr_parent_props = [];
 
-        foreach ($parentsWithProps as $parentWithProp) {
-            $parentProps = array_merge($parentProps, $parentWithProp['props']);
+        foreach ($parentsWithProps as $k) {
+			  $arr_parent_props = array_merge($arr_parent_props, $k['props']);
         }
-        return $parentProps;
+        return $arr_parent_props;
     }
 
     public function getAddableProps($parentsProps, $categoryProps)
@@ -214,9 +213,9 @@ class Adm_catalogController extends AdminscController
             $this->set(compact('category', 'addableProps'));
         }else{
             $category = R::load('category', $id);
-            $category->props = $this->getCatProps($category);
             $parentsWithProps = $this->getCatParentsWithProps($category);
             $parentsProps = $this->getAllParentsProps($parentsWithProps);
+            $category->props = $this->getCatProps($category, $parentsProps);
             $addableProps = $this->getAddableProps($parentsProps, $category['props']);
 
             $category->catParentsWithProps = $parentsWithProps;

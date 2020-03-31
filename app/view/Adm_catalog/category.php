@@ -10,17 +10,17 @@
 			'sql' => "SELECT * FROM category "
 		]);
 
-		$addCategoryButton = "<a href='/adminsc/catalog/category?id=new&parent=`{$_GET['id']}`' 
+		$addCategoryButton = "<a href='/adminsc/catalog/category/new?parent=`{$_GET['id']}`' 
 					   class='a-btn-action'>Добавить категорию</a>";
 		?>
 	</div>
 </div>
 <div class="a-content">
 	<div class="a-breadcrumbs">
-		<a href="/adminsc/index">Admin ></a>
-		<a href="/adminsc/catalog">Каталог ></a>
-		<? if (isset($category['parents'])): ?>
-			<? foreach ($category['parents'] as $k => $v): ?>
+		<a href="/adminsc/index">admin ></a>
+		<a href="/adminsc/catalog">каталог ></a>
+		<? if (isset($category['cat_parents_with_props'])): ?>
+			<? foreach ($category['cat_parents_with_props'] as $k => $v): ?>
 				<a href="/adminsc/catalog/category?id=<?= $v['id']; ?>"><?= $v['name']; ?></a>
 			<? endforeach; ?>
 			<div><?= $category['name']; ?></div>
@@ -91,7 +91,7 @@
 
 						<? foreach ($category['cat_parents_with_props'] as $parent): ?>
 
-							<div class="parent-properties separator">Свойства родительской категории
+							<div class="parent-properties separator">
 								<span><?= $parent['name']; ?></span>
 							</div>
 							<div class="prop column">
@@ -105,7 +105,9 @@
 					<? endif; ?>
 
 
-					<div class="cat-properties-title separator">Свойства категории</div>
+					<div class="cat-properties-title separator">
+							<span><?= $category['name']; ?></span>
+					</div>
 					<div class="cat-properties column">
 						<? foreach ($category['props'] as $prop): ?>
 							<div class="cat-property row">
@@ -125,9 +127,7 @@
 						<option value="0">Добавить свойство</option>
 						<? foreach ($addableProps as $prop): ?>
 							<option value="<?= $prop['id'] ?>"><?= $prop['name'] ?></option>
-
 						<? endforeach; ?>
-
 					</select>
 
 
