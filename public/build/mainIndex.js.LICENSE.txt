@@ -68,11 +68,11 @@
 
 /*! exports provided: A11y, Autoplay, Controller, EffectCoverflow, EffectCube, EffectFade, EffectFlip, HashNavigation, History, Keyboard, Lazy, Mousewheel, Navigation, Pagination, Parallax, Scrollbar, Swiper, Thumbs, Virtual, Zoom */
 
-/*! exports provided: _ */
+/*! exports provided: MyJQ */
 
 /*! exports provided: default */
 
-/*! exports provided: post, get, uniq, ajax_body */
+/*! exports provided: post, get, uniq, ajax_body, _ */
 
 /*! exports provided: window, document */
 

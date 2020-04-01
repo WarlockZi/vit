@@ -54,11 +54,11 @@
 
 /*! ./props.sass */
 
-/*! exports provided: _ */
+/*! exports provided: MyJQ */
 
 /*! exports provided: a_category_ajax */
 
-/*! exports provided: post, get, uniq, ajax_body */
+/*! exports provided: post, get, uniq, ajax_body, _ */
 
 /*! no exports provided */
 

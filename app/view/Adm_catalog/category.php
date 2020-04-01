@@ -16,8 +16,8 @@
 </div>
 <div class="a-content">
 	<div class="a-breadcrumbs">
-		<a href="/adminsc/index">admin ></a>
-		<a href="/adminsc/catalog">каталог ></a>
+		<a href="/adminsc/index">admin</a>
+		<a href="/adminsc/catalog">каталог</a>
 		<? if (isset($category['cat_parents_with_props'])): ?>
 			<? foreach ($category['cat_parents_with_props'] as $k => $v): ?>
 				<a href="/adminsc/catalog/category?id=<?= $v['id']; ?>"><?= $v['name']; ?></a>
@@ -25,6 +25,8 @@
 			<div><?= $category['name']; ?></div>
 		<? endif; ?>
 	</div>
+
+	<div class="a-category-title">Редактировать карегорию : <?= $category['name']; ?></div>
 
 	<div class="a-tabs-wrap">
 

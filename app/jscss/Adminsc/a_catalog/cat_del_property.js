@@ -1,6 +1,6 @@
-import {post} from "../../common/common"
+import {post, _} from "../../common/common"
 import {a_category_ajax} from './a_category'
-import {_} from '../../common/MyJQ'
+// import {_} from '../../common/MyJQ'
 
 
 let cat_properties = _('.cat-properties').on('click', function (e) {

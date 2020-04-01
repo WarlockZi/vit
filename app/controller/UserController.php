@@ -3,6 +3,8 @@
 namespace app\controller;
 
 use app\core\{App, Base\View};
+use app\model\User;
+
 //use app\core\Base\View;
 
 class UserController extends AppController
@@ -42,20 +44,24 @@ class UserController extends AppController
 
 	public function actionLogin()
 	{
+
 		View::setJsN('/public/build/services.js');
 		View::setCssN('/public/build/services.css');
 		if ($data = $this->isAjax()) {
-			$email = (string)$data['email'];
+
+			$params['email'] = $email = (string)$data['email'];
 			if (!App::$app->user->checkEmail($email)) {
 				$msg[] = "Неверный формат email";
 				exit(include ROOT . '/app/view/User/alert.php');
 			}
-			$password = (int)$data['pass'];
+			$params['password'] = $password = $data['pass'];
 			if (!App::$app->user->checkPassword($password)) {
 				$msg[] = "Пароль не должен быть короче 6-ти символов";
 				exit(include ROOT . '/app/view/User/alert.php');
 			}
-			$user = App::$app->user->getUserByEmail($email, $password);
+
+			$user = User::getUserByEmail($params);
+
 			if ($user === false) { // Почта с паролем существуют, но нет подтверждения
 				// Нет пользователя с таким паролем
 				$msg[] = "Пользователь с 'e-mail' : $email не зарегистрирован";
@@ -85,7 +91,6 @@ class UserController extends AppController
 //			$user = \R::load('user', $_SESSION['id']);
 			$this->set(compact('user'));
 		}
-//        View::setJs(['controller' => $this->route['controller'],'view' => $this->view,'addtime']);
 
 	}
 
@@ -94,10 +99,9 @@ class UserController extends AppController
 
 		if ($this->isAjax()) {
 
-
 			[$email,$password,$confPass,$name,$surName,$secName] = $_POST;
 
-			$email = ($_POST['email']);
+			$email = $_POST['email'];
 			$password = $_POST['password'];
 			$confPass = $_POST['confPass'];
 			$name = $_POST['name'];
@@ -112,13 +116,23 @@ class UserController extends AppController
 			$password = md5($password);
 			$hash = md5(microtime());
 
-			$sql = 'INSERT INTO users (rightId, surName, middleName, name, email, password, hash)'
-				. 'VALUES (,?,?,?,?,?,?,?)';
-			$params = [2, $surName, $secName, $name, $email, $password, $hash];
+			$user = \R::dispense('user');
+			$user->rightId = 2;
+			$user->surName = $surName;
+			$user->secName = $secName;
+			$user->name = $name;
+			$user->email = $email;
+			$user->password = $password;
+			$user->hash = $hash;
+			$id = \R::store($user);
 
-			$res = App::$app->user->insertBySql($sql, $params);
+//			$sql = 'INSERT INTO users (rightId, surName, middleName, name, email, password, hash)'
+//				. 'VALUES (,?,?,?,?,?,?,?)';
+//			$params = [2, $surName, $secName, $name, $email, $password, $hash];
+//
+//			$res = App::$app->user->insertBySql($sql, $params);
 
-			if (!$res) {
+			if (!$id) {
 				$msg[] = "Ошибка при добавлении пользователя в базу данных";
 				echo include APP . '/view/User/alert.php';
 				exit();
@@ -138,8 +152,8 @@ class UserController extends AppController
 		}
 		View::setMeta('Регистрация', 'Регистрация', 'Регистрация');
 
-		$token = $this->token;
-		$this->set(compact('token'));
+//		$token = $this->token;
+//		$this->set(compact('token'));
 
 		View::setCssN('/public/build/services.css');
 		View::setJsN('/public/build/services.js');

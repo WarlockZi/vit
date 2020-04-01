@@ -10,7 +10,7 @@ use app\core\Base\Model;
  */
 class User extends Model {
 
-   public $table = 'users';
+   public $table = 'user';
 
    public function __construct() {
       parent::__construct();
@@ -18,11 +18,10 @@ class User extends Model {
 
    public function confirm($hash) {
 
-      $sql = '
-            UPDATE users
-            SET confirm= "1"
-            WHERE hash = ?
-            ';
+      $sql =
+            "UPDATE {$this->table}".
+            "SET confirm= '1'".
+            "WHERE hash = ?";
 
       $params = [$hash];
       $result = $this->insertBySql($sql, $params);
@@ -100,47 +99,24 @@ class User extends Model {
    }
 
    /**
-    * Редактирование данных пользователя
-    * @param integer $id <p>id пользователя</p>
-    * @param string $name <p>Имя</p>
-    * @param string $password <p>Пароль</p>
-    * @return boolean <p>Результат выполнения метода</p>
-    */
-//   public function update($arr) {
-////        $password = md5($arr['password']);
-//      $sql = "UPDATE users SET  email = ?, name = ?, confirm = ?, surName = ?, middleName = ?, birthDate = ?, hired = ?, fired = ?, phone = ?, rights  =? WHERE id = ?";
-//
-//      $params = [$arr['email'], $arr['name'], (int) $arr['conf'], $arr['sName'], $arr['mName'], $arr['bday'] ?: NULL, $arr['hired'] ?: NULL, $arr['fired'] ?: NULL, $arr['phone'], $arr['rights'], $arr['id']];
-//      return $this->insertBySql($sql, $params);
-//   }
-
-   /**
     * Проверяем существует ли пользователь с заданными $email и $password
     * @param string $email <p>E-mail</p>
     * @param string $password <p>Пароль</p>
     * @return mixed : integer user id or false
     */
-   public function getUserByEmail($email, $password) {
+   public static function getUser($params) {
 
-      $password = md5($password);
-
-      $sql = "SELECT * FROM {$this->table} WHERE email = ? AND password = ?";
-      try {
-         $user = $this->findBySql($sql, [$email, $password]);
-      } catch (Exception $exc) {
-         echo $exc->getTraceAsString();
-      }
+		$password = md5($params['password']);
+		$user = \R::findOne('user', ' email=? and password = ? ',  [$params['email'],$password]);
       if ($user) {
          $user = $user[0];
          // Если запись существует и подтверждена, возвращаем id пользователя
          if ($user['confirm'] == 1) {
             return $user;
-            // Не подтверждена, возвращаем NULL
          } elseif ($user['confirm'] == 0) {
             return NULL;
          }
       }
-      //  Такого пользователя нет возвращаем FALSE
       return false;
    }
 

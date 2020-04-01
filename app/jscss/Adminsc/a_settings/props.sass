@@ -21,14 +21,15 @@
         min-width: 30px
         word-break: break-all
         cursor: text
+.a-actions
+  .prop
+      display: flex
+      &:hover
+          background-color: #deeded
+          cursor: pointer
+      div
+          padding: 5px
 
-.props-actions_row
-    display: flex
-    &:hover
-        background-color: #deeded
-        cursor: pointer
-    div
-        padding: 5px
 .prop-container
     flex-flow: column
     display: none
@@ -47,4 +48,5 @@
             color: #4e4e4e
         *:first-child
             display: flex
-            justify-content: flex-end
+            justify-content:
+            max-width: 150px

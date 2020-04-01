@@ -1,5 +1,5 @@
-import {post} from "../../common/common";
-import {_} from '../../common/MyJQ'
+import {post, _} from "../../common/common";
+// import {_} from '../../common/MyJQ'
 import {a_category_ajax} from './a_category'
 
 function cat_props_to_array() {

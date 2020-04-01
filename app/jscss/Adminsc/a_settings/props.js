@@ -1,15 +1,13 @@
 import './props.sass'
-import {_} from '../../common/MyJQ'
-import {ajax_body} from "../../common/common";
+// import {_} from '../../common/yJQ'
+import {ajax_body, _} from "../../common/common";
 
 // show first prop card
-
-let first = _('.props-actions_row').el();
-    // .addClass('active');
-let f = first[0];
+let f = _('.prop-container');
+f[0].classList.add('active');
 
 // toggle prop cards visibility
-_('.props-actions_row').on('click', function () {
+_('.prop').on('click', function () {
     _('.active').removeClass('active');
     let row = this.dataset.id;
     _(`[data-prop-id='${row}']`).addClass('active');
@@ -20,13 +18,12 @@ class props_ajax_body extends ajax_body{
     constructor(action){
         super(action);
         this.model = 'prop';
-        this.table = 'props';
+        this.table = 'prop';
         this.id = +document.querySelector('#id').innerText;
         this.action = action ? action : 'update';
         return this;
     }
 }
-
 // изменение названия свойства / добавление
 _('.property-block').on('input', '.property-name', function () {
     var props_ajax_body = new props_ajax_body(this, 'update');

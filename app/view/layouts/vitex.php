@@ -10,6 +10,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="yandex-verification" content="003253e624aad5b6"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="token" content=<?=$_SESSION['token']?>>
 	<link rel="canonical" href="/<?= isset($vars['canonical']) ? $vars['canonical'] : '' ?>"/>
 	<link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
 	<link rel="preload" href="/pic/header-big.png" as="image"/>

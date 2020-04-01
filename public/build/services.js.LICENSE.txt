@@ -50,11 +50,11 @@
 
 /*! ./showSearchInput */
 
-/*! exports provided: _ */
+/*! exports provided: MyJQ */
 
 /*! exports provided: default */
 
-/*! exports provided: post, get, uniq, ajax_body */
+/*! exports provided: post, get, uniq, ajax_body, _ */
 
 /*! no exports provided */
 

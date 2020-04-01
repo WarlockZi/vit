@@ -9,7 +9,7 @@ use app\core\Base\Model;
 class Product extends Model
 {
 
-	public $table = 'products';
+	public $table = 'product';
 
 	protected function createImgPaths($alias, $fname, $rate = 800, $ext, $isOnly)
 	{
@@ -58,14 +58,7 @@ class Product extends Model
 			"ON p.id = pp.pic_id " .
 			"where pp.product_id = ?";
 		$arr = $this->findBySql($sql, $params);
-//		if ($arr) {
-//			foreach ($arr as $i => $img) {
-//				$ar[$img['sub']][$i]['path'] = $img['path'];
-//				$ar[$img['sub']][$i]['title'] = $img['title'];
-//				$ar[$img['sub']][$i]['alt'] = $img['alt'];
-//			}
-//			return $ar;
-//		}
+
 		return $arr;
 	}
 
@@ -158,7 +151,6 @@ class Product extends Model
 
 	public function getProductParents($parentId)
 	{
-
 		if ($parentId) {
 			$sql = 'SELECT * FROM category WHERE id = ?';
 			$params = [$parentId];
@@ -169,7 +161,7 @@ class Product extends Model
 
 	public function getSale()
 	{
-		$sql = 'SELECT * FROM products WHERE sale = ?';
+		$sql = "SELECT * FROM {$this->table} WHERE sale = ?";
 		$params = [1];
 		$products = $this->findBySql($sql, $params);
 		return $products;
@@ -194,7 +186,7 @@ class Product extends Model
 	public function productsCnt()
 	{
 
-		$sql = 'SELECT COUNT(*) FROM PRODUCTS';
+		$sql = "SELECT COUNT(*) FROM {$this->table}";
 		$arr = $this->findBySql($sql)[0];
 		return $arr['COUNT(*)'];
 	}
@@ -203,7 +195,7 @@ class Product extends Model
 	{
 
 		$param = [$categoryId];
-		$sql = 'SELECT * FROM products WHERE parent = ?';
+		$sql = "SELECT * FROM {$this->table} WHERE parent = ?";
 		$products = $this->findBySql($sql, $param);
 		return $products;
 	}
@@ -212,25 +204,11 @@ class Product extends Model
 	{
 
 		$param = [$productId];
-		$sql = 'SELECT * FROM products WHERE id = ? LIMIT 1';
+		$sql = "SELECT * FROM {$this->table} WHERE id = ? LIMIT 1";
 		$product = $this->findBySql($sql, $param);
 		return $product[0];
 	}
 
-//   public function getProductProps($category) {
-//      if (is_array($category)) {
-//         $props = [];
-//         if (isset($category['parentProps'])) {
-//            $props = array_merge($category['parentProps'],$props);
-//         }
-//         if (isset($category['children']['categories'])) {
-//            while ($category['children']['categories']){
-//               $props = array_merge($category['parentProps'],$props);
-//            }
-//         }
-//         return $props;
-//      }
-//   }
 }
 
 class picture
@@ -409,11 +387,6 @@ class picture
 		$this->image_width = $new_w;
 		$this->image_height = $new_h;
 		$this->image = $new_image;
-	}
-
-	public function __destruct()
-	{
-
 	}
 
 }

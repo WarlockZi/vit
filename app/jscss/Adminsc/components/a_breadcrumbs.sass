@@ -1,13 +1,16 @@
 .a-breadcrumbs
   display: flex
-  margin: 25px 0
-
-  & > div
-    text-transform: uppercase
+  margin: 15px 0
 
   div,  a
-    padding: 3px 6px
     font-size: 0.7rem
     color: #7e98ba
     font-weight: 600
-    margin-left: 5px
+    margin-right: 11px
+    position: relative
+
+  a:after
+      content: '>'
+      position: absolute
+      top: 1px
+      right: -9px

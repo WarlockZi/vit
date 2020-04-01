@@ -1,5 +1,5 @@
 import './common.sass';
-import {_} from "./MyJQ";
+import {MyJQ} from "./MyJQ";
 
 const uniq = (array) => Array.from(new Set(array));
 
@@ -28,14 +28,16 @@ async function post(url, data) {
 }
 
 class ajax_body {
-    constructor(action) {
+    constructor(action='update') {
         this.action = action,
-            this.token = _("meta[name = 'token']").content,
+            this.token = _("meta[name = 'token']").toArray()[0].content,
             this.url = '/adminsc';
         return this;
     }
 
 }
+function _(arg) {
+    return new MyJQ(arg);
+}
 
-
-export {post, get, uniq, ajax_body}; //, autocomplete};
+export {post, get, uniq, ajax_body, _};

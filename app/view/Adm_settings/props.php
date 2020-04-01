@@ -3,7 +3,7 @@
 	<div class="title">Свойства</div>
 	<div class="a-actions">
 		<? foreach ($catProps as $key): ?>
-			<div data-id=<?= $key['id'] ?> class="props-actions_row">
+			<div data-id=<?= $key['id'] ?> class="prop">
 
 				<div><?= $key['name'] ?></div>
 			</div>
