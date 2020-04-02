@@ -48,7 +48,6 @@ class UserController extends AppController
 		View::setJsN('/public/build/services.js');
 		View::setCssN('/public/build/services.css');
 		if ($data = $this->isAjax()) {
-
 			$params['email'] = $email = (string)$data['email'];
 			if (!App::$app->user->checkEmail($email)) {
 				$msg[] = "Неверный формат email";
@@ -59,9 +58,7 @@ class UserController extends AppController
 				$msg[] = "Пароль не должен быть короче 6-ти символов";
 				exit(include ROOT . '/app/view/User/alert.php');
 			}
-
-			$user = User::getUserByEmail($params);
-
+			$user = User::getByEmailAndPass($params);
 			if ($user === false) { // Почта с паролем существуют, но нет подтверждения
 				// Нет пользователя с таким паролем
 				$msg[] = "Пользователь с 'e-mail' : $email не зарегистрирован";
@@ -88,7 +85,7 @@ class UserController extends AppController
 		}
 
 		if (isset($_SESSION['id'])) {
-//			$user = \R::load('user', $_SESSION['id']);
+			$user = \R::load('user', $_SESSION['id']);
 			$this->set(compact('user'));
 		}
 

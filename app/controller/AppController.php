@@ -2,9 +2,8 @@
 
 namespace app\controller;
 
-use app\core\Base\Controller;
-use app\core\App;
-use app\core\Base\View;
+use app\model\{User};
+use app\core\Base\{View, Controller};
 
 class AppController extends Controller
 {
@@ -25,7 +24,7 @@ class AppController extends Controller
 				throw new \Exception();
 			} elseif (isset($_SESSION['id'])) {
 				// Проверяем существует ли пользователь и подтвердил ли регистрацию
-				$user = App::$app->user->getUser($_SESSION['id']);
+				$user = User::getById($_SESSION['id']);
 
 				if ($user === false) {
 					// Если пароль или почта неправильные - показываем ошибку

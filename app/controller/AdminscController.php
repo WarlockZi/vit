@@ -5,6 +5,7 @@ namespace app\controller;
 use app\core\Base\View;
 use app\core\App;
 
+
 class AdminscController extends AppController
 {
     public function __construct($route){

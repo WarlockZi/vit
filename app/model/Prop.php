@@ -7,7 +7,7 @@ use app\core\Base\Model;
 
 class Prop extends Model {
 
-   public $table = 'props';
+   public $table = 'prop';
 
    public static function getPropsVals($props = array()) {
       foreach ($props as $k => $v) {
@@ -22,11 +22,11 @@ class Prop extends Model {
 
    public static function getAll() {
 
-      return App::$app->product->findAll('props');
+      return \R::findAll('prop');
    }
 
    public static function getAllWithVals() {
-      $props = self::getAll();
+      $props = \R::loadAll('prop');
       foreach ($props as $key => $value) {
          $props[$key]['vals'] = App::$app->product->findWhere($value['id'], 'parent', 'vals');
       }

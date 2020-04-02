@@ -206,7 +206,7 @@ abstract class Model
     {
         $category = \R::load('category', $arr['id']);
         $prop = \R::load($arr['values']['shared']['table'], $arr['values']['shared']['id']);
-        $category->sharedPropsList[] = $prop;
+        $category->sharedPropList[] = $prop;
         \R::store($category);
     }
 

@@ -155,14 +155,10 @@ class Adm_catalogController extends AdminscController
         return array_reverse($arr);
     }
 
-    public function getAddNewCatPropList(array $allProps, array $cat, array $parentCats)
-    {
-
-    }
 
     public function getCatProps($cat, $parent_props = [])
     {
-        if ($props = $cat->sharedProps) {
+        if ($props = $cat->sharedProp) {
             foreach ($props as $prop) {
                 $arrProps[$prop->name] = $prop->export();
             }
@@ -183,7 +179,7 @@ class Adm_catalogController extends AdminscController
 
     public function getAddableProps($parentsProps, $categoryProps)
     {
-        $props1 = R::findAll('props');
+        $props1 = R::findAll('prop');
         foreach ($props1 as $prop) {
             $props[$prop->name] = $prop->export();
         }

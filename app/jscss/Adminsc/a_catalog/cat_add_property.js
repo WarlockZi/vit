@@ -1,5 +1,4 @@
 import {post, _} from "../../common/common";
-// import {_} from '../../common/MyJQ'
 import {a_category_ajax} from './a_category'
 
 function cat_props_to_array() {
@@ -54,7 +53,7 @@ let select = _('#select_props').on('change', async function () {
     let obj = new a_category_ajax();
     obj.values = {};
     obj.values.shared = {};
-    obj.values.shared.table = 'props';
+    obj.values.shared.table = 'prop';
     obj.values.shared.id = chosen.value;
 
     await post('/adminsc', obj);
