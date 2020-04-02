@@ -23,14 +23,11 @@ class AppController extends Controller
 			if (isset($_SESSION['id']) && !$_SESSION['id'] && $_SERVER['QUERY_STRING'] != '') { // REDIRECT на регистрацию, если запросили не корень
 				throw new \Exception();
 			} elseif (isset($_SESSION['id'])) {
-				// Проверяем существует ли пользователь и подтвердил ли регистрацию
 				$user = User::getById($_SESSION['id']);
 
 				if ($user === false) {
-					// Если пароль или почта неправильные - показываем ошибку
 					$errors[] = 'Неправильные данные для входа на сайт';
 				} elseif ($user === NULL) {
-					// Пароль почта в порядке, но нет подтверждения
 					$errors[] = 'Чтобы получить доступ, зайдите на рабочую почту, найдите письмо "Регистрация VITEX" и перейдите по ссылке в письме.';
 				} else {
 					$this->set(compact('user'));

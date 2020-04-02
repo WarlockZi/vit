@@ -10,7 +10,7 @@ import '../components/breadcrumbs/breadcrumbs.sass'
 import './catalog/prod.sass'
 import './main.sass'
 import './catalog/product.sass'
-
+import "../components/user_menu/user_menu.sass"
 
 
 

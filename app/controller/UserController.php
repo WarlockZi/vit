@@ -18,12 +18,7 @@ class UserController extends AppController
 	public function actionContacts()
 	{
 		$this->auth();
-		if (isset($_POST['token'])) {
-			if ($_SESSION['token'] !== $_POST['token']) {
-				echo $_POST['token'] . '  +  +  ' . $_SESSION['token'];
-				exit('Обновите страницу.');
-			}
-		}
+
 		View::setMeta('Задайте вопрос', 'Задайте вопрос', 'Задайте вопрос');
 	}
 
@@ -42,22 +37,17 @@ class UserController extends AppController
 		}
 	}
 
-	public function actionLogin()
+	public function actionLogin($msg)
 	{
-
 		View::setJsN('/public/build/services.js');
 		View::setCssN('/public/build/services.css');
 		if ($data = $this->isAjax()) {
-			$params['email'] = $email = (string)$data['email'];
-			if (!App::$app->user->checkEmail($email)) {
-				$msg[] = "Неверный формат email";
-				exit(include ROOT . '/app/view/User/alert.php');
-			}
-			$params['password'] = $password = $data['pass'];
-			if (!App::$app->user->checkPassword($password)) {
-				$msg[] = "Пароль не должен быть короче 6-ти символов";
-				exit(include ROOT . '/app/view/User/alert.php');
-			}
+			$params['email'] = (string)$data['email'];
+			$params['password'] = $data['pass'];
+
+			$this->checkEmail($params['email']);
+			$this->checkPassword($data['pass']);
+
 			$user = User::getByEmailAndPass($params);
 			if ($user === false) { // Почта с паролем существуют, но нет подтверждения
 				// Нет пользователя с таким паролем
@@ -70,7 +60,7 @@ class UserController extends AppController
 				exit();
 			} else {// Если данные правильные, запоминаем пользователя (в сессию)
 				$user['rights'] = explode(",", $user['rights']);
-				App::$app->user->setAuth($user);
+				User::setAuth($user);
 
 				$this->set(compact('user'));
 				$msg[] = "Все ок";
@@ -219,7 +209,7 @@ class UserController extends AppController
 			exit();
 		};
 
-		if (!App::$app->user->confirm($hash)) {
+		if (!User::confirm($hash)) {
 			exit('Не удалось подтвердить почту');
 		};
 		$user = App::$app->user->getUserByHash($hash);
@@ -247,21 +237,17 @@ class UserController extends AppController
 
 	public function actionEdit()
 	{
-		$this->auth(); // Авторизация $_SESSION['id']
-		// Получаем идентификатор пользователя из сессии, если есть
+		$this->auth();
+
 		if (isset($_SESSION['id'])) {
 			$userId = $_SESSION['id'];
 		}
-		// Получаем информацию о пользователе из БД
 		$user = App::$app->user->getUser($userId);
 
-		// Флаг результата
 		$result = false;
 
-		// Обработка формы
 		if (isset($_POST['submit'])) { //нажали кнопку сохранить
-			// Если форма отправлена
-			// Получаем данные из формы редактирования
+			// Если форма отправлена Получаем данные из формы редактирования
 
 			$ff['table'] = 'users';
 			$ff['pkey'] = 'id';
@@ -301,5 +287,33 @@ class UserController extends AppController
 			$this->set(compact('user'));
 		}
 	}
+	/**
+	 * Проверяет имя: не меньше, чем 6 символов
+	 * @param string $password <p>Пароль</p>
+	 * @return boolean <p>Результат выполнения метода</p>
+	 */
+	public function checkPassword($password)
+	{
+		if (strlen($password) >= 6) {
+			return true;
+		}
+		$msg[] = "Пароль не должен быть короче 6-ти символов";
+		exit(include ROOT . '/app/view/User/alert.php');
+//		return false;
+	}
 
+	/**
+	 * Проверяет email
+	 * @param string $email <p>E-mail</p>
+	 * @return boolean <p>Результат выполнения метода</p>
+	 */
+	public static function checkEmail($email)
+	{
+		if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			return true;
+		}
+		$msg[] = "Неверный формат email";
+		exit(include ROOT . '/app/view/User/alert.php');
+//		return false;
+	}
 }

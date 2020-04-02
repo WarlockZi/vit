@@ -12,15 +12,15 @@ class Adm_settingsController extends AdminscController {
       parent::__construct($route);
    }
 
-   public function actionIndex() {   }
+   public function actionIndex() {
 
-   public function actionDumpSQL() {   }
-   public function actionValues() {
-//   	$this->view = '';
 	}
 
+   public function actionDumpSQL() {   }
+   public function actionValues() {	}
+
    public function actionPics() {
-      $pics = App::$app->adminsc->findAll('pic');
+      $pics = \R::findAll('pic');
       $this->set(compact('pics'));
    }
 
