@@ -1,10 +1,11 @@
 import './props.sass'
-// import {_} from '../../common/yJQ'
 import {ajax_body, _} from "../../common/common";
 
 // show first prop card
 let f = _('.prop-container');
-f[0].classList.add('active');
+if (!f.objects.length == 0) {
+    f.first().classList.add('active');
+}
 
 // toggle prop cards visibility
 _('.prop').on('click', function () {
@@ -14,8 +15,8 @@ _('.prop').on('click', function () {
 });
 
 // fill out ajax body
-class props_ajax_body extends ajax_body{
-    constructor(action){
+class props_ajax_body extends ajax_body {
+    constructor(action) {
         super(action);
         this.model = 'prop';
         this.table = 'prop';
@@ -24,6 +25,7 @@ class props_ajax_body extends ajax_body{
         return this;
     }
 }
+
 // изменение названия свойства / добавление
 _('.property-block').on('input', '.property-name', function () {
     var props_ajax_body = new props_ajax_body(this, 'update');

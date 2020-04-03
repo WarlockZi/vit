@@ -90,7 +90,7 @@ class Category extends Model
 		$propId = $obj['values']['shared']['id'];
 		$cat = \R::load('category', $obj['id']);
 
-		unset($cat->sharedPropsList[$propId]);
+		unset($cat->sharedProp[$propId]);
 		\R::store($cat);
 	}
 
