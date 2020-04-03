@@ -45,8 +45,8 @@
 
 	</div>
 
-	<div class="separator btn">
-		<a href='values/save' class="a-btn-action">Сохранить</a>
-		<a href='values/new' class="a-btn-action">Добавить</a>
+	<div class="separator">
+		<a href='values/save' class="btn">Сохранить</a>
+		<a href='values/new' class="btn">Добавить</a>
 	</div>
 </div>

@@ -11,16 +11,16 @@ window.onload = function () {
         speed: 500,
         loop: true,
         breakpoints: {
-            640: {
-                slidesPerView: 4,
+            325: {
+                slidesPerView: 2,
                 spaceBetween: 10,
             },
-            768: {
-                slidesPerView: 5,
+            400: {
+                slidesPerView: 3,
                 spaceBetween: 20,
             },
-            1024: {
-                slidesPerView: 6,
+            600: {
+                slidesPerView: 4,
                 spaceBetween: 30,
             },
         },

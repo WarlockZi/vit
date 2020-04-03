@@ -21,8 +21,8 @@
     <div>Каталог</div>
   </div>
 <section>
-	<div class="separator btns">
-		<a href="/adminsc/catalog/category/new" class="a-btn-action">Добавить категорию</a>
+	<div class="separator">
+		<a href="/adminsc/catalog/category/new" class="btn">Добавить категорию</a>
 	</div>
 </section>
 

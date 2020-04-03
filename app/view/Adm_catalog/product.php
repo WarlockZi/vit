@@ -252,8 +252,8 @@
 
 
 				</section>
-				<div class="separator btns">
-					<button id="product-update-btn">Сохранить</button>
+				<div class="separator">
+					<button class="btn" id="product-update-btn">Сохранить</button>
 
 				</div>
 			</div>

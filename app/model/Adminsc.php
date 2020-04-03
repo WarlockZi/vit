@@ -7,10 +7,6 @@ use app\core\App;
 
 class Adminsc extends Model {
 
-   public function createSiteMaSp() {
-
-   }
-
    public function where($fName = '', $fAct = '', $fArt = '', $prop = []) {
       $where = ' WHERE ';
       $and = '';
@@ -47,7 +43,7 @@ class Adminsc extends Model {
    public function addUser() {
 
 // Следующий id вопроса
-      $sql = "SHOW TABLE STATUS FROM vitex_test LIKE 'users'";
+      $sql = "SHOW TABLE STATUS FROM vitex_test LIKE 'user'";
       $next = $this->findBySql($sql)[0];
 
       ob_start();

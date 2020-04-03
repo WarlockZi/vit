@@ -26,8 +26,8 @@
 
        </div>
 
-       <div class="separator btns">
-         <button id = 'save' data-id = '<?= $prop['id'] ?>'>
+       <div class="separator">
+         <button class="btn" id = 'save' data-id = '<?= $prop['id'] ?>'>
            сохранить
          </button>
        </div>

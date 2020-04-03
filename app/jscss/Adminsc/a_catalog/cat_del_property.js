@@ -19,7 +19,7 @@ async function delProperty(id, name, self) {
     req.values = {};
     req.values.shared = {};
     req.action = "delProp";
-    req.values.shared.table = "props";
+    req.values.shared.table = "prop";
     req.values.shared.id = id;
 
     let deleted = await post(req.url, req);

@@ -10,21 +10,13 @@ class Adm_crmController extends AdminscController {
 
    public function __construct($route) {
       parent::__construct($route);
-
-//      $routeView = ['js' => $this->route, 'view' => $this->view];
-//      View::setJsCss($routeView);
-//      $routeView = ['css' => $this->route, 'view' => $this->view];
-//      View::setJsCss($routeView);
    }
 
-   public function actionIndex() {
-
-   }
+   public function actionIndex() {   }
 
    public function actionUsers() {
-
-      $users = App::$app->user->findAll('users');
-      $rights = App::$app->user->findAll('user_rights');
+      $users = \R::findAll('user');
+      $rights = \R::findAll('right');
       $this->set(compact('users', 'rights'));
    }
 
@@ -34,10 +26,11 @@ class Adm_crmController extends AdminscController {
          header('Location: /adminsc/crm/users');
       };
 
-      $user = App::$app->user->getUser($id);
-      $rights = App::$app->user->getRights();
+//      $user = \R::load('user', $id);
+//      $user = $user->export();
+      $rights = \R::findAll('right');
 
-      $this->set(compact('user','rights'));
+      $this->set(compact('rights'));
    }
 
 }

@@ -55,14 +55,14 @@
                         </div>
                         <div class='row'>
                             <strong>фамилия :</strong><span id='s-name'
-                                                            contenteditable="true"><?= $user['surName']; ?> </span>
+                                                            contenteditable="true"><?= $user['surname']; ?> </span>
                         </div>
                         <div class='row'>
                             <strong>имя :</strong><span id='name' contenteditable="true"><?= $user['name']; ?> </span>
                         </div>
                         <div class='row'>
                             <strong>отчетсво:</strong><span id='m-name'
-                                                            contenteditable="true"><?= $user['middleName']; ?> </span>
+                                                            contenteditable="true"><?= $user['middlename']; ?> </span>
                         </div>
                         <div class='row'>
                             <strong>phone:</strong><span id='phone'
@@ -92,7 +92,7 @@
                         <div class='row'>
                             <strong>д.р.:</strong>
                             <span>
-                  <? $date_format = date('Y-m-d', strtotime($user['birthDate'])) != '1970-01-01' ? date('Y-m-d', strtotime($user['birthDate'])) : NULL; ?>
+                  <? $date_format = date('Y-m-d', strtotime($user['birthdate'])) != '1970-01-01' ? date('Y-m-d', strtotime($user['birthdate'])) : NULL; ?>
                 <input type='date' id="bday" min="2016-08-14" max="2020-08-20" value="<?= $date_format ?>">
               </span>
                         </div>
@@ -107,6 +107,7 @@
                     <div class='admin-flex-table column'>
                         <? foreach ($rights as $right): ?>
                             <div class="row">
+	                            <input data-id = <?=$right['id']?> type="сheckbox">
                                 <strong><?=
                                     $right['name']; ?>
                                 </strong>
@@ -124,11 +125,11 @@
                 <section id="content-tab4">
                 </section>
 
-                        <div class="separator btns">
-                            <div class="a-btn-action">Сохранить</div>
+                        <div class="separator">
+                            <div class="btn">Сохранить</div>
                         </div>
 
-<!--                <div class="separator btns">-->
+<!--                <div class="separator">-->
 <!--                    <button id="user-update-btn">Сохранить-->
 <!--                    </button>-->
 <!--                    <button id="user-create-btn">Добавить пользователя-->

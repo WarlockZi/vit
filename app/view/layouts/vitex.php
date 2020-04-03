@@ -48,10 +48,8 @@
 		}
 
 		.top-menu-wrap {
-			height: auto;
 			max-width: 970px;
 			margin: 0 auto;
-			top: 0;
 			z-index: 3;
 			display: flex;
 			align-items: center;
@@ -61,28 +59,23 @@
 		.top-menu a {
 			font: normal 14px 'Verdana';
 			text-decoration: none;
-			/*padding: 0 10px;*/
 		}
-
-		.user-menu {
-			display: flex;
-			justify-content: flex-end;
-			align-items: center;
-			/*border: 1px solid transparent;*/
-			height: 100%;
-			position: relative;
+		.nav_user{
+			min-width: 230px;
 		}
-
 		.user-menu {
-			padding: 14px 14px;
-			margin: 6px 6px;
-			display: flex;
-			flex: 1;
-			background: url(/pic/user.svg) no-repeat
+			color: #fff0;
+			align-self: stretch;
+			margin: 0;
+		}
+		.user-menu:before {
+			display: block;
+			padding: 3px 8px;
+			background: url(/pic/user.svg) no-repeat;
 		}
 
 		.FIO {
-			display: flex;
+			display: none;
 			align-items: center;
 			padding-right: 10px;
 			font-size: 8px;
@@ -100,12 +93,9 @@
 		.inner-wrap {
 			max-width: 970px;
 			margin: 0 auto;
-			padding-bottom: 3px;
 		}
 
-
 		.h-upper {
-			padding: 12px 0 10px 0;
 			position: relative;
 		}
 
@@ -115,8 +105,7 @@
 
 		.logo-wrap {
 			display: flex;
-			align-items: center;
-			/*min-width: 400px;*/
+			align-self: stretch;
 			font-size: 13px;
 			position: relative;
 			flex: 3;
@@ -124,15 +113,15 @@
 		}
 
 		.logo-wrap img {
-			padding: 10px 10px 0 0;
+			padding: 10px 10px 11px 0;
 		}
 
 		.logo-wrap span {
-			width: 206px;
-			font: 100 1.1rem/1.5rem sans-serif;
+			width: 100px;
+			font: 100 .5rem/.8rem sans-serif;
 			display: flex;
-			align-items: center;
-			padding-top: 6px;
+			align-self: stretch;
+			padding: 9px 0 3px 0;
 		}
 
 		.swiper-slide {
@@ -187,7 +176,7 @@
 						</div>
 					</nav>
 
-					<span class="find"></span>
+					<div class="find-wrap"><div class="find"></div></div>
 					<div class="user-menu">
 
                     <span class="FIO">
@@ -201,53 +190,7 @@
 						<? new User_Menu($user);?>
 
 					</div>
-<!--					<div class="user-menu">-->
-<!--						--><?// if (!isset($user)): ?>
-<!--							<a href="/user/login" aria-label="login">-->
-<!--								<div class="icon"></div>-->
-<!--							</a>-->
-<!--						--><?// else: ?>
-<!--							<div class="icon"></div>-->
-<!---->
-<!--							<span class="FIO">-->
-<!--                    --><?//= $user['surName']; ?>
-<!--                    <br>-->
-<!--                    --><?//= $user['name']; ?>
-<!--								--><?//= $user['middleName']; ?>
-<!--                </span>-->
-<!---->
-<!--							<div class="nav column">-->
-<!--								<a href="/user/edit">Редактировать свой профиль</a>-->
-<!--								--><?//=
-//								in_array('1', $user['rights']) ? // редактировать
-//									'<a href="/edit/1">Редактировать тесты</a>
-//                      <a href="/freetest/edit/41">Редактировать свободный тест</a>' : ''
-//								?>
-<!--								--><?//=
-//								in_array('2', $user['rights']) ? // проходить
-//									'<a href="/test/1">Проходить тесты</a>
-//                         <a href="/freetest/41">Свободный тест</a>' : '';
-//								?>
-<!---->
-<!--								--><?//=
-//								in_array('3', $user['rights']) ?
-//									'<a href="/adminsc">Admin</a>' : ''; // Admin
-//								?>
-<!---->
-<!--								--><?// if (isset($user)): ?>
-<!--									<a href="/user/logout" aria-label="logout">-->
-<!--                            <span class="icon-logout">-->
-<!--                              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="20"-->
-<!--                                   viewBox="0 0 20 20">-->
-<!--                              <path fill='#e30000'-->
-<!--                                    d="M4 8v-2c0-3.314 2.686-6 6-6s6 2.686 6 6v0h-3v2h4c1.105 0 2 0.895 2 2v0 8c0 1.105-0.895 2-2 2v0h-14c-1.105 0-2-0.895-2-2v0-8c0-1.1 0.9-2 2-2h1zM9 14.73v2.27h2v-2.27c0.602-0.352 1-0.996 1-1.732 0-1.105-0.895-2-2-2s-2 0.895-2 2c0 0.736 0.398 1.38 0.991 1.727l0.009 0.005zM7 6v2h6v-2c0-1.657-1.343-3-3-3s-3 1.343-3 3v0z"></path>-->
-<!--                              </svg>-->
-<!--                            </span>Выход</a>-->
-<!--								--><?// endif; ?>
-<!--							</div>-->
-<!--						--><?// endif; ?>
-<!---->
-<!--					</div>-->
+
 				</div>
 
 

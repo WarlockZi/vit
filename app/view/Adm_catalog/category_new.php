@@ -218,9 +218,9 @@
 
 				</section>
 
-				<div class="separator btns">
+				<div class="separator">
 					<? if ($category): ?>
-						<div class="a-btn-action">Сохранить</div>
+						<div class="btn">Сохранить</div>
 					<? endif; ?>
 				</div>
 

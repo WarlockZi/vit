@@ -248,8 +248,8 @@
 
 
                 </section>
-                <div class="separator btns">
-                    <button id="product-save-btn">Сохранить
+                <div class="separator">
+                    <button class="btn" id="product-save-btn">Сохранить
                     </button>
 
                 </div>

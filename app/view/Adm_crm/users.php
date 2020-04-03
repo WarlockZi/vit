@@ -35,8 +35,8 @@
 
 <!--    <button class = "btnadd-user">Создать нового</button>-->
   </div>
-	<div class="separator btns">
-		<div class="a-btn-action">Сохранить</div>
+	<div class="separator">
+		<div class="btn">Сохранить</div>
 	</div>
 
 
