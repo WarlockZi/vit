@@ -25,11 +25,9 @@ class Adm_crmController extends AdminscController {
       if (!isset($_GET['id']) || !$id = $_GET['id']) {
          header('Location: /adminsc/crm/users');
       };
-
 //      $user = \R::load('user', $id);
 //      $user = $user->export();
       $rights = \R::findAll('right');
-
       $this->set(compact('rights'));
    }
 

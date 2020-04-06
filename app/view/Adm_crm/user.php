@@ -35,7 +35,12 @@
                     <div class='admin-flex-table column'>
                         <div class='row'>
                             <strong>id :</strong>
-                            <span id='id' <?= $user['id'] ?: ''; ?>><?= $user['id'] ?: ''; ?></span>
+                            <span id='id'><?= $user['id'] ?: ''; ?></span>
+                        </div>
+                        <div class='row'>
+                            <strong>актив. :</strong>
+                            <input id = "act" class = "checkbox" type="checkbox" data-js-act='act' <?= $user['act'] ?'checked': ''; ?>>
+                            <label for="act"></label>
                         </div>
                         <div class='row'>
                             <strong>Наименование :</strong>
@@ -107,7 +112,6 @@
                     <div class='admin-flex-table column'>
                         <? foreach ($rights as $right): ?>
                             <div class="row">
-	                            <input data-id = <?=$right['id']?> type="сheckbox">
                                 <strong><?=
                                     $right['name']; ?>
                                 </strong>
@@ -126,15 +130,10 @@
                 </section>
 
                         <div class="separator">
-                            <div class="btn">Сохранить</div>
+                            <div class="btn save_user">Сохранить</div>
+                            <div class="btn add_user">Добавить</div>
                         </div>
 
-<!--                <div class="separator">-->
-<!--                    <button id="user-update-btn">Сохранить-->
-<!--                    </button>-->
-<!--                    <button id="user-create-btn">Добавить пользователя-->
-<!--                    </button>-->
-<!--                </div>-->
 
             </div>
         </div>

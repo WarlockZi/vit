@@ -12,10 +12,7 @@ class Adm_settingsController extends AdminscController {
       parent::__construct($route);
    }
 
-   public function actionIndex() {
-
-	}
-
+   public function actionIndex() {	}
    public function actionDumpSQL() {   }
    public function actionValues() {	}
 
@@ -33,7 +30,6 @@ class Adm_settingsController extends AdminscController {
    }
 
    public function actionModule() {
-
       $id = $this->route['id'];
       $module = App::$app->instructions->findOne($id);
       $this->vars['module'] = $module;
