@@ -26,7 +26,7 @@ function MyJQ(arg) {
                 });
         }
     };
-    this.updateEnum();
+    // this.updateEnum();
 
     this.on = function (eventname, f) {
         for (var i = 0; i < this.objects.length; i++) {
@@ -49,7 +49,7 @@ function MyJQ(arg) {
     this.text = function () {
         return this.objects[0].innerText;
     };
-    this.value = function () {
+    this.val = function () {
         return this.objects[0].value;
     };
     this.append = function (child) {
@@ -80,6 +80,25 @@ function MyJQ(arg) {
         return this.objects;
     };
 
+    this.fullfill = function () {
+        // let current = this.objects[0];
+        if (this.tagName === 'INPUT') {
+            if (this.type === 'text') {
+                return this.innerText;
+            } else if (this.type === 'checkbox') {
+                return this.checked ? 1 : 0;
+            } else if (this.type === 'date') {
+                return this.value;
+            }
+        } else if (this.tagName === 'P') {
+
+        }else if (this.tagName === 'SELECT') {
+            return this.options[this.selectedIndex].value;
+        }else {
+            return this.innerText;
+        }
+    };
+
     return this;
 }
 
@@ -91,5 +110,5 @@ MyJQ.prototype = new function (arg) {
 };
 
 
-export  {MyJQ}
+export {MyJQ}
 

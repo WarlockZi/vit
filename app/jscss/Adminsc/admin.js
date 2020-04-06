@@ -2,6 +2,7 @@ import '../common/common'
 import './admin.sass'
 import './components/a_footer/a_footer.sass'
 import './a_catalog/a_category'
+import './a_crm/a_user/a_user'
 
 import '../components/cache/clear-cache'
 import './components/a_menu/a_menu'

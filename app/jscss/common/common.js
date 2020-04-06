@@ -9,8 +9,7 @@ async function get(key) {
     return p ? p[1] : false;
 }
 
-async function post(url, data) {
-//      debugger;
+function post(url, data) {
     return new Promise(function (resolve, reject) {
         var req = new XMLHttpRequest();
         req.open('POST', url);
@@ -28,14 +27,18 @@ async function post(url, data) {
 }
 
 class ajax_body {
-    constructor(action='update') {
+    constructor(table = 'user', action = 'update') {
+        this.url = '/adminsc',
         this.action = action,
             this.token = _("meta[name = 'token']").toArray()[0].content,
-            this.url = '/adminsc';
+            this.table = table,
+            this.model = table,
+            this.values = {};
+            this.values.shared = {};
         return this;
     }
-
 }
+
 function _(arg) {
     return new MyJQ(arg);
 }
