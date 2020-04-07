@@ -2,7 +2,6 @@
 
 	<div class="title">Настройки</div>
 
-	<? if (in_array('3', $user['rights'])): // admin ?>
 		<div class="a-actions">
 
 			<a href=#>Права пользователей</a>
@@ -16,7 +15,6 @@
 			<a href='/adminsc/settings/dump'>Dump</a>
 
 		</div>
-	<? endif; ?>
 
 </div>
 

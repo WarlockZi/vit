@@ -1,13 +1,11 @@
 <div class="a-submenu">
 	<div class="title">CRM</div>
-	<? if (in_array('3', $user['rights'])): // admin ?>
 		<div class="a-actions">
 
 			<a href="crm/orders">Заказы</a>
 			<a href='users'>Покупатели</a>
 
 		</div>
-	<? endif; ?>
 </div>
 
 <div class="a-content">

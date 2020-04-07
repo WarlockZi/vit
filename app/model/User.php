@@ -114,7 +114,8 @@ class User extends Model
 	public static function getRights($user)
 	{
 		$rights = [];
-		foreach ($user->sharedRight as $item){
+		$arr = $user->sharedRight;
+		foreach ($arr as $item){
 			array_push($rights,$item['id']);
 		}
 		$user['rights'] = $rights;
@@ -162,17 +163,6 @@ class User extends Model
 		}
 		return $res;
 	}
-
-
-//	public function getRights($user)
-//	{
-//		$res = $this->findAll('user_right');
-//		if ($res) {
-//			return $res;
-//		}
-//		return false;
-//	}
-
 
 	public function getUserByHash($hash)
 	{

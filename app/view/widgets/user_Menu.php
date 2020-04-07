@@ -1,12 +1,14 @@
 <?php
 
 namespace app\view\widgets;
+use app\model\User;
 
 class User_Menu
 {
 	public function __construct($user)
 	{
-		echo $this->toHtml($user);
+        $rightId = User::getRights($user);
+		echo $this->toHtml($rightId);
 	}
 
 	public function getOptions($rightId)

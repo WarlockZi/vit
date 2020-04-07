@@ -28,11 +28,11 @@ class Adm_crmController extends AdminscController {
 //      $user = $user->export();
       $rights = \R::findAll('right');
       $this->set(compact('rights'));
-      $arr = $this->vars['user']->sharedRight;
-		foreach ( $arr as $item) {
-			$a[] = $item['id'];
-      }
-      $this->vars['user']->rights = $a;
+//      $arr = $this->vars['user']->sharedRight;
+//		foreach ( $arr as $item) {
+//			$a[] = $item['id'];
+//      }
+//      $this->vars['user']->rights;
    }
 
 }
