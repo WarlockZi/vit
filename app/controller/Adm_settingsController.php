@@ -11,22 +11,30 @@ class Adm_settingsController extends AdminscController {
    public function __construct($route) {
       parent::__construct($route);
    }
-
    public function actionIndex() {	}
-   public function actionDumpSQL() {   }
-   public function actionValues() {	}
 
    public function actionPics() {
       $pics = \R::findAll('pic');
       $this->set(compact('pics'));
    }
 
-   public function actionDump() {   }
+   public function actionProps() {
 
-   public function actionDumpWWW() {
-      if ($this->isAjax()) {
-         $a = 3;
+      $catProps = \R::findAll('prop', 'order by sort desc');
+      foreach ($catProps as $k => $v) {
+         $catProps[$k]['val'] = explode(',', $catProps[$k]['val']);
+      };
+      $this->vars['catProps'] = $catProps;
+   }
+
+   public function actionProp() {
+      if (isset($_GET['id']) && $_GET['id']) {
+         $id = $_GET['id'];
       }
+      $prop = App::$app->prop->findOne($id);
+      $prop['val'] = $prop['val']?explode(',', $prop['val']):[];
+
+      $this->vars['prop'] = $prop;
    }
 
    public function actionModule() {
@@ -61,24 +69,13 @@ class Adm_settingsController extends AdminscController {
          $this->vars['doc'] = $doc;
       }
    }
-
-   public function actionProps() {
-
-      $catProps = \R::findAll('prop', 'order by sort desc');
-      foreach ($catProps as $k => $v) {
-         $catProps[$k]['val'] = explode(',', $catProps[$k]['val']);
-      };
-      $this->vars['catProps'] = $catProps;
-   }
-
-   public function actionProp() {
-      if (isset($_GET['id']) && $_GET['id']) {
-         $id = $_GET['id'];
+   public function actionDumpWWW() {
+      if ($this->isAjax()) {
+         $a = 3;
       }
-      $prop = App::$app->prop->findOne($id);
-      $prop['val'] = $prop['val']?explode(',', $prop['val']):[];
-
-      $this->vars['prop'] = $prop;
    }
 
+   public function actionDumpSQL() {   }
+   public function actionValues() {	}
+   public function actionDump() {   }
 }

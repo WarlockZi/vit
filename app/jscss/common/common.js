@@ -18,7 +18,7 @@ function post(url, data) {
         req.setRequestHeader("X-Requested-With", "XMLHttpRequest");
         req.send('param=' + JSON.stringify(data));
         req.onerror = function () {
-            reject(Error("Network Error"));
+            reject(Error("Error from post req Common/common"));
         };
         req.onload = function () {
             resolve(req.response);
@@ -27,7 +27,7 @@ function post(url, data) {
 }
 
 class ajax_body {
-    constructor(table = 'user', action = 'update') {
+    constructor(table = 'user', action = 'read') {
         this.url = '/adminsc',
         this.action = action,
             this.token = _("meta[name = 'token']").toArray()[0].content,

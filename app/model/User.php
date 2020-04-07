@@ -17,17 +17,18 @@ class User extends Model
 
 	public static function confirm($hash)
 	{
-		$user = $this->findOne($this->table, 'hash = ?',[$hash]);
-		$user->confirm=1;
+		$user = \R::findOne('user', 'hash = ?', [$hash]);
+		$user->confirm = 1;
 		if (\R::store($user)) {
 			return "Вы успешно подтвердили свой E-mail.";
 		} else {
 			return "Не верный код подтверждения регистрации";
 		}
 	}
-	public static function confirmed(array $user)
+
+	public static function confirmed($user)
 	{
-		if ($user['confirmed']= '1') {
+		if ($user['confirmed'] = '1') {
 			return true;
 		} else {
 			return false;
@@ -84,7 +85,7 @@ class User extends Model
 
 			if ($msg === TRUE) {
 				$_SESSION['msg'] = "Новый пароль выслан Вам на почту";
-				header("Location:" . PROJ . "/user/login");
+				header("Location:/user/login");
 			} else {
 				$_SESSION['msg'] = $msg;
 			}
@@ -98,19 +99,25 @@ class User extends Model
 		$password = md5($params['password']);
 		$user = \R::findOne('user', ' email=? and password = ? ', [$params['email'], $password]);
 		if ($user) {
-			$user = $user->export();
-			// Если запись существует и подтверждена, возвращаем id пользователя
 			if (User::confirmed($user)) {
-				return $user;
+				$user['rights'] = $user->sharedRight;
+				$user = $user->export();
+				$_SESSION['id'] = $user['id'];
+				exit($user['start_url']);
 			} else {
-				return NULL;
+				exit ();
 			}
 		}
 		return false;
 	}
 
-	public static function getRights($user){
-		$user['rights'] = explode(",", $user['rights']);
+	public static function getRights($user)
+	{
+		$rights = [];
+		foreach ($user->sharedRight as $item){
+			array_push($rights,$item['id']);
+		}
+		$user['rights'] = $rights;
 		return $user;
 	}
 
@@ -157,7 +164,7 @@ class User extends Model
 	}
 
 
-//	public function getRights()
+//	public function getRights($user)
 //	{
 //		$res = $this->findAll('user_right');
 //		if ($res) {

@@ -41,6 +41,11 @@ class UserController extends AppController
 	{
 		View::setJsN('/public/build/services.js');
 		View::setCssN('/public/build/services.css');
+		if ($this->isAjax()){
+			$d = 4;
+			$gas = 45;
+		}
+
 		if ($data = $this->isAjax()) {
 			$params['email'] = (string)$data['email'];
 			$params['password'] = $data['pass'];
@@ -74,7 +79,7 @@ class UserController extends AppController
 			}
 		}
 
-		if (isset($_SESSION['id'])) {
+		if (isset($_SESSION['id'])&&$_SESSION['id']!=0) {
 			$user = \R::load('user', $_SESSION['id']);
 			$this->set(compact('user'));
 		}

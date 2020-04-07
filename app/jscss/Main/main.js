@@ -1,7 +1,7 @@
 import '../components/swiper/swiper'
-import '../common/common'
-import './components/header/header.sass'
-import './components/footer/footer.sass'
+import {_} from '../common/common'
+import './header.sass'
+import './footer.sass'
 import '../components/alert/alert'
 import '../components/coockie/coockie'
 import '../components/autocomplete/autocomplete'
@@ -13,6 +13,10 @@ import './catalog/product.sass'
 import "../components/user_menu/user_menu.sass"
 
 
+
+_('.user-menu').on('click', function () {
+    window.location.href = '/user/login';
+});
 
 // jQuery.event.special.touchstart =
 //     {// чтобы не было ошибки при прикосновениях пальцем на мобилке

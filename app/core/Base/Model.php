@@ -29,9 +29,7 @@ abstract class Model
 
 	public function clean_data($str)
 	{
-//      $str =  mysql_real_escape_string($str);
 		return strip_tags(trim($str));
-
 	}
 
 	public function findAll($table, $sort = '')
@@ -191,6 +189,11 @@ abstract class Model
 		return $this->insertBySql($sql, $param);
 	}
 
+	public function read($arr)
+	{
+		return  \R::load($arr['table'],$arr['id']);
+	}
+
 	public function delete($arr)
 	{
 		$table = $arr['table'];
@@ -201,14 +204,6 @@ abstract class Model
 		$sql = "DELETE FROM ? WHERE  ? = ?";
 		return $this->insertBySql($sql, $param);
 	}
-
-//    public function updateShared($arr)
-//    {
-//        $category = \R::load('category', $arr['id']);
-//        $prop = \R::load($arr['values']['shared']['table'], $arr['values']['shared']['id']);
-//        $category->sharedPropList[] = $prop;
-//        \R::store($category);
-//    }
 
 	public function updateShared($arr)
 	{

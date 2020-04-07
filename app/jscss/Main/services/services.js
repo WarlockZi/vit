@@ -1,6 +1,6 @@
 import '../../common/common'
-import '../components/header/header.sass'
-import '../components/footer/footer.sass'
+import '../header.sass'
+import '../footer.sass'
 import '../../components/autocomplete/autocomplete'
 
 import '../../components/coockie/coockie'

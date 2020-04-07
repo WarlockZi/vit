@@ -10,7 +10,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="yandex-verification" content="003253e624aad5b6"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="token" content=<?=$_SESSION['token']?>>
+	<meta name="token" content=<?= $_SESSION['token'] ?>>
 	<link rel="canonical" href="/<?= isset($vars['canonical']) ? $vars['canonical'] : '' ?>"/>
 	<link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
 	<link rel="preload" href="/pic/header-big.png" as="image"/>
@@ -60,18 +60,15 @@
 			font: normal 14px 'Verdana';
 			text-decoration: none;
 		}
-		.nav_user{
+
+		.nav_user {
 			min-width: 230px;
 		}
+
 		.user-menu {
 			color: #fff0;
 			align-self: stretch;
 			margin: 0;
-		}
-		.user-menu:before {
-			display: block;
-			padding: 3px 8px;
-			background: url(/pic/user.svg) no-repeat;
 		}
 
 		.FIO {
@@ -137,9 +134,7 @@
 
 <body class="column">
 
-<div class="top-menus">
-
-</div>
+<div class="top-menus"></div>
 
 
 <header>
@@ -176,18 +171,28 @@
 						</div>
 					</nav>
 
-					<div class="find-wrap"><div class="find"></div></div>
+					<div class="find-wrap">
+						<div class="find"></div>
+					</div>
+
 					<div class="user-menu">
 
-                    <span class="FIO">
-	                    <? use app\view\widgets\User_Menu;
-							  $rightId = $user['rights'];
-							  if (isset($user)) {
-								  echo $user['surname'] . ' ' . $user['name'] . ' ' . $user['middlename'];
-							  } ?>
-                    </span>
+						<!--						--><? //$user = false;?>
+						<? if (isset($user)): ?>
 
-						<? new User_Menu($user);?>
+							<span class="FIO">
+
+	                    <?= $user['surname'] . ' ' . $user['name'] . ' ' . $user['middlename']; ?>
+<!--							  --><?// use app\view\widgets\User_Menu; ?>
+							  <? new app\view\widgets\User_Menu($user); ?>
+
+							  <? $_SESSION['id'] = 0; ?>
+
+                    </span>
+						<? else: ?>
+							<?= "<a href='/user/login'></a>"; ?>
+						<? endif; ?>
+
 
 					</div>
 
@@ -215,7 +220,7 @@
 
 
 <div class="page-buffer"></div>
-<footer class='column'>
+<footer>
 
 	<div class="row">
 		<div class="column">

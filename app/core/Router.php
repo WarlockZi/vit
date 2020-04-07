@@ -71,17 +71,13 @@ class Router
     public static function dispatch($url)
     {
 
-        // Получим только неявные Get параметры(то, что после имени домена идет)
         $url = self::removeQuryString($url);
         if (self::matchRoute($url)) {
 
-            // передаем route, из него в Contriller вычленяем (route[action] = view)
             $controller = 'app\controller\\' . self::$route['controller'] . 'Controller';
             $cObj = new $controller(self::$route);
-            // Если удалось подключить класс
             if (class_exists($controller)) {
                 $action = 'action' . self::upperCamelCase(self::$route['action']); // . 'Action'; //Action для того, чтобы пользователь не мог обращаться к функции(хотя можно написать protected)
-                // Если удалось подключить метод Action
                 if (method_exists($cObj, $action)) {
                     $cObj->$action(self::$aCategoryOrProduct); // Выполним метод
                     $cObj->getView(); // Подключим вид
@@ -94,10 +90,7 @@ class Router
 
         } else {
             http_response_code(404);
-//            $cObj=new \app\controller\MainController($route);
-//            $cObj->error(self::$aCategoryOrProduct); // Выполним метод
-//            $cObj->getView(); // Подключим вид
-            include '../public/404.html'; // '404.html';
+            include './public/404.html'; // '404.html';
         }
     }
 

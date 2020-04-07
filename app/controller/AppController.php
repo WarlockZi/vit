@@ -2,21 +2,38 @@
 
 namespace app\controller;
 
+use app\core\App;
 use app\model\{User};
 use app\core\Base\{View, Controller};
 
 class AppController extends Controller
 {
-//	protected $list;
-
 	public function __construct(array $route)
 	{
 		parent::__construct($route);
+
+		if ($this->isAjax()) {
+			$this->processAjax();
+			exit('ajax done');
+		}
+
 		$this->layout = 'vitex';
 		View::setJsN("/public/build/mainIndex.js");
 		View::setCssN("/public/build/mainIndex.css");
 	}
 
+	public function processAjax()
+	{
+		if (isset($_POST['param'])) {
+			$arr = json_decode($_POST['param'], true);
+
+			$func = $arr['action'];
+			$model = $arr['model'] ?: 'adminsc';
+			if (App::$app->{$model}->$func($arr)) {
+				exit('true');
+			}
+		}
+	}
 	public function auth()
 	{
 		try {
@@ -24,6 +41,8 @@ class AppController extends Controller
 				throw new \Exception();
 			} elseif (isset($_SESSION['id'])) {
 				$user = User::getById($_SESSION['id']);
+				$user->sharedRight;
+				$user['rights'] = User::getRights($user);
 
 				if ($user === false) {
 					$errors[] = 'Неправильные данные для входа на сайт';

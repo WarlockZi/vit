@@ -2,38 +2,30 @@
 
 namespace app\controller;
 
-use app\core\Base\View;
-use app\model\User;
-use app\model\Catalog;
-use app\core\App;
+use app\core\{App, Base\View};
+use app\model\{User, Catalog};
 
 class MainController Extends AppController {
 
    public function __construct($route) {
-
-      if ($this->isAjax()) {
-         if (isset($_POST['param'])) {
-            $arr = json_decode($_POST['param'], true);
-            $func = $arr['action'];
-            $model = $arr['model'] ?: 'adminsc';
-            if (App::$app->{$model}->$func($arr)) {
-               exit('true');
-            }
-         }
-      }
+//      if ($this->isAjax()) {
+//         if (isset($_POST['param'])) {
+//            $arr = json_decode($_POST['param'], true);
+//            $func = $arr['action'];
+//            $model = $arr['model'] ?: 'adminsc';
+//            if (App::$app->{$model}->$func($arr)) {
+//               exit('true');
+//            }
+//         }
+//      }
       parent::__construct($route);
 
-      $sale = App::$app->cache->get('sale');
-      if (!$sale) {
-         $sale = App::$app->product->getSale();
-         App::$app->cache->set('sale', $sale, 30);
-      }
-      $this->set(compact('sale'));
    }
 
    public function actionIndex() {
+
       if (isset($_SESSION['id'])) {
-         $user = User::getById($_SESSION['id']);
+         $user = \R::findOne('user',($_SESSION['id']));
          if ($user === false) {
             $errors[] = 'Неправильные данные для входа на сайт';
          } elseif ($user === NULL) {
@@ -41,45 +33,34 @@ class MainController Extends AppController {
          } else {
             $this->set(compact('user'));
          }
-         return TRUE;
       }
+
+		$sale = App::$app->cache->get('sale');
+		if (!$sale) {
+			$sale = App::$app->product->getSale();
+			App::$app->cache->set('sale', $sale, 30);
+		}
+		$this->set(compact('sale'));
+
       View::setMeta('Медицинские расходные материалы', 'Доставим медицинские расходные материалы в любую точку России', 'медицинские расходные материалы, доставка, производство, по России');
    }
 
-   public function actionPoliticaconf() {
+   public function actionPoliticaconf() { }
 
-   }
+   public function actionDiscount() {   }
 
-   public function actionDiscount() {
+   public function actionDelivery() {}
 
-   }
+   public function actionPayment() {}
 
-   public function actionDelivery() {
+   public function actionContacts() {}
 
-   }
+   public function actionOferta() {}
 
-   public function actionPayment() {
+   public function actionAbout() {}
 
-   }
+   public function actionReturn_change() {}
 
-   public function actionContacts() {
-
-   }
-
-   public function actionOferta() {
-
-   }
-
-   public function actionAbout() {
-
-   }
-
-   public function actionReturn_change() {
-
-   }
-
-   public function actionArticles() {
-
-   }
+   public function actionArticles() {}
 
 }

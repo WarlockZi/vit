@@ -206,9 +206,6 @@ body,
 .top-strip,
 /*.top-strip div,*/ 
 .top-strip div a, 
-.user-menu,
-.user-menu li,
-.user-menu label,
 .enter-button,
 .user-button,
 .user-button span,
@@ -287,11 +284,6 @@ footer {
     margin: 3px 0 0 18px;
     display: inline-block;
     vertical-align: top;
-}
-.user-menu{
-    flex:3;
-    justify-content: flex-end;
-    align-items: center;
 }
 
 .enter-button:hover a{

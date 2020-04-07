@@ -45,7 +45,18 @@ abstract class Controller
 					exit('Обновите страницу');
 				}
 			}
-			return (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest' && $data || isset($_POST['ajax']) && ($_POST['ajax'] == 'true') && $data) ? $data : false;
+			return (
+				isset($_SERVER['HTTP_X_REQUESTED_WITH'])
+				&& $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest'
+				&& $data
+
+				||
+				isset($_POST['ajax'])
+				&& ($_POST['ajax'] == 'true')
+				&& $data)
+
+				? $data
+				: false;
 		}
 	}
 
