@@ -14,9 +14,6 @@ import "../components/user_menu/user_menu.sass"
 
 
 
-_('.user-menu').on('click', function () {
-    window.location.href = '/user/login';
-});
 
 // jQuery.event.special.touchstart =
 //     {// чтобы не было ошибки при прикосновениях пальцем на мобилке

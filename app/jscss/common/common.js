@@ -29,14 +29,50 @@ function post(url, data) {
 class ajax_body {
     constructor(table = 'user', action = 'read') {
         this.url = '/adminsc',
-        this.action = action,
+            this.action = action,
             this.token = _("meta[name = 'token']").toArray()[0].content,
             this.table = table,
             this.model = table,
             this.values = {};
-            this.values.shared = {};
+        this.values.shared = {};
+
+        this.ownFields();
+
+        if (_('.shared').objects.length) {
+            this.sharedFilds();
+        }
         return this;
     }
+
+    ownFields() {
+        let vals = _('.field').objects;
+        for (var i of vals) {
+            this.values[`${i.id}`] = _(i).fullfill();
+        }
+    };
+
+    sharedFilds() {
+
+        let ids = [];
+        let right = _('.shared.right:checked').objects;
+        for (let i of right) {
+            ids.push(+i.id);
+        }
+        this.values.shared[`right`] = ids;
+    }
+}
+
+function popup(message) {
+    let str = '';
+    for (let mes in message) {
+        str += "<p>${mes}</p>"
+    }
+
+    let popup = document.createElement('div');
+    popup.classList.add('popup');
+    popup.innerHTML(str);
+
+    return popup;
 }
 
 function _(arg) {

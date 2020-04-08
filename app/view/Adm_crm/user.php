@@ -44,34 +44,34 @@
 
 						<div class='row'>
 							<strong>подтвержден :</strong>
-							<select name="conf" id="confirm" value=1 class="value">
+							<select name="conf" id="confirm" value=1 class="field">
 								<option value="0" <?= $user['confirm'] == '0' ? 'selected' : ''; ?>>0</option>
 								<option value="1" <?= $user['confirm'] == '1' ? 'selected' : ''; ?>>1</option>
 							</select>
 						</div>
 						<div class='row'>
 							<strong>email :</strong>
-							<span class="value" id='email' contenteditable="true"><?= $user['email']; ?></span>
+							<span class="field" id='email' contenteditable="true"><?= $user['email']; ?></span>
 						</div>
 						<div class='row'>
 							<strong>фамилия :</strong>
-							<span class="value" id='surname' contenteditable="true"><?= $user['surname']; ?> </span>
+							<span class="field" id='surname' contenteditable="true"><?= $user['surname']; ?> </span>
 						</div>
 						<div class='row'>
 							<strong>имя :</strong>
-							<span class="value" id='name' contenteditable="true"><?= $user['name']; ?> </span>
+							<span class="field" id='name' contenteditable="true"><?= $user['name']; ?> </span>
 						</div>
 						<div class='row'>
 							<strong>отчетсво:</strong>
-							<span class="value" id='middlename' contenteditable="true"><?= $user['middlename']; ?> </span>
+							<span class="field" id='middlename' contenteditable="true"><?= $user['middlename']; ?> </span>
 						</div>
 						<div class='row'>
 							<strong>phone:</strong>
-							<span class="value" id='phone' contenteditable="true"><?= $user['phone']; ?> </span>
+							<span class="field" id='phone' contenteditable="true"><?= $user['phone']; ?> </span>
 						</div>
 						<div class='row'>
 							<strong>добавочный:</strong>
-							<span class="value" id='extension' contenteditable="true"><?= $user['extension']; ?> </span>
+							<span class="field" id='extension' contenteditable="true"><?= $user['extension']; ?> </span>
 						</div>
 						<div class='row'>
 							<strong>принят:</strong>
@@ -80,7 +80,7 @@
 						$date = date('Y-m-d', strtotime($user['hired']));
 						$date_format = $date != '1970-01-01' ? $date : NULL;
 						?>
-                <input class="value" type='date' id="hired" min="2016-08-14" max="2020-08-20"
+                <input class="field" type='date' id="hired" min="2016-08-14" max="2020-08-20"
                        value="<?= $date_format; ?>">
               </span>
 						</div>
@@ -88,7 +88,7 @@
 							<strong>уволен:</strong>
 							<span>
                   <? $date_format = date('Y-m-d', strtotime($user['fired'])) != '1970-01-01' ? date('Y-m-d', strtotime($user['fired'])) : NULL; ?>
-                <input class="value" type='date' id="fired" min="2016-08-14" max="2020-08-20"
+                <input class="field" type='date' id="fired" min="2016-08-14" max="2020-08-20"
                        value="<?= $date_format ?>">
               </span>
 						</div>
@@ -96,7 +96,7 @@
 							<strong>д.р.:</strong>
 							<span>
                   <? $date_format = date('Y-m-d', strtotime($user['birthdate'])) != '1970-01-01' ? date('Y-m-d', strtotime($user['birthdate'])) : NULL; ?>
-                <input class="value" type='date' id="bday" min="2016-08-14" max="2020-08-20"
+                <input class="field" type='date' id="bday" min="2016-08-14" max="2020-08-20"
                        value="<?= $date_format ?>">
               </span>
 						</div>
@@ -114,7 +114,7 @@
 								<strong><?=
 									$right['name']; ?>
 								</strong>
-								<input class="js-shared-right checkbox" id='<?= $right['id']; ?>' type="checkbox"
+								<input class="shared right checkbox" id='<?= $right['id']; ?>' type="checkbox"
 									<?= in_array($right['id'], $user['rights']) ? 'checked' : '' ?>>
 								<label for="<?= $right['id']; ?>"></label>
 							</div>

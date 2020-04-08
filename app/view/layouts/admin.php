@@ -33,14 +33,13 @@
 	<div class="user-menu admin">
 
                     <span class="FIO">
-	                    <? use app\view\widgets\User_Menu;
-	                    $rightId = $user['rights'];
+	                    <?$rightId = $user['rights'];
 							  if (isset($user)) {
 								  echo $user['surname'] . ' ' . $user['name'] . ' ' . $user['middlename'];
 							  } ?>
                     </span>
 
-		<? new User_Menu($user);?>
+		<? new app\view\widgets\User_Menu($user);?>
 
 	</div>
 

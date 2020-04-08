@@ -41,8 +41,6 @@ class AppController extends Controller
 				throw new \Exception();
 			} elseif (isset($_SESSION['id'])) {
 				$user = User::getById($_SESSION['id']);
-//				$user->sharedRight;
-//				$user['rights'] = User::getRights($user);
 
 				if ($user === false) {
 					$errors[] = 'Неправильные данные для входа на сайт';

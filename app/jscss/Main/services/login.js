@@ -1,4 +1,5 @@
 import './login.sass'
+import '../../components/user_menu/user_menu.sass'
 import {post, ajax_body, _} from '../../common/common'
 
 /////////////////////////    Login     /////////////////////

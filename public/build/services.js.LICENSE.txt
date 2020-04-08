@@ -8,6 +8,8 @@
 
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./map.sass */
 
+/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./user_menu.sass */
+
 /*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./common.sass */
 
 /*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./footer.sass */
@@ -23,6 +25,8 @@
 /*! ../../components/autocomplete/autocomplete */
 
 /*! ../../components/coockie/coockie */
+
+/*! ../../components/user_menu/user_menu.sass */
 
 /*! ../footer.sass */
 
@@ -43,6 +47,8 @@
 /*! ./login.sass */
 
 /*! ./map.sass */
+
+/*! ./profile */
 
 /*! ./register */
 
@@ -94,6 +100,10 @@
   !*** ./app/jscss/Main/services/login.sass ***!
   \********************************************/
 
+/*!********************************************!*\
+  !*** ./app/jscss/Main/services/profile.js ***!
+  \********************************************/
+
 /*!*********************************************!*\
   !*** ./app/jscss/Main/services/register.js ***!
   \*********************************************/
@@ -109,6 +119,10 @@
 /*!***************************************************!*\
   !*** ./app/jscss/components/coockie/coockie.sass ***!
   \***************************************************/
+
+/*!*******************************************************!*\
+  !*** ./app/jscss/components/user_menu/user_menu.sass ***!
+  \*******************************************************/
 
 /*!***********************************************************!*\
   !*** ./app/jscss/components/autocomplete/autocomplete.js ***!
@@ -153,6 +167,10 @@
 /*!**********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/coockie/coockie.sass ***!
   \**********************************************************************************************************************************************************************************************************/
+
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/user_menu/user_menu.sass ***!
+  \**************************************************************************************************************************************************************************************************************/
 
 /*!********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/autocomplete/autocomplete.sass ***!

@@ -18,23 +18,24 @@
 		</ul>
 	<?php endif; ?>
 
-	<form class="form-container" action="/user/edit" method="post">
-		<div class="form-title">Редактирование данных</div>
+	<div class="form-container" action="/user/edit" method="post">
+		<div class="form-title">Редактировать профиль</div>
+		<div id="id" hidden><?= $user['id'] ?></div>
 
-		<input class="form-input" placeholder="Имя" name="name" value="<?= $user['name'] ?>"/>
+		<input class="form-input field" placeholder="Имя" id="name" value="<?= $user['name'] ?>"/>
 
-		<input class="form-input" placeholder="Фамилия" name="surName" value="<?= $user['surName'] ?>"/>
+		<input class="form-input field" placeholder="Фамилия" id="surname" value="<?= $user['surname'] ?>"/>
 
-		<input class="form-input" placeholder="Отчество" name="middleName" value="<?= $user['middleName'] ?>"/>
+		<input class="form-input field" placeholder="Отчество" id="middlename" value="<?= $user['middlename'] ?>"/>
 
-		<input class="form-input" placeholder="День рождения:" name="birthDate" type="date"
-		       value="<?= $user['birthDate'] ?>"/>
+		<input class="form-input field" placeholder="День рождения:" id="birthdate" type="date"
+		       value="<?= $user['birthdate'] ?>"/>
 
-		<input class="form-input" placeholder="Телефон" name="phone" value="<?= $user['phone'] ?>"/>
+		<input class="form-input field" placeholder="Телефон" id="phone" value="<?= $user['phone'] ?>"/>
 
-		<input class="form-input" placeholder="email" name="email" type="email" value="<?= $user['email'] ?>" required/>
+		<input class="form-input field" placeholder="email" id="email" type="email" value="<?= $user['email'] ?>" required/>
 
-		<input type="submit" name="submit" class="form-input submit" value="Сохранить"/>
+		<div class="submit">Сохранить</div>
 	</form>
 	<style>
 

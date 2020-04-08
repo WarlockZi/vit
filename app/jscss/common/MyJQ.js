@@ -84,7 +84,7 @@ function MyJQ(arg) {
         // let current = this.objects[0];
         if (this.tagName === 'INPUT') {
             if (this.type === 'text') {
-                return this.innerText;
+                return this.value;
             } else if (this.type === 'checkbox') {
                 return this.checked ? 1 : 0;
             } else if (this.type === 'date') {

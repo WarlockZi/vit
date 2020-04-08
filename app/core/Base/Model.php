@@ -191,7 +191,7 @@ abstract class Model
 
 	public function read($arr)
 	{
-		return  \R::load($arr['table'],$arr['id']);
+		return \R::load($arr['table'], $arr['id']);
 	}
 
 	public function delete($arr)
@@ -208,61 +208,35 @@ abstract class Model
 	public function updateShared($arr)
 	{
 		$host = $arr['table'];
-		$shared = $arr['values']['shared']['table'];
-
 		$hostEl = \R::load("{$host}", $arr['id']);
-		$action = 'shared' . ucfirst($shared) . 'List';
 
-		foreach ($arr['values']['shared']['ids'] as $id) {
-			$sharedEL = \R::load($arr['values']['shared']['table'], $id);
-			$hostEl->$action[] = $sharedEL;
-			\R::store($hostEl);
+		foreach ($arr['values']['shared'] as $shTable => $ids) {
+			$action = 'shared' . ucfirst($shTable) . 'List';
+			foreach ($ids as $id) {
+				$sharedEL = \R::load($shTable, $id);
+				$hostEl->$action[] = $sharedEL;
+				\R::store($hostEl);
+			}
 		}
 	}
 
 	public function updateOwn($arr)
 	{
+		unset($arr['values']['shared']);
 		$table = $arr['table'];
-		$pkey = $arr['pkey'];
-		$pkeyVal = $arr['pkeyVal'];
-		$vals = $arr['values'];
-		$valsCount = count($vals);
-		$str = '';
-		$param = [];
-		$k = 1;
-		foreach ($vals as $i => $val) {
-			if ($k < $valsCount) {
-				$str .= "`$i`" . '= ?, ';
-				$k++;
-			} else {
-				$str .= "`$i`" . '= ?';
-			}
-			array_push($param, $val);
+		$b = \R::load($arr['table'], $arr['id']);
+		foreach ($arr['values'] as $name => $val) {
+			$b->{$name} = $val;
 		}
-		$sql = "UPDATE `{$table}` SET {$str} WHERE `{$pkey}` = ?";
-		array_push($param, $pkeyVal);
-		if ($this->insertBySql($sql, $param)) {
-			return true;
-		}
-		return 'Видимо, ошибка в запросе!';
+		\R::store($b);
+
 	}
 
-	/**
-	 * @param $arr [table]
-	 * @param $arr [pkey]
-	 * @param $arr [pkeyVal]
-	 * @param $arr [values]
-	 * @return bool|string
-	 */
 	public function update($arr)
 	{
+		$this->updateOwn($arr);
 		if (isset($arr['values']['shared'])) {
 			$this->updateShared($arr);
-		} else {
-			$this->updateOwn($arr);
 		}
-
-
 	}
-
 }

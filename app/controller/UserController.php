@@ -5,10 +5,9 @@ namespace app\controller;
 use app\core\{App, Base\View};
 use app\model\User;
 
-//use app\core\Base\View;
-
 class UserController extends AppController
 {
+	public $table = 'user';
 
 	public function __construct($route)
 	{
@@ -17,8 +16,7 @@ class UserController extends AppController
 
 	public function actionContacts()
 	{
-		$this->auth();
-
+//		$this->auth();
 		View::setMeta('Задайте вопрос', 'Задайте вопрос', 'Задайте вопрос');
 	}
 
@@ -88,7 +86,6 @@ class UserController extends AppController
 
 	public function actionRegister()
 	{
-
 		if ($this->isAjax()) {
 
 			[$email,$password,$confPass,$name,$surName,$secName] = $_POST;
@@ -118,12 +115,6 @@ class UserController extends AppController
 			$user->hash = $hash;
 			$id = \R::store($user);
 
-//			$sql = 'INSERT INTO users (rightId, surName, middleName, name, email, password, hash)'
-//				. 'VALUES (,?,?,?,?,?,?,?)';
-//			$params = [2, $surName, $secName, $name, $email, $password, $hash];
-//
-//			$res = App::$app->user->insertBySql($sql, $params);
-
 			if (!$id) {
 				$msg[] = "Ошибка при добавлении пользователя в базу данных";
 				echo include APP . '/view/User/alert.php';
@@ -143,10 +134,6 @@ class UserController extends AppController
 			exit();
 		}
 		View::setMeta('Регистрация', 'Регистрация', 'Регистрация');
-
-//		$token = $this->token;
-//		$this->set(compact('token'));
-
 		View::setCssN('/public/build/services.css');
 		View::setJsN('/public/build/services.js');
 
@@ -194,16 +181,13 @@ class UserController extends AppController
 
 	public function actionLogout()
 	{
-		//очистить массив  $_SESSION
 		$_SESSION = array();
 		session_destroy();
-		// Перенаправляем пользователя на главную страницу
 		header("Location: /");
 	}
 
 	public function actionConfirm()
-	{ // Забишем что пользователь подтвердил почту в базу данных
-		// Получим id пользователя по hash
+	{
 		try {
 			$hash = App::$app->user->clean_data($_GET['hash']);
 			if (!$hash) {
@@ -240,19 +224,22 @@ class UserController extends AppController
 	}
 
 
-	public function actionEdit()
+	public function actionProfile()
 	{
+		View::setJsN('/public/build/services.js');
+		View::setCssN('/public/build/services.css');
+		View::setMeta('Профиль', 'Профиль', 'Профиль');
+
 		$this->auth();
 
 		if (isset($_SESSION['id'])) {
 			$userId = $_SESSION['id'];
 		}
-		$user = App::$app->user->getUser($userId);
+		$user = \R::findOne($this->table, $userId);
 
 		$result = false;
 
 		if (isset($_POST['submit'])) { //нажали кнопку сохранить
-			// Если форма отправлена Получаем данные из формы редактирования
 
 			$ff['table'] = 'users';
 			$ff['pkey'] = 'id';
@@ -271,24 +258,12 @@ class UserController extends AppController
 			}
 
 			if ($errors == false) {
-				// Если ошибок нет, сохраняет изменения профиля
 				$result = App::$app->user->update($ff);
 			}
-			View::setMeta('Профиль', 'Профиль', 'Профиль');
-//            $css = 'style.css';
-//            $rightId = explode(",", $user['rights']);
+
 			$this->set(compact('user', 'result', 'errors'));
 		} else {// форма из базы данных
-			$email = $user['email'];
-			$name = $user['name'];
-			$surName = $user['surName'];
-			$middleName = $user['middleName'];
-			$birthDate = $user['birthDate'];
-			$phone = $user['phone'];
-//            $password = $user['password'];
 
-			View::setMeta('Профиль', 'Профиль', 'Профиль');
-//         $rightId = explode(",", $user['rights']);
 			$this->set(compact('user'));
 		}
 	}

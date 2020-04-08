@@ -118,14 +118,13 @@ class User extends Model
 		foreach ($arr as $item){
 			array_push($rights,$item['id']);
 		}
-		$user['rights'] = $rights;
-		return $user;
+		return $rights;
 	}
 
 	public static function getById($id)
 	{
 		$user = \R::load('user', $id);
-		$user = self::getRights($user);
+		$user['rights'] = self::getRights($user);
 		if ($user) {
 			return $user;
 		}

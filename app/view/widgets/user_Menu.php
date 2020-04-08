@@ -1,14 +1,15 @@
 <?php
 
 namespace app\view\widgets;
+
 use app\model\User;
 
 class User_Menu
 {
 	public function __construct($user)
 	{
-        $rightId = User::getRights($user);
-		echo $this->toHtml($rightId);
+		$rights = User::getRights($user);
+		echo $this->toHtml($rights);
 	}
 
 	public function getOptions($rightId)
@@ -33,12 +34,12 @@ class User_Menu
 	}
 
 
-	public function toHtml($user)
+	public function toHtml($rights)
 	{
 
 		$content = "<div class=\"nav_user\">
-<a class=\"resume\" href=\"/user/edit\">Редактировать свой профиль</a>" .
-			$this->getOptions($user['rights']) .
+			<a class=\"resume\" href=\"/user/profile\">Редактировать свой профиль</a>" .
+			$this->getOptions($rights) .
 			"</div>";
 
 		return $content;
