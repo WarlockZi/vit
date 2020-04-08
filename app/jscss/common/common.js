@@ -79,4 +79,4 @@ function _(arg) {
     return new MyJQ(arg);
 }
 
-export {post, get, uniq, ajax_body, _};
+export {post, get, popup, uniq, ajax_body, _};

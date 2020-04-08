@@ -1,7 +1,7 @@
 import './a_user.sass'
 import {_, post, ajax_body, popup} from './../../common/common'
 
-
+debugger;
 _('.save_user').on('click', async (e)=> {
     var body = new ajax_body('user', 'update');
     body.id =  _('#id').text();

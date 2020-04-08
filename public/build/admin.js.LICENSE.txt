@@ -24,8 +24,6 @@
 
 /*! ../../common/common */
 
-/*! ../common/common */
-
 /*! ../components/cache/clear-cache */
 
 /*! ./../../common/common */
@@ -68,7 +66,7 @@
 
 /*! exports provided: a_category_ajax */
 
-/*! exports provided: post, get, uniq, ajax_body, _ */
+/*! exports provided: post, get, popup, uniq, ajax_body, _ */
 
 /*! no exports provided */
 

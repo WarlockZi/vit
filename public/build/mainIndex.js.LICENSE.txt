@@ -74,7 +74,7 @@
 
 /*! exports provided: default */
 
-/*! exports provided: post, get, uniq, ajax_body, _ */
+/*! exports provided: post, get, popup, uniq, ajax_body, _ */
 
 /*! exports provided: window, document */
 

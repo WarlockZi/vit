@@ -1,4 +1,4 @@
-import '../common/common'
+// import '../common/common'
 import './admin.sass'
 import './a_footer/a_footer.sass'
 import './a_catalog/a_category'
