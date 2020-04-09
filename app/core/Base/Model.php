@@ -148,45 +148,21 @@ abstract class Model
 			}
 			return $all;
 		}
-	}
-
-	protected function hierachy()
-	{
-		$tree = [];
-		$data = $this->data;
-		foreach ($data as $id => &$node) {
-			if (isset($node['parent']) && !$node['parent']) {
-				$tree[$id] = &$node;
-			} elseif (isset($node['parent']) && $node['parent']) {
-				$data[$node['parent']]['childs'][$id] = &$node;
-			}
-		}
-		return $tree;
+			return false;
 	}
 
 	public function create($arr)
 	{
-		$values = $arr['values'];
-		$table = $arr['table'];
-		$vals = $arr['values'];
-		$str = '';
-		$vs = '';
-		$valsCount = count($vals);
-		$k = 1;
-		$param = [];
-		foreach ($values as $i => $val) {
-			if ($k < $valsCount) {
-				$str .= "`$i`,";
-				$vs .= '?, ';
-				$k++;
-			} else {
-				$str .= "`$i`";
-				$vs .= '?';
+		unset($arr['values']['shared']);
+		$bean = \R::dispense( $arr['table']);
+		foreach ($arr['values'] as $key=>$v) {
+			if ($key = 'password'){
+				$v =  md5($v);
 			}
-			array_push($param, $val);
+			$bean->{$key} = $v;
 		}
-		$sql = "INSERT INTO {$table} ({$str}) VALUES ({$vs})";
-		return $this->insertBySql($sql, $param);
+		$id = \R::store($bean);
+
 	}
 
 	public function read($arr)
@@ -223,7 +199,6 @@ abstract class Model
 	public function updateOwn($arr)
 	{
 		unset($arr['values']['shared']);
-		$table = $arr['table'];
 		$b = \R::load($arr['table'], $arr['id']);
 		foreach ($arr['values'] as $name => $val) {
 			$b->{$name} = $val;

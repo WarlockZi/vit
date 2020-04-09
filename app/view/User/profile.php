@@ -35,7 +35,7 @@
 
 		<input class="form-input field" placeholder="email" id="email" type="email" value="<?= $user['email'] ?>" required/>
 
-		<div class="submit">Сохранить</div>
+		<div class="save_profile submit">Сохранить</div>
 	</form>
 	<style>
 

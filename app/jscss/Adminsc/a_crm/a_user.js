@@ -8,8 +8,10 @@ _('.save_user').on('click', async (e)=> {
 
     let res = await post('/adminsc', body);
     if (res === 'ajax done'){
-        let body = document.querySelector('body');
-        body.append(popup(['Пользователь сохранен', 'Все хорошо!']));
+
+        let popupEl = popup(['Пользователь сохранен', 'Все хорошо!']);
+
+        // _('.popup').style.opacity  = 1;
     }
 });
 

@@ -1,11 +1,11 @@
 <div class="a-submenu">
 	<div class="title">CRM</div>
-		<div class="a-actions">
+	<div class="a-actions">
 
-			<a href="crm/orders">Заказы</a>
-			<a href='users'>Покупатели</a>
+		<a href="crm/orders">Заказы</a>
+		<a href='users'>Покупатели</a>
 
-		</div>
+	</div>
 </div>
 
 <div class="a-content">
@@ -37,8 +37,8 @@
 						</div>
 						<div class='row'>
 							<strong>актив. :</strong>
-							<input id="act" class="value checkbox" type="checkbox"
-							       data-js-act='act' <?= $user['act'] ? 'checked' : ''; ?>>
+							<input id="act" class="field checkbox" type="checkbox"
+								<?= $user['act'] ? 'checked' : ''; ?>>
 							<label for="act"></label>
 						</div>
 
@@ -76,29 +76,23 @@
 						<div class='row'>
 							<strong>принят:</strong>
 							<span>
-                  <?
-						$date = date('Y-m-d', strtotime($user['hired']));
-						$date_format = $date != '1970-01-01' ? $date : NULL;
-						?>
-                <input class="field" type='date' id="hired" min="2016-08-14" max="2020-08-20"
-                       value="<?= $date_format; ?>">
-              </span>
+                     <input class="field" type='date' id="hired" min="2016-08-14" max="2020-08-20"
+                            value="<?= $this->format_date($user['hired']); ?>"/>
+							</span>
 						</div>
 						<div class='row'>
 							<strong>уволен:</strong>
 							<span>
-                  <? $date_format = date('Y-m-d', strtotime($user['fired'])) != '1970-01-01' ? date('Y-m-d', strtotime($user['fired'])) : NULL; ?>
-                <input class="field" type='date' id="fired" min="2016-08-14" max="2020-08-20"
-                       value="<?= $date_format ?>">
-              </span>
+                    <input class="field" type='date' id="fired" min="2016-08-14" max="2020-08-20"
+                           value="<?= $this->format_date($user['fired']); ?>"/>
+                     </span>
 						</div>
 						<div class='row'>
 							<strong>д.р.:</strong>
 							<span>
-                  <? $date_format = date('Y-m-d', strtotime($user['birthdate'])) != '1970-01-01' ? date('Y-m-d', strtotime($user['birthdate'])) : NULL; ?>
-                <input class="field" type='date' id="bday" min="2016-08-14" max="2020-08-20"
-                       value="<?= $date_format ?>">
-              </span>
+                        <input class="field" type='date' id="bday" min="2016-08-14" max="2020-08-20"
+                               value="<?= $this->format_date($user['bday']); ?>"/>
+                     </span>
 						</div>
 						<div class='row'>
 							<strong></strong>

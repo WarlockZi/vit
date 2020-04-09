@@ -7,27 +7,19 @@
 
 	<form class="form-container" action="#" method="post">
 
-		<div class="form-title">Регистрация на сайте</div>
+		<div class="form-title">Регистрация</div>
 
-		<input type="email" name="email" class="form-input"
+		<input id = "email" type="email" class="form-input field"
 		       placeholder="E-mail"/>
+		<label for="email">
+<!--			<span> e-mail </span>-->
+		</label>
 
-		<input type="password" name="password" class="form-input"
+		<input id = "password" type="password" class="form-input field"
 		       placeholder="Пароль"/>
+		<label for="password"></label>
 
-		<input type='password' name='confPass' class="form-input"
-		       placeholder="Подтвердите пароль"/>
-
-		<input type="text" name="surName" class="form-input"
-		       placeholder="Фамилия"/>
-
-		<input type="text" name="name" class="form-input"
-		       placeholder="Имя"/>
-
-		<input type="text" name="secName" class="form-input"
-		       placeholder="Отчесво"/>
-
-		<input type="submit" name="reg" class="form-input submit" value="Зарегистрироваться"/>
+		<div class="register form-input">Зарегистрироваться</div>
 	</form>
 	<div class='registration-disclaimer'>
 		<p>Нажимая на кнопку "Регистрация", вы принимаете условия <a href="/about/oferta">Публичной оферты</a> и

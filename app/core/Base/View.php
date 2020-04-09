@@ -50,14 +50,12 @@ class View {
       echo $page_cache;
    }
 
-//   public static function getJsCssProps($data, $ext) {
-//      $addtime = in_array('addtime', $data) ? true : false;
-//      $addtime = (MODE == 'DEV') && $addtime ? "?" . time() : '';
-//      $defer = in_array('defer', $data) ? 'defer' : '';
-//      $async = in_array('defer', $data) ? 'async' : '';
-//      $deferAsync = $defer ?: $async;
-//      return compact('deferAsync', 'addtime');
-//   }
+
+	public function format_date(string $date)
+	{
+		$a = date('Y-m-d',strtotime($date));
+		return $a;
+	}
 
    public static function setJsN(string $path) {
        self::$jsCss['js'] = $path;
@@ -66,32 +64,6 @@ class View {
     public static function setCssN(string $path) {
         self::$jsCss['css'] = $path;
     }
-
-//   public static function setJs($data) {
-//      extract(self::getJsCssProps($data, 'js'));
-//      if (isset($data['controller']) && isset($data['view'])) {
-//         $script = "/public/jscss/" . $data['controller'] . '/' . $data['view'] . '.js';
-//         $file = ROOT . $script;
-//         if (is_readable($file)) {
-//            self::$jsCss['js'][] = "<script {$deferAsync} src='{$script}{$addtime}'></script>";
-//         }
-//      } else {
-//         self::$jsCss['js'][] = "<script {$deferAsync} src='{$data['js']}{$addtime}'></script>";
-//      }
-//   }
-
-//   public static function setCss($data) {
-//      extract(self::getJsCssProps($data, 'css'));
-//      if (isset($data['controller']) && isset($data['view'])) {
-//         $css = "/public/jscss/" . $data['controller'] . '/' . $data['view'] . '.css';
-//         $file = ROOT . $css;
-//         if (is_readable($file)) {
-//            self::$jsCss['css'][] = "<link href='{$css}{$addtime}' type='text/css' rel='stylesheet'>";
-//         }
-//      } else {
-//         self::$jsCss['css'][] = "<link href='{$data['css']}{$addtime}' type='text/css' rel='stylesheet'>";
-//      }
-//   }
 
    public static function getCSS() {
       echo self::$jsCss['css'];

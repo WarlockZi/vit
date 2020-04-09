@@ -34,6 +34,7 @@ class AppController extends Controller
 			}
 		}
 	}
+
 	public function auth()
 	{
 		try {

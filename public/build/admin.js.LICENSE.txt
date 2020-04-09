@@ -10,6 +10,8 @@
 
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./cache.sass */
 
+/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./popup.sass */
+
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./props.sass */
 
 /*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./admin.sass */
@@ -26,11 +28,15 @@
 
 /*! ../components/cache/clear-cache */
 
+/*! ../components/popup/popup */
+
+/*! ../components/popup/popup.sass */
+
 /*! ./../../common/common */
 
-/*! ./../Adminsc/a_catalog/_checkbox.sass */
-
 /*! ./MyJQ */
+
+/*! ./a_catalog/_checkbox.sass */
 
 /*! ./a_catalog/a_category */
 
@@ -59,6 +65,8 @@
 /*! ./cat_del_property */
 
 /*! ./common.sass */
+
+/*! ./popup.sass */
 
 /*! ./props.sass */
 
@@ -104,6 +112,10 @@
   !*** ./app/jscss/Adminsc/a_crm/a_user.sass ***!
   \*********************************************/
 
+/*!*********************************************!*\
+  !*** ./app/jscss/components/popup/popup.js ***!
+  \*********************************************/
+
 /*!**********************************************!*\
   !*** ./app/jscss/Adminsc/a_menu/a_menu.sass ***!
   \**********************************************/
@@ -114,6 +126,10 @@
 
 /*!***********************************************!*\
   !*** ./app/jscss/components/cache/cache.sass ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./app/jscss/components/popup/popup.sass ***!
   \***********************************************/
 
 /*!*************************************************!*\
@@ -170,6 +186,10 @@
 
 /*!******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/cache/cache.sass ***!
+  \******************************************************************************************************************************************************************************************************/
+
+/*!******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/popup/popup.sass ***!
   \******************************************************************************************************************************************************************************************************/
 
 /*!********************************************************************************************************************************************************************************************************!*\

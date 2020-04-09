@@ -1,13 +1,15 @@
-// import '../common/common'
 import './admin.sass'
 import './a_footer/a_footer.sass'
+
 import './a_catalog/a_category'
+import './a_catalog/_checkbox.sass'
 import './a_crm/a_user'
+import './a_settings/props'
 
 import '../components/cache/clear-cache'
+import '../components/popup/popup'
+
 import './a_menu/a_menu'
-import './a_settings/props'
-import './../Adminsc/a_catalog/_checkbox.sass'
 
 
 

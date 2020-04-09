@@ -87,7 +87,12 @@ function MyJQ(arg) {
                 return this.value;
             } else if (this.type === 'checkbox') {
                 return this.checked ? 1 : 0;
+            } else if (this.type === 'email'||this.type === 'password') {
+                return this.value;
             } else if (this.type === 'date') {
+                if (this.value === ""){
+                    return "0000-00-00";
+                }
                 return this.value;
             }
         } else if (this.tagName === 'P') {

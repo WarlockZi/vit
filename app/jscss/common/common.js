@@ -1,4 +1,5 @@
 import './common.sass';
+import '../components/popup/popup.sass';
 import {MyJQ} from "./MyJQ";
 
 const uniq = (array) => Array.from(new Set(array));
@@ -9,7 +10,7 @@ async function get(key) {
     return p ? p[1] : false;
 }
 
-function post(url, data) {
+function post(url = '/adminsc', data) {
     return new Promise(function (resolve, reject) {
         var req = new XMLHttpRequest();
         req.open('POST', url);
@@ -34,7 +35,6 @@ class ajax_body {
             this.table = table,
             this.model = table,
             this.values = {};
-        this.values.shared = {};
 
         this.ownFields();
 
@@ -58,19 +58,31 @@ class ajax_body {
         for (let i of right) {
             ids.push(+i.id);
         }
+        this.values.shared = {};
         this.values.shared[`right`] = ids;
     }
 }
 
-function popup(message) {
+async  function popup(message) {
     let str = '';
     for (let mes in message) {
-        str += "<p>${mes}</p>"
+        str += `<p>${message[mes]}</p>`
     }
+    // str = "<p>Пользователь сохранен</p>"
 
     let popup = document.createElement('div');
     popup.classList.add('popup');
-    popup.innerHTML(str);
+    popup.innerHTML = str
+    let body = document.querySelector('body');
+    body.append(popup);
+
+    let d = await setTimeout(function () {
+    popup.style.opacity = 1;
+    },20);
+
+    d = await setTimeout(function () {
+    popup.style.opacity = 0;
+    },118200);
 
     return popup;
 }

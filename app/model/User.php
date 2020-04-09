@@ -89,7 +89,7 @@ class User extends Model
 			} else {
 				$_SESSION['msg'] = $msg;
 			}
-		} else {                      //не  отпарвляли форму
+		} else {
 			$_SESSION['msg'] = '';
 		}
 	}
