@@ -2,7 +2,7 @@
   <div class="title">CRM</div>
      <div class="a-actions">
 
-       <a href  = "crm/orders">Заказы</a>
+       <a href  = "orders">Заказы</a>
        <a href  = 'users'>Покупатели</a>
 
      </div>

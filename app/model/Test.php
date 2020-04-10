@@ -20,7 +20,7 @@ class Test extends Model {
          $param = [$tId];
          $test = $this->findBySql($sql, $param)[0];
          // Заполняем список enable "ненулевых" тестов
-         $testList = $this->findAll();
+         $testList = \R::findAll('test');
          // Удаляем из списка ссылку на самого себя(тест)
          unset($testList[$tId - 1]);
          // если это тест, делаем активным тест, иначе по умолчанию будет папка
@@ -45,9 +45,9 @@ class Test extends Model {
          $test['id'] = 0;
          $test['test_name'] = '';
          $test['sort'] = 0;
-         $selected = '';
-         $checked = 0;
-         $testList = $this->findAll();
+//         $selected = '';
+//         $checked = 0;
+         $testList = \R::findAll('test');
          $depOptions = '<option value = "0">Не принадлежит</option>';
          foreach ($testList as $testDep) {
             $depOptions .= '<option value = ' . $testDep['id'] . '>' . $testDep['test_name'] . '</option>';

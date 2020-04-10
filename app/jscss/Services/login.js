@@ -1,10 +1,10 @@
 import './login.sass'
-import '../../components/user_menu/user_menu.sass'
-import {post, ajax_body, _} from '../../common/common'
+import '../components/user_menu/user_menu.sass'
+import {post, ajax_body, _} from '../common/common'
 
 /////////////////////////    Login     /////////////////////
 
-_("#login").on("click",async function (e) {
+_(".login").on("click",async function (e) {
         // e.preventDefault();
         let body = new ajax_body();
         body.url = '/user/login',

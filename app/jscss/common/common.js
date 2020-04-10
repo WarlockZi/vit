@@ -1,6 +1,7 @@
 import './common.sass';
 import '../components/popup/popup.sass';
 import {MyJQ} from "./MyJQ";
+import {validator} from "./Validator";
 
 const uniq = (array) => Array.from(new Set(array));
 
@@ -91,4 +92,8 @@ function _(arg) {
     return new MyJQ(arg);
 }
 
-export {post, get, popup, uniq, ajax_body, _};
+function Validator(arg, constrain) {
+    return new validator(arg, constrain);
+}
+
+export {post, get, popup, uniq, ajax_body, _, Validator};

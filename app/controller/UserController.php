@@ -207,20 +207,19 @@ class UserController extends AppController
 
 		View::setMeta('Проверка почты', 'Почта пользователя проверена', 'проверка почты');
 
-		$rightId = explode(",", $user['rights']);
-		$js = $this->getJSCSS('.js');
 		$this->set(compact('user', 'rightId'));
+		View::setJsN('/public/build/services.js');
+		View::setCssN('/public/build/services.css');
 
 	}
 
-	public function actionReturnPass()
+	public function actionForgot()
 	{
-
 		$_SESSION['id'] = '';
 		App::$app->user->returnPass();
-
 		View::setMeta('Забыли пароль', 'Забыли пароль', 'Забыли пароль');
-		$this->set(compact('user'));
+		View::setJsN('/public/build/services.js');
+		View::setCssN('/public/build/services.css');
 	}
 
 

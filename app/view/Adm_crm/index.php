@@ -1,13 +1,11 @@
 <div class="a-submenu">
 
-
-
   <div class="title">CRM</div>
 
      <div class="a-actions">
 
-       <a href  = "crm/orders">Заказы</a>
-       <a href  = 'crm/users'>Покупатели</a>
+       <a href  = "/adminsc/crm/orders">Заказы</a>
+       <a href  = '/adminsc/crm/users'>Покупатели</a>
 
      </div>
 </div>

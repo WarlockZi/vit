@@ -32,18 +32,13 @@ abstract class Model
 		return strip_tags(trim($str));
 	}
 
-	public function findAll($table, $sort = '')
-	{
-		$sql = "SELECT * FROM " . ($table ?: $this->table) . ($sort ? " ORDER BY {$sort}" : "");
-		return $this->pdo->query($sql);
-	}
+//	public function findAll($table, $sort = '')
+//	{
+//		$sql = "SELECT * FROM " . ($table ?: $this->table) . ($sort ? " ORDER BY {$sort}" : "");
+//		return $this->pdo->query($sql);
+//	}
 
-	/**
-	 * Получить строку из таблицы table по полю field, где id искомый параметр<br/>
-	 * @param str $field <p>field поле, по которому ищем</p>
-	 * @param integer $id <p>$id значение (по умолч - id)</p>
-	 * @return array <p>строку таблицы</p>
-	 */
+
 	public function findOne($id, $field = '')
 	{
 		$field = $field ?: $this->pk;
@@ -52,12 +47,7 @@ abstract class Model
 		return $result ? $result[0] : FALSE;
 	}
 
-	/**
-	 * Получить строку из таблицы table по полю field, где id искомый параметр<br/>
-	 * @param str $field <p>field поле, по которому ищем</p>
-	 * @param integer $id <p>$id значение (по умолч - id)</p>
-	 * @return array <p>строку таблицы</p>
-	 */
+
 	public function findWhere($id, $field, $table)
 	{
 		$table = $table ?: $this->table;
@@ -66,12 +56,7 @@ abstract class Model
 		return $this->pdo->query($sql, [$id]);
 	}
 
-	/**
-	 * Получить <br/>
-	 * @param str $field <p>field поле, по которому ищем</p>
-	 * @param integer $id <p>$id значение (по умолч - id)</p>
-	 * @return array <p>строку таблицы</p>
-	 */
+
 	public function findBySql($sql, $params = [])
 	{
 		return $this->pdo->query($sql, $params);
@@ -82,11 +67,7 @@ abstract class Model
 		return $this->pdo->execute($sql, $params);
 	}
 
-	/**
-	 * @param $table
-	 * @param string $db
-	 * @return mixed
-	 */
+
 	public function autoincrement($table, $db = 'vitex_test')
 	{
 		$params = [$db, $table];
@@ -136,6 +117,20 @@ abstract class Model
 		}
 	}
 
+	protected function hierachy()
+	{
+		$tree = [];
+		$data = $this->data;
+		foreach ($data as $id => &$node) {
+			if (isset($node['parent']) && !$node['parent']) {
+				$tree[$id] = &$node;
+			} elseif (isset($node['parent']) && $node['parent']) {
+				$data[$node['parent']]['childs'][$id] = &$node;
+			}
+		}
+		return $tree;
+	}
+
 	public function getAssoc($table)
 	{
 		$params = array();
@@ -148,16 +143,16 @@ abstract class Model
 			}
 			return $all;
 		}
-			return false;
+		return false;
 	}
 
 	public function create($arr)
 	{
 		unset($arr['values']['shared']);
-		$bean = \R::dispense( $arr['table']);
-		foreach ($arr['values'] as $key=>$v) {
-			if ($key = 'password'){
-				$v =  md5($v);
+		$bean = \R::dispense($arr['table']);
+		foreach ($arr['values'] as $key => $v) {
+			if ($key = 'password') {
+				$v = md5($v);
 			}
 			$bean->{$key} = $v;
 		}
@@ -179,6 +174,14 @@ abstract class Model
 		$param = [$table, $field, $id];
 		$sql = "DELETE FROM ? WHERE  ? = ?";
 		return $this->insertBySql($sql, $param);
+	}
+
+	public function update($arr)
+	{
+		$this->updateOwn($arr);
+		if (isset($arr['values']['shared'])) {
+			$this->updateShared($arr);
+		}
 	}
 
 	public function updateShared($arr)
@@ -207,11 +210,5 @@ abstract class Model
 
 	}
 
-	public function update($arr)
-	{
-		$this->updateOwn($arr);
-		if (isset($arr['values']['shared'])) {
-			$this->updateShared($arr);
-		}
-	}
+
 }

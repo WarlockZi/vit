@@ -1,0 +1,91 @@
+$button-bg-color: #e0e0e0
+$button-bg-accent: #b9b9b9
+$text-color-accent: #4D4D4D
+$text-color: #808080
+$text-color-hover: #585858
+
+.form-container
+  display: flex
+  flex-flow: column wrap
+  padding: 35px 30px 15px 30px
+  background: #eee
+  width: 300px
+  margin: 3% auto
+  align-items: stretch
+
+
+  .title
+    font-weight: bold
+    font-size: 120%
+    //text-align: center
+    color: #949494
+    margin-bottom: 20px
+    padding: 10px
+
+  input
+     background: #f7f7f7
+     border-radius: 0
+     border-bottom: 1px solid #ccc
+     border-left: 0
+     border-top: 0
+     border-right: 0
+     flex: 1
+     margin-bottom: 15px
+     padding: 12px
+     width: 100%
+     box-sizing: border-box
+     color: #757575
+
+  .button-accent
+    padding: 14px
+    background: $button-bg-accent
+    text-align: center
+    font-weight: 600
+    cursor: pointer
+    margin: 20px 0
+    color: $text-color-accent
+
+
+  .button-accent:hover
+    background: #979797
+    color: #fff
+
+  .button
+    color: $text-color
+    flex: 1
+    flex-basis: 100%
+    text-align: center
+    font-weight: 600
+    background: $button-bg-color
+    padding: 10px 3px
+    display: flex
+    align-self: stretch
+    align-items: center
+    justify-content: center
+    cursor: pointer
+
+  .button:hover
+     background: #cccccc
+     color: $text-color-hover
+
+  .registration_forgot
+    display: flex
+    align-items: center
+
+    .button:nth-child(2)
+      margin-left: 10px
+
+
+.registration-disclaimer
+  display: flex
+  background-color: #eee
+  margin: 2% auto
+  padding: 20px
+  width: 50%
+  min-width: 300px
+
+  p
+    margin: 0
+
+  a
+    text-decoration: underline
