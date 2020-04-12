@@ -78,9 +78,11 @@
 
 /*! exports provided: MyJQ */
 
+/*! exports provided: Validator */
+
 /*! exports provided: default */
 
-/*! exports provided: post, get, popup, uniq, ajax_body, _, Validator */
+/*! exports provided: post, get, popup, uniq, ajax_body, _, Validate */
 
 /*! exports provided: window, document */
 
