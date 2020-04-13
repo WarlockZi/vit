@@ -1,4 +1,4 @@
-<section>
+<main>
 
     <?=$_SESSION['msg']?>
     <?unset($_SESSION['msg'])?>
@@ -9,4 +9,4 @@
         placeholder="E-mail"  value="<?=isset($_SESSION['reg']['email'])?$_SESSION['reg']['email']:'';?>"/>
 		<div class = "button-accent forgot">Отправить</div>
 	</form>	
-</section>
+</main>

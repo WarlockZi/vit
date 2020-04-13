@@ -1,7 +1,7 @@
 import './common.sass';
 import '../components/popup/popup.sass';
 import {MyJQ} from "./MyJQ";
-import {Validator} from "./Validator";
+// import {Validator} from "./Validator";
 
 const uniq = (array) => Array.from(new Set(array));
 
@@ -64,7 +64,7 @@ class ajax_body {
     }
 }
 
-async  function popup(message) {
+async function popup(message) {
     let str = '';
     for (let mes in message) {
         str += `<p>${message[mes]}</p>`
@@ -78,12 +78,12 @@ async  function popup(message) {
     body.append(popup);
 
     let d = await setTimeout(function () {
-    popup.style.opacity = 1;
-    },20);
+        popup.style.opacity = 1;
+    }, 20);
 
     d = await setTimeout(function () {
-    popup.style.opacity = 0;
-    },118200);
+        popup.style.opacity = 0;
+    }, 118200);
 
     return popup;
 }
@@ -92,8 +92,23 @@ function _(arg) {
     return new MyJQ(arg);
 }
 
-function Validate(arg, constrain) {
-    return new Validator(arg, constrain);
+function validation(type, str, self) {
+    if (type === 'email') {
+        if (str.length < 5) throw Error('Почта не менее 5 символов');
+        var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2.3}$/;
+        if(str.match(emailPattern)){
+            self.classList.add('valid');
+        }else{
+            self.classList.add('invalid');
+        }
+
+    } else if (type === 'password') {
+
+        var passwordPattern = /^(a-zA-Z0-9_\-])+$/;
+    }
+    var namePattern = /^[а-яА-Яa-zA-Z0-9!%&@#$\^*?_~+]+$/;
+
+
 }
 
-export {post, get, popup, uniq, ajax_body, _, Validate};
+export {post, get, popup, uniq, ajax_body, _, validation};
