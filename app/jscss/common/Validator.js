@@ -4,7 +4,6 @@ function valid(input, errors) {
 
 }
 function invalid(input, errors) {
-    errors.push('Проверьте введенный email');
     input.style.background = '#ffeded';
 }
 
@@ -15,18 +14,20 @@ function validate(type, str, input) {
     }
 
     if (type === 'email') {
-        if (str.length < 5) {
+        let minlen = 5;
+        if (str.length < minlen){
+            errors.push(`Длина email должна быть не менее ${minlen}`);
             invalid(input, errors);
-            // throw Error('Почта не менее 5 символов');
         }
 
         var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
         if (str.match(emailPattern)) {
             valid(input, errors);
         } else {
+            errors.push( 'Проверьте пробелы, знак собачки @, наличие точки ');
             invalid(input, errors);
         }
-    } else if (type === 'password') {
+    }else if (type === 'password') {
         var passwordPattern = /^(a-zA-Z0-9_\-])+$/;
         if (str.match(passwordPattern)) {
             valid(input, errors);
@@ -36,7 +37,7 @@ function validate(type, str, input) {
         }
     }
     var namePattern = /^[а-яА-Яa-zA-Z0-9!%&@#$\^*?_~+]+$/;
-    return error;
+    return errors;
 }
 
 
