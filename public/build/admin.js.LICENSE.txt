@@ -48,6 +48,8 @@
 
 /*! ./MyJQ */
 
+/*! ./Validator */
+
 /*! ./a_breadcrumbs.sass */
 
 /*! ./a_catalog/_checkbox.sass */
@@ -90,7 +92,9 @@
 
 /*! exports provided: a_category_ajax */
 
-/*! exports provided: post, get, popup, uniq, ajax_body, _, validation */
+/*! exports provided: post, get, popup, uniq, ajax_body, _, validate */
+
+/*! exports provided: validate */
 
 /*! no exports provided */
 
@@ -115,6 +119,10 @@
 /*!**************************************!*\
   !*** ./app/jscss/common/common.sass ***!
   \**************************************/
+
+/*!***************************************!*\
+  !*** ./app/jscss/common/Validator.js ***!
+  \***************************************/
 
 /*!******************************************!*\
   !*** ./app/jscss/common/grid_table.sass ***!

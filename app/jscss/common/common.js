@@ -1,7 +1,7 @@
-import './common.sass';
-import '../components/popup/popup.sass';
-import {MyJQ} from "./MyJQ";
-// import {Validator} from "./Validator";
+import './common.sass'
+import '../components/popup/popup.sass'
+import {MyJQ} from "./MyJQ"
+import {validate} from "./Validator"
 
 const uniq = (array) => Array.from(new Set(array));
 
@@ -92,23 +92,5 @@ function _(arg) {
     return new MyJQ(arg);
 }
 
-function validation(type, str, self) {
-    if (type === 'email') {
-        if (str.length < 5) throw Error('Почта не менее 5 символов');
-        var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2.3}$/;
-        if(str.match(emailPattern)){
-            self.classList.add('valid');
-        }else{
-            self.classList.add('invalid');
-        }
 
-    } else if (type === 'password') {
-
-        var passwordPattern = /^(a-zA-Z0-9_\-])+$/;
-    }
-    var namePattern = /^[а-яА-Яa-zA-Z0-9!%&@#$\^*?_~+]+$/;
-
-
-}
-
-export {post, get, popup, uniq, ajax_body, _, validation};
+export {post, get, popup, uniq, ajax_body, _, validate};

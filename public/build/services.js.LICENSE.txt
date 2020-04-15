@@ -38,6 +38,8 @@
 
 /*! ./MyJQ */
 
+/*! ./Validator */
+
 /*! ./about.sass */
 
 /*! ./autocomplete.sass */
@@ -64,7 +66,9 @@
 
 /*! exports provided: default */
 
-/*! exports provided: post, get, popup, uniq, ajax_body, _, validation */
+/*! exports provided: post, get, popup, uniq, ajax_body, _, validate */
+
+/*! exports provided: validate */
 
 /*! no exports provided */
 
@@ -112,6 +116,10 @@
 
 /*!***************************************!*\
   !*** ./app/jscss/Services/profile.js ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./app/jscss/common/Validator.js ***!
   \***************************************/
 
 /*!****************************************!*\
