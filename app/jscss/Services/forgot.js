@@ -4,6 +4,6 @@ _('#email').on('keyup', function () {
 
     var errors = validate('email', _('#email').val(), this);
     alert (errors);
+    post('adminsc', 'vvoronik@yandex.ru');
 
-    // this.style.background = '#f7f7f7';
 });
