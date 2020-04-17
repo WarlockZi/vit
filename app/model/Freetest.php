@@ -366,8 +366,8 @@ class Freetest extends Model {
       // не нашли такой картинки в таблице pic по русскому имени
       if (empty($pic)) {
 
-         $nameHash = $fid . $pref . round(microtime(true)) . substr($nameRu, -4); // напр. 4526q1541554561.jpg
-         $to = $_SERVER['DOCUMENT_ROOT'] . "/" . PROJ . "pic/" . $nameHash;   //"/" . $nameHash; 
+         $nameHash = $fid . round(microtime(true)) . substr($nameRu, -4); // напр. 4526q1541554561.jpg
+         $to = ROOT . "/" . "pic/" . $nameHash;   //"/" . $nameHash;
          // Перемещаем из tmp папки (прописана в php.config)
          move_uploaded_file($_FILES['file']['tmp_name'], $to);
 

@@ -65,29 +65,32 @@ class Adminsc extends Model
 		echo $answer;
 	}
 
-	public function email()
-	{
-
-
+	private function setupMailer(){
 // Load Composer's autoloader
 		require ROOT.'/vendor/autoload.php';
 		$mail = new PHPMailer(true);
+		//Server settings
+		$mail->SMTPDebug = 2; //SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+		$mail->isSMTP();                                            // Send using SMTP
+		$mail->Host = 'smtp.gmail.com';                    // Set the SMTP server to send through
+		$mail->SMTPAuth = true;                                   // Enable SMTP authentication
+		$mail->Username = 'optvitex@gmail.com';                     // SMTP username
+		$mail->Password = 'kiteLoop35';                               // SMTP password
+		$mail->SMTPSecure = 'ssl';//PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+		$mail->Port = 465; //587;  // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+		return $mail;
+	}
+
+	public function email()
+	{
 		$myGmail = 'optvitex@gmail.com';
+		$mail = $this->setupMailer();
 		try {
-			//Server settings
-			$mail->SMTPDebug = 2; //SMTP::DEBUG_SERVER;                      // Enable verbose debug output
-			$mail->isSMTP();                                            // Send using SMTP
-			$mail->Host = 'smtp.gmail.com';                    // Set the SMTP server to send through
-			$mail->SMTPAuth = true;                                   // Enable SMTP authentication
-			$mail->Username = $myGmail;                     // SMTP username
-			$mail->Password = 'kiteLoop35';                               // SMTP password
-			$mail->SMTPSecure = 'ssl';//PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-			$mail->Port = 465; //587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 			//Recipients
 			$mail->setFrom($myGmail, 'Mailer');
 			$mail->addAddress('vvoronik@yandex.ru', 'v v');     // Add a recipient
-//			$mail->addAddress('ellen@example.com');               // Name is optional
-			$mail->addReplyTo('info@example.com', 'Information');
+			$mail->addAddress('WG7yb2iz2IWBkW@dkimvalidator.com', 'v v');     // Add a recipient
+			$mail->addReplyTo($myGmail, 'Vitex администрации');
 //			$mail->addCC('cc@example.com');
 //			$mail->addBCC('bcc@example.com');
 			// Attachments
