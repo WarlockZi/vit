@@ -39,10 +39,6 @@ class UserController extends AppController
 	{
 		View::setJsN('/public/build/services.js');
 		View::setCssN('/public/build/services.css');
-		if ($this->isAjax()){
-			$d = 4;
-			$gas = 45;
-		}
 
 		if ($data = $this->isAjax()) {
 			$params['email'] = (string)$data['email'];
@@ -201,7 +197,7 @@ class UserController extends AppController
 		if (!User::confirm($hash)) {
 			exit('Не удалось подтвердить почту');
 		};
-		$user = App::$app->user->getUserByHash($hash);
+		$user = User::getUserByHash($hash);
 		// Сохраним id пользователя в сессии
 		App::$app->user->setAuth($user);
 

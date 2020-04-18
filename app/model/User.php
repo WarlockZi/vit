@@ -163,9 +163,9 @@ class User extends Model
 		return $res;
 	}
 
-	public function getUserByHash($hash)
+	public static function getUserByHash($hash)
 	{
-		if ($user = \R::findOne($this->table, 'hash = ?', [$hash])) {
+		if ($user = \R::findOne('user', 'hash = ?', [$hash])) {
 			return $user->export();
 		}
 		return [];
