@@ -34,7 +34,6 @@ class ajax_body {
             this.action = action,
             this.token = _("meta[name = 'token']").toArray()[0].content,
             this.table = table,
-            this.model = table,
             this.values = {};
 
         this.ownFields();

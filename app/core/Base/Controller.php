@@ -52,7 +52,7 @@ abstract class Controller
 
 				||
 				isset($_POST['ajax'])
-				&& ($_POST['ajax'] == 'true')
+				&& ($_POST['а'] == 'true')
 				&& $data)
 
 				? $data

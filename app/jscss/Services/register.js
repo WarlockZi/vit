@@ -1,10 +1,16 @@
 import {_, ajax_body, post, popup} from '../common/common'
 
 _(".register").on("click", async function (e) {
-    e.preventDefault();
-    let body = new ajax_body('user', 'create' );
 
-    await post(null, body);
+    let body = new ajax_body('user', 'register');
+    // body.model = 'user';
+
+    let res = await post('/user/register', body);
+    if (res === 'email occupied') {
+        popup(['Указанный email занят.']);
+    } else if (res === 'confirm email') {
+        popup(['Зайдите на email и перейдите по указанной там ссылке для активизации']);
+    }
     popup(['Регистрация успешна!', 'все хорошо!']);
 
 

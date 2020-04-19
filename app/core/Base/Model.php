@@ -151,7 +151,7 @@ abstract class Model
 		unset($arr['values']['shared']);
 		$bean = \R::dispense($arr['table']);
 		foreach ($arr['values'] as $key => $v) {
-			if ($key = 'password') {
+			if ($key == 'password') {
 				$v = md5($v);
 			}
 			$bean->{$key} = $v;

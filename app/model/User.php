@@ -102,10 +102,9 @@ class User extends Model
 			if (User::confirmed($user)) {
 				$user['rights'] = $user->sharedRight;
 				$user = $user->export();
-				$_SESSION['id'] = $user['id'];
-				exit($user['start_url']);
+				return $user;
 			} else {
-				exit ();
+				return null;
 			}
 		}
 		return false;
@@ -131,6 +130,7 @@ class User extends Model
 		return false;
 	}
 
+
 	public static function setAuth(array $user)
 	{
 		if (!isset($_SESSION['id']) || $_SESSION['id'] = '') {
@@ -154,15 +154,23 @@ class User extends Model
 		return false;
 	}
 
-	public function checkEmailExists($email)
-	{
-		$res = $this->findOne($email, 'email');
-		if (count($res)) {
-			return $res;
-		}
-		return $res;
-	}
+//	public function checkEmailExists($email)
+//	{
+//		$res = $this->findOne($email, 'email');
+//		if (count($res)) {
+//			return $res;
+//		}
+//		return $res;
+//	}
 
+	public static function emailAlreadyExists(string $email)
+	{
+	    $exists =\R::findOne('user', 'email = ?', [$email]);
+		if ($exists) {
+			return true;
+		}
+		return false;
+	}
 	public static function getUserByHash($hash)
 	{
 		if ($user = \R::findOne('user', 'hash = ?', [$hash])) {

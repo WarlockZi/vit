@@ -17,8 +17,8 @@
 
 		<div class="register button-accent">Зарегистрироваться</div>
 		<div class="registration_forgot">
-			<a class="button" href="/user/login">Войти</a>
 			<a class="button" href="/user/forgot">Забыли пароль</a>
+			<a class="button" href="/user/login">Войти</a>
 		</div>
 	</form>
 	<div class='registration-disclaimer'>

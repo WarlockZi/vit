@@ -54,8 +54,8 @@ class Router
                             $route[$k] = $v;
                         }
                     }
-                    // Если action не указан, подключить index
-                    if (!isset($route['action'])) {
+
+                    if (!isset($route['action'])) {// Если action не указан, подключить index
                         $route['action'] = 'index';
                     }
                     $route['controller'] = isset($route['controller']) ? self::upperCamelCase($route['controller']) : '';
@@ -70,7 +70,6 @@ class Router
 
     public static function dispatch($url)
     {
-
         $url = self::removeQuryString($url);
         if (self::matchRoute($url)) {
 
@@ -121,12 +120,10 @@ class Router
 
     protected static function removeQuryString($url)
     {
-
         if ($url) {
             $params = explode('&', $url, 2);
 
             if (strpos($params[0], '=') === FALSE) {
-
                 return trim(str_replace("XDEBUG_SESSION_START=netbeans-xdebug", "", $params[0]), '/');
             } else {
                 return '';

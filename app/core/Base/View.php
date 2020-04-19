@@ -53,8 +53,7 @@ class View {
 
 	public function format_date(string $date)
 	{
-		$a = date('Y-m-d',strtotime($date));
-		return $a;
+		return date('Y-m-d',strtotime($date));
 	}
 
    public static function setJsN(string $path) {

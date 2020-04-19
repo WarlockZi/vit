@@ -13,7 +13,7 @@ $(function () {
          values: {}
       };
    }
-   ;
+
 // сохранить изменения
    $('#product-update-btn').on('click', async function () {
 
