@@ -1,5 +1,5 @@
 import './common.sass'
-import '../components/popup/popup.sass'
+import './popup.sass'
 import {MyJQ} from "./MyJQ"
 import {validate} from "./Validator"
 
@@ -63,7 +63,7 @@ class ajax_body {
     }
 }
 
-async function popup(message) {
+async function popup(message, status) {
     let str = '';
     for (let mes in message) {
         str += `<p>${message[mes]}</p>`
@@ -72,6 +72,9 @@ async function popup(message) {
 
     let popup = document.createElement('div');
     popup.classList.add('popup');
+    if (!status) {
+        popup.classList.add('popup-not-ok');
+    }
     popup.innerHTML = str
     let body = document.querySelector('body');
     body.append(popup);

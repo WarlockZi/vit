@@ -2,8 +2,6 @@
 
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./coockie.sass */
 
-/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./popup.sass */
-
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./user_menu.sass */
 
 /*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./about.sass */
@@ -18,6 +16,8 @@
 
 /*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./map.sass */
 
+/*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./popup.sass */
+
 /*! ../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
 
 /*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
@@ -31,8 +31,6 @@
 /*! ../components/autocomplete/autocomplete */
 
 /*! ../components/coockie/coockie */
-
-/*! ../components/popup/popup.sass */
 
 /*! ../components/user_menu/user_menu.sass */
 
@@ -55,6 +53,8 @@
 /*! ./login.sass */
 
 /*! ./map.sass */
+
+/*! ./popup.sass */
 
 /*! ./profile */
 
@@ -98,6 +98,10 @@
   !*** ./app/jscss/Services/map.sass ***!
   \*************************************/
 
+/*!*************************************!*\
+  !*** ./app/jscss/common/popup.sass ***!
+  \*************************************/
+
 /*!**************************************!*\
   !*** ./app/jscss/Services/forgot.js ***!
   \**************************************/
@@ -129,10 +133,6 @@
 /*!****************************************!*\
   !*** ./app/jscss/Services/services.js ***!
   \****************************************/
-
-/*!***********************************************!*\
-  !*** ./app/jscss/components/popup/popup.sass ***!
-  \***********************************************/
 
 /*!*************************************************!*\
   !*** ./app/jscss/components/coockie/coockie.js ***!
@@ -174,6 +174,10 @@
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Services/map.sass ***!
   \********************************************************************************************************************************************************************************************/
 
+/*!********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/common/popup.sass ***!
+  \********************************************************************************************************************************************************************************************/
+
 /*!*********************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/common/common.sass ***!
   \*********************************************************************************************************************************************************************************************/
@@ -185,10 +189,6 @@
 /*!**********************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Services/login.sass ***!
   \**********************************************************************************************************************************************************************************************/
-
-/*!******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/popup/popup.sass ***!
-  \******************************************************************************************************************************************************************************************************/
 
 /*!**********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/coockie/coockie.sass ***!

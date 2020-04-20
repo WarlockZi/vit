@@ -163,7 +163,7 @@ class User extends Model
 //		return $res;
 //	}
 
-	public static function emailAlreadyExists(string $email)
+	public static function emailExists(string $email)
 	{
 	    $exists =\R::findOne('user', 'email = ?', [$email]);
 		if ($exists) {
