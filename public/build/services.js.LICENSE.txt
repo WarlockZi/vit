@@ -28,6 +28,8 @@
 
 /*! ../common/common */
 
+/*! ../common/inlineSvg.js */
+
 /*! ../components/autocomplete/autocomplete */
 
 /*! ../components/coockie/coockie */
@@ -42,6 +44,8 @@
 
 /*! ./autocomplete.sass */
 
+/*! ./common */
+
 /*! ./common.sass */
 
 /*! ./coockie.sass */
@@ -53,6 +57,8 @@
 /*! ./login.sass */
 
 /*! ./map.sass */
+
+/*! ./popup */
 
 /*! ./popup.sass */
 
@@ -66,6 +72,8 @@
 
 /*! exports provided: default */
 
+/*! exports provided: popup */
+
 /*! exports provided: post, get, popup, uniq, ajax_body, _, validate */
 
 /*! exports provided: validate */
@@ -77,6 +85,10 @@
 /*!**********************************!*\
   !*** ./app/jscss/common/MyJQ.js ***!
   \**********************************/
+
+/*!***********************************!*\
+  !*** ./app/jscss/common/popup.js ***!
+  \***********************************/
 
 /*!************************************!*\
   !*** ./app/jscss/Main/footer.sass ***!
@@ -124,6 +136,10 @@
 
 /*!***************************************!*\
   !*** ./app/jscss/common/Validator.js ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./app/jscss/common/inlineSvg.js ***!
   \***************************************/
 
 /*!****************************************!*\

@@ -80,7 +80,11 @@
 
 /*! ./cat_del_property */
 
+/*! ./common */
+
 /*! ./common.sass */
+
+/*! ./popup */
 
 /*! ./popup.sass */
 
@@ -89,6 +93,8 @@
 /*! exports provided: MyJQ */
 
 /*! exports provided: a_category_ajax */
+
+/*! exports provided: popup */
 
 /*! exports provided: post, get, popup, uniq, ajax_body, _, validate */
 
@@ -101,6 +107,10 @@
 /*!**********************************!*\
   !*** ./app/jscss/common/MyJQ.js ***!
   \**********************************/
+
+/*!***********************************!*\
+  !*** ./app/jscss/common/popup.js ***!
+  \***********************************/
 
 /*!************************************!*\
   !*** ./app/jscss/Adminsc/admin.js ***!

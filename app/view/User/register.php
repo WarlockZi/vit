@@ -12,9 +12,11 @@
 		<input id = "email" type="email" class="input field"
 		       placeholder="E-mail" required/>
 
-		<div class="register-password-wrap">
+		<div class="register-password-wrap row">
 			<input id = "password" type="password" class="input field"
 			       placeholder="Пароль" required/>
+			<img class="img-svg view" src="/pic/view.svg" alt="">
+			<img class="img-svg no-view" src="/pic/no-view.svg" alt="">
 		</div>
 
 		<div class="register button-accent">Зарегистрироваться</div>

@@ -2,6 +2,7 @@ import './common.sass'
 import './popup.sass'
 import {MyJQ} from "./MyJQ"
 import {validate} from "./Validator"
+import {popup} from "./popup"
 
 const uniq = (array) => Array.from(new Set(array));
 
@@ -63,32 +64,7 @@ class ajax_body {
     }
 }
 
-async function popup(message, status) {
-    let str = '';
-    for (let mes in message) {
-        str += `<p>${message[mes]}</p>`
-    }
-    // str = "<p>Пользователь сохранен</p>"
 
-    let popup = document.createElement('div');
-    popup.classList.add('popup');
-    if (!status) {
-        popup.classList.add('popup-not-ok');
-    }
-    popup.innerHTML = str
-    let body = document.querySelector('body');
-    body.append(popup);
-
-    let d = await setTimeout(function () {
-        popup.style.opacity = 1;
-    }, 20);
-
-    d = await setTimeout(function () {
-        popup.style.opacity = 0;
-    }, 118200);
-
-    return popup;
-}
 
 function _(arg) {
     return new MyJQ(arg);
