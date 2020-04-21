@@ -1,16 +1,28 @@
 import {_} from './common'
 
-function addDomWrappers(){
-    if (_('.popup-wrap').objects[0]!=='undefined'){
-        let columnWrapper =
+function createDomWrapper(){
+    if (_('.popup-wrap').objects[0]==='undefined'){
+        let columnWrapper = document.createElement('div');
+        columnWrapper.classList.add('popup-wrap column');
+        document.body.append(columnWrapper);
+        return columnWrapper;
+    }else{
+        return _('.popup-wrap').objects[0];
     }
+}
 
+function createMessage(){
+    if (_('.popup-wrap').objects[0]!=='undefined'){
+        let columnWrapper = document.createElement('div');
+        columnWrapper.classList.add('popup-wrap');
+        document.body.append(columnWrapper);
+    }
     let str = "<div class = 'popup-wrap column'>";
 }
 
 async function popup(message, status) {
 
-
+    let str = '';
     for (let mes in message) {
         str += `<p>${message[mes]}</p>`
     }
