@@ -1,7 +1,7 @@
 import {_} from './common'
 
 imgToSVG();
-setTimeout(addListeners, 500);
+setTimeout(addListeners, 800);
 
 function imgToSVG() {
     let imgCollection = _('img.img-svg').toArray();
@@ -10,15 +10,14 @@ function imgToSVG() {
         var imgURL = el.src;
         let data = await fetch(imgURL);
         let text = await data.text();
-        let xml = StringToXMLDom(text);
-        let svg = xml.getElementsByTagName('svg')[0];
+        let xml = await StringToXMLDom(text);
+        let svg = await xml.getElementsByTagName('svg')[0];
         svg.setAttribute('class', elClass);
         el.parentNode.replaceChild(svg, el);
-    })
+    });
 }
 
 function addListeners() {
-    debugger;
     let arr = _('svg').objects;
     arr.map((el) => {
         el.addEventListener('mouseover', showPassword);
