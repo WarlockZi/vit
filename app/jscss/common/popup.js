@@ -29,9 +29,10 @@ async function popup(message, status) {
 
     let popup = document.createElement('div');
     popup.classList.add('popup');
-    if (!status) {
+    if (status) {
         popup.classList.add('popup-not-ok');
     }
+
     popup.innerHTML = str
     let body = document.querySelector('body');
     body.append(popup);
