@@ -1,28 +1,35 @@
 import {_} from './common'
 
-imgToSVG();
-setTimeout(addListeners, 800);
+imgToSVG().then((res) => addListeners(res));
+// imgToSVG();
+// setTimeout(addListeners, 800);
 
-function imgToSVG() {
+async function imgToSVG() {
     let imgCollection = _('img.img-svg').toArray();
     imgCollection.map(async function (el) {
         let elClass = el.getAttribute('class');
         var imgURL = el.src;
-        let data = await fetch(imgURL);
-        let text = await data.text();
-        let xml = await StringToXMLDom(text);
-        let svg = await xml.getElementsByTagName('svg')[0];
+
+        async function fetchData() {
+            let data = await fetch(imgURL);
+            let text = await data.text();
+        };
+        let xml = StringToXMLDom(text);
+        let svg = xml.getElementsByTagName('svg')[0];
         svg.setAttribute('class', elClass);
         el.parentNode.replaceChild(svg, el);
     });
+    alert(1);
+    return 'ddd';
 }
 
-function addListeners() {
+function addListeners(res) {
     let arr = _('svg').objects;
     arr.map((el) => {
         el.addEventListener('mouseover', showPassword);
         el.addEventListener('mouseout', hidePassword);
     });
+    alert(res + 2);
 }
 
 function showPassword() {
