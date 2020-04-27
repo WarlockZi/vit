@@ -1,35 +1,28 @@
 import {_} from './common'
 
-imgToSVG().then((res) => addListeners(res));
-// imgToSVG();
-// setTimeout(addListeners, 800);
+imgToSVG();
 
-async function imgToSVG() {
+function imgToSVG() {
     let imgCollection = _('img.img-svg').toArray();
     imgCollection.map(async function (el) {
         let elClass = el.getAttribute('class');
-        var imgURL = el.src;
-
-        async function fetchData() {
-            let data = await fetch(imgURL);
-            let text = await data.text();
-        };
+        var elSrc = el.src;
+        let data = await fetch(elSrc);
+        let text = await data.text();
         let xml = StringToXMLDom(text);
         let svg = xml.getElementsByTagName('svg')[0];
         svg.setAttribute('class', elClass);
         el.parentNode.replaceChild(svg, el);
+    addListeners();
     });
-    alert(1);
-    return 'ddd';
 }
 
-function addListeners(res) {
+function addListeners() {
     let arr = _('svg').objects;
     arr.map((el) => {
         el.addEventListener('mouseover', showPassword);
         el.addEventListener('mouseout', hidePassword);
     });
-    alert(res + 2);
 }
 
 function showPassword() {
