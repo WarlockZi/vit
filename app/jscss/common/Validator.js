@@ -14,7 +14,12 @@ function validate(type, str, input) {
     }
 
     if (type === 'email') {
-        let minlen = 5;
+        let nameLen = 1;
+        let domainLen = 5;
+        if (str.indexOf('@')===-1){
+            errors.push('no @');
+        }
+        let name = str.substr(0,str.indexOf('@'));
         if (str.length < minlen){
             errors.push(`Длина email должна быть не менее ${minlen}`);
             invalid(input, errors);

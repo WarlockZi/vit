@@ -224,33 +224,5 @@ class UserController extends AppController
 		}
 	}
 
-	/**
-	 * Проверяет имя: не меньше, чем 6 символов
-	 * @param string $password <p>Пароль</p>
-	 * @return boolean <p>Результат выполнения метода</p>
-	 */
-	public function checkPassword($password)
-	{
-		if (strlen($password) >= 6) {
-			return true;
-		}
-		$msg[] = "Пароль не должен быть короче 6-ти символов";
-		exit(include ROOT . '/app/view/User/alert.php');
-//		return false;
-	}
 
-	/**
-	 * Проверяет email
-	 * @param string $email <p>E-mail</p>
-	 * @return boolean <p>Результат выполнения метода</p>
-	 */
-	public static function checkEmail($email)
-	{
-		if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			return true;
-		}
-		$msg[] = "Неверный формат email";
-		exit(include ROOT . '/app/view/User/alert.php');
-//		return false;
-	}
 }
