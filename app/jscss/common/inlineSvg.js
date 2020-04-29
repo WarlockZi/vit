@@ -1,20 +1,23 @@
 import {_} from './common'
 
-imgToSVG();
+(async () => {
+        await imgToSVG();
+        addListeners();
+    }
+)();
 
-function imgToSVG() {
-    let imgCollection = _('img.img-svg').toArray();
-    imgCollection.map(async function (el) {
+async function imgToSVG() {
+    let imgCollection = Array.from(_('img.img-svg'));
+    await Promise.all(imgCollection.map(async (el) => {
         let elClass = el.getAttribute('class');
         var elSrc = el.src;
         let data = await fetch(elSrc);
         let text = await data.text();
-        let xml = StringToXMLDom(text);
-        let svg = xml.getElementsByTagName('svg')[0];
+        let xml = await StringToXMLDom(text);
+        let svg = await xml.getElementsByTagName('svg')[0];
         svg.setAttribute('class', elClass);
         el.parentNode.replaceChild(svg, el);
-    addListeners();
-    });
+    }));
 }
 
 function addListeners() {
@@ -44,8 +47,7 @@ function StringToXMLDom(string) {
     if (window.DOMParser) {
         let parser = new DOMParser();
         xmlDoc = parser.parseFromString(string, "text/xml");
-    } else // Internet Explorer
-    {
+    } else {// Internet Explorer
         xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
         xmlDoc.async = "false";
         xmlDoc.loadXML(string);
