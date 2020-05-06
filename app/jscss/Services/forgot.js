@@ -1,11 +1,9 @@
 import {_, post, validate, popup} from '../common/common'
 
 _('#email').on('keyup', function () {
-
-    var errors = validate('email', _('#email').val(), this);
-    // alert(errors);
-
+    validate('email', _('#email').val(), this);
 });
+
 _('.forgot').on('click', async function () {
     // if (!errors) {
         var data = {};
