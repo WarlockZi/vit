@@ -17,7 +17,7 @@
 	<link rel="preload" href="/pic/logo-square.svg" as="image"/>
 	<link rel="preload" href="/pic/logo-vitex.svg" as="image"/>
 	<link rel="preload" href="/pic/0serv/icons8-contacts-50.svg" as="image"/>
-<!--	<link rel="preload" href="/pic/user.svg" as="image"/>-->
+	<!--	<link rel="preload" href="/pic/user.svg" as="image"/>-->
 	<? $this::getMeta(); ?>
 	<link rel="preload" href='<? $this::getCSS(); ?>' as="style" onload="this.rel='stylesheet'" media="all">
 	<style>
@@ -65,7 +65,7 @@
 			min-width: 230px;
 		}
 
-		.user-menu {
+		.user-menu-wrap {
 			color: #fff0;
 			align-self: stretch;
 			margin: 0;
@@ -149,36 +149,40 @@
 					<?= !($this->route['action'] == "index" && $this->route['controller'] == "Main") ? "</a>" : "" ?>
 					<span>медицинские расходные материалы оптом</span>
 				</div>
-				<div class="header-actions-wrap">
-					<input id="burger-button" type="checkbox">
-					<label id="burger-label" for="burger-button"><span></span></label>
-					<nav id="burger-menu">
-						<div class="wrap column">
-							<a class="item" href="/perchatki-rezinovye-tekhnicheskie">перчатки</a>
-							<a class="item" href="/about/payment">бахилы</a>
-							<a class="item" href="/about/payment">сиз</a>
-							<a class="item" href="/about/payment">шприцы</a>
-							<hr>
-							<a class="item" href="/about/payment">акции</a>
-							<a class="item" href="/about/payment">ОПЛАТА</a>
-							<a class="item" href="/about/delivery">ДОСТАВКА</a>
-							<a class="item" href="/about/return_change">ВОЗВРАТ И ОБМЕН</a>
-							<a class="item" href="/about/discount">СИСТЕМА СКИДОК</a>
-							<hr>
-							<a class="item" href="/about/contacts">Контакты</a>
-							<a class="item" href="/about/contacts">СТАТЬИ</a>
-							<a class="item" href="/about/contact-us">✉ Напишите нам</a>
-						</div>
-					</nav>
-
+				<div class="actions-wrap">
+					<div class="burger-menu-wrap">
+						<input id="burger-button" type="checkbox">
+						<label id="burger-label" for="burger-button">
+							<img src="/pic/0serv/icons8-menu-50.svg" alt="" class="burger img-svg">
+						</label>
+						<nav id="burger-menu">
+							<div class="wrap column">
+								<a class="item" href="/perchatki-rezinovye-tekhnicheskie">перчатки</a>
+								<a class="item" href="/about/payment">бахилы</a>
+								<a class="item" href="/about/payment">сиз</a>
+								<a class="item" href="/about/payment">шприцы</a>
+								<hr>
+								<a class="item" href="/about/payment">акции</a>
+								<a class="item" href="/about/payment">ОПЛАТА</a>
+								<a class="item" href="/about/delivery">ДОСТАВКА</a>
+								<a class="item" href="/about/return_change">ВОЗВРАТ И ОБМЕН</a>
+								<a class="item" href="/about/discount">СИСТЕМА СКИДОК</a>
+								<hr>
+								<a class="item" href="/about/contacts">Контакты</a>
+								<a class="item" href="/about/contacts">СТАТЬИ</a>
+								<a class="item" href="/about/contact-us">✉ Напишите нам</a>
+							</div>
+						</nav>
+					</div>
 					<div class="find-wrap">
-						<div class="find"></div>
+						<img class="img-svg find" src="/pic/0serv/icons8-search-50.svg" alt="" >
+<!--						<div class="find"></div>-->
 					</div>
 
-					<div class="user-menu resumes">
-                        <img class = "img-svg" src="/pic/0serv/icons8-contacts-50.svg" alt="">
+					<div class="user-menu-wrap">
+						<img class="img-svg account" src="/pic/0serv/icons8-contacts-50.svg" alt="">
 						<? if (isset($user)): ?>
-                            <span class="FIO">
+							<span class="FIO">
 	                    <?= $user['surname'] . ' ' . $user['name'] . ' ' . $user['middlename']; ?>
                     </span>
 							<? new app\view\widgets\User_Menu($user); ?>

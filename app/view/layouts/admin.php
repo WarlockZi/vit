@@ -30,7 +30,7 @@
 
 	<div class="clear-cache" title='очистить кэш'></div>
 
-	<div class="user-menu admin">
+	<div class="user-menu-wrap admin">
 
                     <span class="FIO">
 	                    <?$rightId = $user['rights'];

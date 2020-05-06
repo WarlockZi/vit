@@ -34,8 +34,8 @@ class User_Menu
 
 	public function toHtml($rights)
 	{
-		$content = "<div class=\"nav_user\">.
-			<a class=\"resume\" href=\"/user/profile\">Редактировать свой профиль</a>" .
+		$content = "<div class='nav_user'>".
+			"<a class='resume' href='/user/profile'>Редактировать свой профиль</a>" .
 			$this->getOptions($rights) .
 			"</div>";
 		return $content;
