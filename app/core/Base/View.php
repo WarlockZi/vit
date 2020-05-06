@@ -2,6 +2,8 @@
 
 namespace app\core\Base;
 
+use RedBeanPHP\Cursor\NullCursor;
+
 class View {
 
    public $route;
@@ -53,6 +55,7 @@ class View {
 
 	public function format_date(string $date)
 	{
+	    if ($date === '0000-00-00') return null;
 		return date('Y-m-d',strtotime($date));
 	}
 

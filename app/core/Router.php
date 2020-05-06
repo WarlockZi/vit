@@ -20,9 +20,7 @@ class Router
 
     public static function matchRoute($url)
     {
-
 // если это категория
-
         if ($url && $category = App::$app->category->isCategory($url)) {
             $route['controller'] = 'Catalog';
             $route['action'] = 'category';
@@ -30,42 +28,33 @@ class Router
             self::$route = $route;
             self::$aCategoryOrProduct = $category;
             return TRUE;
-
 // это продукт
         } elseif ($url && $product = App::$app->product->isProduct($url)) {
 
             $route['controller'] = 'Catalog';
             $route['action'] = 'product';
-
             self::$route = $route;
             self::$aCategoryOrProduct = $product;
             return TRUE;
-
 // это страница не продукт и не категория
         } else {
-
             foreach (self::$routes as $pattern => $route) {
-
                 if (preg_match("#$pattern#i", $url, $matches)) {
-
                     foreach ($matches as $k => $v) {
-
                         if (is_string($k)) { // превращаем нумеро7ванный массив в ассоциативный
                             $route[$k] = $v;
                         }
                     }
-
                     if (!isset($route['action'])) {// Если action не указан, подключить index
                         $route['action'] = 'index';
                     }
                     $route['controller'] = isset($route['controller']) ? self::upperCamelCase($route['controller']) : '';
-
                     self::$route = $route;
-                    return TRUE;
+                    return true;
                 }
             }
         }
-        return FALSE;
+        return false;
     }
 
     public static function dispatch($url)
@@ -89,7 +78,7 @@ class Router
 
         } else {
             http_response_code(404);
-            include './public/404.html'; // '404.html';
+            include ROOT.'/public/404.html'; // '404.html';
         }
     }
 

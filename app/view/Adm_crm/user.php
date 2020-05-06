@@ -77,21 +77,21 @@
 							<strong>принят:</strong>
 							<span>
                      <input class="field" type='date' id="hired" min="2016-08-14" max="2020-08-20"
-                            value="<?= $this->format_date($user['hired']); ?>"/>
+                            value="<?= $this->format_date($user['hired']?:'0000-00-00'); ?>"/>
 							</span>
 						</div>
 						<div class='row'>
 							<strong>уволен:</strong>
 							<span>
                     <input class="field" type='date' id="fired" min="2016-08-14" max="2020-08-20"
-                           value="<?= $this->format_date($user['fired']); ?>"/>
+                           value="<?= $this->format_date($user['fired']?:'0000-00-00'); ?>"/>
                      </span>
 						</div>
 						<div class='row'>
 							<strong>д.р.:</strong>
 							<span>
                         <input class="field" type='date' id="bday" min="2016-08-14" max="2020-08-20"
-                               value="<?= $this->format_date($user['bday']); ?>"/>
+                               value="<?= $this->format_date($user['bday']?:'0000-00-00'); ?>"/>
                      </span>
 						</div>
 						<div class='row'>

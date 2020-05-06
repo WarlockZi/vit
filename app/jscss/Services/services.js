@@ -6,7 +6,7 @@ import './map.sass'
 
 import '../components/autocomplete/autocomplete'
 import '../components/coockie/coockie'
-import '../common/inlineSvg.js'
+import '../common/show_hide_pass.js'
 
 import './register'
 import './login'

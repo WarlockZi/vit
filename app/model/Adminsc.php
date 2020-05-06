@@ -13,7 +13,6 @@ use app\core\App;
 
 class Adminsc extends Model
 {
-
 	public function where($fName = '', $fAct = '', $fArt = '', $prop = [])
 	{
 		$where = ' WHERE ';
@@ -51,7 +50,6 @@ class Adminsc extends Model
 
 	public function addUser()
 	{
-
 // Следующий id вопроса
 		$sql = "SHOW TABLE STATUS FROM vitex_test LIKE 'user'";
 		$next = $this->findBySql($sql)[0];
@@ -59,9 +57,7 @@ class Adminsc extends Model
 		ob_start();
 		require APP . '/view/Adminsc/newUser.php';
 		$answer = ob_get_clean();
-
 		compact('answer');
-
 		echo $answer;
 	}
 
@@ -81,14 +77,14 @@ class Adminsc extends Model
 		return $mail;
 	}
 
-	public function email()
+	public function email($subj, $body, $altBody, $to='vvoronik@yandex.ru', $from ='VITEX')
 	{
 		$myGmail = 'optvitex@gmail.com';
 		$mail = $this->setupMailer();
 		try {
 			//Recipients
-			$mail->setFrom($myGmail, 'Mailer');
-			$mail->addAddress('vvoronik@yandex.ru', 'v v');     // Add a recipient
+			$mail->setFrom($myGmail, $from);
+			$mail->addAddress($to, 'v v');     // Add a recipient
 			$mail->addAddress('WG7yb2iz2IWBkW@dkimvalidator.com', 'v v');     // Add a recipient
 			$mail->addReplyTo($myGmail, 'Vitex администрации');
 //			$mail->addCC('cc@example.com');
@@ -98,9 +94,9 @@ class Adminsc extends Model
 //			$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 			// Content
 			$mail->isHTML(true);                                  // Set email format to HTML
-			$mail->Subject = 'Here is the subject';
-			$mail->Body = 'This is the HTML message body <b>in bold!</b>';
-			$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+			$mail->Subject = $subj;
+			$mail->Body = $body;
+			$mail->AltBody = $altBody;
 			$mail->send();
 			echo 'Message has been sent';
 		} catch (Exception $e) {

@@ -1,8 +1,9 @@
 import './common.sass'
-import './popup.sass'
 import {MyJQ} from "./MyJQ"
-import {validate} from "./Validator"
+import {validate} from "./validator"
 import {popup} from "./popup"
+import  ajax_body from "./body_ajax"
+import img2svg from './img2svg'
 
 const uniq = (array) => Array.from(new Set(array));
 
@@ -10,6 +11,11 @@ async function get(key) {
     var p = window.location.search;
     p = p.match(new RegExp(key + '=([^&=]+)'));
     return p ? p[1] : false;
+}
+function sleep(ms) {
+    return new Promise(
+        resolve => setTimeout(resolve, ms)
+    );
 }
 
 function post(url = '/adminsc', data) {
@@ -29,46 +35,8 @@ function post(url = '/adminsc', data) {
     });
 }
 
-class ajax_body {
-    constructor(table = 'user', action = 'read') {
-        this.url = '/adminsc',
-            this.action = action,
-            this.token = _("meta[name = 'token']").toArray()[0].content,
-            this.table = table,
-            this.values = {};
-
-        this.ownFields();
-
-        if (_('.shared').objects.length) {
-            this.sharedFilds();
-        }
-        return this;
-    }
-
-    ownFields() {
-        let vals = _('.field').objects;
-        for (var i of vals) {
-            this.values[`${i.id}`] = _(i).fullfill();
-        }
-    };
-
-    sharedFilds() {
-
-        let ids = [];
-        let right = _('.shared.right:checked').objects;
-        for (let i of right) {
-            ids.push(+i.id);
-        }
-        this.values.shared = {};
-        this.values.shared[`right`] = ids;
-    }
-}
-
-
-
 function _(arg) {
     return new MyJQ(arg);
 }
 
-
-export {post, get, popup, uniq, ajax_body, _, validate};
+export {post, get, popup, uniq, ajax_body, _, validate, sleep, img2svg};

@@ -1,26 +1,8 @@
-import {_} from './common'
+import './popup.sass'
+import {_, sleep} from './common'
 
-function createDomWrapper(){
-    if (_('.popup-wrap').objects[0]==='undefined'){
-        let columnWrapper = document.createElement('div');
-        columnWrapper.classList.add('popup-wrap column');
-        document.body.append(columnWrapper);
-        return columnWrapper;
-    }else{
-        return _('.popup-wrap').objects[0];
-    }
-}
-
-function createMessage(){
-    if (_('.popup-wrap').objects[0]!=='undefined'){
-        let columnWrapper = document.createElement('div');
-        columnWrapper.classList.add('popup-wrap');
-        document.body.append(columnWrapper);
-    }
-    let str = "<div class = 'popup-wrap column'>";
-}
-
-async function popup(message, status) {
+async function popup(message, error) {
+    const timer = 3000;
 
     let str = '';
     for (let mes in message) {
@@ -29,25 +11,32 @@ async function popup(message, status) {
 
     let popup = document.createElement('div');
     popup.classList.add('popup');
-    if (status) {
+    if (error) {
         popup.classList.add('popup-not-ok');
     }
 
-    popup.innerHTML = str
-    let body = document.querySelector('body');
-    body.append(popup);
+    popup.innerHTML = str;
 
-    let d = await setTimeout(function () {
-        popup.style.opacity = 1;
-    }, 20);
-
-    d = await setTimeout(function () {
-        popup.style.opacity = 0;
-
-    }, 118200);
-
-    return popup;
+    let wrapper = createDomWrapper();
+    wrapper.append(popup);
+    await sleep(10);
+    popup.style.opacity = 1;
+    await sleep(timer);
+    popup.style.opacity = 0;
+    await sleep(timer + 10);
+    popup.remove();
 }
 
+function createDomWrapper() {
+    let wrapper = _('.popup-wrap').objects;
+    if (wrapper.length !== 0) {
+        return wrapper[0];
+    }
+    let columnWrapper = document.createElement('div');
+    columnWrapper.classList.add('popup-wrap');
+    columnWrapper.classList.add('column');
+    document.body.append(columnWrapper);
+    return columnWrapper;
+}
 
-export{popup}
+export {popup}

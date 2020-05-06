@@ -46,8 +46,6 @@
 
 /*! ./MyJQ */
 
-/*! ./Validator */
-
 /*! ./a_breadcrumbs.sass */
 
 /*! ./a_catalog/_checkbox.sass */
@@ -74,6 +72,8 @@
 
 /*! ./admin.sass */
 
+/*! ./body_ajax */
+
 /*! ./cache.sass */
 
 /*! ./cat_add_property */
@@ -84,19 +84,25 @@
 
 /*! ./common.sass */
 
+/*! ./img2svg */
+
 /*! ./popup */
 
 /*! ./popup.sass */
 
 /*! ./props.sass */
 
+/*! ./validator */
+
 /*! exports provided: MyJQ */
 
 /*! exports provided: a_category_ajax */
 
+/*! exports provided: default */
+
 /*! exports provided: popup */
 
-/*! exports provided: post, get, popup, uniq, ajax_body, _, validate */
+/*! exports provided: post, get, popup, uniq, ajax_body, _, validate, sleep, img2svg */
 
 /*! exports provided: validate */
 
@@ -121,6 +127,10 @@
   \************************************/
 
 /*!*************************************!*\
+  !*** ./app/jscss/common/img2svg.js ***!
+  \*************************************/
+
+/*!*************************************!*\
   !*** ./app/jscss/common/popup.sass ***!
   \*************************************/
 
@@ -133,7 +143,11 @@
   \**************************************/
 
 /*!***************************************!*\
-  !*** ./app/jscss/common/Validator.js ***!
+  !*** ./app/jscss/common/body_ajax.js ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./app/jscss/common/validator.js ***!
   \***************************************/
 
 /*!******************************************!*\

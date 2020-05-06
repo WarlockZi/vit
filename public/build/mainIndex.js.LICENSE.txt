@@ -44,11 +44,11 @@
 
 /*! ./MyJQ */
 
-/*! ./Validator */
-
 /*! ./alert.sass */
 
 /*! ./autocomplete.sass */
+
+/*! ./body_ajax */
 
 /*! ./catalog/prod.sass */
 
@@ -64,6 +64,8 @@
 
 /*! ./header.sass */
 
+/*! ./img2svg */
+
 /*! ./main.sass */
 
 /*! ./popup */
@@ -73,6 +75,8 @@
 /*! ./showSearchInput */
 
 /*! ./swiper.sass */
+
+/*! ./validator */
 
 /*! dom7/dist/dom7.modular */
 
@@ -86,7 +90,7 @@
 
 /*! exports provided: popup */
 
-/*! exports provided: post, get, popup, uniq, ajax_body, _, validate */
+/*! exports provided: post, get, popup, uniq, ajax_body, _, validate, sleep, img2svg */
 
 /*! exports provided: validate */
 
@@ -129,6 +133,10 @@
   \************************************/
 
 /*!*************************************!*\
+  !*** ./app/jscss/common/img2svg.js ***!
+  \*************************************/
+
+/*!*************************************!*\
   !*** ./app/jscss/common/popup.sass ***!
   \*************************************/
 
@@ -137,7 +145,11 @@
   \**************************************/
 
 /*!***************************************!*\
-  !*** ./app/jscss/common/Validator.js ***!
+  !*** ./app/jscss/common/body_ajax.js ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./app/jscss/common/validator.js ***!
   \***************************************/
 
 /*!******************************************!*\

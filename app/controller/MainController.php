@@ -15,9 +15,9 @@ class MainController Extends AppController
 
 	public function actionIndex()
 	{
-
 		if (isset($_SESSION['id']) && $_SESSION['id']) {
-			$user = \R::findOne('user', ($_SESSION['id']));
+			$user = \R::findOne('user', 'id=?',[($_SESSION['id'])]);
+			$user['rights'] = User::getRights($user);
 			$this->set(compact('user'));
 		}
 

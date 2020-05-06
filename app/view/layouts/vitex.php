@@ -16,7 +16,8 @@
 	<link rel="preload" href="/pic/header-big.png" as="image"/>
 	<link rel="preload" href="/pic/logo-square.svg" as="image"/>
 	<link rel="preload" href="/pic/logo-vitex.svg" as="image"/>
-	<link rel="preload" href="/pic/user.svg" as="image"/>
+	<link rel="preload" href="/pic/0serv/icons8-contacts-50.svg" as="image"/>
+<!--	<link rel="preload" href="/pic/user.svg" as="image"/>-->
 	<? $this::getMeta(); ?>
 	<link rel="preload" href='<? $this::getCSS(); ?>' as="style" onload="this.rel='stylesheet'" media="all">
 	<style>
@@ -36,7 +37,6 @@
 			color: #4e4e4e;
 			text-decoration: none;
 		}
-
 
 		.top-menu {
 			/*background: #4e4e4e;*/
@@ -175,17 +175,16 @@
 						<div class="find"></div>
 					</div>
 
-					<div class="user-menu resume">
-
+					<div class="user-menu resumes">
+                        <img class = "img-svg" src="/pic/0serv/icons8-contacts-50.svg" alt="">
 						<? if (isset($user)): ?>
-							<span class="FIO">
+                            <span class="FIO">
 	                    <?= $user['surname'] . ' ' . $user['name'] . ' ' . $user['middlename']; ?>
                     </span>
 							<? new app\view\widgets\User_Menu($user); ?>
 						<? else: ?>
 							<?= "<a href='/user/login'></a>"; ?>
 						<? endif; ?>
-
 
 					</div>
 

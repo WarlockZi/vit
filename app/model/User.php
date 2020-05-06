@@ -52,6 +52,12 @@ class User extends Model
 		return md5($pass);
 	}
 
+//	public function login()
+//	{
+//		$email = $this->clean_data($email);
+//		return \R::findOne($this->table, 'email = ?', [$email]);
+//	}
+
 	public function getByEmail($email)
 	{
 		$email = $this->clean_data($email);
@@ -94,10 +100,10 @@ class User extends Model
 		}
 	}
 
-	public static function getByEmailAndPass($params)
+	public static function getByEmailAndPass($email, $pass )
 	{
-		$password = md5($params['password']);
-		$user = \R::findOne('user', ' email=? and password = ? ', [$params['email'], $password]);
+		$pass = md5($pass);
+		$user = \R::findOne('user', ' email=? and password = ? ', [$email, $pass]);
 		if ($user) {
 			if (User::confirmed($user)) {
 				$user['rights'] = $user->sharedRight;
@@ -133,8 +139,8 @@ class User extends Model
 
 	public static function setAuth(array $user)
 	{
-		if (!isset($_SESSION['id']) || $_SESSION['id'] = '') {
-			$_SESSION['id'] = (int)$user['id'];
+		if (!isset($_SESSION['id']) || $_SESSION['id'] === '') {
+			$_SESSION['id'] = ''.$user['id'];
 		}
 	}
 

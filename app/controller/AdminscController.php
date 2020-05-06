@@ -17,8 +17,6 @@ class AdminscController extends AppController
         View::setCssN('/public/build/admin.css');
     }
 
-
-
     public function actionClearCache()
     {
         $path = ROOT . "/tmp/cache/*.txt";

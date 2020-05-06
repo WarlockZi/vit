@@ -32,13 +32,6 @@ abstract class Model
 		return strip_tags(trim($str));
 	}
 
-//	public function findAll($table, $sort = '')
-//	{
-//		$sql = "SELECT * FROM " . ($table ?: $this->table) . ($sort ? " ORDER BY {$sort}" : "");
-//		return $this->pdo->query($sql);
-//	}
-
-
 	public function findOne($id, $field = '')
 	{
 		$field = $field ?: $this->pk;
@@ -178,25 +171,27 @@ abstract class Model
 
 	public function update($arr)
 	{
-		$this->updateOwn($arr);
+		$errorOwn = $this->updateOwn($arr);
 		if (isset($arr['values']['shared'])) {
-			$this->updateShared($arr);
+			$errorShared = $this->updateShared($arr);
 		}
+        return ($errorOwn*$errorShared)?false:true;
 	}
 
 	public function updateShared($arr)
 	{
 		$host = $arr['table'];
 		$hostEl = \R::load("{$host}", $arr['id']);
-
+		$error = 1;
 		foreach ($arr['values']['shared'] as $shTable => $ids) {
 			$action = 'shared' . ucfirst($shTable) . 'List';
 			foreach ($ids as $id) {
 				$sharedEL = \R::load($shTable, $id);
 				$hostEl->$action[] = $sharedEL;
-				\R::store($hostEl);
+				$error = $error*\R::store($hostEl);
 			}
 		}
+		return $error;
 	}
 
 	public function updateOwn($arr)
@@ -206,9 +201,6 @@ abstract class Model
 		foreach ($arr['values'] as $name => $val) {
 			$b->{$name} = $val;
 		}
-		\R::store($b);
-
+		return\R::store($b);
 	}
-
-
 }

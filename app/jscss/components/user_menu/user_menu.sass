@@ -18,42 +18,34 @@
     bottom: 0%
     left: 0
 
-  &.resume
-    width: 50px
-
   &.admin:before
     content: '☰'
     display: block
     padding: 0 8px
-
-  &.resume:before
-    content: ""
-    width: 25px
-    height: 50px
-    position: absolute
-    display: block
-    top: 17px
-    left: 12px
-    background: url(/pic/user.svg) no-repeat
+//
+//  &.resume
+//    width: 50px
+//
+//  &.resume:before
+//    content: ""
+//    width: 25px
+//    height: 50px
+//    position: absolute
+//    display: block
+//    top: 17px
+//    left: 12px
+//    background: url(/pic/user.svg) no-repeat
 
 .user-menu:hover .nav_user,
 .user-menu:hover .nav_user > a
   display: flex
-
-.extend_1
-  content: ''
-  position: absolute
-  height: 16px
-  width: 14px
-  top: 7px
-  left: 9px
 
 .extend_2
   content: ''
   position: absolute
   height: 16px
   width: 14px
-  top: 7px
+  top: 3px
   left: 9px
 
 
@@ -78,12 +70,12 @@
 
     
     &.logout:before
-      @extend .extend_1
+      @extend .extend_2
       background: url("/pic/svg/logout.svg") no-repeat center
       background-size: contain
 
     &.envelope:before
-      @extend .extend_1
+      @extend .extend_2
       background: url("/pic/svg/email.svg") no-repeat center
       background-size: contain
 
@@ -161,7 +153,7 @@
 //      &:hover
 //        background: #ababab33
 
-.user-menu
-  .FIO
-    @media screen and (max-width: 560px)
-      display: none
+//.user-menu
+//  .FIO
+//    @media screen and (max-width: 560px)
+//      display: none
