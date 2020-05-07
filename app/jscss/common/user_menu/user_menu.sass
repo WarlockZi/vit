@@ -1,14 +1,12 @@
-
 .user-menu-wrap
   display: flex
   justify-content: flex-end
   align-items: center
   position: relative
-  margin-right: 10px
-  color: #fff
   font-size: 0.8rem
   cursor: pointer
   padding: 15px 10px
+  color: #fff
 
   &.admin:before
     content: '☰'
@@ -17,6 +15,10 @@
 
   &:hover .nav_user
     display: flex
+
+  a
+    object-fit: contain
+
 
 .extend_2
   content: ''

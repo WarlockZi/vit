@@ -83,7 +83,7 @@
 			margin: auto;
 		}
 
-		#burger-button, .nav, nav, .logo-square {
+		.nav, nav, .logo-square {
 			display: none;
 		}
 
@@ -102,7 +102,8 @@
 
 		.logo-wrap {
 			display: flex;
-			align-self: stretch;
+			align-items: center;
+			justify-content: center;
 			font-size: 13px;
 			position: relative;
 			flex: 3;
@@ -110,15 +111,13 @@
 		}
 
 		.logo-wrap img {
-			padding: 10px 5px 11px 5px;
+			padding: 10px;
 		}
 
-		.logo-wrap span {
+		.logo-wrap div {
 			width: 100px;
 			font: 100 .7rem/.8rem sans-serif;
-			display: flex;
-			align-self: stretch;
-			padding: 9px 0 3px 0;
+
 		}
 
 		.swiper-slide {
@@ -134,7 +133,7 @@
 
 <body class="column">
 
-<div class="top-menus"></div>
+<div class="top-menu"></div>
 
 
 <header>
@@ -142,52 +141,36 @@
 		<div class='h-upper'>
 
 			<div class="top-menu-wrap">
+
+				<div class="burger-wrap">
+						<img src="/pic/0serv/icons8-menu-50.svg" alt="burger" class="burger img-svg">
+				</div>
+
 				<div class="logo-wrap">
 					<?= !($this->route['action'] == "index" && $this->route['controller'] == "Main") ? "<a href = '/' aria-label = 'На главную'>" : "" ?>
 					<img src="/pic/logo-square.svg" class="logo-square" alt="logo  медицицинские расходные материалы">
 					<img src="/pic/logo-vitex.svg" class="logo-vitex" alt="vitex медицицинские расходные материалы">
 					<?= !($this->route['action'] == "index" && $this->route['controller'] == "Main") ? "</a>" : "" ?>
-					<span>медицинские расходные материалы оптом</span>
+					<div>медицинские расходные материалы оптом</div>
 				</div>
+
 				<div class="actions-wrap">
-					<div class="burger-menu-wrap">
-						<input id="burger-button" type="checkbox">
-						<label id="burger-label" for="burger-button">
-							<img src="/pic/0serv/icons8-menu-50.svg" alt="" class="burger img-svg">
-						</label>
-						<nav id="burger-menu">
-							<div class="wrap column">
-								<a class="item" href="/perchatki-rezinovye-tekhnicheskie">перчатки</a>
-								<a class="item" href="/about/payment">бахилы</a>
-								<a class="item" href="/about/payment">сиз</a>
-								<a class="item" href="/about/payment">шприцы</a>
-								<hr>
-								<a class="item" href="/about/payment">акции</a>
-								<a class="item" href="/about/payment">ОПЛАТА</a>
-								<a class="item" href="/about/delivery">ДОСТАВКА</a>
-								<a class="item" href="/about/return_change">ВОЗВРАТ И ОБМЕН</a>
-								<a class="item" href="/about/discount">СИСТЕМА СКИДОК</a>
-								<hr>
-								<a class="item" href="/about/contacts">Контакты</a>
-								<a class="item" href="/about/contacts">СТАТЬИ</a>
-								<a class="item" href="/about/contact-us">✉ Напишите нам</a>
-							</div>
-						</nav>
-					</div>
 					<div class="find-wrap">
-						<img class="img-svg find" src="/pic/0serv/icons8-search-50.svg" alt="" >
-<!--						<div class="find"></div>-->
+						<img class="img-svg find" src="/pic/0serv/icons8-search-50.svg" alt="">
+						<!--						<div class="find"></div>-->
 					</div>
 
 					<div class="user-menu-wrap">
-						<img class="img-svg account" src="/pic/0serv/icons8-contacts-50.svg" alt="">
 						<? if (isset($user)): ?>
+							<img class="img-svg account" src="/pic/0serv/icons8-contacts-50.svg" alt="">
 							<span class="FIO">
 	                    <?= $user['surname'] . ' ' . $user['name'] . ' ' . $user['middlename']; ?>
                     </span>
 							<? new app\view\widgets\User_Menu($user); ?>
 						<? else: ?>
-							<?= "<a href='/user/login'></a>"; ?>
+							<?= "<a href='/user/login'>".
+						"<img class='img - svg account' src='/pic/0serv/icons8-contacts-50.svg' alt=''>".
+							"</a>"; ?>
 						<? endif; ?>
 
 					</div>
@@ -210,6 +193,25 @@
 		</div>
 
 	</div>
+
+	<nav id="burger-menu">
+		<div class="wrap column">
+			<a class="item" href="/perchatki-rezinovye-tekhnicheskie">перчатки</a>
+			<a class="item" href="/about/payment">бахилы</a>
+			<a class="item" href="/about/payment">сиз</a>
+			<a class="item" href="/about/payment">шприцы</a>
+			<hr>
+			<a class="item" href="/about/payment">акции</a>
+			<a class="item" href="/about/payment">ОПЛАТА</a>
+			<a class="item" href="/about/delivery">ДОСТАВКА</a>
+			<a class="item" href="/about/return_change">ВОЗВРАТ И ОБМЕН</a>
+			<a class="item" href="/about/discount">СИСТЕМА СКИДОК</a>
+			<hr>
+			<a class="item" href="/about/contacts">Контакты</a>
+			<a class="item" href="/about/contacts">СТАТЬИ</a>
+			<a class="item" href="/about/contact-us">✉ Напишите нам</a>
+		</div>
+	</nav>
 </header>
 
 <?= $content ?>

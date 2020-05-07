@@ -1,4 +1,4 @@
-import {_} from '../../common/common'
+import {_} from '../../../common/common'
 
 let search_wrap = _('.search-wrap')[0];
 _('.find-wrap')[0].addEventListener('click', function () {

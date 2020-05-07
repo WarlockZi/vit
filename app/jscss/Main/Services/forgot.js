@@ -1,4 +1,4 @@
-import {_, post, validate, popup} from '../common/common'
+import {_, post, validate, popup} from '../../common/common'
 
 _('#email').on('keyup', function () {
     validate('email', _('#email').val(), this);

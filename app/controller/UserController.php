@@ -36,16 +36,12 @@ class UserController extends AppController
             $password = $data['values']['password'];
             $user = User::getByEmailAndPass($email, $password);
             if ($user === false) { // Почта с паролем существуют, но нет подтверждения
-                $msg[] = "Пользователь с 'e-mail' : {$email} не зарегистрирован";
-                $msg[] = "Перейдите по <a href = 'https://vitexopt.ru/user/register'>ССЫЛКЕ</a> чтобы зарегистрироваться.";
-                exit(include ROOT . '/app/view/User/alert.php');
             } elseif ($user === NULL) {// Пароль, почта в порядке, но нет подтверждения
-                $msg[] = 'Зайдите на <a href ="https://mail.vitexopt.ru/webmail/login/">РАБОЧУЮ ПОЧТУ</a>, найдите письмо "Регистрация VITEX" и перейдите по ссылке в письме.';
-                exit(include ROOT . '/app/view/User/alert.php');
+
             } else {// Если данные правильные, запоминаем пользователя (в сессию)
                 User::setAuth($user);
                 $this->set(compact('user'));
-                if (in_array('5', $user['rights'])) {
+                if (in_array('4', $user['rights'])) {
                     exit ('в админку');
                 } else {
                     exit('в кабинет');
@@ -56,6 +52,10 @@ class UserController extends AppController
             $user = \R::load('user', $_SESSION['id']);
             $this->set(compact('user'));
         }
+//                $msg[] = 'Зайдите на <a href ="https://mail.vitexopt.ru/webmail/login/">РАБОЧУЮ ПОЧТУ</a>, найдите письмо "Регистрация VITEX" и перейдите по ссылке в письме.';
+//                $msg[] = "Пользователь с 'e-mail' : {$email} не зарегистрирован";
+//                $msg[] = "Перейдите по <a href = 'https://vitexopt.ru/user/register'>ССЫЛКЕ</a> чтобы зарегистрироваться.";
+//                exit(include ROOT . '/app/view/User/alert.php');
 
     }
 

@@ -1,0 +1,47 @@
+@import "../../common/media"
+
+header
+  background: #fff
+  width: 100%
+  box-shadow: 0px 1px 12px 0px #d2d2d2
+  position: fixed
+  top: 0
+  z-index: 6
+
+.actions-wrap
+  flex: 1
+  display: flex
+  justify-content: flex-end
+  align-items: center
+  align-self: stretch
+
+  .account, .find
+    width: 45px
+    height: 45px
+    padding: 10px
+    fill: #4e4e4e
+
+
+.h-upper
+
+  .logo-wrap
+
+    .logo-vitex
+
+      @media screen and (max-width: $screen_md)
+        display: none
+
+    .logo-square
+
+      @media screen and (max-width: $screen_md)
+        display: flex
+        width: 50px
+
+
+    >svg
+      width: 250px
+      height: 40px
+
+    span
+      @media screen and (max-width: $screen_md)
+        font-size: xx-small

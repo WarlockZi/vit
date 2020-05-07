@@ -1,4 +1,4 @@
-import {_, ajax_body, post, popup} from '../common/common'
+import {_, ajax_body, post, popup} from '../../common/common'
 
 _(".register").on("click", async function (e) {
 

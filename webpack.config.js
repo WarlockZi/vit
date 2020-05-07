@@ -15,7 +15,7 @@ const PATHS = {
 module.exports = {
     devtool: "source-map",
     entry: {
-        services: PATHS.source + '/Services/services.js',
+        services: PATHS.source + '/Main/Services/services.js',
         admin: PATHS.source + '/Adminsc/admin.js',
         mainIndex: PATHS.source + '/Main/main.js',
     },

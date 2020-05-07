@@ -1,44 +1,42 @@
-/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./autocomplete.sass */
+/*! !../../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./autocomplete.sass */
+
+/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./about.sass */
 
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./coockie.sass */
 
-/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./user_menu.sass */
+/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./header.sass */
 
-/*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./about.sass */
+/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./login.sass */
+
+/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./map.sass */
+
+/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./profile.sass */
 
 /*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./common.sass */
 
 /*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./footer.sass */
 
-/*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./header.sass */
-
-/*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./login.sass */
-
-/*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./map.sass */
-
 /*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./popup.sass */
 
-/*! !../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./profile.sass */
+/*! ../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
 
 /*! ../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
+
+/*! ../../../common/common */
 
 /*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */
 
 /*! ../../common/common */
 
-/*! ../Main/footer.sass */
+/*! ../../common/coockie/coockie */
 
-/*! ../Main/header.sass */
+/*! ../../common/show_hide_pass.js */
 
-/*! ../common/common */
+/*! ../footer.sass */
 
-/*! ../common/show_hide_pass.js */
+/*! ../header/autocomplete/autocomplete */
 
-/*! ../components/autocomplete/autocomplete */
-
-/*! ../components/coockie/coockie */
-
-/*! ../components/user_menu/user_menu.sass */
+/*! ../header/header.sass */
 
 /*! ./MyJQ */
 
@@ -105,20 +103,8 @@
   \************************************/
 
 /*!************************************!*\
-  !*** ./app/jscss/Main/header.sass ***!
-  \************************************/
-
-/*!************************************!*\
   !*** ./app/jscss/common/common.js ***!
   \************************************/
-
-/*!*************************************!*\
-  !*** ./app/jscss/Services/login.js ***!
-  \*************************************/
-
-/*!*************************************!*\
-  !*** ./app/jscss/Services/map.sass ***!
-  \*************************************/
 
 /*!*************************************!*\
   !*** ./app/jscss/common/img2svg.js ***!
@@ -129,24 +115,8 @@
   \*************************************/
 
 /*!**************************************!*\
-  !*** ./app/jscss/Services/forgot.js ***!
-  \**************************************/
-
-/*!**************************************!*\
   !*** ./app/jscss/common/common.sass ***!
   \**************************************/
-
-/*!***************************************!*\
-  !*** ./app/jscss/Services/about.sass ***!
-  \***************************************/
-
-/*!***************************************!*\
-  !*** ./app/jscss/Services/login.sass ***!
-  \***************************************/
-
-/*!***************************************!*\
-  !*** ./app/jscss/Services/profile.js ***!
-  \***************************************/
 
 /*!***************************************!*\
   !*** ./app/jscss/common/body_ajax.js ***!
@@ -156,45 +126,69 @@
   !*** ./app/jscss/common/validator.js ***!
   \***************************************/
 
-/*!****************************************!*\
-  !*** ./app/jscss/Services/register.js ***!
-  \****************************************/
+/*!******************************************!*\
+  !*** ./app/jscss/Main/Services/login.js ***!
+  \******************************************/
 
-/*!****************************************!*\
-  !*** ./app/jscss/Services/services.js ***!
-  \****************************************/
+/*!******************************************!*\
+  !*** ./app/jscss/Main/Services/map.sass ***!
+  \******************************************/
 
-/*!*****************************************!*\
-  !*** ./app/jscss/Services/profile.sass ***!
-  \*****************************************/
+/*!*******************************************!*\
+  !*** ./app/jscss/Main/Services/forgot.js ***!
+  \*******************************************/
+
+/*!*******************************************!*\
+  !*** ./app/jscss/Main/header/header.sass ***!
+  \*******************************************/
+
+/*!********************************************!*\
+  !*** ./app/jscss/Main/Services/about.sass ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./app/jscss/Main/Services/login.sass ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ./app/jscss/Main/Services/profile.js ***!
+  \********************************************/
 
 /*!********************************************!*\
   !*** ./app/jscss/common/show_hide_pass.js ***!
   \********************************************/
 
-/*!*************************************************!*\
-  !*** ./app/jscss/components/coockie/coockie.js ***!
-  \*************************************************/
+/*!*********************************************!*\
+  !*** ./app/jscss/Main/Services/register.js ***!
+  \*********************************************/
 
-/*!***************************************************!*\
-  !*** ./app/jscss/components/coockie/coockie.sass ***!
-  \***************************************************/
+/*!*********************************************!*\
+  !*** ./app/jscss/Main/Services/services.js ***!
+  \*********************************************/
 
-/*!*******************************************************!*\
-  !*** ./app/jscss/components/user_menu/user_menu.sass ***!
-  \*******************************************************/
+/*!*********************************************!*\
+  !*** ./app/jscss/common/coockie/coockie.js ***!
+  \*********************************************/
 
-/*!***********************************************************!*\
-  !*** ./app/jscss/components/autocomplete/autocomplete.js ***!
-  \***********************************************************/
+/*!**********************************************!*\
+  !*** ./app/jscss/Main/Services/profile.sass ***!
+  \**********************************************/
 
-/*!*************************************************************!*\
-  !*** ./app/jscss/components/autocomplete/autocomplete.sass ***!
-  \*************************************************************/
+/*!***********************************************!*\
+  !*** ./app/jscss/common/coockie/coockie.sass ***!
+  \***********************************************/
+
+/*!************************************************************!*\
+  !*** ./app/jscss/Main/header/autocomplete/autocomplete.js ***!
+  \************************************************************/
 
 /*!**************************************************************!*\
-  !*** ./app/jscss/components/autocomplete/showSearchInput.js ***!
+  !*** ./app/jscss/Main/header/autocomplete/autocomplete.sass ***!
   \**************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./app/jscss/Main/header/autocomplete/showSearchInput.js ***!
+  \***************************************************************/
 
 /*!****************************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
@@ -204,14 +198,6 @@
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/footer.sass ***!
   \*******************************************************************************************************************************************************************************************/
 
-/*!*******************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/header.sass ***!
-  \*******************************************************************************************************************************************************************************************/
-
-/*!********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Services/map.sass ***!
-  \********************************************************************************************************************************************************************************************/
-
 /*!********************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/common/popup.sass ***!
   \********************************************************************************************************************************************************************************************/
@@ -220,26 +206,30 @@
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/common/common.sass ***!
   \*********************************************************************************************************************************************************************************************/
 
-/*!**********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Services/about.sass ***!
-  \**********************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/Services/map.sass ***!
+  \*************************************************************************************************************************************************************************************************/
 
-/*!**********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Services/login.sass ***!
-  \**********************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/header/header.sass ***!
+  \**************************************************************************************************************************************************************************************************/
 
-/*!************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Services/profile.sass ***!
-  \************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/Services/about.sass ***!
+  \***************************************************************************************************************************************************************************************************/
 
-/*!**********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/coockie/coockie.sass ***!
-  \**********************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/Services/login.sass ***!
+  \***************************************************************************************************************************************************************************************************/
 
-/*!**************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/user_menu/user_menu.sass ***!
-  \**************************************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/Services/profile.sass ***!
+  \*****************************************************************************************************************************************************************************************************/
 
-/*!********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/components/autocomplete/autocomplete.sass ***!
-  \********************************************************************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/common/coockie/coockie.sass ***!
+  \******************************************************************************************************************************************************************************************************/
+
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Main/header/autocomplete/autocomplete.sass ***!
+  \*********************************************************************************************************************************************************************************************************************/

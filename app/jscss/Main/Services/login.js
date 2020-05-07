@@ -1,8 +1,11 @@
 import './login.sass'
-import '../components/user_menu/user_menu.sass'
-import {post, ajax_body, _} from '../common/common'
+import {post, ajax_body, _, validate} from '../../common/common'
 
-/////////////////////////    Login     /////////////////////
+
+_('#password').on('keyup', function () {
+    validate('password',this.value, this);
+});
+
 _(".login").on("click",async function (e) {
         let body = new ajax_body();
         body.model = '';

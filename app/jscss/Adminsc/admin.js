@@ -7,13 +7,13 @@ import '../common/popup.sass'
 
 import "./a_breadcrumbs.sass"
 import "./a_submenu/a_submenu.sass"
-import "../components/user_menu/user_menu.sass"
+import "../common/user_menu/user_menu.sass"
 
 import './a_catalog/a_category'
 import './a_crm/a_user'
 import './a_settings/props'
 
-import '../components/cache/clear-cache'
+import '../common/cache/clear-cache'
 
 import './a_menu/a_menu'
 
