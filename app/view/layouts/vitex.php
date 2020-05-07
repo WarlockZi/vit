@@ -110,7 +110,7 @@
 		}
 
 		.logo-wrap img {
-			padding: 10px 10px 11px 0;
+			padding: 10px 5px 11px 5px;
 		}
 
 		.logo-wrap span {
