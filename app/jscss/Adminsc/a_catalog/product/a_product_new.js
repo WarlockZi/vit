@@ -31,7 +31,7 @@ $(function () {
       Obj.values.description = $('#description').text();
       Obj.values.core = $('#core').text();
 
-      var props = $('.work-area .category-properties');
+      var props = $(' .category-properties');
       var prop = {};
       var u = uniq(props);
       u.map((i) => {

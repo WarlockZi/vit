@@ -8,8 +8,8 @@ class User_Menu
 {
 	public function __construct($user)
 	{
-		$rights = User::getRights($user);
-		echo $this->toHtml($rights);
+//		$rights = User::getRights($user['rights']);
+		echo $this->toHtml($user['rights']);
 	}
 
 	public function getOptions($rightId)

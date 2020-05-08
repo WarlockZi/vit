@@ -6,7 +6,6 @@
     <div>Site Map</div>
   </div>
 
-  <div class="work-area">
 
     <? if (in_array('3',$user['rights'])): // admin ?>
        <div class="a-actions">
@@ -21,7 +20,7 @@
       <button id='create_sitemap'>Создать карту</button>
     </div>    
 
-  </div>
+
 
 
 

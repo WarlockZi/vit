@@ -29,8 +29,6 @@
 
 	<div class="a-tabs-wrap">
 
-		<div class="work-area">
-
 			<div class="tabs">
 				<input id="tab1" type="radio" name="tabs" checked>
 				<label for="tab1" title="Подкатегории">Подробно</label>
@@ -225,7 +223,7 @@
 				</div>
 
 			</div>
-		</div>
+
 
 	</div>
 </div>

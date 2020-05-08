@@ -130,6 +130,7 @@ class User extends Model
 	{
 		$user = \R::load('user', $id);
 		$user['rights'] = self::getRights($user);
+		$user = $user->export();
 		if ($user) {
 			return $user;
 		}

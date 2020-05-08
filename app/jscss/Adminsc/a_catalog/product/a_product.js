@@ -28,7 +28,7 @@ $(function () {
       Obj.values.keywords = $('#keywords').text();
       Obj.values.description = $('#description').text();
       Obj.values.core = $('#core').text();
-      var props = $('.work-area .category-properties');
+      var props = $(' .category-properties');
       var prop = ({});
       props = uniq(props);
       props.map((i) => {

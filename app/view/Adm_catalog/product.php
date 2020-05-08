@@ -29,7 +29,7 @@
 	<H1><?= $product['name'] ?: ''; ?></H1>
 
 	<div class="a-tabs-wrap">
-		<div class="work-area">
+
 			<div class="tabs">
 				<input id="tab1" type="radio" name="tabs">
 				<label for="tab1" title="Подробно">Подробно</label>
@@ -72,7 +72,7 @@
 							<?  foreach ($product['img'] as $pic): ?>
 								<div>
 									<?
-									$da = $product['img'];
+								$da = $product['img'];
 									$y = isset($da) ? '/pic/' . $product['alias'] . '/' . $ptype . '/1/' . $da . '.webp' : '/pic/srvc/nophoto-min.jpg';
 									?>
 									<img src="<?= $y ?: '/srvc/nophoto-min.jpg'; ?>">
@@ -256,7 +256,7 @@
 					<button class="btn" id="product-update-btn">Сохранить</button>
 
 				</div>
-			</div>
+
 		</div>
 
 	</div>
