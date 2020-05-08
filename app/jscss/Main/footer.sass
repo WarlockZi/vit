@@ -1,5 +1,10 @@
+@import "../common/media"
+
+
 .page-buffer
   min-height: 150px
+  @media screen and (min-width: $screen_xs)
+    min-height: 0px
 
 footer
   background-image: url('/pic/header-big.png')

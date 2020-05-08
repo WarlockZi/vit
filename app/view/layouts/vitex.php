@@ -30,7 +30,7 @@
 		}
 
 		body *::selection {
-			background: rgba(0, 0, 0, 0);
+			background: rgba(141, 141, 141, 0.17);
 		}
 
 		a, p {
@@ -66,9 +66,7 @@
 		}
 
 		.user-menu-wrap {
-			color: #fff0;
 			align-self: stretch;
-			margin: 0;
 		}
 
 		.FIO {
@@ -157,7 +155,6 @@
 				<div class="actions-wrap">
 					<div class="find-wrap">
 						<img class="img-svg find" src="/pic/0serv/icons8-search-50.svg" alt="">
-						<!--						<div class="find"></div>-->
 					</div>
 
 					<div class="user-menu-wrap">
