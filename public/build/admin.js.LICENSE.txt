@@ -38,8 +38,6 @@
 
 /*! ../common/grid_table.sass */
 
-/*! ../common/popup.sass */
-
 /*! ../common/user_menu/user_menu.sass */
 
 /*! ./../../common/common */

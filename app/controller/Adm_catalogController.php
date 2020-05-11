@@ -4,7 +4,8 @@ namespace app\controller;
 
 use app\core\App;
 use app\model\Catalog;
-//use R;
+use app\model\Category;
+use \R as R;
 
 class Adm_catalogController extends AdminscController
 {
@@ -82,20 +83,17 @@ class Adm_catalogController extends AdminscController
 
 	public function actionProduct()
 	{
-
 		if (isset($_GET['id'])) {
 			if ($_GET['id'] == 'new') {
 				if (!isset($_GET['category'])) {
 					exit('не указана родительская категория !');
 				}
-
 				$product = [];
 				$id = (int)$_GET['category'];
 				$category = App::$app->category->getCategory($id);
 				$props = App::$app->prop->getProps();
 				$this->set(compact('product', 'category', 'props'));
 				$this->view = 'product_new';
-
 			} else {
 				$id = (int)$_GET['id'];
 
@@ -135,10 +133,6 @@ class Adm_catalogController extends AdminscController
 		$this->set(compact('category'));
 	}
 
-	/**
-	 * @param $cat
-	 * @return array of parents of category with props
-	 */
 	public function getCatParentsWithProps($cat, &$arr = [])
 	{
 		$parent_id = $cat->parent;
@@ -205,11 +199,13 @@ class Adm_catalogController extends AdminscController
 			$addableProps = $this->getAddableProps($parentsProps, $category['props']);
 			$this->set(compact('category', 'addableProps'));
 		} else {
-			$category = \R::load('category', $id);
+			$category = R::load('category', $id);
 			$parentsWithProps = $this->getCatParentsWithProps($category);
 			$parentsProps = $this->getAllParentsProps($parentsWithProps);
 			$category->props = $this->getCatProps($category, $parentsProps);
 			$addableProps = $this->getAddableProps($parentsProps, $category['props']);
+
+			$catChildren = Category::getCategoryChildren($category->id);
 
 			$category->catParentsWithProps = $parentsWithProps;
 			$category = $category->export();

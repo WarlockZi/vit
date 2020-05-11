@@ -2,6 +2,7 @@
 
 use app\core\Router;
 use app\core\App;
+use \R as R;
 
 session_start();
 
@@ -18,8 +19,9 @@ function vitexAutoload($class)
 spl_autoload_register('vitexAutoload');
 
 require '../vendor/rb/rb-mysql.php';
+require_once '../vendor/rb/sqn.php';
 R::setup( 'mysql:host=127.0.0.1;dbname=vitex_test', 'mysql', 'mysql' );
-R::getDatabaseAdapter()->getDatabase()->stringifyFetches( FALSE );
+R::getDatabaseAdapter()->getDatabase()->stringifyFetches( true );
 R::getDatabaseAdapter()->getDatabase()->getPDO()->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
 R::freeze(false);
 

@@ -2,14 +2,12 @@
 	<div class="title">Каталог</div>
 	<div class="a-actions">
 		<?
-
 		new app\view\widgets\menu\Menu([
 			'class' => 'admin-category-menu',
 			'tpl' => ROOT . "/app/view/widgets/menu/menu_tpl/site_admin_category_menu.php",
 			'cache' => 60,
 			'sql' => "SELECT * FROM category "
 		]);
-
 		$addCategoryButton = "<div class='btn category add'>Добавить категорию</div>";
 		?>
 	</div>
@@ -60,7 +58,7 @@
 					</div>
 					<div class="row">
 						<strong>активный</strong>
-						<input id='act' type="checkbox" <?= $category['act'] ? 'checked' : '' ?>>
+						<input id='act' type="checkbox" class="checkbox"<?= $category['act'] ? 'checked' : '' ?>>
 						<label for='act'></label>
 					</div>
 					<div class="row">
@@ -165,8 +163,7 @@
 					<a href="/adminsc/catalog/category?id=<?= $value['id'] ?>"><?= $value['alias'] ?></a>
 				<? endforeach; ?>
 
-			<? else: ?>
-				<? if (isset($category['children'])): ?>
+				<? elseif (isset($category['children'])): ?>
 					<?= $ddProductButton ?>
 					<div class="products row">
 						<? foreach ($category['children']['products'] as $product) : ?>
@@ -184,7 +181,7 @@
 						<? endforeach; ?>
 					</div>
 				<? endif; ?>
-			<? endif; ?>
+
 
 
 		</section>

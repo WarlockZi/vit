@@ -3,7 +3,7 @@
 namespace app\controller;
 
 use app\core\App;
-use \app\model\Prop;
+use \app\model\User;
 use app\core\Base\View;
 
 class CatalogController extends AppController {
@@ -31,19 +31,15 @@ class CatalogController extends AppController {
       header('Expires: ' . gmdate('D, d M Y H:i:s \G\M\T', time() + 86400));
       $this->view = 'product';
 
-//      $parents = $product['parents'];
       $breadcrumbs = App::$app->product->getBreadcrumbs($product, $product['parents'], 'product');
 
       if (isset($_SESSION['id']) && $_SESSION['id']) {
-         $id = $_SESSION['id'];
-         $user = App::$app->user->getUser($id);
+         $user = User::getById($_SESSION['id']);
       }
       $canonical = $product['alias'];
       View::setMeta($product['title'], $product['description'], $product['keywords']);
-//      'user', , 'categories', 'tov'
       $this->set(compact('canonical', 'breadcrumbs', 'product'));
 
-//      View::setCss(['css' => $this->route['controller'], 'view' => $this->view, 'addtime']);
    }
 
    public function actionCategory($category) {

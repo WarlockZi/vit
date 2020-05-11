@@ -2976,7 +2976,7 @@ class OODBBean implements\IteratorAggregate,\ArrayAccess,\Countable,Jsonable
 			$list = array();
 			foreach($this->properties as $property => $value) {
 				if (is_scalar($value)) {
-					if ( self::$enforceUTF8encoding ) {
+f					if ( self::$enforceUTF8encoding ) {
 						$list[$property] = mb_convert_encoding($value, 'UTF-8', 'UTF-8');
 					} else {
 						$list[$property] = $value;

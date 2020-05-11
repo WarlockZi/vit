@@ -1,20 +1,28 @@
 import './a_menu.sass'
+import {_} from "../../common/common"
+
+_('.a-menu').on('mouseenter', function () {
+    this.style.width = '71px';
+});
+_('.a-menu').on('mouseleave', function () {
+    this.style.width = '32px';
+});
 
 let path = window.location.pathname;
 let paths = path.match('(adminsc$)|(crm)|(settings)|(Sitemap)|(catalog)')[0];
 
 switch (paths) {
     case 'catalog':
-        document.querySelector('.module.catalog').classList.add('activ');
+        _('.module.catalog')[0].classList.add('activ');
         break;
     case 'crm':
-        document.querySelector('.module.crm').classList.add('activ');
+        _('.module.crm')[0].classList.add('activ');
         break;
     case 'settings':
-        document.querySelector('.module.settings').classList.add('activ');
+        _('.module.settings')[0].classList.add('activ');
         break;
     case 'adminsc':
-        document.querySelector('.module.home').classList.add('activ');
+        _('.module.home')[0].classList.add('activ');
         break;
 
 }

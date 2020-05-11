@@ -11,7 +11,7 @@ class Category extends Model
 
 	public $table = 'category';
 
-	public function getCategoryParents($parentId, $parents = [], $i = -1)
+	static function getCategoryParents($parentId, $parents = [], $i = -1)
 	{
 		if ($parentId) {
 			$parent = \R::find('category', $parentId);
@@ -24,18 +24,17 @@ class Category extends Model
 		}
 	}
 
-	public function getAssocCategory($options)
+	static function getAssocCategory($options)
 	{
-		$onlyActive = (isset($options['active']) && $options['active']) ? " WHERE `act` = 1" : "";
-		$sql = 'SELECT * FROM category' . $onlyActive;
-		$res = App::$app->category->findBySql($sql, $params = array());
+		$onlyActive = $options['active']?"`act` = ?":'';
+        $res = \R::findAll('category',$onlyActive,['1']);
+//		$sql = 'SELECT * FROM category' . $onlyActive;
+//		$res = App::$app->category->findBySql($sql, $params = array());
 
 		if ($res !== FALSE) {
 			$all = [];
 			foreach ($res as $key => $v) {
-				$params = [$v['id']];
-				$sql = 'SELECT * FROM products WHERE parent = ?';
-				$res = App::$app->product->findBySql($sql, $params);
+                $res =\R::findAll('product','parent = ?', [$v['id']]);
 				$all[$v['id']] = $v;
 				$all[$v['id']]['products'] = $res;
 			}
@@ -44,7 +43,7 @@ class Category extends Model
 		return false;
 	}
 
-	public function categoriesTree($cat)
+	static function categoriesTree($cat)
 	{
 		$tree = [];
 		$data = $cat;
@@ -58,13 +57,13 @@ class Category extends Model
 		return $tree;
 	}
 
-	function findValueByKey($inputArray, $findKey)
+	static function findValueByKey($inputArray, $findKey)
 	{
 		foreach ($inputArray as $key => $value) {
 			if ($findKey == $key) {
 				return $value;
 			} elseif (is_array($value) && isset($value['childs'])) {
-				$tmp = $this->findValueByKey($value['childs'], $findKey);
+				$tmp = self::findValueByKey($value['childs'], $findKey);
 				if ($tmp !== false) {
 					return $tmp;
 				}
@@ -73,7 +72,7 @@ class Category extends Model
 		return false;
 	}
 
-	public function getCategoriesProducts($aCategories, $products = [])
+	static function getCategoriesProducts($aCategories, $products = [])
 	{
 		foreach ($aCategories as $key => $value) {
 			if (isset($value['childs']) && is_array($value['childs'])) {
@@ -94,26 +93,24 @@ class Category extends Model
 		\R::store($cat);
 	}
 
-	public function getCategoryChildren($parentId)
+	public static function getCategoryChildren($parentId)
 	{
-		$cat = $this->getAssocCategory(['act' => 0]);
-		$tree = $this->categoriesTree($cat);
-		$categories = $this->findValueByKey($tree, $parentId);
-		if (isset($categories['childs'])) {
+		$cat = self::getAssocCategory(['active'=>1]);
+		$tree = self::categoriesTree($cat);
+		$categories = self::findValueByKey($tree, $parentId);
+        if(isset($categories['childs'])) {
 			$children['categories'] = $categories['childs'];
-			$products = $this->getCategoriesProducts($categories['childs']);
+			$products = self::getCategoriesProducts($categories['childs']);
 		} else {
-			$products = $this->getCategoriesProducts(array($categories));
+			$products = self::getCategoriesProducts(array($categories));
 		}
-		if ($products) {
-			$children['products'] = $products;
-		}
+		$products??	$children['products'] = $products;
+
 		if (!$products && !isset($categories['childs'])) {
 			return FALSE;
 		}
 		return $children;
 	}
-
 
 	public function isCategory($url)
 	{
@@ -128,8 +125,8 @@ class Category extends Model
 			}
 			$category = $this->findOne($arr[0], 'alias');
 			if ($category && is_array($category)) {
-				$category['parents'] = $this->getCategoryParents($category['parent']);
-				$category['children'] = $this->getCategoryChildren($category['id']);
+				$category['parents'] = self::getCategoryParents($category['parent']);
+				$category['children'] = self::getCategoryChildren($category['id']);
 			} else {
 				return FALSE;
 			}
