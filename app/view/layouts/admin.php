@@ -10,7 +10,7 @@
 	<link rel="preload" href="/pic/admin-mainmenu-items-bg.png" as="image"/>
 	<link rel="preload" href="/pic/admin-mainmenu-items.png" as="image"/>
 	<link rel="preload" href="/pic/header-big.png" as="image"/>
-	<meta name="token" content=<?=$_SESSION['token']?>>
+	<meta name="token" content=<?= $_SESSION['token'] ?>>
 	<style>
 		a {
 			color: #2f2f2f;
@@ -32,14 +32,11 @@
 
 	<div class="user-menu-wrap admin">
 
-                    <span class="FIO">
-	                    <?$rightId = $user['rights'];
-							  if (isset($user)) {
-								  echo $user['surname'] . ' ' . $user['name'] . ' ' . $user['middlename'];
-							  } ?>
-                    </span>
+		<span class="FIO">
+			<?= isset($user) ? $user['surname'] . ' ' . $user['name'] . ' ' . $user['middlename'] : ''; ?>
+		</span>
 
-		<? new app\view\widgets\User_Menu($user);?>
+		<? new app\view\widgets\User_Menu($user); ?>
 
 	</div>
 

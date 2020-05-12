@@ -175,7 +175,7 @@ abstract class Model
 		if (isset($arr['values']['shared'])) {
 			$errorShared = $this->updateShared($arr);
 		}
-        return ($errorOwn*$errorShared)?false:true;
+		return ($errorOwn * $errorShared) ? false : true;
 	}
 
 	public function updateShared($arr)
@@ -185,11 +185,12 @@ abstract class Model
 		$error = 1;
 		foreach ($arr['values']['shared'] as $shTable => $ids) {
 			$action = 'shared' . ucfirst($shTable) . 'List';
+			$hostEl->$action = [];
 			foreach ($ids as $id) {
 				$sharedEL = \R::load($shTable, $id);
 				$hostEl->$action[] = $sharedEL;
-				$error = $error*\R::store($hostEl);
 			}
+			$error = $error * \R::store($hostEl);
 		}
 		return $error;
 	}
@@ -201,6 +202,6 @@ abstract class Model
 		foreach ($arr['values'] as $name => $val) {
 			$b->{$name} = $val;
 		}
-		return\R::store($b);
+		return \R::store($b);
 	}
 }

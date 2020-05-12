@@ -43,9 +43,7 @@ class AppController extends Controller
 			} elseif (isset($_SESSION['id'])) {
 				$user = User::getById($_SESSION['id']);
 
-				if ($user === false) {
-					$errors[] = 'Неправильные данные для входа на сайт';
-				} elseif ($user === NULL) {
+				if ($user === NULL) {
 					$errors[] = 'Чтобы получить доступ, зайдите на рабочую почту, найдите письмо "Регистрация VITEX" и перейдите по ссылке в письме.';
 				} else {
 					$this->set(compact('user'));

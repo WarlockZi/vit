@@ -2,9 +2,8 @@
 
 namespace app\controller;
 
-use app\core\App;
-use app\core\Base\View;
-use app\controller\AdminscController;
+use app\model\Right;
+use app\model\User;
 
 class Adm_crmController extends AdminscController {
 
@@ -24,15 +23,10 @@ class Adm_crmController extends AdminscController {
       if (!isset($_GET['id']) || !$id = $_GET['id']) {
          header('Location: /adminsc/crm/users');
       };
-//      $user = \R::load('user', $id);
-//      $user = $user->export();
-      $rights = \R::findAll('right');
-      $this->set(compact('rights'));
-//      $arr = $this->vars['user']->sharedRight;
-//		foreach ( $arr as $item) {
-//			$a[] = $item['id'];
-//      }
-//      $this->vars['user']->rights;
-   }
 
+      $rights = Right::getAllRights();
+
+      $showUser = User::getById((int)$_GET['id']);
+      $this->set(compact('showUser', 'rights'));
+   }
 }

@@ -8,11 +8,12 @@
   </div>
 
   <div class="pic row">
-      <? if (in_array('3', $user['rights'])): // admin ?>
+      <? if (key_exists('admin', $user['sharedRight'])): // admin ?>
          <? foreach ($pics as $key => $value): ?>
           <div class="column">
               <div >
-                <img src="/pic/<?= $value['nameHash'] ?>" alt="">
+	              <?$pifc = $value->export();?>
+                <img src="/pic/test/<?=$pifc['nameHash']?>" alt="">
               </div>
             <span><?= $value['nameRu'] ?> </span>
           </div>

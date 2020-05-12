@@ -8,20 +8,28 @@ class User_Menu
 {
 	public function __construct($user)
 	{
-	    $rights = $user->sharedRight;
-		echo $this->toHtml($rights);
+		echo $this->toHtml($user['sharedRight']);
 	}
 
-	public function getOptions($rightId)
+	public function toHtml($rights)
+	{
+		$content = "<div class='nav_user'>" .
+			"<a class='resume' href='/user/profile'>Редактировать свой профиль</a>" .
+			$this->getOptions($rights) .
+			"</div>";
+		return $content;
+	}
+
+	public function getOptions($rights)
 	{
 		$str = "";
-		$str .= in_array('3', $rightId) ? "<a class='admin' href='/adminsc'>Admin</a>" : "";
-		$str .= in_array('1', $rightId) ?
+		$str .= key_exists('admin', $rights) ? "<a class='admin' href='/adminsc'>Admin</a>" : "";
+		$str .= key_exists('editTest', $rights) ?
 			"<a class = 'test_edit' href='test/edit/1'>Ред. закрытые тесты</a>
 			<a class = 'freetest_edit' href='/freetest/edit/41'>Ред. открытые тест</a>"
 			: "";
 
-		$str .= in_array('2', $rightId) ?
+		$str .= key_exists('doTest', $rights) ?
 			"<a class = 'test' href='/test/1'>Закрытый тест</a>
 			<a class = 'freetest' href='/freetest/41'>Открытый тест</a>"
 			: "";
@@ -30,15 +38,4 @@ class User_Menu
 					<a class='logout' href='/user/logout' >Выход</a>";
 		return $str;
 	}
-
-
-	public function toHtml($rights)
-	{
-		$content = "<div class='nav_user'>".
-			"<a class='resume' href='/user/profile'>Редактировать свой профиль</a>" .
-			$this->getOptions($rights) .
-			"</div>";
-		return $content;
-	}
 }
-

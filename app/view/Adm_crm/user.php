@@ -32,65 +32,65 @@
 					<div class='admin-flex-table column'>
 						<div class='row'>
 							<strong>id :</strong>
-							<span id='id'><?= $user['id'] ?: ''; ?></span>
+							<span id='id'><?= $showUser['id'] ?: ''; ?></span>
 						</div>
 						<div class='row'>
 							<strong>актив. :</strong>
 							<input id="act" class="field checkbox" type="checkbox"
-								<?= $user['act'] ? 'checked' : ''; ?>>
+								<?= $showUser['act'] ? 'checked' : ''; ?>>
 							<label for="act"></label>
 						</div>
 
 						<div class='row'>
 							<strong>подтвержден :</strong>
 							<select name="conf" id="confirm" value=1 class="field">
-								<option value="0" <?= $user['confirm'] == '0' ? 'selected' : ''; ?>>0</option>
-								<option value="1" <?= $user['confirm'] == '1' ? 'selected' : ''; ?>>1</option>
+								<option value="0" <?= $showUser['confirm'] == '0' ? 'selected' : ''; ?>>0</option>
+								<option value="1" <?= $showUser['confirm'] == '1' ? 'selected' : ''; ?>>1</option>
 							</select>
 						</div>
 						<div class='row'>
 							<strong>email :</strong>
-							<span class="field" id='email' contenteditable="true"><?= $user['email']; ?></span>
+							<span class="field" id='email' contenteditable="true"><?= $showUser['email']; ?></span>
 						</div>
 						<div class='row'>
 							<strong>фамилия :</strong>
-							<span class="field" id='surname' contenteditable="true"><?= $user['surname']; ?> </span>
+							<span class="field" id='surname' contenteditable="true"><?= $showUser['surname']; ?> </span>
 						</div>
 						<div class='row'>
 							<strong>имя :</strong>
-							<span class="field" id='name' contenteditable="true"><?= $user['name']; ?> </span>
+							<span class="field" id='name' contenteditable="true"><?= $showUser['name']; ?> </span>
 						</div>
 						<div class='row'>
 							<strong>отчетсво:</strong>
-							<span class="field" id='middlename' contenteditable="true"><?= $user['middlename']; ?> </span>
+							<span class="field" id='middlename' contenteditable="true"><?= $showUser['middlename']; ?> </span>
 						</div>
 						<div class='row'>
 							<strong>phone:</strong>
-							<span class="field" id='phone' contenteditable="true"><?= $user['phone']; ?> </span>
+							<span class="field" id='phone' contenteditable="true"><?= $showUser['phone']; ?> </span>
 						</div>
 						<div class='row'>
 							<strong>добавочный:</strong>
-							<span class="field" id='extension' contenteditable="true"><?= $user['extension']; ?> </span>
+							<span class="field" id='extension' contenteditable="true"><?= $showUser['extension']; ?> </span>
 						</div>
 						<div class='row'>
 							<strong>принят:</strong>
 							<span>
                      <input class="field" type='date' id="hired" min="2016-08-14" max="2020-08-20"
-                            value="<?= $this->format_date($user['hired']?:'0000-00-00'); ?>"/>
+                            value="<?= $this->format_date($showUser['hired']?:'0000-00-00'); ?>"/>
 							</span>
 						</div>
 						<div class='row'>
 							<strong>уволен:</strong>
 							<span>
                     <input class="field" type='date' id="fired" min="2016-08-14" max="2020-08-20"
-                           value="<?= $this->format_date($user['fired']?:'0000-00-00'); ?>"/>
+                           value="<?= $this->format_date($showUser['fired']?:'0000-00-00'); ?>"/>
                      </span>
 						</div>
 						<div class='row'>
 							<strong>д.р.:</strong>
 							<span>
                         <input class="field" type='date' id="bday" min="2016-08-14" max="2020-08-20"
-                               value="<?= $this->format_date($user['bday']?:'0000-00-00'); ?>"/>
+                               value="<?= $this->format_date($showUser['bday']?:'0000-00-00'); ?>"/>
                      </span>
 						</div>
 						<div class='row'>
@@ -102,13 +102,13 @@
 				</section>
 				<section id="content-tab2">
 					<div class='admin-flex-table column'>
+						<? $userRights = $showUser['sharedRight'];?>
 						<? foreach ($rights as $right): ?>
 							<div class="row">
-								<strong><?=
-									$right['name']; ?>
+								<strong><?=$right['name']; ?>
 								</strong>
 								<input class="shared right checkbox" id='<?= $right['id']; ?>' type="checkbox"
-									<?= in_array($right['id'], $user['rights']) ? 'checked' : '' ?>>
+									<?= key_exists($right['alias'], $userRights) ? 'checked' : '' ?>>
 								<label for="<?= $right['id']; ?>"></label>
 							</div>
 						<? endforeach; ?>

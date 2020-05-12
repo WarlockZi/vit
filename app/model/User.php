@@ -26,7 +26,7 @@ class User extends Model
 		}
 	}
 
-	public static function confirmed($user)
+	static function confirmed($user)
 	{
 		if ($user['confirmed'] = '1') {
 			return true;
@@ -52,11 +52,6 @@ class User extends Model
 		return md5($pass);
 	}
 
-//	public function login()
-//	{
-//		$email = $this->clean_data($email);
-//		return \R::findOne($this->table, 'email = ?', [$email]);
-//	}
 
 	public function getByEmail($email)
 	{
@@ -116,21 +111,22 @@ class User extends Model
 		return false;
 	}
 
-	public static function getRights($user)
+
+	public static function arrayRights($rights)
 	{
-		$rights = [];
-		$arr = $user->sharedRight;
-		foreach ($arr as $item){
-			array_push($rights,$item['id']);
+		$right = [];
+		foreach ($rights as $item){
+			$right[$item['alias']]= $item->export();
 		}
-		return $rights;
+		return $right;
 	}
 
 	public static function getById($id)
 	{
 		$user = \R::load('user', $id);
-		$user['rights'] = self::getRights($user);
+		$rights = $user->sharedRight;
 		$user = $user->export();
+		$user['sharedRight'] = self::arrayRights($rights);
 		if ($user) {
 			return $user;
 		}
