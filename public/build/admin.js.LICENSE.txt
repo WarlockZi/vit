@@ -12,6 +12,8 @@
 
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./cache.sass */
 
+/*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./pics.sass */
+
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./props.sass */
 
 /*! !../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js??ref--6-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./user_menu.sass */
@@ -33,6 +35,10 @@
 /*! ../../common/MyJQ */
 
 /*! ../../common/common */
+
+/*! ../Adminsc/a_settings/pics */
+
+/*! ../Adminsc/a_settings/props */
 
 /*! ../common/cache/clear-cache */
 
@@ -62,8 +68,6 @@
 
 /*! ./a_menu/a_menu */
 
-/*! ./a_settings/props */
-
 /*! ./a_submenu/a_submenu.sass */
 
 /*! ./a_user.sass */
@@ -83,6 +87,8 @@
 /*! ./common.sass */
 
 /*! ./img2svg */
+
+/*! ./pics.sass */
 
 /*! ./popup */
 
@@ -176,6 +182,10 @@
   !*** ./app/jscss/Adminsc/a_menu/a_menu.sass ***!
   \**********************************************/
 
+/*!**********************************************!*\
+  !*** ./app/jscss/Adminsc/a_settings/pics.js ***!
+  \**********************************************/
+
 /*!***********************************************!*\
   !*** ./app/jscss/Adminsc/a_settings/props.js ***!
   \***********************************************/
@@ -183,6 +193,10 @@
 /*!***********************************************!*\
   !*** ./app/jscss/common/cache/clear-cache.js ***!
   \***********************************************/
+
+/*!************************************************!*\
+  !*** ./app/jscss/Adminsc/a_settings/pics.sass ***!
+  \************************************************/
 
 /*!*************************************************!*\
   !*** ./app/jscss/Adminsc/a_settings/props.sass ***!
@@ -255,6 +269,10 @@
 /*!*****************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Adminsc/a_menu/a_menu.sass ***!
   \*****************************************************************************************************************************************************************************************************/
+
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Adminsc/a_settings/pics.sass ***!
+  \*******************************************************************************************************************************************************************************************************/
 
 /*!********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/jscss/Adminsc/a_settings/props.sass ***!

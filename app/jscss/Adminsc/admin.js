@@ -12,7 +12,8 @@ import "../common/user_menu/user_menu.sass"
 
 import './a_catalog/a_category'
 import './a_crm/a_user'
-import './a_settings/props'
+import '../Adminsc/a_settings/props'
+import '../Adminsc/a_settings/pics'
 
 import '../common/cache/clear-cache'
 
