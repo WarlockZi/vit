@@ -24,7 +24,7 @@ class Adm_crmController extends AdminscController {
          header('Location: /adminsc/crm/users');
       };
 
-      $rights = Right::getAllRights();
+      $rights = Right::getAll();
 
       $showUser = User::getById((int)$_GET['id']);
       $this->set(compact('showUser', 'rights'));

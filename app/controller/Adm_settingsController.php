@@ -17,6 +17,10 @@ class Adm_settingsController extends AdminscController {
       $pics = \R::findAll('pic');
       $this->set(compact('pics'));
    }
+   public function actionTags() {
+      $tags = \R::findAll('tag');
+      $this->set(compact('tags'));
+   }
 
    public function actionProps() {
 

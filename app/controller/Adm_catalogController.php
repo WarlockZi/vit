@@ -15,14 +15,6 @@ class Adm_catalogController extends AdminscController
 	{
 		parent::__construct($route);
 
-//		if ($this->isAjax()) {
-//			if (isset($_POST['param'])) {
-//				$arr = json_decode($_POST['param'], true);
-//				$func = $arr['action'];
-//				App::$app->adminsc->$func($arr);
-//				exit();
-//			};
-//		}
 	}
 
 	public function actionProducts()

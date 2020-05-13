@@ -10,6 +10,7 @@
 			<a href='/adminsc/settings/values'>Значения свойств</a>
 			<br><hr><br>
 			<a href='/adminsc/settings/pics'>Картинки</a>
+			<a href='/adminsc/settings/tags'>Теги</a>
 			<a href='/adminsc/Sitemap'>Создать SiteMap</a>
 			<a href='/adminsc/settings/instructions'>Инструкции</a>
 			<a href='/adminsc/settings/dump'>Dump</a>

@@ -26,21 +26,16 @@ class Category extends Model
 
 	static function getAssocCategory($options)
 	{
-		$onlyActive = $options['active']?"`act` = ?":'';
-        $res = \R::findAll('category',$onlyActive,['1']);
-//		$sql = 'SELECT * FROM category' . $onlyActive;
-//		$res = App::$app->category->findBySql($sql, $params = array());
-
-		if ($res !== FALSE) {
-			$all = [];
-			foreach ($res as $key => $v) {
-                $res =\R::findAll('product','parent = ?', [$v['id']]);
-				$all[$v['id']] = $v;
-				$all[$v['id']]['products'] = $res;
-			}
-			return $all;
+		$onlyActive = $options['active'] ? "`act` = ?" : '';
+		$res = \R::findAll('category', $onlyActive, ['1']);
+		$all = [];
+		foreach ($res as $key => $v) {
+			$v = $v->export();
+			$res = \R::findAll('product', 'parent = ?', [$v['id']]);
+			$all[$v['id']] = $v;
+			$all[$v['id']]['products'] = $res;
 		}
-		return false;
+		return $all;
 	}
 
 	static function categoriesTree($cat)
@@ -95,16 +90,16 @@ class Category extends Model
 
 	public static function getCategoryChildren($parentId)
 	{
-		$cat = self::getAssocCategory(['active'=>1]);
+		$cat = self::getAssocCategory(['active' => 1]);
 		$tree = self::categoriesTree($cat);
 		$categories = self::findValueByKey($tree, $parentId);
-        if(isset($categories['childs'])) {
+		if (isset($categories['childs'])) {
 			$children['categories'] = $categories['childs'];
 			$products = self::getCategoriesProducts($categories['childs']);
 		} else {
 			$products = self::getCategoriesProducts(array($categories));
 		}
-		$products??	$children['products'] = $products;
+		$products ?? $children['products'] = $products;
 
 		if (!$products && !isset($categories['childs'])) {
 			return FALSE;

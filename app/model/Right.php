@@ -8,13 +8,13 @@ class Right
 {
 	private $table = 'right';
 
-	static function getAllRights()
+	static function getAll()
 	{
 		$rights = \R::getAll("SELECT * FROM `right`");
 		foreach ($rights as $right){
 			$arr[$right['alias']] = $right;
 		}
-		return $arr;
+		return $arr;ge
 	}
 
 }

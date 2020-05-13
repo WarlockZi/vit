@@ -1,0 +1,41 @@
+.tags-wrap
+  height: 100vw
+
+  .tag-wrap
+    display: flex
+    flex-flow: column
+
+    .card
+      position: relative
+      display: flex
+      flex-flow: column
+      background: #f5f5f5
+
+      &:focus
+        outline: #ff1e4c
+
+      .name
+        padding: 7px 0px
+        font-size: 0.5em
+
+      .del
+        position: absolute
+        right: 0
+        bottom: 0
+        width: 30px
+        height: 100%
+        color: #4181b9
+        font-size: .7em
+        background: #cee6e6
+        margin: auto
+        display: flex
+        align-items: center
+        justify-content: center
+
+        &:hover
+          background-color: #565d68
+          color: #fff
+          font-weight: 600
+          cursor: pointer
+
+
