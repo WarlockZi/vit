@@ -1,14 +1,10 @@
 <div class="a-submenu">
 	<div class="title">Тэги</div>
 	<? foreach ($tags as $key => $value): ?>
+		<? $tag = $value->export(); ?>
 		<div class="card">
-			<div class="pic">
-				<? $tag = $value->export(); ?>
-				<img src="/pic/test/<?= $tag['nameHash'] ?>" alt="">
-			</div>
-			<div class="name"><?= $tag['nameHash'] ?></div>
-			<div class="art"><?= $tag['nameRu'] ?></div>
-			<span><?= $value['nameRu'] ?> </span>
+			<div><?= $tag['name'] ?></div>
+
 		</div>
 	<? endforeach; ?>
 
@@ -25,18 +21,21 @@
 		<div class="tag-wrap">Тег
 
 			<div class="card">
-				<div class="name" contenteditable></div>
+				<div id="id" hidden></div>
+				<div id="name" class="name field" contenteditable></div>
 				<div class="del">X</div>
 				<? foreach ($tags as $key => $value): ?>
-					<? $tag = $value->export(); ?>
-					<div class="name" contenteditable><?= $tag['name'] ?></div>
-					<div class="del">X</div>
-				<? endforeach; ?>
 			</div>
+			<div class="card">
+				<? $tag = $value->export(); ?>
+				<div class="name" contenteditable><?= $tag['name'] ?></div>
+				<div class="del">X</div>
+			</div>
+			<? endforeach; ?>
 		</div>
 	</div>
 	<div class="separator">
-		<div class="btn">Сохранить</div>
+		<div class="btn tag-save">Сохранить</div>
 		<a href="/adminsc/settings/tag/new" class="btn">Добавить тег</a>
 	</div>
 </div>

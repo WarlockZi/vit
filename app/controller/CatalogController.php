@@ -10,12 +10,7 @@ class CatalogController extends AppController {
 
    public function __construct($route) {
       parent::__construct($route);
-//      $this->layout = 'vitex';
-//      $list = App::$app->category->getActiveCategories();
-//      $this->set(compact('list'));
-//      View::setCss(['css' => '/public/css/vitex.css', 'addtime']);
       View::setCssN('/public/build/mainIndex.css');
-
    }
 
    public function actionIndex() {

@@ -38,10 +38,10 @@ class Category extends Model
 		return $all;
 	}
 
-	static function categoriesTree($cat)
+	static function categoriesTree($data)
 	{
 		$tree = [];
-		$data = $cat;
+//		$data = $cat;
 		foreach ($data as $id => &$node) {
 			if (isset($node['parent']) && !$node['parent']) {
 				$tree[$id] = &$node;
@@ -71,7 +71,7 @@ class Category extends Model
 	{
 		foreach ($aCategories as $key => $value) {
 			if (isset($value['childs']) && is_array($value['childs'])) {
-				$this->getCategoriesProducts($value['childs'], $products);
+				self::getCategoriesProducts($value['childs'], $products);
 				$products = array_merge($products, $value['products']);
 			}
 			$products = array_merge($products, $value['products']);
@@ -90,7 +90,7 @@ class Category extends Model
 
 	public static function getCategoryChildren($parentId)
 	{
-		$cat = self::getAssocCategory(['active' => 1]);
+		$cat = self::getAssocCategory(['active' => 0]);
 		$tree = self::categoriesTree($cat);
 		$categories = self::findValueByKey($tree, $parentId);
 		if (isset($categories['childs'])) {
@@ -104,7 +104,7 @@ class Category extends Model
 		if (!$products && !isset($categories['childs'])) {
 			return FALSE;
 		}
-		return $children;
+//		return $children;
 	}
 
 	public function isCategory($url)
@@ -132,9 +132,7 @@ class Category extends Model
 
 	public function getCategory($id)
 	{
-		$category = \R::findOne('category', $id); //$this->findOne($id);
-
-		if ($category) {
+		if ($category = \R::findOne('category', $id)) {
 
 			$category['props'] = $category->sharedProps;
 			$category['parents'] = $this->getCategoryParents($category['parent']);
@@ -146,26 +144,24 @@ class Category extends Model
 				$parentProps = array_merge($parentProps, $value['props']);
 			}
 			$category['parentProps'] = array_unique($parentProps);
+			return $category;
+
 		}
-		if (!$category) {
-			return FALSE;
-		};
-		return $category;
+		return FALSE;
 	}
 
-	public function getActiveCategories($fromCache = 0)
+	public function getRootCategories($fromCache = 0, $active=1)
 	{
 		if ($fromCache) {
 			$list = App::$app->cache->get('list');
 			if (!$list) {
-				$list = $this->getActiveCategories();
+				$list = $this->getRootCategories();
 				App::$app->cache->set('list', $list, 30);
 				return $list;
 			}
 		}
-
-		return \R::findAll('category', "WHERE parent = 0 AND act = 1");
-
+		$active = $active?"AND act = 1":'';
+		return \R::findAll('category', "(parent = 0 $active)");
 	}
 
 }

@@ -6,7 +6,7 @@ use \app\core\Base\Model;
 
 class Tag extends Model
 {
-	private $table = 'tag';
+	protected $table = 'tag';
 
 	static function getAll()
 	{

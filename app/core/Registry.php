@@ -19,6 +19,8 @@ class Registry {
 			'product' => 'app\model\Product',
 			'category' => 'app\model\Category',
 			'adminsc' => 'app\model\Adminsc',
+			'tag' => 'app\model\Tag',
+			'right' => 'app\model\Right',
 			//'instructions' => 'app\model\Instructions',
 		];
       foreach ($this->reestr as $name => $object) {

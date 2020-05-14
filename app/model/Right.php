@@ -6,15 +6,15 @@ namespace app\model;
 
 class Right
 {
-	private $table = 'right';
+	protected $table = 'right';
 
 	static function getAll()
 	{
-		$rights = \R::getAll("SELECT * FROM `right`");
+		$rights = \R::getAll("SELECT * FROM {self::table");
 		foreach ($rights as $right){
 			$arr[$right['alias']] = $right;
 		}
-		return $arr;ge
+		return $arr;
 	}
 
 }

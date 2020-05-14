@@ -103,7 +103,7 @@ class Adm_catalogController extends AdminscController
 
 	public function actionIndex()
 	{
-		$iniCatList = App::$app->category->getActiveCategories();
+		$iniCatList = App::$app->category->getRootCategories();
 		$this->set(compact('iniCatList'));
 	}
 

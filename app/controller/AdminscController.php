@@ -26,8 +26,7 @@ class AdminscController extends AppController
 
     public function actionSiteMap()
     {
-        $iniCatList = App::$app->category->getActiveCategories();
-        $this->set(compact('iniCatList'));
+
     }
 
     public function actionProducts()
