@@ -52,6 +52,14 @@ function MyJQ(arg) {
     this.val = function () {
         return this.objects[0].value;
     };
+    this.find = function (selector) {
+        return this.objects[0].querySelectorAll(selector);
+    };
+    this.attr = function (attr, val) {
+        val && this.objects.setAttribute(attr);
+        return this.objects.getAttribute(attr);
+    };
+
     this.append = function (child) {
         return this.objects[0].append(child);
     };

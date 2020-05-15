@@ -21,22 +21,22 @@
 		<div class="tag-wrap">Тег
 
 			<div class="card">
-				<div id="id" hidden></div>
+				<div id="new" hidden></div>
 				<div id="name" class="name field" contenteditable></div>
-				<div class="del">X</div>
-				<? foreach ($tags as $key => $value): ?>
+				<div class="tag-del">X</div>
 			</div>
-			<div class="card">
-				<? $tag = $value->export(); ?>
-				<div class="name" contenteditable><?= $tag['name'] ?></div>
-				<div class="del">X</div>
-			</div>
+			<? foreach ($tags as $key => $value): ?>
+				<div class="card">
+					<? $tag = $value->export(); ?>
+					<div class="name" contenteditable><?= $tag['name'] ?></div>
+					<div class="tag-del" data-id="<?= $tag['id'] ?>">X</div>
+				</div>
 			<? endforeach; ?>
 		</div>
 	</div>
 	<div class="separator">
 		<div class="btn tag-save">Сохранить</div>
-		<a href="/adminsc/settings/tag/new" class="btn">Добавить тег</a>
+		<div class="btn tag-add">Добавить тег</div>
 	</div>
 </div>
 

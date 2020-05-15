@@ -160,13 +160,12 @@ abstract class Model
 
 	public function delete($arr)
 	{
-		$table = $arr['table'];
-		$field = $arr['field'];
-		$id = $arr['id'];
-		$val = $arr['val'];
-		$param = [$table, $field, $id];
-		$sql = "DELETE FROM ? WHERE  ? = ?";
-		return $this->insertBySql($sql, $param);
+		($table = $arr['table'])??exit('no table given');
+		($id = $arr['id'])??exit('no id given');
+//		$id = $arr['id'];
+		$bean = \R::load($table, $id);
+		$d = \R::trash($bean);
+		exit ('deleted');
 	}
 
 	public function update($arr)

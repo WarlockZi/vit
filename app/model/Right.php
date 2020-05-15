@@ -4,13 +4,16 @@
 namespace app\model;
 
 
-class Right
+use app\core\Base\Model;
+
+class Right extends Model
 {
-	protected $table = 'right';
+	protected static $rightTable = 'right';
 
 	static function getAll()
 	{
-		$rights = \R::getAll("SELECT * FROM {self::table");
+		$d = self::$rightTable;
+		$rights = \R::getAll("SELECT * FROM `{$d}`");
 		foreach ($rights as $right){
 			$arr[$right['alias']] = $right;
 		}
