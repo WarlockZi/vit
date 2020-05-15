@@ -1,3 +1,4 @@
+<div class="a-submenu"></div>
 <div class="a-tabs-wrap">
 
 
@@ -13,7 +14,7 @@
           <div class="card">
               <div class = "pic">
 	              <?$pifc = $value->export();?>
-                <img src="/pic/test/<?=$pifc['nameHash']?>" alt="">
+                <img src="<?=\app\model\Pic::show('/pic/test/'.$pifc['nameHash']);?>"  alt="">
               </div>
               <div class="name"><?=$pifc['nameHash']?></div>
               <div class="art"><?=$pifc['nameRu']?></div>

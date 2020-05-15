@@ -10,11 +10,11 @@ use \R as R;
 class Adm_catalogController extends AdminscController
 {
 	private $table = 'product';
+	protected static $catTable = 'category';
 
 	public function __construct($route)
 	{
 		parent::__construct($route);
-
 	}
 
 	public function actionProducts()
@@ -103,7 +103,7 @@ class Adm_catalogController extends AdminscController
 
 	public function actionIndex()
 	{
-		$iniCatList = App::$app->category->getRootCategories();
+		$iniCatList = \R::findAll(self::$catTable, 'act = 1');
 		$this->set(compact('iniCatList'));
 	}
 
@@ -117,8 +117,6 @@ class Adm_catalogController extends AdminscController
 	public function actionCategoryNew()
 	{
 		$this->view = 'category_new';
-//        $props = [];
-//        $parent = isset($_GET['parent']) && (int)$_GET['parent'] !== 0 ? (int)$_GET['parent'] : 0;
 		$idAutoincrement = App::$app->category->autoincrement('category');
 		$category['id'] = $idAutoincrement;
 
