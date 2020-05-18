@@ -2,10 +2,16 @@ import './tags.sass'
 import {_, post, ajax_body, popup} from '../../common/common'
 
 let id = _('#id');
-//// create tag
-_('.tag-add').on('click', function () {
+
+//// save tag
+_('.tag-save').on('click', async function () {
     let data = new ajax_body('tag', 'create');
-    id && post(null, data);
+    if (typeof id === 'string') { //create
+        let id = await post(null, data);
+        addMenuItem(id, _('.name')[0]);
+    }else{//update
+
+    }
 });
 
 //// delete tag
@@ -18,5 +24,10 @@ _('.tag-del').on('click', async function () {
 
 });
 
-
+function addMenuItem(id, name){
+    let card = document.createElement('div');
+    card.classList.add('card');
+    let tagName = document.createElement('div');
+    tagName.innerText = name;
+}
 

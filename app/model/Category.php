@@ -150,12 +150,12 @@ class Category extends Model
 		return FALSE;
 	}
 
-	public function getRootCategories($fromCache = 0, $active=1)
+	public static function getRootCategories($fromCache = 0, $active=1)
 	{
 		if ($fromCache) {
 			$list = App::$app->cache->get('list');
 			if (!$list) {
-				$list = $this->getRootCategories();
+				$list = Category::getRootCategories();
 				App::$app->cache->set('list', $list, 30);
 				return $list;
 			}

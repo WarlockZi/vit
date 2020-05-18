@@ -19,6 +19,10 @@ class Adm_settingsController extends AdminscController {
    }
    public function actionTags() {
       $tags = \R::findAll('tag');
+//      $rootTags = \R::findAll('tag', 'ownTagList = null');
+      foreach($tags as $tag){
+          $own =  $tag->sharedTagList;
+      }
       $this->set(compact('tags'));
    }
 

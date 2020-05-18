@@ -103,7 +103,8 @@ class Adm_catalogController extends AdminscController
 
 	public function actionIndex()
 	{
-		$iniCatList = \R::findAll(self::$catTable, 'act = 1');
+//		$iniCatList = \R::findAll(self::$catTable);
+		$iniCatList = Category::getRootCategories();
 		$this->set(compact('iniCatList'));
 	}
 
@@ -112,7 +113,6 @@ class Adm_catalogController extends AdminscController
 		$iniCatList = App::$app->category->getActiveCategories();
 		$this->set(compact('iniCatList'));
 	}
-
 
 	public function actionCategoryNew()
 	{
