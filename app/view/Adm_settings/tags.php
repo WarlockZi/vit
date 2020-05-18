@@ -1,12 +1,12 @@
 <div class="a-submenu">
 	<div class="title">Тэги</div>
-    <div class="tag-wrap">
-	<? foreach ($tags as $tag): ?>
-		<div class="card">
-			<div><?= $tag['name'] ?></div>
-		</div>
-	<? endforeach; ?>
-    </div>
+	<div class="tags-menu">
+		<? foreach ($tags as $tag): ?>
+			<div class="card">
+				<div><?= $tag['name'] ?></div>
+			</div>
+		<? endforeach; ?>
+	</div>
 </div>
 <div class="a-content">
 	<div class="a-breadcrumbs">
@@ -27,7 +27,7 @@
 	</div>
 	<div class="separator">
 		<div class="btn tag-save">Сохранить</div>
-<!--		<div class="btn tag-add">Добавить тег</div>-->
+		<!--		<div class="btn tag-add">Добавить тег</div>-->
 	</div>
 </div>
 

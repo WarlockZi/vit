@@ -10,7 +10,10 @@ _('.tag-save').on('click', async function () {
         let id = await post(null, data);
         addMenuItem(id, _('.name')[0]);
     }else{//update
-
+        let i = await post(null, data);
+        let name = _('.name').text();
+        id &&
+        addMenuItem(i, name);
     }
 });
 
