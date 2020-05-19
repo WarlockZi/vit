@@ -3,7 +3,8 @@
 	<div class="tags-menu">
 		<? foreach ($tags as $tag): ?>
 			<div class="card">
-				<div><?= $tag['name'] ?></div>
+				<div><?= $tag['name']; ?></div>
+                <div class = "del" data-id = <?= $tag['id']; ?>>X</div>
 			</div>
 		<? endforeach; ?>
 	</div>

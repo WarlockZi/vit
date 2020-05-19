@@ -2,6 +2,7 @@
 
 .tags-wrap
   height: 100vw
+  color: $title_color
 
   .tag-wrap
     display: flex
@@ -41,8 +42,28 @@
           cursor: pointer
 
 .tags-menu
+  overflow: hidden
+
   .card
-    color: #fff
-    //color: $p_text_color
+    position: relative
+    color: $p_text_color
     padding: 1px 5px
+    cursor: pointer
+    .del
+      display: flex
+      justify-content: center
+      align-items: center
+      content: 'X'
+      font-size: x-small
+      width: 15px
+      height: 15px
+      bottom: 15%
+      right: -50%
+      position: absolute
+      transition: right 100ms
+    &:hover .del
+      right: 0
+      background-color: #cccccc
+
+
 
