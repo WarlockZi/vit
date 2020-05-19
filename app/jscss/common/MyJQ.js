@@ -46,7 +46,8 @@ function MyJQ(arg) {
         }
         return this;
     };
-    this.text = function () {
+    this.text = function (text) {
+        (typeof text === 'string') && (this.objects[0].innerText = text);
         return this.objects[0].innerText;
     };
     this.val = function () {
@@ -95,19 +96,19 @@ function MyJQ(arg) {
                 return this.value;
             } else if (this.type === 'checkbox') {
                 return this.checked ? 1 : 0;
-            } else if (this.type === 'email'||this.type === 'password') {
+            } else if (this.type === 'email' || this.type === 'password') {
                 return this.value;
             } else if (this.type === 'date') {
-                if (this.value === ""){
+                if (this.value === "") {
                     return null;
                 }
                 return this.value;
             }
         } else if (this.tagName === 'P') {
 
-        }else if (this.tagName === 'SELECT') {
+        } else if (this.tagName === 'SELECT') {
             return this.options[this.selectedIndex].value;
-        }else {
+        } else {
             return this.innerText;
         }
     };

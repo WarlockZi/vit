@@ -1,5 +1,32 @@
 @import '../../common/vars.sass'
 
+.tags-menu
+  overflow: hidden
+
+  .card
+    position: relative
+    color: $p_text_color
+    padding: 1px 5px
+    cursor: pointer
+
+    .del
+      display: flex
+      justify-content: center
+      align-items: center
+      content: 'X'
+      font-size: x-small
+      width: 15px
+      height: 15px
+      bottom: 15%
+      right: -50%
+      position: absolute
+      transition: right 100ms
+
+    &:hover .del
+      right: 0
+      background-color: #cccccc
+
+
 .tags-wrap
   height: 100vw
   color: $title_color
@@ -41,29 +68,24 @@
           font-weight: 600
           cursor: pointer
 
-.tags-menu
-  overflow: hidden
+.shared-wrap
+  margin-top: 10px
 
-  .card
+  .select
     position: relative
-    color: $p_text_color
-    padding: 1px 5px
-    cursor: pointer
-    .del
-      display: flex
-      justify-content: center
-      align-items: center
-      content: 'X'
-      font-size: x-small
-      width: 15px
-      height: 15px
-      bottom: 15%
-      right: -50%
+    width: 100%
+    height: 20px
+    background: whitesmoke
+    .select-wrap
       position: absolute
-      transition: right 100ms
-    &:hover .del
-      right: 0
-      background-color: #cccccc
+      top: 100%
+      left: 0
+      display: flex
+      flex-flow: column
+      height: 0
+      width: 100%
+      overflow: hidden
+      background-color: #f6f6f6
 
-
-
+    &:hover>.select-wrap
+      height: auto

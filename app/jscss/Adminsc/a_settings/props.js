@@ -27,7 +27,7 @@ class props_ajax_body extends ajax_body {
 }
 
 // изменение названия свойства / добавление
-_('.property-block').on('input', '.property-name', function () {
+_('.property-block').on('click', function () {
     var props_ajax_body = new props_ajax_body(this, 'update');
     props_ajax_body.pkeyVal = this.getAttribute('data-id');
     props_ajax_body.values.name = this.value.trim();
@@ -44,7 +44,7 @@ _('.property-block').on('input', '.property-name', function () {
     setTimeout(function () {
         post(props_ajax_body.url, props_ajax_body)
     }, 800);
-});
+},'.property-name');
 // изменение селекта
 _('select.type').on('change', function () {
     var props_ajax_body = new props_ajax_body(this, 'update');

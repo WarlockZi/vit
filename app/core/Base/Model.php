@@ -150,7 +150,7 @@ abstract class Model
 			$bean->{$key} = $v;
 		}
 		$id = \R::store($bean);
-
+		exit("{$id}");
 	}
 
 	public function read($arr)

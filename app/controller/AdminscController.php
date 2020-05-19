@@ -24,10 +24,7 @@ class AdminscController extends AppController
         exit('Успешно');
     }
 
-    public function actionSiteMap()
-    {
-
-    }
+    public function actionSiteMap()  {   }
 
     public function actionProducts()
     {
