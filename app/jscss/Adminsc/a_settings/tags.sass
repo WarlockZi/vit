@@ -1,5 +1,7 @@
 @import '../../common/vars.sass'
 
+$radio-inactive-color: #f39e9e
+$radio-active-color: #f23d3d
 .tags-menu
   overflow: hidden
 
@@ -76,6 +78,7 @@
     width: 100%
     height: 20px
     background: whitesmoke
+
     .select-wrap
       position: absolute
       top: 100%
@@ -86,6 +89,46 @@
       width: 100%
       overflow: hidden
       background-color: #f6f6f6
+      cursor: pointer
+
+      .shared
+        display: flex
+
+        .radio
+          border: 1px solid $radio-inactive-color
+          border-radius: 50px
+          width: 15px
+          height: 15px
+          position: relative
+          margin: 0 10px
+
+      .shared.checked
+        .radio
+          border: 2px solid $radio-active-color
+
+        .dot
+          position: absolute
+          left: 25%
+          bottom: 23%
+          border: 3px solid $radio-active-color
+          border-radius: 50px
+          width: 6px
+          height: 6px
+
+      .shared:hover:not(.checked)
+        background-color: #ececec
+
+        .radio
+          border: 2px solid $radio-inactive-color
+
+          .dot
+            position: absolute
+            left: 25%
+            bottom: 23%
+            border: 3px solid $radio-inactive-color
+            border-radius: 50px
+            width: 6px
+            height: 6px
 
     &:hover>.select-wrap
       height: auto

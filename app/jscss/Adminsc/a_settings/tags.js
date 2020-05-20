@@ -4,35 +4,48 @@ import {_, post, ajax_body, popup} from '../../common/common'
 
 let id = _('#id').text();
 
-//// save tag
-_('.tag-save').on('click', async function () {
-    let name = _('#name').text();
-    if (!name) return;
-    let data = new ajax_body('tag', 'create');
-    if (typeof id === 'string') { //create
-        let i = await post(null, data);
-        addMenuItem(i, name);
-        _('#name').text('');
-        clearField();
-    }else{//update
-        let i = await post(null, data);
-        id &&
-        addMenuItem(i, name);
+// pick tag from menu for edit
+_('.tags-menu').on('click', function (e) {
+    if (e.target.classList.contains('name')) {
+        let card = e.target.parentNode;
+        let del = card.querySelector('.del');
+        let id = del.dataset.id;
+
+        let name = e.target.innerText;
+        _('.tag-wrap .card .name').text(name);
+        _('.tag-wrap .card #id').attr('id', id );
     }
 });
 
+//// save tag
+_('.tag-save').on('click', save);
+
+
 //// delete tag
-_('.tag-del').on('click', function (){
-    deleteTag (this);
+_('.tag-del').on('click', function () {
+    deleteTag(this);
 });
-_('.tags-menu').on('click', function (e){
-    (e.target.className == 'del')&& deleteTag (e.target);
+_('.tags-menu').on('click', function (e) {
+    (e.target.className == 'del') && deleteTag(e.target);
 });
 
 
+// toggle radio shared
+_('.shared').on('click', function (e) {
+    if (!this.classList.contains('shared')) return;
+    let arShared = this.parentNode.querySelectorAll('.shared');
+    Array.from(arShared).forEach((i) => {
+        if (i.classList.contains('checked'))
+            i.classList.toggle('checked');
+    });
+    this.classList.toggle('checked');
+
+    (typeof +id === 'number') && save();
+
+});
 
 
-function addMenuItem(id, name){
+function addMenuItem(id, name) {
     let card = document.createElement('div');
     card.classList.add('card');
 
@@ -52,12 +65,28 @@ function addMenuItem(id, name){
 
 async function deleteTag(self) {
     let data = new ajax_body('tag', 'delete');
-    data.id = self.dataset.id?self.dataset.id:self.parentNode.dataset.id;
-    let res =  await post(null, data);
-    res==='deleted' && popup(['Тэг удален']);
+    data.id = self.dataset.id ? self.dataset.id : self.parentNode.dataset.id;
+    let res = await post(null, data);
+    res === 'deleted' && popup(['Тэг удален']);
     self.parentNode.remove();
 }
 
 async function clearField(self) {
 
+}
+
+async function save() {
+    let name = _('#name').text();
+    if (!name) return;
+    let data = new ajax_body('tag', 'create');
+    if (typeof id === 'string') { //create
+        let i = await post(null, data);
+        addMenuItem(i, name);
+        _('#name').text('');
+        clearField();
+    } else {//update
+        let i = await post(null, data);
+        id &&
+        addMenuItem(i, name);
+    }
 }

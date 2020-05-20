@@ -3,7 +3,7 @@
 	<div class="tags-menu">
 		<? foreach ($tags as $tag): ?>
 			<div class="card">
-				<div><?= $tag['name']; ?></div>
+				<div class = "name"><?= $tag['name']; ?></div>
 				<div class="del" data-id= <?= $tag['id']; ?>>X</div>
 			</div>
 		<? endforeach; ?>
@@ -30,7 +30,9 @@
 					<? foreach ($tags as $tag): ?>
 						<? if (!$tag->sharedTagList): ?>
 							<div class="shared">
-								<input type = "checkbox" class="checkbox"></input>
+								<div class="radio">
+									<div class="dot"></div>
+								</div>
 								<div><?= $tag['name']; ?></div>
 							</div>
 						<? endif; ?>
