@@ -20,7 +20,7 @@
 	<div class="tags-wrap">
 		<div class="tag-wrap">Тег
 			<div class="card">
-				<div id="id" hidden></div>
+				<div id="id" data-id="" hidden></div>
 				<div id="name" class="name field" contenteditable></div>
 				<div class="tag-del">X</div>
 			</div>
@@ -33,7 +33,8 @@
 								<div class="radio">
 									<div class="dot"></div>
 								</div>
-								<div><?= $tag['name']; ?></div>
+								<div id="name"><?= $tag['name']; ?></div>
+								<div id="id" data-id="<?= $tag['id']; ?>"></div>
 							</div>
 						<? endif; ?>
 					<? endforeach; ?>

@@ -2,24 +2,23 @@ import './tags.sass'
 import '../../common/common.sass'
 import {_, post, ajax_body, popup} from '../../common/common'
 
-let id = _('#id').text();
+// let id = _('#id').attr('data-id');
 
 // pick tag from menu for edit
 _('.tags-menu').on('click', function (e) {
     if (e.target.classList.contains('name')) {
         let card = e.target.parentNode;
         let del = card.querySelector('.del');
-        let id = del.dataset.id;
 
+        let id = del.dataset.id;
         let name = e.target.innerText;
-        _('.tag-wrap .card .name').text(name);
-        _('.tag-wrap .card #id').attr('id', id );
+        _('.tag-wrap .card #name').text(name);
+        _('.tag-wrap .card #id').attr('data-id', id );
     }
 });
 
 //// save tag
 _('.tag-save').on('click', save);
-
 
 //// delete tag
 _('.tag-del').on('click', function () {
@@ -39,9 +38,7 @@ _('.shared').on('click', function (e) {
             i.classList.toggle('checked');
     });
     this.classList.toggle('checked');
-
-    (typeof +id === 'number') && save();
-
+    _('#id').attr('data-id') && save();
 });
 
 
@@ -71,22 +68,23 @@ async function deleteTag(self) {
     self.parentNode.remove();
 }
 
-async function clearField(self) {
-
-}
-
 async function save() {
     let name = _('#name').text();
     if (!name) return;
     let data = new ajax_body('tag', 'create');
-    if (typeof id === 'string') { //create
+    let id = _('#id').attr('data-id');
+    if (!id) { //create
         let i = await post(null, data);
         addMenuItem(i, name);
         _('#name').text('');
         clearField();
     } else {//update
+        data = new ajax_body();
         let i = await post(null, data);
-        id &&
-        addMenuItem(i, name);
+
     }
+}
+
+async function clearField(self) {
+
 }
