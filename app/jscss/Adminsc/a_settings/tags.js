@@ -2,8 +2,6 @@ import './tags.sass'
 import '../../common/common.sass'
 import {_, post, ajax_body, popup} from '../../common/common'
 
-// let id = _('#id').attr('data-id');
-
 // pick tag from menu for edit
 _('.tags-menu').on('click', function (e) {
     if (e.target.classList.contains('name')) {
@@ -28,7 +26,6 @@ _('.tags-menu').on('click', function (e) {
     (e.target.className == 'del') && deleteTag(e.target);
 });
 
-
 // toggle radio shared
 _('.shared').on('click', function (e) {
     if (!this.classList.contains('shared')) return;
@@ -38,7 +35,8 @@ _('.shared').on('click', function (e) {
             i.classList.toggle('checked');
     });
     this.classList.toggle('checked');
-    _('#id').attr('data-id') && save();
+    let id = _('#id').attr('data-id');
+    if (id) updateTag(this);
 });
 
 
@@ -81,10 +79,15 @@ async function save() {
     } else {//update
         data = new ajax_body();
         let i = await post(null, data);
+        updateTag(this);
 
     }
 }
 
+async function updateTag(self) {
+    let body = new ajax_body('tag', 'update');
+    post(null, body);
+}
 async function clearField(self) {
 
 }

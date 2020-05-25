@@ -29,7 +29,7 @@
 					<div class="select-wrap">
 					<? foreach ($tags as $tag): ?>
 						<? if (!$tag->sharedTagList): ?>
-							<div class="shared">
+							<div class="shared" data-table='tag'>
 								<div class="radio">
 									<div class="dot"></div>
 								</div>
