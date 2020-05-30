@@ -23,6 +23,7 @@ class Adm_catalogController extends AdminscController
 
 		$fName = $fAct = $fArt = 0;
 		$params = explode('&', $_SERVER['QUERY_STRING'], 2);
+		$QSA = '';
 		if (count($params) > 1) {
 			$QSA = urldecode($params[1]);
 			$pattern = '/&?page=[0-9]+&?/';
@@ -69,7 +70,7 @@ class Adm_catalogController extends AdminscController
 		if (!$cnt_pages)
 			$cnt_pages = 1;
 
-		if ($page > $cnt_pages)
+//		if ($page > $cnt_pages)
 			$this->set(compact('products', 'productsCnt', 'cnt_pages', 'QSA'));
 	}
 

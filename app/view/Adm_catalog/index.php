@@ -11,6 +11,7 @@
       ]);
       ?>
     <a href  = "/adminsc/catalog/products">Товары</a>
+    <a href  = "/adminsc/catalog/categories">Категори</a>
   </div>
 </div>
 
