@@ -85,8 +85,15 @@ async function save() {
 }
 
 async function updateTag(self) {
-    let body = new ajax_body('tag', 'update');
-    post(null, body);
+    let id = _(self).find('#id').objects[0].dataset.id;
+    let tagId = _('.card #id').objects[0];
+    tagId = tagId.dataset.id;
+    if (tagId !== id){
+        let body = new ajax_body('tag', 'update');
+        body.sharedTables('tag');
+
+        post(null, body);
+    }
 }
 async function clearField(self) {
 
