@@ -150,7 +150,7 @@ class Category extends Model
 		return FALSE;
 	}
 
-	public static function getRootCategories($fromCache = 0, $active=1)
+	public static function getRootCategories($fromCache = 0, $active=0)
 	{
 		if ($fromCache) {
 			$list = App::$app->cache->get('list');
@@ -161,7 +161,7 @@ class Category extends Model
 			}
 		}
 		$active = $active?"AND act = 1":'';
-		return \R::findAll('category', "(parent = 0 $active)");
+		return \R::findAll('category');
 	}
 
 }

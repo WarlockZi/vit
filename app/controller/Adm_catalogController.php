@@ -104,7 +104,6 @@ class Adm_catalogController extends AdminscController
 
 	public function actionIndex()
 	{
-//		$iniCatList = \R::findAll(self::$catTable);
 		$iniCatList = Category::getRootCategories();
 		$this->set(compact('iniCatList'));
 	}

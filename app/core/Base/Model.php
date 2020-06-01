@@ -115,7 +115,7 @@ abstract class Model
 		$tree = [];
 		$data = $this->data;
 		foreach ($data as $id => &$node) {
-			if (isset($node['parent']) && !$node['parent']) {
+			if (isset($node['category_id']) && !$node['parent']) {
 				$tree[$id] = &$node;
 			} elseif (isset($node['parent']) && $node['parent']) {
 				$data[$node['parent']]['childs'][$id] = &$node;
