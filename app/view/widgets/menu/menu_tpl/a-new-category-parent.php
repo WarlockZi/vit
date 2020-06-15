@@ -1,5 +1,5 @@
 <?
-$d = $cat['parent'] ? '-' : '';
+$d = $cat['category_id'] ? '-' : '';
 $space = '&nbsp;&nbsp;' ?>
 
 <option value='<?= $cat['id'] ?>'>
