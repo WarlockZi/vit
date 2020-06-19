@@ -35,6 +35,15 @@ class User extends Model
 		}
 	}
 
+	static function getRights($user : string)
+	{
+		if ($user['confirmed'] = '1') {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	public function generatePasswordMd5()
 	{
 		$str = "23456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
@@ -112,7 +121,7 @@ class User extends Model
 	}
 
 
-	public static function arrayRights($rights)
+	public static function arrayRights($rights:re)
 	{
 		$right = [];
 		foreach ($rights as $item){

@@ -16,3 +16,5 @@ import './catalog/prod.sass'
 import './catalog/product.sass'
 
 img2svg();
+
+document.designMode = 'on';
